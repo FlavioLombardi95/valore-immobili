@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import heroLogo from '../logos/Valore-Immobili-logo-transparent.png'
 import './App.css'
 
@@ -36,7 +36,7 @@ function App() {
     return nextErrors
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
     const nextErrors = validate()
     if (Object.keys(nextErrors).length > 0) {
@@ -46,11 +46,23 @@ function App() {
 
     setIsSubmitting(true)
 
-    // Fase locale: simuliamo l'invio, poi mostriamo la thank-you page.
-    setTimeout(() => {
-      setIsSubmitting(false)
+    try {
+      const res = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok) {
+        setErrors({ submit: data.error || 'Errore durante l’invio. Riprova.' })
+        return
+      }
       setSubmitted(true)
-    }, 800)
+    } catch (err) {
+      setErrors({ submit: 'Errore di connessione. Riprova.' })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -264,6 +276,11 @@ function App() {
                   )}
                 </div>
 
+                {errors.submit && (
+                  <p className="error-text" style={{ marginBottom: '1rem' }}>
+                    {errors.submit}
+                  </p>
+                )}
                 <div className="form-footer">
                   <div className="button-glow">
                     <button

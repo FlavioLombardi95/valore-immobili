@@ -32,3 +32,6 @@ dist-ssr
 .env
 .env.local
 .env.*.local
+
+# Chiavi Google / account di servizio (NON committare mai)
+valore-immobili-746c6fbe1d58.json
