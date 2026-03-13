@@ -1,0 +1,85 @@
+:root {
+  /* Palette Valore Immobili: arancione + verde scuro, look serio e moderno */
+  --brand-orange: #f97316;
+  --brand-orange-soft: #ffedd5;
+  --brand-green: #064e3b;
+  --brand-green-soft: #ecfdf3;
+  --text: #374151;
+  --text-muted: #6b7280;
+  --bg: #f9fafb;
+  --surface: #ffffff;
+  --border: #e5e7eb;
+  --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.12);
+
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text',
+    'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Display',
+    'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+
+  font: 16px/150% var(--sans);
+  letter-spacing: 0.02em;
+  color: var(--text);
+  background: #f3f4f6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 24px 16px 32px;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--heading);
+  font-weight: 600;
+  color: #111827;
+}
+
+h1 {
+  font-size: clamp(2rem, 3vw + 1rem, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  margin: 0 0 12px;
+}
+
+h2 {
+  font-size: 1.1rem;
+  margin: 0 0 6px;
+}
+
+h3 {
+  font-size: 1rem;
+  margin: 0 0 4px;
+}
+
+p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: #111827;
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: #f3f4f6;
+}

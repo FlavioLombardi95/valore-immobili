@@ -1,0 +1,17 @@
+---
+description: Mantieni README aggiornato dopo ogni modifica significativa
+alwaysApply: true
+---
+
+# Aggiornamento README obbligatorio
+
+- Dopo **ogni modifica significativa** al progetto (nuove feature, cambi di flusso del form, modifiche alla UI rilevanti, integrazioni esterne), **aggiorna sempre il `README.md`** alla radice di `valore-immobili-landing`.
+- L’update al README deve includere:
+  - cosa è cambiato in termini di funzionalità o UX
+  - eventuali nuovi comandi o dipendenze
+  - note su come cambiano flussi lead / integrazioni esterne (es. Google Sheet, email, tracking).
+- Se le modifiche sono piccole e solo di copia o styling minore, aggiungi comunque una breve nota riassuntiva se cambia l’esperienza utente in modo percepibile.
+- Prima di concludere una sessione di lavoro, **rileggi il README** e assicurati che:
+  - descriva correttamente l’attuale comportamento della landing e del form
+  - non contenga riferimenti obsoleti a flussi rimossi o sostituiti.
+
