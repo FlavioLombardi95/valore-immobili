@@ -38,7 +38,7 @@ export default async function handler(req, res) {
     })
   }
 
-  const sheetName = process.env.GOOGLE_SHEET_NAME || 'Foglio 1'
+  const sheetName = process.env.GOOGLE_SHEET_NAME || 'Sheet1'
   const auth = new google.auth.GoogleAuth({
     credentials,
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
