@@ -39,6 +39,7 @@ export default async function handler(req, res) {
   }
 
   const sheetName = process.env.GOOGLE_SHEET_NAME || 'Foglio 1'
+  const range = `'${sheetName}'!A:F`
   const auth = new google.auth.GoogleAuth({
     credentials,
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
@@ -57,7 +58,7 @@ export default async function handler(req, res) {
   try {
     await sheets.spreadsheets.values.append({
       spreadsheetId: sheetId,
-      range: `${sheetName}!A:F`,
+      range,
       valueInputOption: 'RAW',
       insertDataOption: 'INSERT_ROWS',
       resource: { values: [row] },
