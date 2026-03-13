@@ -40,20 +40,17 @@ main {
 }
 
 .hero-logo-banner {
-  margin-bottom: 24px;
-  border-radius: 22px;
-  overflow: hidden;
-  background: #000;
+  margin-bottom: 16px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 32px 24px;
+  justify-content: flex-start;
+  padding-top: 4px;
 }
 
 .hero-logo-banner img {
   display: block;
-  width: 100%;
-  max-width: 380px;
+  width: auto;
+  max-width: 180px;
   height: auto;
 }
 

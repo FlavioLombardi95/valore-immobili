@@ -55,8 +55,9 @@ Sì: devi aggiungere **esattamente quelle due variabili** (e solo quelle, se usi
 - **Value** = il valore come sopra.
 - **Environment** = seleziona almeno **Production** (e, se vuoi, anche Preview).
 
-**Opzionali** (solo se il tuo foglio ha un nome diverso o usi un altro foglio):  
-`GOOGLE_SHEET_NAME` (es. `Foglio 1`), `GOOGLE_SHEET_GID` (es. `0`). Se non li aggiungi, si usano questi default.
+**Opzionali:**  
+- `GOOGLE_SHEET_NAME`: nome **esatto** del tab del foglio (in basso nel Google Sheet). Se il tab si chiama "Foglio 1" metti `Foglio 1`; se si chiama "Sheet1" lascia vuoto (è il default). Se vedi l’errore "Unable to parse range", imposta questa variabile con il nome del tab.
+- `GOOGLE_SHEET_GID`: gid del foglio (es. `0`). Default `0`.
 
 ## 5. Redeploy
 
