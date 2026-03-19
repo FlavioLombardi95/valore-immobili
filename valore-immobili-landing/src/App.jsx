@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import heroLogo from '../logos/Valore immobili (1).png'
+import heroLogo from '../logos/Valore Immobili logo.jpg'
 import './App.css'
 
 function App() {
@@ -56,6 +56,12 @@ function App() {
       if (!res.ok) {
         setErrors({ submit: data.error || 'Errore durante l’invio. Riprova.' })
         return
+      }
+      if (typeof window !== 'undefined' && Array.isArray(window.dataLayer)) {
+        window.dataLayer.push({
+          event: 'lead_submit_success',
+          timeframe: formData.timeframe,
+        })
       }
       setSubmitted(true)
     } catch (err) {
