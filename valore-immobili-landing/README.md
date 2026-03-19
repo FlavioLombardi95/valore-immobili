@@ -13,16 +13,19 @@ Landing page React/Vite per il progetto **valore-immobili.it**, pensata per racc
 - `src/App.jsx`: layout principale con:
   - pannello sinistro (hero con logo principale in alto, testo, punti chiave del servizio)
   - pannello destro (form di richiesta + thank-you state dopo l’invio)
-- `src/App.css`: layout e componenti visivi (card centrale, form, badge, pulsanti, thank-you)
+- `src/App.css`: layout e componenti visivi (card centrale, form, badge, pulsanti, thank-you; copy hero ottimizzato con testo nero per la leggibilità)
 - `src/index.css`: reset + variabili di tema globali e tipografia
 - `logos/Logo_Valore_Immobili_orrizontale_piccolo-removebg-preview.png`: logo brand ufficiale usato nella hero.
+- In desktop viene mostrata un'immagine dell'immobile sotto il testo hero.
 - `public/favicon.png`: favicon aggiornata dal nuovo logo brand.
 
 ### Flusso utente
 
 1. L’utente atterra sulla landing e legge:
    - chi è Valore Immobili
+   - spaziatura hero migliorata sotto il logo per leggibilità
    - cosa offre (valutazione sul posto, gratuita e senza impegno)
+   - copy hero aggiornata per chiarire che la stima non è automatica: è un’analisi concreta fatta sul posto
    - come funziona il servizio (su appuntamento, con sopralluogo)
 2. Compila il form con:
    - nome e cognome
@@ -50,7 +53,7 @@ Apri poi il browser su `http://localhost:5173`.
 Per far aprire il link «Privacy Policy» alla tua policy Iubenda, crea un file `.env` (copia da `.env.example`) e imposta:
 
 ```bash
-VITE_IUBENDA_PRIVACY_URL=https://www.iubenda.com/privacy-policy/TUO_ID
+VITE_IUBENDA_PRIVACY_URL=https://www.iubenda.com/privacy-policy/69451858
 ```
 
 In produzione (Vercel) aggiungi la stessa variabile nelle **Environment Variables** del progetto.
@@ -63,8 +66,6 @@ La pagina della privacy è gestita con **Iubenda**. Il link nel form (checkbox c
 2. Crea/compila la **Privacy and Cookie Policy** per il sito.
 3. Vai su **Embed** e copia il **Direct link** (es. `https://www.iubenda.com/privacy-policy/12345678`).
 4. Imposta la variabile d’ambiente `VITE_IUBENDA_PRIVACY_URL` con quell’URL (in locale in `.env`, in produzione in Vercel).
-
-Se `VITE_IUBENDA_PRIVACY_URL` non è impostata, il link resta `#` (da configurare prima del go-live).
 
 ### Note su integrazioni future
 

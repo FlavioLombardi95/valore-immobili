@@ -1,9 +1,15 @@
 import React, { useState } from 'react'
 import heroLogo from '../logos/Logo_Valore_Immobili_orrizontale_piccolo-removebg-preview.png'
+import mainImg from './assets/main-img.jpg'
 import './App.css'
 
 /** URL della Privacy Policy (Iubenda: dal dashboard copia il "Direct link"). */
-const PRIVACY_POLICY_URL = import.meta.env.VITE_IUBENDA_PRIVACY_URL || '#'
+const PRIVACY_POLICY_URL =
+  import.meta.env.VITE_IUBENDA_PRIVACY_URL ||
+  'https://www.iubenda.com/privacy-policy/69451858'
+
+const COOKIE_POLICY_URL =
+  'https://www.iubenda.com/privacy-policy/69451858/cookie-policy'
 
 function App() {
   const [formData, setFormData] = useState({
@@ -96,23 +102,41 @@ function App() {
               />
             </div>
 
+            <br />
+
             <div className="hero-copy">
-              <div className="hero-badge">
-                <span className="hero-badge-dot" />
-                Stai pensando di vendere casa entro 6–12 mesi?
-              </div>
               <h1>Richiedi una valutazione reale del tuo immobile.</h1>
               <p className="hero-subtitle">
-                Un esperto visita l’immobile, analizza il mercato reale e ti
-                restituisce una valutazione fondata su ciò che vede, non su un
-                algoritmo.
+                Non una stima automatica basata su medie di mercato o dati
+                statistici, ma{' '}
+                <strong>un’analisi concreta fatta sul posto</strong>.
               </p>
               <p className="hero-note">
+                A differenza di tante piattaforme online, che generano valori
+                indicativi partendo da dati generici, noi ti forniamo una
+                stima precisa, ragionata e aderente al mercato reale in quel
+                momento.
+                <br />
+                <br />
+                Un nostro esperto visita personalmente l’immobile, osserva
+                ogni dettaglio, valuta il contesto reale e confronta la
+                situazione con le compravendite effettive della zona. Il
+                risultato è una valutazione costruita su ciò che esiste
+                davvero, <strong>non su un algoritmo</strong>.
+                <br />
+                <br />
                 Questo servizio è pensato per proprietari che stanno{' '}
-                <strong>valutando concretamente la vendita</strong> entro i prossimi
-                6–12 mesi. Se cerchi solo una stima indicativa veloce, probabilmente
-                non è il servizio giusto.
+                <strong>valutando concretamente la vendita</strong> entro i
+                prossimi 3–12 mesi. Se cerchi solo una stima veloce e indicativa,
+                probabilmente non è il servizio giusto.
               </p>
+
+              <div className="hero-desktop-image">
+                <img
+                  src={mainImg}
+                  alt="Immobile"
+                />
+              </div>
             </div>
           </div>
 
@@ -313,8 +337,8 @@ function App() {
                         Ho letto e accetto la{' '}
                         <a
                           href={PRIVACY_POLICY_URL}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          className="iubenda-white iubenda-noiframe iubenda-embed"
+                          title="Privacy Policy "
                         >
                           Privacy Policy
                         </a>
