@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import heroLogo from '../logos/Logo Valore Immobili grande.jpg'
+import heroLogo from '../logos/Logo_Valore_Immobili_orrizontale_piccolo-removebg-preview.png'
 import './App.css'
 
 function App() {
