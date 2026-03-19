@@ -15,7 +15,7 @@ Landing page React/Vite per il progetto **valore-immobili.it**, pensata per racc
   - pannello destro (form di richiesta + thank-you state dopo l’invio)
 - `src/App.css`: layout e componenti visivi (card centrale, form, badge, pulsanti, thank-you)
 - `src/index.css`: reset + variabili di tema globali e tipografia
-- `logos/Valore Immobili logo.jpg`: logo brand ufficiale usato nella hero.
+- `logos/Logo Valore Immobili grande.jpg`: logo brand ufficiale usato nella hero.
 - `public/favicon.png`: favicon aggiornata dal nuovo logo brand.
 
 ### Flusso utente
