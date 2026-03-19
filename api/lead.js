@@ -1,7 +1,7 @@
 /**
  * POST /api/lead
  * Aggiunge una riga al Google Sheet (lead dal form).
- * Body: { fullName, city, phone, email, timeframe }
+ * Body: { fullName, city, phone, email, timeframe, privacyAccepted }
  * Env: GOOGLE_SHEET_ID, GOOGLE_SERVICE_ACCOUNT_JSON (JSON della service account)
  */
 import { google } from 'googleapis'
@@ -30,16 +30,16 @@ export default async function handler(req, res) {
     })
   }
 
-  const { fullName, city, phone, email, timeframe } = req.body || {}
-  if (!fullName || !city || !phone || !email || !timeframe) {
+  const { fullName, city, phone, email, timeframe, privacyAccepted } = req.body || {}
+  if (!fullName || !city || !phone || !email || !timeframe || privacyAccepted !== true) {
     return res.status(400).json({
       error: 'Dati mancanti',
-      required: ['fullName', 'city', 'phone', 'email', 'timeframe'],
+      required: ['fullName', 'city', 'phone', 'email', 'timeframe', 'privacyAccepted'],
     })
   }
 
   const sheetName = process.env.GOOGLE_SHEET_NAME
-  const range = sheetName ? `${sheetName}!A:F` : 'A:F'
+  const range = sheetName ? `${sheetName}!A:G` : 'A:G'
   const auth = new google.auth.GoogleAuth({
     credentials,
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
@@ -53,6 +53,7 @@ export default async function handler(req, res) {
     String(phone).trim(),
     String(email).trim(),
     String(timeframe).trim(),
+    'accepted',
   ]
 
   try {

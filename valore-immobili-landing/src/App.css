@@ -331,6 +331,31 @@ main {
   gap: 10px;
 }
 
+.privacy-consent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.privacy-consent-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.privacy-consent-label input {
+  margin-top: 2px;
+  accent-color: #f97316;
+}
+
+.privacy-consent-label a {
+  color: #0f766e;
+  text-decoration: underline;
+}
+
 .primary-button {
   display: inline-flex;
   align-items: center;

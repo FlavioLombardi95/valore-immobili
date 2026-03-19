@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import heroLogo from '../logos/Logo_Valore_Immobili_orrizontale_piccolo-removebg-preview.png'
 import './App.css'
 
+/** URL della Privacy Policy (Iubenda: dal dashboard copia il "Direct link"). */
+const PRIVACY_POLICY_URL = import.meta.env.VITE_IUBENDA_PRIVACY_URL || '#'
+
 function App() {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -9,6 +12,7 @@ function App() {
     phone: '',
     email: '',
     timeframe: '',
+    privacyAccepted: false,
   })
 
   const [errors, setErrors] = useState({})
@@ -26,6 +30,12 @@ function App() {
     setErrors((prev) => ({ ...prev, timeframe: undefined }))
   }
 
+  const handlePrivacyChange = (event) => {
+    const checked = event.target.checked
+    setFormData((prev) => ({ ...prev, privacyAccepted: checked }))
+    setErrors((prev) => ({ ...prev, privacyAccepted: undefined }))
+  }
+
   const validate = () => {
     const nextErrors = {}
     if (!formData.fullName.trim()) nextErrors.fullName = 'Inserisci nome e cognome.'
@@ -33,6 +43,9 @@ function App() {
     if (!formData.phone.trim()) nextErrors.phone = 'Inserisci un numero di telefono.'
     if (!formData.email.trim()) nextErrors.email = 'Inserisci un indirizzo email.'
     if (!formData.timeframe) nextErrors.timeframe = 'Seleziona una tempistica indicativa.'
+    if (!formData.privacyAccepted) {
+      nextErrors.privacyAccepted = 'Devi accettare la privacy policy per proseguire.'
+    }
     return nextErrors
   }
 
@@ -90,9 +103,9 @@ function App() {
               </div>
               <h1>Richiedi una valutazione reale del tuo immobile.</h1>
               <p className="hero-subtitle">
-                Un esperto della zona visita l’immobile a Monza e comuni limitrofi,
-                analizza il mercato reale e ti restituisce una valutazione fondata
-                su ciò che vede, non su un algoritmo.
+                Un esperto visita l’immobile, analizza il mercato reale e ti
+                restituisce una valutazione fondata su ciò che vede, non su un
+                algoritmo.
               </p>
               <p className="hero-note">
                 Questo servizio è pensato per proprietari che stanno{' '}
@@ -113,11 +126,11 @@ function App() {
               </div>
             </div>
             <div>
-              <div className="hero-footnote-label">Zona di attività</div>
+              <div className="hero-footnote-label">Modalità servizio</div>
               <div className="hero-footnote-value">
-                <span>Monza</span>
+                <span>Su appuntamento</span>
                 <br />
-                + comuni limitrofi
+                Valutazione sul posto
               </div>
             </div>
             <div>
@@ -182,7 +195,7 @@ function App() {
                       className={`field-input ${errors.city ? 'error' : ''}`}
                       type="text"
                       autoComplete="address-level2"
-                      placeholder="Es. Monza"
+                      placeholder="Es. Comune dell’immobile"
                       value={formData.city}
                       onChange={handleChange('city')}
                     />
@@ -288,6 +301,30 @@ function App() {
                   </p>
                 )}
                 <div className="form-footer">
+                  <div className="privacy-consent">
+                    <label className="privacy-consent-label" htmlFor="privacyAccepted">
+                      <input
+                        id="privacyAccepted"
+                        type="checkbox"
+                        checked={formData.privacyAccepted}
+                        onChange={handlePrivacyChange}
+                      />
+                      <span>
+                        Ho letto e accetto la{' '}
+                        <a
+                          href={PRIVACY_POLICY_URL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Privacy Policy
+                        </a>
+                        .
+                      </span>
+                    </label>
+                    {errors.privacyAccepted && (
+                      <p className="error-text">{errors.privacyAccepted}</p>
+                    )}
+                  </div>
                   <div className="button-glow">
                     <button
                       type="submit"
@@ -308,8 +345,7 @@ function App() {
                   <div className="meta-row">
                     <span className="meta-dot" />
                     <span>
-                      Un consulente della tua zona ti richiamerà entro 1–2 giorni
-                      lavorativi.
+                      Un consulente ti richiamerà entro 1–2 giorni lavorativi.
                     </span>
                   </div>
                   <div className="meta-divider" />
@@ -336,10 +372,9 @@ function App() {
                 </div>
 
                 <p className="disclaimer">
-                  Inviando il form acconsenti al trattamento dei tuoi dati per
-                  poter essere ricontattato in merito alla richiesta di
-                  valutazione dell’immobile. Nessun dato verrà ceduto a terzi
-                  senza il tuo consenso.
+                  I dati inseriti vengono trattati esclusivamente per ricontattarti
+                  in merito alla tua richiesta di valutazione e non vengono ceduti a
+                  terzi senza consenso.
                 </p>
               </form>
             </>
@@ -348,7 +383,7 @@ function App() {
               <div>
                 <div className="thankyou-label">Richiesta ricevuta</div>
                 <h2 className="thankyou-title">
-                  Grazie, un esperto della tua zona ti contatterà a breve.
+                  Grazie, un esperto ti contatterà a breve.
                 </h2>
                 <p className="thankyou-body">
                   Abbiamo ricevuto la tua richiesta di valutazione sul posto.{' '}
