@@ -8,9 +8,6 @@ const PRIVACY_POLICY_URL =
   import.meta.env.VITE_IUBENDA_PRIVACY_URL ||
   'https://www.iubenda.com/privacy-policy/69451858'
 
-const COOKIE_POLICY_URL =
-  'https://www.iubenda.com/privacy-policy/69451858/cookie-policy'
-
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const defaultContactValidation = {

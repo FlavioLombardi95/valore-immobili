@@ -1,5 +1,0 @@
-{
-  "buildCommand": "npm install && cd valore-immobili-landing && npm install && npm run build",
-  "outputDirectory": "valore-immobili-landing/dist",
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
-}
