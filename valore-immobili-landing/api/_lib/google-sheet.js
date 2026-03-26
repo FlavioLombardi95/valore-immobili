@@ -1,5 +1,19 @@
 import { google } from 'googleapis'
 
+const formatRomeTimestamp = () => {
+  const formatter = new Intl.DateTimeFormat('sv-SE', {
+    timeZone: 'Europe/Rome',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false,
+  })
+  return formatter.format(new Date()).replace(' ', 'T')
+}
+
 const getGoogleSheetConfig = () => {
   const sheetId = process.env.GOOGLE_SHEET_ID
   const rawCreds = process.env.GOOGLE_SERVICE_ACCOUNT_JSON
@@ -23,7 +37,7 @@ const getGoogleSheetConfig = () => {
 export const hasGoogleSheetConfig = () =>
   Boolean(process.env.GOOGLE_SHEET_ID && process.env.GOOGLE_SERVICE_ACCOUNT_JSON)
 
-export const appendLeadToGoogleSheet = async (payload, verification) => {
+export const appendLeadToGoogleSheet = async (payload) => {
   const config = getGoogleSheetConfig()
   if (!config) {
     throw new Error('Google Sheet non configurato.')
@@ -36,13 +50,13 @@ export const appendLeadToGoogleSheet = async (payload, verification) => {
   const sheets = google.sheets({ version: 'v4', auth })
 
   const row = [
-    new Date().toISOString(),
+    formatRomeTimestamp(),
     String(payload.fullName).trim(),
     String(payload.city).trim(),
     String(payload.phone).trim(),
     String(payload.email).trim(),
     String(payload.timeframe).trim(),
-    verification ? JSON.stringify(verification) : 'accepted',
+    'accepted',
   ]
 
   await sheets.spreadsheets.values.append({
