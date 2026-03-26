@@ -44,7 +44,9 @@ Landing page React/Vite per il progetto **valore-immobili.it**, pensata per racc
    - vengono effettuate le validazioni lato client
    - `POST /api/lead` rifà la verifica server-side in modalità **strict**
    - se email/telefono non sono validi, la lead viene rifiutata
-   - se validi, la lead viene accettata e (opzionalmente) inoltrata al backend esterno tramite `LEAD_FORWARD_URL`
+   - se validi, la lead viene accettata e:
+     - inoltrata al backend esterno via `LEAD_FORWARD_URL` (se presente), oppure
+     - salvata direttamente su Google Sheet con `GOOGLE_SHEET_ID` + `GOOGLE_SERVICE_ACCOUNT_JSON`
    - al termine viene mostrata la **thank-you view** nel pannello destro.
 
 ### Sviluppo locale
@@ -80,6 +82,17 @@ LEAD_FORWARD_URL=https://example.com/api/lead
 ```
 
 In assenza di `LEAD_FORWARD_URL`, l'API `POST /api/lead` valida i contatti ma non inoltra la lead.
+
+Per il salvataggio diretto su Google Sheet (alternativa a `LEAD_FORWARD_URL`) configura:
+
+```bash
+GOOGLE_SHEET_ID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+GOOGLE_SERVICE_ACCOUNT_JSON={"type":"service_account", ...}
+# opzionale
+GOOGLE_SHEET_NAME=Foglio 1
+```
+
+Con queste variabili viene esposta anche `POST /api/sheet` nello stesso progetto.
 
 ### Privacy Policy con Iubenda
 

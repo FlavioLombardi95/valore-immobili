@@ -3,6 +3,7 @@ import {
   getPhoneValidation,
   STRICT_INVALID_STATUSES,
 } from './_lib/contact-verify.js'
+import { appendLeadToGoogleSheet, hasGoogleSheetConfig } from './_lib/google-sheet.js'
 
 const isObject = (value) => typeof value === 'object' && value !== null
 
@@ -19,7 +20,11 @@ const validateLeadPayload = (payload) => {
 
 const forwardLead = async (payload, verification) => {
   const forwardUrl = process.env.LEAD_FORWARD_URL
-  if (!forwardUrl) return
+  if (!forwardUrl) {
+    if (!hasGoogleSheetConfig()) return
+    await appendLeadToGoogleSheet(payload, verification)
+    return
+  }
 
   const response = await fetch(forwardUrl, {
     method: 'POST',
@@ -65,7 +70,7 @@ export default async function handler(req, res) {
     return res.status(200).json({
       ok: true,
       verification: { phone, email },
-      forwarded: Boolean(process.env.LEAD_FORWARD_URL),
+      forwarded: Boolean(process.env.LEAD_FORWARD_URL || hasGoogleSheetConfig()),
     })
   } catch {
     return res.status(500).json({ error: 'Errore durante la verifica dei contatti.' })
