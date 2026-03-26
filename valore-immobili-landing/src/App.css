@@ -497,6 +497,12 @@ main {
   color: #b91c1c;
 }
 
+.valid-text {
+  margin-top: 3px;
+  font-size: 0.78rem;
+  color: #15803d;
+}
+
 .field-input.error,
 .field-select.error {
   border-color: #b91c1c;

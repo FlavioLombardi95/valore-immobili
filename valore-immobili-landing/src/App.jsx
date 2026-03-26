@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import heroLogo from '../logos/Logo_Valore_Immobili_orrizontale_piccolo-removebg-preview.png'
 import mainImg from './assets/main-img.jpg'
 import './App.css'
@@ -10,6 +10,15 @@ const PRIVACY_POLICY_URL =
 
 const COOKIE_POLICY_URL =
   'https://www.iubenda.com/privacy-policy/69451858/cookie-policy'
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+const defaultContactValidation = {
+  phone: { status: 'idle', message: '' },
+  email: { status: 'idle', message: '' },
+}
+
+const isContactFieldValid = (fieldValidation) => fieldValidation.status === 'valid'
 
 function App() {
   const [formData, setFormData] = useState({
@@ -24,11 +33,22 @@ function App() {
   const [errors, setErrors] = useState({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [contactValidation, setContactValidation] = useState(defaultContactValidation)
+
+  const setContactFieldValidation = (field, status, message) => {
+    setContactValidation((prev) => ({
+      ...prev,
+      [field]: { status, message },
+    }))
+  }
 
   const handleChange = (field) => (event) => {
     const value = event.target.value
     setFormData((prev) => ({ ...prev, [field]: value }))
     setErrors((prev) => ({ ...prev, [field]: undefined }))
+    if (field === 'phone' || field === 'email') {
+      setContactFieldValidation(field, 'idle', '')
+    }
   }
 
   const handleTimeframeSelect = (value) => {
@@ -52,8 +72,85 @@ function App() {
     if (!formData.privacyAccepted) {
       nextErrors.privacyAccepted = 'Devi accettare la privacy policy per proseguire.'
     }
+    if (formData.phone.trim() && !isContactFieldValid(contactValidation.phone)) {
+      nextErrors.phone = 'Numero di telefono invalido.'
+    }
+    if (formData.email.trim() && !isContactFieldValid(contactValidation.email)) {
+      nextErrors.email = 'Indirizzo email invalido.'
+    }
     return nextErrors
   }
+
+  useEffect(() => {
+    const trimmedPhone = formData.phone.trim()
+    if (!trimmedPhone) {
+      setContactFieldValidation('phone', 'idle', '')
+      return
+    }
+
+    const digitsOnly = trimmedPhone.replace(/\D/g, '')
+    if (digitsOnly.length < 8) {
+      setContactFieldValidation('phone', 'invalid', 'Numero invalido')
+      return
+    }
+
+    const timeoutId = setTimeout(async () => {
+      setContactFieldValidation('phone', 'checking', '')
+      try {
+        const res = await fetch('/api/contact-verify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ phone: trimmedPhone }),
+        })
+        const data = await res.json().catch(() => ({}))
+        const isValid = res.ok && data?.phone?.status === 'valid'
+        setContactFieldValidation(
+          'phone',
+          isValid ? 'valid' : 'invalid',
+          isValid ? 'Numero valido' : 'Numero invalido',
+        )
+      } catch {
+        setContactFieldValidation('phone', 'invalid', 'Numero invalido')
+      }
+    }, 700)
+
+    return () => clearTimeout(timeoutId)
+  }, [formData.phone])
+
+  useEffect(() => {
+    const trimmedEmail = formData.email.trim()
+    if (!trimmedEmail) {
+      setContactFieldValidation('email', 'idle', '')
+      return
+    }
+
+    if (!EMAIL_REGEX.test(trimmedEmail)) {
+      setContactFieldValidation('email', 'invalid', 'Email invalida')
+      return
+    }
+
+    const timeoutId = setTimeout(async () => {
+      setContactFieldValidation('email', 'checking', '')
+      try {
+        const res = await fetch('/api/contact-verify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: trimmedEmail }),
+        })
+        const data = await res.json().catch(() => ({}))
+        const isValid = res.ok && data?.email?.status === 'valid'
+        setContactFieldValidation(
+          'email',
+          isValid ? 'valid' : 'invalid',
+          isValid ? 'Email valida' : 'Email invalida',
+        )
+      } catch {
+        setContactFieldValidation('email', 'invalid', 'Email invalida')
+      }
+    }, 700)
+
+    return () => clearTimeout(timeoutId)
+  }, [formData.email])
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -83,7 +180,7 @@ function App() {
         })
       }
       setSubmitted(true)
-    } catch (err) {
+    } catch {
       setErrors({ submit: 'Errore di connessione. Riprova.' })
     } finally {
       setIsSubmitting(false)
@@ -232,13 +329,23 @@ function App() {
                     </label>
                     <input
                       id="phone"
-                      className={`field-input ${errors.phone ? 'error' : ''}`}
+                      className={`field-input ${
+                        errors.phone || contactValidation.phone.status === 'invalid'
+                          ? 'error'
+                          : ''
+                      }`}
                       type="tel"
                       autoComplete="tel"
                       placeholder="Es. +39 333 123 4567"
                       value={formData.phone}
                       onChange={handleChange('phone')}
                     />
+                    {contactValidation.phone.status === 'valid' && (
+                      <p className="valid-text">{contactValidation.phone.message}</p>
+                    )}
+                    {contactValidation.phone.status === 'invalid' && (
+                      <p className="error-text">{contactValidation.phone.message}</p>
+                    )}
                     {errors.phone && (
                       <p className="error-text">{errors.phone}</p>
                     )}
@@ -251,13 +358,23 @@ function App() {
                   </label>
                   <input
                     id="email"
-                    className={`field-input ${errors.email ? 'error' : ''}`}
+                    className={`field-input ${
+                      errors.email || contactValidation.email.status === 'invalid'
+                        ? 'error'
+                        : ''
+                    }`}
                     type="email"
                     autoComplete="email"
                     placeholder="Dove vuoi ricevere la conferma"
                     value={formData.email}
                     onChange={handleChange('email')}
                   />
+                  {contactValidation.email.status === 'valid' && (
+                    <p className="valid-text">{contactValidation.email.message}</p>
+                  )}
+                  {contactValidation.email.status === 'invalid' && (
+                    <p className="error-text">{contactValidation.email.message}</p>
+                  )}
                   {errors.email && <p className="error-text">{errors.email}</p>}
                 </div>
 

@@ -35,10 +35,16 @@ Landing page React/Vite per il progetto **valore-immobili.it**, pensata per racc
    - email
    - tempistica indicativa di vendita (entro 3/6/12 mesi)
    - consenso obbligatorio alla Privacy Policy (checkbox)
-3. Al submit:
-   - vengono effettuate le **validazioni lato client**
-   - il frontend invia i dati a `POST /api/lead`
-   - l'API salva la lead su Google Sheet includendo anche il consenso privacy (`accepted`)
+3. Durante la compilazione:
+   - telefono e email vengono verificati in tempo reale su `POST /api/contact-verify`
+   - il form mostra solo stato **verde/rosso**:
+     - verde: dato valido
+     - rosso: dato invalido
+4. Al submit:
+   - vengono effettuate le validazioni lato client
+   - `POST /api/lead` rifà la verifica server-side in modalità **strict**
+   - se email/telefono non sono validi, la lead viene rifiutata
+   - se validi, la lead viene accettata e (opzionalmente) inoltrata al backend esterno tramite `LEAD_FORWARD_URL`
    - al termine viene mostrata la **thank-you view** nel pannello destro.
 
 ### Sviluppo locale
@@ -58,6 +64,22 @@ VITE_IUBENDA_PRIVACY_URL=https://www.iubenda.com/privacy-policy/69451858
 ```
 
 In produzione (Vercel) aggiungi la stessa variabile nelle **Environment Variables** del progetto.
+
+Per le verifiche realtime e il blocco strict aggiungi anche:
+
+```bash
+TWILIO_ACCOUNT_SID=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+TWILIO_AUTH_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+KICKBOX_API_KEY=live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+Se vuoi mantenere un salvataggio su sistema esterno (Google Sheet, CRM, webhook), configura anche:
+
+```bash
+LEAD_FORWARD_URL=https://example.com/api/lead
+```
+
+In assenza di `LEAD_FORWARD_URL`, l'API `POST /api/lead` valida i contatti ma non inoltra la lead.
 
 ### Privacy Policy con Iubenda
 
