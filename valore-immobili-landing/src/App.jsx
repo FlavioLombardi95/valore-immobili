@@ -182,7 +182,7 @@ function App() {
               <header className="form-header">
                 <div className="form-kicker">Richiedi la valutazione gratuita</div>
                 <h2 className="form-title">
-                  Compila il form in meno di un minuto.
+                  Compila il form: bastano pochi secondi.
                 </h2>
                 <p className="form-caption">
                   Ti contatteremo solo per organizzare il sopralluogo del tuo
@@ -395,11 +395,6 @@ function App() {
                   </div>
                 </div>
 
-                <p className="disclaimer">
-                  I dati inseriti vengono trattati esclusivamente per ricontattarti
-                  in merito alla tua richiesta di valutazione e non vengono ceduti a
-                  terzi senza consenso.
-                </p>
               </form>
             </>
           ) : (
@@ -407,7 +402,7 @@ function App() {
               <div>
                 <div className="thankyou-label">Richiesta ricevuta</div>
                 <h2 className="thankyou-title">
-                  Grazie, un esperto ti contatterà a breve.
+                  Grazie per esserti registrato su Valore Immobili.
                 </h2>
                 <p className="thankyou-body">
                   Abbiamo ricevuto la tua richiesta di valutazione sul posto.{' '}
@@ -445,7 +440,7 @@ function App() {
                       setIsSubmitting(false)
                     }}
                   >
-                    inviare una nuova richiesta
+                    modificare la tua richiesta
                   </button>
                   .
                 </p>
