@@ -11,8 +11,8 @@ Landing page React/Vite per il progetto **valore-immobili.it**, pensata per racc
 ### Struttura
 
 - `src/App.jsx`: layout principale con:
-  - pannello sinistro (hero con logo principale in alto, testo, punti chiave del servizio)
-  - pannello destro (form di richiesta + thank-you state dopo l’invio)
+  - pannello sinistro (hero con logo principale in alto, copy sintetica e trust bullets)
+  - pannello destro (form di richiesta a 2 step + thank-you state dopo l’invio)
 - `src/App.css`: layout e componenti visivi (card centrale, form, badge, pulsanti, thank-you; copy hero ottimizzato con testo nero per la leggibilità)
 - `src/index.css`: reset + variabili di tema globali e tipografia
 - `index.html`: imposta il titolo della pagina mostrato nella tab del browser (`valore immobili`)
@@ -25,25 +25,22 @@ La cartella `valore-immobili-landing` è l'unica sorgente deployabile su Vercel 
 
 ### Flusso utente
 
-1. L’utente atterra sulla landing e legge:
-   - chi è Valore Immobili
-   - spaziatura hero migliorata sotto il logo per leggibilità
-   - cosa offre (valutazione sul posto, gratuita e senza impegno)
-   - copy hero aggiornata per chiarire che la stima non è automatica: è un’analisi concreta fatta sul posto
-   - come funziona il servizio (su appuntamento, con sopralluogo)
-2. Compila il form con:
-   - nome e cognome
-   - città dell’immobile
-   - telefono
-   - email
-   - tempistica indicativa di vendita (entro 3/6/12 mesi)
-   - consenso obbligatorio alla Privacy Policy (checkbox)
-3. Durante la compilazione:
+1. L’utente atterra sulla landing e vede subito:
+   - proposta di valore sintetica ("valutazione reale, gratuita, senza impegno")
+   - trust bullets ad alta leggibilità
+   - form di acquisizione
+2. Su mobile il layout è ottimizzato per conversione:
+   - il pannello form viene mostrato prima della hero lunga
+   - il passaggio al form avviene senza dover scorrere molto
+3. Compila il form in **2 step**:
+   - **Passo 1**: città immobile + tempistica indicativa (3/6/12 mesi)
+   - **Passo 2**: nome e cognome + telefono + email + consenso Privacy Policy
+4. Durante la compilazione:
    - telefono e email vengono verificati in tempo reale su `POST /api/contact-verify`
    - il form mostra solo stato **verde/rosso**:
      - verde: dato valido
      - rosso: dato invalido
-4. Al submit:
+5. Al submit:
    - vengono effettuate le validazioni lato client
    - `POST /api/lead` rifà la verifica server-side in modalità **strict**
    - se email/telefono non sono validi, la lead viene rifiutata
@@ -51,6 +48,7 @@ La cartella `valore-immobili-landing` è l'unica sorgente deployabile su Vercel 
      - inoltrata al backend esterno via `LEAD_FORWARD_URL` (se presente), oppure
      - salvata direttamente su Google Sheet con `GOOGLE_SHEET_ID` + `GOOGLE_SERVICE_ACCOUNT_JSON`
    - al termine viene mostrata la **thank-you view** nel pannello destro.
+   - il tracciamento `window.dataLayer.push({ event: 'lead_submit_success', timeframe })` resta invariato.
 
 ### Sviluppo locale
 

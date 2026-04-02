@@ -2,6 +2,46 @@ main {
   width: 100%;
 }
 
+.top-intent {
+  max-width: 1120px;
+  margin: 0 auto 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.top-intent-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(380px, 100%);
+  height: 78px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.top-intent-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.top-intent-title {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 1.06rem;
+  line-height: 1.35;
+  font-weight: 800;
+}
+
 .page-shell {
   max-width: 1120px;
   margin: 0 auto;
@@ -15,9 +55,32 @@ main {
 }
 
 @media (max-width: 900px) {
+  .top-intent {
+    margin: 0 auto 12px;
+    gap: 8px;
+  }
+
+  .top-intent-logo {
+    width: min(340px, 100%);
+    height: 68px;
+  }
+
+  .top-intent-title {
+    font-size: 0.96rem;
+    padding: 11px 12px;
+  }
+
   .page-shell {
     border-radius: 20px;
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .form-panel {
+    order: 1;
+  }
+
+  .hero-panel {
+    order: 2;
   }
 }
 
@@ -77,6 +140,13 @@ main {
   color: #111827;
 }
 
+.hero-support-title {
+  margin: 0 0 8px;
+  font-size: 1.28rem;
+  line-height: 1.25;
+  color: #111827;
+}
+
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -99,7 +169,16 @@ main {
 
 .hero-subtitle {
   font-size: 1rem;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.hero-trust-list {
+  margin: 0 0 12px 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 4px;
+  font-size: 0.9rem;
   color: #111827;
 }
 
@@ -186,11 +265,17 @@ main {
 }
 
 .form-kicker {
-  font-size: 0.78rem;
-  text-transform: uppercase;
+  font-size: 0.8rem;
+  text-transform: none;
   letter-spacing: 0.18em;
-  color: var(--brand-green);
-  margin-bottom: 4px;
+  color: #fff7ed;
+  margin-bottom: 8px;
+  font-weight: 800;
+  text-align: center;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  border: 1px solid rgba(249, 115, 22, 0.5);
 }
 
 .form-title {
@@ -200,6 +285,28 @@ main {
 
 .form-caption {
   font-size: 0.9rem;
+}
+
+.form-stepper {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.form-stepper span {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 5px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.form-stepper span.active {
+  border-color: rgba(249, 115, 22, 0.5);
+  color: #9a3412;
+  background: var(--brand-orange-soft);
 }
 
 .form {
@@ -329,7 +436,6 @@ main {
   background: #111827;
   color: #f9fafb;
   border-color: #111827;
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.4);
   transform: translateY(-1px);
 }
 
@@ -340,7 +446,6 @@ main {
 
 .timeframe-pill:hover {
   border-color: rgba(15, 23, 42, 0.12);
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
 }
 
 .radio-dot {
@@ -426,34 +531,51 @@ main {
   background: linear-gradient(135deg, #f97316, #ea580c);
   color: #fefce8;
   cursor: pointer;
-  box-shadow: 0 18px 40px rgba(124, 45, 18, 0.5);
   transform: translateY(0);
   transition:
     transform 0.08s ease,
-    box-shadow 0.12s ease,
     filter 0.12s ease;
 }
 
 .primary-button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 22px 48px rgba(124, 45, 18, 0.55);
   filter: brightness(1.02);
 }
 
 .primary-button:active {
   transform: translateY(0);
-  box-shadow: 0 14px 30px rgba(124, 45, 18, 0.4);
 }
 
 .primary-button[disabled] {
   opacity: 0.7;
   cursor: default;
-  box-shadow: none;
   transform: none;
 }
 
 .button-glow {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.secondary-button {
+  width: 100%;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  padding: 10px 16px;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+.secondary-button:hover {
+  border-color: rgba(15, 23, 42, 0.35);
+  background: #f8fafc;
 }
 
 .primary-button-icon {

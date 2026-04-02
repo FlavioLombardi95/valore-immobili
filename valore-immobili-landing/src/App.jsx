@@ -30,6 +30,7 @@ function App() {
   const [errors, setErrors] = useState({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [formStep, setFormStep] = useState(1)
   const [contactValidation, setContactValidation] = useState(defaultContactValidation)
 
   const setContactFieldValidation = (field, status, message) => {
@@ -75,6 +76,13 @@ function App() {
     if (formData.email.trim() && !isContactFieldValid(contactValidation.email)) {
       nextErrors.email = 'Indirizzo email invalido.'
     }
+    return nextErrors
+  }
+
+  const validateStepOne = () => {
+    const nextErrors = {}
+    if (!formData.city.trim()) nextErrors.city = 'Inserisci la città dell’immobile.'
+    if (!formData.timeframe) nextErrors.timeframe = 'Seleziona una tempistica indicativa.'
     return nextErrors
   }
 
@@ -184,45 +192,44 @@ function App() {
     }
   }
 
+  const handleContinueStepOne = () => {
+    const nextErrors = validateStepOne()
+    if (Object.keys(nextErrors).length > 0) {
+      setErrors((prev) => ({ ...prev, ...nextErrors }))
+      return
+    }
+    setFormStep(2)
+  }
+
   return (
     <main>
+      <section className="top-intent" aria-label="Messaggio principale">
+        <div className="top-intent-logo">
+          <img
+            src={heroLogo}
+            alt="Valore Immobili"
+          />
+        </div>
+        <h1 className="top-intent-title">
+          Stai pensando di vendere casa? Richiedi ora una valutazione reale del tuo immobile lasciando i tuoi dati.
+        </h1>
+      </section>
+
       <div className="page-shell">
         <section className="hero-panel">
           <div>
-            <div className="hero-logo-banner">
-              <img
-                src={heroLogo}
-                alt="Valore Immobili"
-              />
-            </div>
-
-            <br />
-
             <div className="hero-copy">
-              <h1>Richiedi una valutazione reale del tuo immobile.</h1>
+              <h2 className="hero-support-title">Perché compilare la richiesta ora</h2>
               <p className="hero-subtitle">
-                Non una stima automatica basata su medie di mercato o dati
-                statistici, ma{' '}
-                <strong>un’analisi concreta fatta sul posto</strong>.
+                Compila in 2 passaggi: ti richiamiamo noi per organizzare il sopralluogo.
               </p>
+              <ul className="hero-trust-list" aria-label="Punti di fiducia del servizio">
+                <li>Valutazione dell'immobile sul posto, non online</li>
+                <li>Nessun obbligo di affidare l’incarico</li>
+                <li>Ti richiamiamo entro 1-2 giorni lavorativi</li>
+              </ul>
               <p className="hero-note">
-                A differenza di tante piattaforme online, che generano valori
-                indicativi partendo da dati generici, noi ti forniamo una
-                stima precisa, ragionata e aderente al mercato reale in quel
-                momento.
-                <br />
-                <br />
-                Un nostro esperto visita personalmente l’immobile, osserva
-                ogni dettaglio, valuta il contesto reale e confronta la
-                situazione con le compravendite effettive della zona. Il
-                risultato è una valutazione costruita su ciò che esiste
-                davvero, <strong>non su un algoritmo</strong>.
-                <br />
-                <br />
-                Questo servizio è pensato per proprietari che stanno{' '}
-                <strong>valutando concretamente la vendita</strong> entro i
-                prossimi 3–12 mesi. Se cerchi solo una stima veloce e indicativa,
-                probabilmente non è il servizio giusto.
+                Servizio dedicato a chi sta valutando <strong>concretamente la vendita</strong> entro i prossimi 3–12 mesi.
               </p>
 
               <div className="hero-desktop-image">
@@ -274,164 +281,178 @@ function App() {
           {!submitted ? (
             <>
               <header className="form-header">
-                <div className="form-kicker">Richiedi la valutazione gratuita</div>
-                <h2 className="form-title">
-                  Compila il form: bastano pochi secondi.
-                </h2>
+                <div className="form-kicker">RICHIEDI UNA VALUTAZIONE GRATUITA</div>
+                <h2 className="form-title">Compila il form in 2 passaggi.</h2>
                 <p className="form-caption">
                   Ti contatteremo solo per organizzare il sopralluogo del tuo
                   immobile, senza pressioni e senza obbligo di vendita.
                 </p>
+                <div className="form-stepper" aria-label="Avanzamento form">
+                  <span className={formStep >= 1 ? 'active' : ''}>Passo 1</span>
+                  <span className={formStep >= 2 ? 'active' : ''}>Passo 2</span>
+                </div>
               </header>
 
               <form className="form" onSubmit={handleSubmit} noValidate>
-                <div className="field-group">
-                  <label className="field-label" htmlFor="fullName">
-                    Nome e cognome<span>*</span>
-                  </label>
-                  <input
-                    id="fullName"
-                    className={`field-input ${errors.fullName ? 'error' : ''}`}
-                    type="text"
-                    autoComplete="name"
-                    placeholder="Es. Laura Rossi"
-                    value={formData.fullName}
-                    onChange={handleChange('fullName')}
-                  />
-                  {errors.fullName && (
-                    <p className="error-text">{errors.fullName}</p>
-                  )}
-                </div>
-
-                <div className="field-row">
-                  <div className="field-group">
-                    <label className="field-label" htmlFor="city">
-                      Città dell’immobile<span>*</span>
-                    </label>
-                    <input
-                      id="city"
-                      className={`field-input ${errors.city ? 'error' : ''}`}
-                      type="text"
-                      autoComplete="address-level2"
-                      placeholder="Es. Comune dell’immobile"
-                      value={formData.city}
-                      onChange={handleChange('city')}
-                    />
-                    {errors.city && <p className="error-text">{errors.city}</p>}
-                  </div>
-
-                  <div className="field-group">
-                    <label className="field-label" htmlFor="phone">
-                      Telefono<span>*</span>
-                    </label>
-                    <input
-                      id="phone"
-                      className={`field-input ${
-                        errors.phone || contactValidation.phone.status === 'invalid'
-                          ? 'error'
-                          : ''
-                      }`}
-                      type="tel"
-                      autoComplete="tel"
-                      placeholder="Es. +39 333 123 4567"
-                      value={formData.phone}
-                      onChange={handleChange('phone')}
-                    />
-                    {contactValidation.phone.status === 'valid' && (
-                      <p className="valid-text">{contactValidation.phone.message}</p>
-                    )}
-                    {contactValidation.phone.status === 'invalid' && (
-                      <p className="error-text">{contactValidation.phone.message}</p>
-                    )}
-                    {errors.phone && (
-                      <p className="error-text">{errors.phone}</p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="field-group">
-                  <label className="field-label" htmlFor="email">
-                    Email<span>*</span>
-                  </label>
-                  <input
-                    id="email"
-                    className={`field-input ${
-                      errors.email || contactValidation.email.status === 'invalid'
-                        ? 'error'
-                        : ''
-                    }`}
-                    type="email"
-                    autoComplete="email"
-                    placeholder="Dove vuoi ricevere la conferma"
-                    value={formData.email}
-                    onChange={handleChange('email')}
-                  />
-                  {contactValidation.email.status === 'valid' && (
-                    <p className="valid-text">{contactValidation.email.message}</p>
-                  )}
-                  {contactValidation.email.status === 'invalid' && (
-                    <p className="error-text">{contactValidation.email.message}</p>
-                  )}
-                  {errors.email && <p className="error-text">{errors.email}</p>}
-                </div>
-
-                <div className="field-group">
-                  <div className="field-label">
-                    Quando pensi di vendere l’immobile?<span>*</span>
-                  </div>
-                  <p className="field-description">
-                    Indica la tempistica che ti sembra più vicina alla tua
-                    situazione attuale.
-                  </p>
-
-                  <div className="timeframe-options">
-                    {[
-                      {
-                        value: '3',
-                        label: 'Entro 3 mesi',
-                        badge: 'Più urgente',
-                      },
-                      {
-                        value: '6',
-                        label: 'Entro 6 mesi',
-                        badge: 'In programma',
-                      },
-                      {
-                        value: '12',
-                        label: 'Entro 12 mesi',
-                        badge: 'Sto iniziando a informarmi',
-                      },
-                    ].map((option) => (
-                      <label
-                        key={option.value}
-                        className="timeframe-pill"
-                        data-selected={formData.timeframe === option.value}
-                      >
-                        <input
-                          type="radio"
-                          name="timeframe"
-                          value={option.value}
-                          checked={formData.timeframe === option.value}
-                          onChange={() => handleTimeframeSelect(option.value)}
-                          className="timeframe-hidden-input"
-                        />
-                        <span>
-                          <span className="radio-dot">
-                            <span className="radio-dot-inner" />
-                          </span>
-                          {option.label}
-                        </span>
-                        <span className="timeframe-pill-badge">
-                          {option.badge}
-                        </span>
+                {formStep === 1 ? (
+                  <>
+                    <div className="field-group">
+                      <label className="field-label" htmlFor="city">
+                        Città dell’immobile<span>*</span>
                       </label>
-                    ))}
-                  </div>
+                      <input
+                        id="city"
+                        className={`field-input ${errors.city ? 'error' : ''}`}
+                        type="text"
+                        autoComplete="address-level2"
+                        placeholder="Es. Comune dell’immobile"
+                        value={formData.city}
+                        onChange={handleChange('city')}
+                      />
+                      {errors.city && <p className="error-text">{errors.city}</p>}
+                    </div>
 
-                  {errors.timeframe && (
-                    <p className="error-text">{errors.timeframe}</p>
-                  )}
-                </div>
+                    <div className="field-group">
+                      <div className="field-label">
+                        Quando pensi di vendere l’immobile?<span>*</span>
+                      </div>
+                      <p className="field-description">
+                        Seleziona la tempistica più vicina alla tua situazione.
+                      </p>
+
+                      <div className="timeframe-options">
+                        {[
+                          {
+                            value: '3',
+                            label: 'Entro 3 mesi',
+                            badge: 'Più urgente',
+                          },
+                          {
+                            value: '6',
+                            label: 'Entro 6 mesi',
+                            badge: 'In programma',
+                          },
+                          {
+                            value: '12',
+                            label: 'Entro 12 mesi',
+                            badge: 'Sto iniziando a informarmi',
+                          },
+                        ].map((option) => (
+                          <label
+                            key={option.value}
+                            className="timeframe-pill"
+                            data-selected={formData.timeframe === option.value}
+                          >
+                            <input
+                              type="radio"
+                              name="timeframe"
+                              value={option.value}
+                              checked={formData.timeframe === option.value}
+                              onChange={() => handleTimeframeSelect(option.value)}
+                              className="timeframe-hidden-input"
+                            />
+                            <span>
+                              <span className="radio-dot">
+                                <span className="radio-dot-inner" />
+                              </span>
+                              {option.label}
+                            </span>
+                            <span className="timeframe-pill-badge">
+                              {option.badge}
+                            </span>
+                          </label>
+                        ))}
+                      </div>
+
+                      {errors.timeframe && (
+                        <p className="error-text">{errors.timeframe}</p>
+                      )}
+                    </div>
+
+                    <button
+                      type="button"
+                      className="primary-button"
+                      onClick={handleContinueStepOne}
+                    >
+                      <span>Continua al passo 2</span>
+                      <span className="primary-button-icon">→</span>
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <div className="field-group">
+                      <label className="field-label" htmlFor="fullName">
+                        Nome e cognome<span>*</span>
+                      </label>
+                      <input
+                        id="fullName"
+                        className={`field-input ${errors.fullName ? 'error' : ''}`}
+                        type="text"
+                        autoComplete="name"
+                        placeholder="Es. Laura Rossi"
+                        value={formData.fullName}
+                        onChange={handleChange('fullName')}
+                      />
+                      {errors.fullName && (
+                        <p className="error-text">{errors.fullName}</p>
+                      )}
+                    </div>
+
+                    <div className="field-row">
+                      <div className="field-group">
+                        <label className="field-label" htmlFor="phone">
+                          Telefono<span>*</span>
+                        </label>
+                        <input
+                          id="phone"
+                          className={`field-input ${
+                            errors.phone || contactValidation.phone.status === 'invalid'
+                              ? 'error'
+                              : ''
+                          }`}
+                          type="tel"
+                          autoComplete="tel"
+                          placeholder="Es. +39 333 123 4567"
+                          value={formData.phone}
+                          onChange={handleChange('phone')}
+                        />
+                        {contactValidation.phone.status === 'valid' && (
+                          <p className="valid-text">{contactValidation.phone.message}</p>
+                        )}
+                        {contactValidation.phone.status === 'invalid' && (
+                          <p className="error-text">{contactValidation.phone.message}</p>
+                        )}
+                        {errors.phone && (
+                          <p className="error-text">{errors.phone}</p>
+                        )}
+                      </div>
+
+                      <div className="field-group">
+                        <label className="field-label" htmlFor="email">
+                          Email<span>*</span>
+                        </label>
+                        <input
+                          id="email"
+                          className={`field-input ${
+                            errors.email || contactValidation.email.status === 'invalid'
+                              ? 'error'
+                              : ''
+                          }`}
+                          type="email"
+                          autoComplete="email"
+                          placeholder="Dove vuoi ricevere la conferma"
+                          value={formData.email}
+                          onChange={handleChange('email')}
+                        />
+                        {contactValidation.email.status === 'valid' && (
+                          <p className="valid-text">{contactValidation.email.message}</p>
+                        )}
+                        {contactValidation.email.status === 'invalid' && (
+                          <p className="error-text">{contactValidation.email.message}</p>
+                        )}
+                        {errors.email && <p className="error-text">{errors.email}</p>}
+                      </div>
+                    </div>
 
                 {errors.submit && (
                   <p className="error-text" style={{ marginBottom: '1rem' }}>
@@ -464,6 +485,13 @@ function App() {
                     )}
                   </div>
                   <div className="button-glow">
+                    <button
+                      type="button"
+                      className="secondary-button"
+                      onClick={() => setFormStep(1)}
+                    >
+                      Torna al passo 1
+                    </button>
                     <button
                       type="submit"
                       className="primary-button"
@@ -508,6 +536,8 @@ function App() {
                     </div>
                   </div>
                 </div>
+                  </>
+                )}
 
               </form>
             </>
