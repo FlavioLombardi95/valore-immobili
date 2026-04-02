@@ -211,7 +211,7 @@ function App() {
           />
         </div>
         <h1 className="top-intent-title">
-          Stai pensando di vendere casa? Richiedi ora una valutazione reale del tuo immobile lasciando i tuoi dati.
+          Stai pensando di vendere casa? Richiedi ora una valutazione reale del tuo immobile.
         </h1>
       </section>
 
