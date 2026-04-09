@@ -5,6 +5,12 @@
   "installCommand": "npm install",
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/valutazione", "destination": "/valutazione/index.html" },
+    { "source": "/valutazione/step-1", "destination": "/valutazione/step-1.html" },
+    { "source": "/valutazione/step-2", "destination": "/valutazione/step-2.html" },
+    { "source": "/valutazione/step-2c", "destination": "/valutazione/step-2c.html" },
+    { "source": "/valutazione/step-3", "destination": "/valutazione/step-3.html" },
+    { "source": "/valutazione/(.*)", "destination": "/valutazione/$1" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

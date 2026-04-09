@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="light" lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Valore Immobili - Step 2C</title>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MBQLNCSQ');</script>
+<link as="font" crossorigin="" href="/valutazione/assets/fonts/inter-400.ttf" rel="preload" type="font/ttf"/>
+<link as="font" crossorigin="" href="/valutazione/assets/fonts/inter-600.ttf" rel="preload" type="font/ttf"/>
+<link as="font" crossorigin="" href="/valutazione/assets/fonts/plusjakarta-800.ttf" rel="preload" type="font/ttf"/>
+<link href="/valutazione/css/fonts.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#d6dbde",
+                    "on-primary-fixed-variant": "#7f2b00",
+                    "primary-fixed-dim": "#ffb599",
+                    "primary-container": "#f26522",
+                    "on-tertiary-fixed-variant": "#414657",
+                    "tertiary-fixed-dim": "#c1c6da",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#50a0fe",
+                    "inverse-surface": "#2c3134",
+                    "outline": "#8d7166",
+                    "on-primary-container": "#4f1800",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#f6fafd",
+                    "background": "#f6fafd",
+                    "surface-container-high": "#e4e9ec",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#ffdbce",
+                    "tertiary-container": "#8b90a3",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#dfe3e6",
+                    "on-error": "#ffffff",
+                    "tertiary": "#595e6f",
+                    "surface-tint": "#a63b00",
+                    "outline-variant": "#e1bfb3",
+                    "on-surface": "#171c1f",
+                    "tertiary-fixed": "#dde2f7",
+                    "surface": "#f6fafd",
+                    "secondary-fixed": "#d4e3ff",
+                    "inverse-on-surface": "#edf1f5",
+                    "on-tertiary-fixed": "#161b2a",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#370e00",
+                    "surface-container": "#eaeef2",
+                    "secondary": "#005fac",
+                    "on-secondary-container": "#003665",
+                    "surface-container-low": "#f0f4f7",
+                    "on-background": "#171c1f",
+                    "inverse-primary": "#ffb599",
+                    "secondary-fixed-dim": "#a4c9ff",
+                    "surface-variant": "#dfe3e6",
+                    "on-secondary-fixed": "#001c39",
+                    "primary": "#a63b00",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-container": "#242939",
+                    "on-surface-variant": "#594138",
+                    "on-secondary-fixed-variant": "#004884"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBQLNCSQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- TopNavBar (Shell Visibility: Relevant for Brand Trust) -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-xl shadow-blue-900/5">
+<div class="max-w-7xl mx-auto flex justify-center items-center px-6 py-4">
+<img alt="Valore Immobili" class="w-[220px] md:w-[280px] h-[56px] md:h-[68px] object-cover object-center" src="/valutazione/assets/logo-valore-immobili.png"/>
+</div>
+</nav>
+<main class="flex-grow pt-16 pb-8 px-4 md:px-8">
+<div class="max-w-5xl mx-auto">
+<!-- Progress Stepper Container -->
+<div class="mb-8">
+<div class="flex justify-between items-center mb-4">
+<span class="font-label text-sm font-semibold text-secondary">Passaggio finale</span>
+<span class="font-label text-sm font-bold text-primary">90% Completato</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container transition-all duration-500" style="width: 90%;"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Content Side -->
+<div class="lg:col-span-12 space-y-6">
+<div class="space-y-4">
+<h1 class="font-headline text-4xl md:text-5xl font-extrabold text-secondary tracking-tight leading-tight">
+                            Dove può contattarti il nostro agente per consegnarti il report?
+                        </h1>
+<p class="text-lg text-tertiary max-w-xl">
+                            Abbiamo quasi finito! Inserisci i tuoi recapiti per ricevere l'analisi completa della tua zona. Il nostro algoritmo ha elaborato i dati OMI e le tendenze di mercato locali.
+                        </p>
+</div>
+<div class="glass-panel rounded-[2rem] shadow-2xl border border-outline-variant/15 p-6 md:p-7">
+  <h3 class="font-headline text-2xl font-extrabold text-secondary mb-5">Completa i dati per il contatto</h3>
+  <form action="/valutazione/step-3" class="space-y-4" id="lead-form-step-2c" method="post">
+    <div class="grid sm:grid-cols-2 gap-4">
+      <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="city" placeholder="Comune/Zona immobile" required type="text"/>
+      <select class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="propertyType" required>
+        <option value="">Tipo immobile</option>
+        <option>Appartamento</option>
+        <option>Villa</option>
+        <option>Casa indipendente</option>
+        <option>Garage</option>
+        <option>Altro</option>
+      </select>
+    </div>
+    <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="fullName" placeholder="Nome e Cognome" required type="text"/>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="phone" placeholder="+39 333 123 4567" required type="tel"/>
+      <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="email" placeholder="nome@email.it" required type="email"/>
+    </div>
+    <select class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="timeframe" required>
+      <option value="">Quando pensi di vendere?</option>
+      <option value="3">Entro 3 mesi</option>
+      <option value="6">Entro 6 mesi</option>
+      <option value="12">Entro 12 mesi</option>
+    </select>
+    <label class="flex items-start gap-2 text-xs text-tertiary leading-relaxed">
+      <input name="privacyAccepted" required type="checkbox"/>
+      <span>Ho letto e accetto la <a class="underline" href="https://www.iubenda.com/privacy-policy/69451858" rel="noopener" target="_blank">Privacy Policy</a>.</span>
+    </label>
+    <button class="w-full py-4 rounded-full bg-gradient-to-r from-primary to-primary-container text-white font-bold text-lg shadow-xl shadow-primary/20 hover:shadow-2xl transition-all" type="submit">Richiedi Appuntamento Gratuito</button>
+    <p class="text-sm text-center text-tertiary min-h-5" id="lead-form-feedback"></p>
+  </form>
+</div>
+<!-- Trust Cards Bento Style -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="p-6 bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/15 flex items-start gap-4">
+<div class="bg-secondary-container/20 p-3 rounded-full text-secondary">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+</div>
+<div>
+<h3 class="font-bold text-on-surface">Privacy protected</h3>
+<p class="text-sm text-tertiary">I tuoi dati sono crittografati e mai condivisi con terzi senza consenso.</p>
+</div>
+</div>
+<div class="p-6 bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/15 flex items-start gap-4">
+<div class="bg-primary-container/10 p-3 rounded-full text-primary">
+<span class="material-symbols-outlined" data-icon="verified">verified</span>
+</div>
+<div>
+<h3 class="font-bold text-on-surface">Certificato OMI</h3>
+<p class="text-sm text-tertiary">Valutazioni basate sui database ufficiali dell'Osservatorio Mercato Immobiliare.</p>
+</div>
+</div>
+</div>
+<!-- Visual Accent (Asymmetric Image) -->
+<div class="relative mt-6 rounded-2xl overflow-hidden shadow-2xl h-44 md:h-56">
+<img alt="Luxury apartment interior" class="w-full h-full object-cover" data-alt="Modern minimalist luxury apartment interior with floor to ceiling windows overlooking a city skyline at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCVOxqauIbl1cxuERuNxVRoevTSgsF35aNGYeVV3ZFng6FsXLWugsAw-L7JONcabnrf4EAtTzBF2qAPRHnTQPcpDmk_7zykOcmVHClZOlD0kQ8WQZiPEZkmEeRnKf1Wsgil-lDJaLD5sZSzuLUxTYzS2PjpjQ4ush-_y4bfp94DmlnCJMyPO4Oy82SOa-KN_USRc0TXaZ5HlfG0ebcf9lqY4hp1td1qF5GHI_7BAwpfl6myRItXsfjhGr4SqOJrA4ACUthMKk39Us"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/60 to-transparent flex items-end p-8">
+<p class="text-white font-medium italic">"La precisione del dato trasforma un immobile in un investimento."</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full py-10 border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-8 flex flex-col items-center justify-center gap-4 text-center">
+<img alt="Valore Immobili" class="w-[250px] md:w-[320px] h-[74px] md:h-[92px] object-cover object-center" src="/valutazione/assets/logo-valore-immobili.png"/>
+<div class="flex gap-8">
+<a class="font-['Inter'] text-sm text-slate-500 hover:text-blue-900 dark:hover:text-blue-100 transition-opacity underline decoration-orange-500/30" href="https://www.iubenda.com/privacy-policy/69451858" rel="noopener" target="_blank">Privacy Policy</a>
+</div>
+<p class="font-['Inter'] text-sm text-slate-500">© 2026 Valore Immobili. Tutti i diritti riservati.</p>
+</div>
+</footer>
+<a aria-label="WhatsApp" class="js-whatsapp-link fixed bottom-24 right-6 z-50 h-14 w-14 rounded-full bg-[#25D366] text-white shadow-2xl flex items-center justify-center hover:scale-110 transition-transform" data-step="step_2c" href="#">
+  <svg class="h-7 w-7 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+</a>
+<script>window.APP_CONFIG={whatsappNumber:"393516349175"};</script>
+<script src="/valutazione/js/tracking.js"></script>
+<script>
+  (function () {
+    const form = document.getElementById('lead-form-step-2c');
+    const feedback = document.getElementById('lead-form-feedback');
+    if (!form) return;
+
+    const invalidStatuses = new Set(['invalid', 'undeliverable', 'do_not_mail', 'do_not_call', 'unknown']);
+
+    const verifyContacts = async (phone, email) => {
+      const res = await fetch('/api/contact-verify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phone, email })
+      });
+      const data = await res.json().catch(() => ({}));
+      return { ok: res.ok, data };
+    };
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      feedback.textContent = '';
+      const payload = {
+        city: form.city.value.trim(),
+        propertyType: form.propertyType.value,
+        fullName: form.fullName.value.trim(),
+        phone: form.phone.value.trim(),
+        email: form.email.value.trim(),
+        timeframe: form.timeframe.value,
+        privacyAccepted: Boolean(form.privacyAccepted.checked)
+      };
+
+      if (!payload.city || !payload.propertyType || !payload.fullName || !payload.phone || !payload.email || !payload.timeframe) {
+        feedback.textContent = 'Compila tutti i campi obbligatori.';
+        return;
+      }
+      if (!payload.privacyAccepted) {
+        feedback.textContent = 'Devi accettare la Privacy Policy per proseguire.';
+        return;
+      }
+
+      try {
+        const verification = await verifyContacts(payload.phone, payload.email);
+        if (!verification.ok) {
+          feedback.textContent = verification.data?.error || 'Impossibile verificare i contatti. Riprova.';
+          return;
+        }
+
+        const phoneStatus = verification.data?.phone?.status || '';
+        const emailStatus = verification.data?.email?.status || '';
+        if (invalidStatuses.has(phoneStatus)) {
+          feedback.textContent = 'Numero di telefono invalido.';
+          return;
+        }
+        if (invalidStatuses.has(emailStatus)) {
+          feedback.textContent = 'Indirizzo email invalido.';
+          return;
+        }
+
+        const res = await fetch('/api/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          feedback.textContent = data.error || 'Errore durante l\'invio.';
+          return;
+        }
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'lead_submit_success',
+          lead_type: 'form',
+          timeframe: payload.timeframe
+        });
+        window.location.href = '/valutazione/step-3?lead=ok';
+      } catch {
+        feedback.textContent = 'Errore di connessione. Riprova.';
+      }
+    });
+  })();
+</script>
+</body></html>
