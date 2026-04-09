@@ -1,6 +1,4 @@
 (function () {
-  var number = (window.APP_CONFIG && window.APP_CONFIG.whatsappNumber) || '';
-  var normalized = String(number).replace(/\D/g, '');
   var message = 'Ciao, ho visto la vostra pagina e vorrei informazioni per fissare un sopralluogo gratuito per la valutazione del mio immobile.';
   var popupDismissKey = 'vi_whatsapp_popup_dismissed';
 
@@ -10,16 +8,16 @@
   }
 
   function wireWhatsAppLink(anchor) {
-    if (!anchor || !normalized) return;
-    anchor.href = 'https://wa.me/' + normalized + '?text=' + encodeURIComponent(message);
+    if (!anchor) return;
+    var step = anchor.dataset.step || 'unknown';
+    anchor.href = '/api/wa-link?step=' + encodeURIComponent(step) + '&msg=' + encodeURIComponent(message);
     anchor.target = '_blank';
     anchor.rel = 'noopener';
     anchor.addEventListener('click', function () {
       pushEvent({
         event: 'whatsapp_click',
         lead_type: 'whatsapp',
-        page_step: anchor.dataset.step || 'unknown',
-        whatsapp_number: normalized
+        page_step: step
       });
     });
   }
