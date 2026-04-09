@@ -129,7 +129,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 <div class="glass-panel rounded-[2rem] shadow-2xl border border-outline-variant/15 p-6 md:p-7">
   <h3 class="font-headline text-2xl font-extrabold text-secondary mb-5">Completa i dati per il contatto</h3>
-  <form action="/valutazione/step-3" class="space-y-4" id="lead-form-step-2c" method="post">
+  <form action="/valutazione/step-3" class="space-y-4" id="lead-form-step-2c" method="post" novalidate>
     <div class="grid sm:grid-cols-2 gap-4">
       <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="city" placeholder="Comune/Zona immobile" required type="text"/>
       <select class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="propertyType" required>
@@ -143,8 +143,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
     <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="fullName" placeholder="Nome e Cognome" required type="text"/>
     <div class="grid sm:grid-cols-2 gap-4">
-      <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="phone" placeholder="+39 333 123 4567" required type="tel"/>
-      <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="email" placeholder="nome@email.it" required type="email"/>
+      <div>
+        <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="phone" placeholder="+39 333 123 4567" required type="tel"/>
+        <p class="text-xs mt-1 text-tertiary min-h-4" id="phone-live-feedback"></p>
+      </div>
+      <div>
+        <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="email" placeholder="nome@email.it" required type="email"/>
+        <p class="text-xs mt-1 text-tertiary min-h-4" id="email-live-feedback"></p>
+      </div>
     </div>
     <select class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="timeframe" required>
       <option value="">Quando pensi di vendere?</option>
@@ -210,9 +216,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   (function () {
     const form = document.getElementById('lead-form-step-2c');
     const feedback = document.getElementById('lead-form-feedback');
+    const phoneFeedback = document.getElementById('phone-live-feedback');
+    const emailFeedback = document.getElementById('email-live-feedback');
     if (!form) return;
 
     const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let phoneTimer = null;
+    let emailTimer = null;
 
     const verifyContacts = async (phone, email) => {
       const res = await fetch('/api/contact-verify', {
@@ -224,9 +234,81 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       return { ok: res.ok, data };
     };
 
+    const setLiveMessage = (target, text, type) => {
+      if (!target) return;
+      target.textContent = text || '';
+      target.classList.remove('text-tertiary', 'text-green-700', 'text-red-600');
+      if (!text) {
+        target.classList.add('text-tertiary');
+        return;
+      }
+      target.classList.add(type === 'ok' ? 'text-green-700' : 'text-red-600');
+    };
+
+    const checkPhoneRealtime = async () => {
+      const phone = form.phone.value.trim();
+      if (!phone) {
+        setLiveMessage(phoneFeedback, '', '');
+        return;
+      }
+      const digits = phone.replace(/\D/g, '');
+      if (digits.length < 8) {
+        setLiveMessage(phoneFeedback, 'Numero troppo corto.', 'error');
+        return;
+      }
+      setLiveMessage(phoneFeedback, 'Verifica numero in corso...', 'ok');
+      try {
+        const verification = await verifyContacts(phone, null);
+        const status = verification.data?.phone?.status || '';
+        if (verification.ok && status === 'valid') {
+          setLiveMessage(phoneFeedback, 'Numero valido.', 'ok');
+        } else {
+          setLiveMessage(phoneFeedback, 'Numero di telefono invalido.', 'error');
+        }
+      } catch {
+        setLiveMessage(phoneFeedback, 'Errore durante la verifica del numero.', 'error');
+      }
+    };
+
+    const checkEmailRealtime = async () => {
+      const email = form.email.value.trim().toLowerCase();
+      if (!email) {
+        setLiveMessage(emailFeedback, '', '');
+        return;
+      }
+      if (!EMAIL_REGEX.test(email)) {
+        setLiveMessage(emailFeedback, 'Formato email non valido.', 'error');
+        return;
+      }
+      setLiveMessage(emailFeedback, 'Verifica email in corso...', 'ok');
+      try {
+        const verification = await verifyContacts(null, email);
+        const status = verification.data?.email?.status || '';
+        if (verification.ok && status === 'valid') {
+          setLiveMessage(emailFeedback, 'Email valida.', 'ok');
+        } else {
+          setLiveMessage(emailFeedback, 'Indirizzo email invalido.', 'error');
+        }
+      } catch {
+        setLiveMessage(emailFeedback, 'Errore durante la verifica email.', 'error');
+      }
+    };
+
+    form.phone.addEventListener('input', () => {
+      clearTimeout(phoneTimer);
+      phoneTimer = setTimeout(checkPhoneRealtime, 500);
+    });
+
+    form.email.addEventListener('input', () => {
+      clearTimeout(emailTimer);
+      emailTimer = setTimeout(checkEmailRealtime, 500);
+    });
+
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
       feedback.textContent = '';
+      setLiveMessage(phoneFeedback, '', '');
+      setLiveMessage(emailFeedback, '', '');
       const payload = {
         city: form.city.value.trim(),
         propertyType: form.propertyType.value,
@@ -237,8 +319,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         privacyAccepted: Boolean(form.privacyAccepted.checked)
       };
 
-      if (!payload.city || !payload.propertyType || !payload.fullName || !payload.phone || !payload.email || !payload.timeframe) {
-        feedback.textContent = 'Compila tutti i campi obbligatori.';
+      if (!payload.city) {
+        feedback.textContent = 'Inserisci il comune/zona dell’immobile.';
+        return;
+      }
+      if (!payload.propertyType) {
+        feedback.textContent = 'Seleziona il tipo di immobile.';
+        return;
+      }
+      if (!payload.fullName) {
+        feedback.textContent = 'Inserisci nome e cognome.';
+        return;
+      }
+      if (!payload.phone) {
+        feedback.textContent = 'Inserisci il numero di telefono.';
+        return;
+      }
+      if (!payload.email) {
+        feedback.textContent = 'Inserisci l’indirizzo email.';
+        return;
+      }
+      if (!payload.timeframe) {
+        feedback.textContent = 'Seleziona quando pensi di vendere.';
         return;
       }
       if (!payload.privacyAccepted) {
@@ -266,11 +368,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         const phoneStatus = verification.data?.phone?.status || '';
         const emailStatus = verification.data?.email?.status || '';
         if (phoneStatus !== 'valid') {
-          feedback.textContent = 'Numero di telefono invalido.';
+          setLiveMessage(phoneFeedback, 'Numero di telefono invalido.', 'error');
           return;
         }
         if (emailStatus !== 'valid') {
-          feedback.textContent = 'Indirizzo email invalido.';
+          setLiveMessage(emailFeedback, 'Indirizzo email invalido.', 'error');
           return;
         }
 
