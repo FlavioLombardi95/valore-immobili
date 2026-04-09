@@ -212,7 +212,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     const feedback = document.getElementById('lead-form-feedback');
     if (!form) return;
 
-    const invalidStatuses = new Set(['invalid', 'undeliverable', 'do_not_mail', 'do_not_call', 'unknown']);
+    const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     const verifyContacts = async (phone, email) => {
       const res = await fetch('/api/contact-verify', {
@@ -247,6 +247,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }
 
       try {
+        const phoneDigits = payload.phone.replace(/\D/g, '');
+        if (phoneDigits.length < 8) {
+          feedback.textContent = 'Numero di telefono invalido.';
+          return;
+        }
+        if (!EMAIL_REGEX.test(payload.email.toLowerCase())) {
+          feedback.textContent = 'Indirizzo email invalido.';
+          return;
+        }
+
         const verification = await verifyContacts(payload.phone, payload.email);
         if (!verification.ok) {
           feedback.textContent = verification.data?.error || 'Impossibile verificare i contatti. Riprova.';
@@ -255,11 +265,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         const phoneStatus = verification.data?.phone?.status || '';
         const emailStatus = verification.data?.email?.status || '';
-        if (invalidStatuses.has(phoneStatus)) {
+        if (phoneStatus !== 'valid') {
           feedback.textContent = 'Numero di telefono invalido.';
           return;
         }
-        if (invalidStatuses.has(emailStatus)) {
+        if (emailStatus !== 'valid') {
           feedback.textContent = 'Indirizzo email invalido.';
           return;
         }
