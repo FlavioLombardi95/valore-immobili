@@ -119,112 +119,74 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 </header>
 <main>
-<!-- Hero Section -->
-<section class="relative overflow-hidden pt-12 pb-14 lg:pt-20 lg:pb-20 hero-gradient">
-<div class="max-w-7xl mx-auto px-8 relative z-10">
-<div class="grid lg:grid-cols-2 gap-10 items-center">
-<div class="space-y-8">
-<div class="inline-flex items-center gap-2 px-4 py-2 bg-surface-container-lowest rounded-full shadow-sm mx-auto lg:mx-0">
-<span class="flex h-2 w-2 rounded-full bg-primary-container"></span>
-<span class="text-xs font-bold tracking-widest text-secondary uppercase">Sopralluogo tecnico gratuito</span>
-</div>
-<h1 class="text-5xl lg:text-7xl font-headline font-extrabold text-secondary leading-[1.1] tracking-tight">
-                            Non affidare il valore della tua casa a un algoritmo. <span class="text-primary italic">Scopri il prezzo reale con un sopralluogo tecnico.</span>
+<!-- Hero + Step 1 -->
+<section class="relative overflow-hidden pt-12 pb-14 lg:pt-16 lg:pb-16 hero-gradient">
+<div class="max-w-3xl mx-auto px-8 relative z-10">
+<div class="text-center lg:text-left">
+<h1 class="text-4xl sm:text-5xl lg:text-6xl font-headline font-extrabold text-secondary leading-[1.15] tracking-tight">
+Scopri quanto vale davvero la tua casa
 </h1>
-<p class="text-xl text-tertiary max-w-lg leading-relaxed">
-                            Le stime automatiche online hanno margini d'errore che possono costarti migliaia di euro. Per vendere davvero, serve un'analisi professionale sul posto da chi conosce ogni via di Milano e Monza e Brianza.
-                        </p>
-<div class="flex flex-col sm:flex-row gap-4">
-<a class="cta-gradient text-on-primary px-10 py-5 rounded-full font-headline font-bold text-lg shadow-xl shadow-primary/20 hover:scale-105 transition-transform duration-300 inline-flex items-center justify-center" href="/valutazione/step-2c">
-                                Fissa il sopralluogo gratuito
-                            </a>
-<div class="flex items-center gap-3 px-6 py-4">
-<div class="flex -space-x-2">
-<img class="w-10 h-10 rounded-full border-2 border-surface shadow-sm" data-alt="professional real estate agent headshot with friendly smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4sHzzPPf_eOZSWYVWjn5qq1uZMpsILzQdEDxmXQLxbeCaoL0Nez3nEEGTcqQKWL0bZiB80ahYi9DHOIhdFyAjpUNkAPOxvUzkfC4K3F7pkPG1A2cX4UDRg3ElVZlH06EFu6QI0ESNLlyvfr25jQ7q7EQI_SppFVQqzXUKPKRD34RlucQkjuuDmQTMIjfPSMC-gAwn5Q8RMUV8W4EomA2kv6sK4nf2b1KSxDAyeApLtzEdRjxhJePezuU1FdyMfOmtCkvVf7KsRSU"/>
-<img class="w-10 h-10 rounded-full border-2 border-surface shadow-sm" data-alt="professional businesswoman portrait looking confident and helpful" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1LVvdy9XVEHsOI2jvi52ppeTxNZ1WRPE6xUZdGxUtXx8XPQivGqNH0pY8mCVIZxxgXZ_7fOzCVjQTVjx_Dd8jftR261OaBnu4VY9nj0RwgXx7DdNlFigARWQOYpH4bSMqsvPFA7fkon7fEA8dNWsjpcaZRjhWH2N4yOksUa_OX0mlyjCCPaQQthLfHuKaZC1MskEn3EatGz2Bw9Q0msXbfDFC7hWzJKj5fQ1s171MWIH1YH08Z-s4ZIHNOIrUKJFr08KAKlAQMAI"/>
+<p class="text-lg sm:text-xl text-tertiary mt-5 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+Valutazione immobiliare professionale basata su immobili realmente venduti nella tua zona
+</p>
 </div>
-<span class="text-sm font-medium text-secondary">Parla con un esperto</span>
+<div class="mt-10">
+<div class="flex items-center gap-3 mb-6">
+<div class="h-px flex-1 bg-outline-variant/40"></div>
+<span class="text-sm font-bold text-secondary uppercase tracking-wider whitespace-nowrap text-center">Step 1 di 2 – Dati immobile</span>
+<div class="h-px flex-1 bg-outline-variant/40"></div>
 </div>
+<form class="glass-card rounded-2xl p-6 md:p-8 shadow-xl border border-white/40 space-y-4 max-w-xl mx-auto lg:mx-0" id="step1-funnel-form" novalidate>
+<div class="space-y-4">
+<input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="city" placeholder="Comune" required type="text" autocomplete="address-level2"/>
+<select class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="propertyType" required>
+<option value="">Tipologia immobile</option>
+<option>Appartamento</option>
+<option>Villa</option>
+<option>Casa indipendente</option>
+<option>Garage</option>
+<option>Altro</option>
+</select>
+<input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="squareMeters" inputmode="numeric" min="1" max="99999" placeholder="Metri quadri" required step="1" type="number"/>
 </div>
-</div>
-<div class="relative">
-<div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl relative group">
-<img class="w-full h-full object-cover" data-alt="modern luxury villa exterior with clean architectural lines and warm evening lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgBuTG7FblZ_h75EfKpk76hVJF1Ex8WyYc4pHMeS2h6mePJp88jzF41BFPXCt8VeeZ5tvSy_88CijIaIZGuiwpkW2jVT-v0OXGFDQWkeqas2cXvP6PQtjdx3ulKxiL7Ay7Eo6zJ_9dYdBioYFEgCikXqEnEI-8Y4zqmAE05riF_-ePUCLXGTezXvSdRW0UMS8xhpSBUvE4IhZGbNBrRKw1qJrKQ_mlAI6mZDzLqOTWMET7z8fLCbex95ZdZz3_HwGExGJLF_CcVbE"/>
-<div class="absolute inset-0 bg-gradient-to-t from-secondary/40 to-transparent"></div>
-</div>
-<!-- Floating Glass Card -->
-<div class="absolute -bottom-10 -left-10 glass-card p-8 rounded-xl shadow-2xl border border-white/20 max-w-xs hidden md:block">
-<div class="flex items-center gap-4 mb-4">
-<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">insights</span>
-</div>
-<div>
-<p class="text-[10px] uppercase tracking-widest font-bold text-tertiary">Precisione AI</p>
-<p class="text-lg font-headline font-bold text-secondary">99.2%</p>
-</div>
-</div>
-<p class="text-sm text-tertiary leading-snug">Il nostro modello analizza oltre 500 variabili locali in tempo reale.</p>
+<p class="text-xs text-center text-error min-h-4" id="step1-form-feedback"></p>
+<button class="w-full cta-gradient text-on-primary py-4 rounded-full font-headline font-bold text-lg shadow-xl shadow-primary/20 hover:scale-[1.02] transition-transform" type="submit">
+Continua
+</button>
+<p class="text-xs text-center text-tertiary">Nessun impegno – nessuna pubblicità – dati protetti</p>
+</form>
 </div>
 </div>
-</div>
-</div>
-<!-- Background Decoration -->
 <div class="absolute top-0 right-0 w-1/3 h-full bg-secondary/5 -skew-x-12 translate-x-1/2 pointer-events-none"></div>
 </section>
-<!-- How It Works Section -->
+<!-- Riceverai -->
 <section class="py-14 bg-surface">
-<div class="max-w-7xl mx-auto px-8">
-<div class="text-center mb-12">
-<h2 class="text-4xl font-headline font-extrabold text-secondary mb-4 tracking-tight">La differenza tra una stima statistica e il valore reale a Milano e Monza Brianza.</h2>
-<p class="text-tertiary max-w-3xl mx-auto">Un portale nazionale non può conoscere le dinamiche reali di un quartiere di Milano o l'attrattività di una zona residenziale in Monza e Brianza. Noi sì, perché operiamo da sempre esclusivamente in questi territori.</p>
-</div>
-<div class="grid md:grid-cols-3 gap-8 relative">
-<!-- Step 1 -->
-<div class="relative z-10 group text-center md:text-left">
-<div class="mb-8 relative">
-<div class="w-20 h-20 bg-surface-container-high rounded-xl flex items-center justify-center group-hover:bg-secondary-container transition-colors duration-300 mx-auto md:mx-0">
-<span class="material-symbols-outlined text-3xl text-secondary">edit_note</span>
-</div>
-<span class="absolute -top-4 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 md:-left-4 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-on-primary font-bold shadow-lg">1</span>
-</div>
-<h3 class="text-xl font-headline font-bold text-secondary mb-4">Siamo specialisti di Milano, Monza e Brianza</h3>
-<p class="text-tertiary leading-relaxed">Operiamo solo su questi territori. Conosciamo i valori reali delle compravendite concluse, non solo i prezzi vetrina.</p>
-</div>
-<!-- Step 2 -->
-<div class="relative z-10 group text-center md:text-left">
-<div class="mb-8 relative">
-<div class="w-20 h-20 bg-surface-container-high rounded-xl flex items-center justify-center group-hover:bg-secondary-container transition-colors duration-300 mx-auto md:mx-0">
-<span class="material-symbols-outlined text-3xl text-secondary">memory</span>
-</div>
-<span class="absolute -top-4 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 md:-left-4 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-on-primary font-bold shadow-lg">2</span>
-</div>
-<h3 class="text-xl font-headline font-bold text-secondary mb-4">Esperienza Consolidata</h3>
-<p class="text-tertiary leading-relaxed">Con migliaia di sopralluoghi alle spalle, abbiamo affinato un metodo di analisi che tutela il tuo patrimonio immobiliare.</p>
-</div>
-<!-- Step 3 -->
-<div class="relative z-10 group text-center md:text-left">
-<div class="mb-8 relative">
-<div class="w-20 h-20 bg-surface-container-high rounded-xl flex items-center justify-center group-hover:bg-secondary-container transition-colors duration-300 mx-auto md:mx-0">
-<span class="material-symbols-outlined text-3xl text-secondary">person_search</span>
-</div>
-<span class="absolute -top-4 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 md:-left-4 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-on-primary font-bold shadow-lg">3</span>
-</div>
-<h3 class="text-xl font-headline font-bold text-secondary mb-4">Valorizzazione Reale</h3>
-<p class="text-tertiary leading-relaxed">Il sopralluogo permette di far emergere i punti di forza unici della tua casa che una stima automatica finirebbe per ignorare.</p>
-</div>
-</div>
+<div class="max-w-3xl mx-auto px-8">
+<h2 class="text-2xl md:text-3xl font-headline font-extrabold text-secondary mb-8 tracking-tight">Riceverai:</h2>
+<ul class="space-y-5 text-tertiary text-lg leading-relaxed">
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-green-600 shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span><strong class="text-secondary">Sopralluogo diretto</strong> da un consulente immobiliare</span>
+</li>
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-green-600 shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span><strong class="text-secondary">Analisi reale</strong> del tuo immobile sul posto</span>
+</li>
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-green-600 shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span><strong class="text-secondary">Valutazione</strong> professionale basata sul mercato attuale</span>
+</li>
+</ul>
 </div>
 </section>
 <!-- Recent Valuations Feed -->
 <section class="py-14 bg-surface-container-low">
 <div class="max-w-7xl mx-auto px-8">
-<div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
-<div>
-<h2 class="text-4xl font-headline font-extrabold text-secondary mb-4 tracking-tight">Valutazioni Recenti</h2>
-<p class="text-tertiary">Trasparenza totale. Ecco cosa abbiamo analizzato nell'ultima settimana.</p>
-</div>
-<div class="flex gap-2">
-<span class="px-4 py-2 bg-surface-container-highest rounded-full text-xs font-bold text-secondary uppercase tracking-widest">Aggiornato ora</span>
+<div class="mx-auto mb-10 max-w-3xl text-center">
+<h2 class="text-4xl font-headline font-extrabold text-secondary mb-4 tracking-tight">Esempi di compravendite</h2>
+<p class="text-tertiary">Immobili realmente venduti nei territori in cui operiamo.</p>
+<div class="mt-4 flex justify-center">
+<span class="inline-flex px-4 py-2 bg-surface-container-highest rounded-full text-xs font-bold text-secondary uppercase tracking-widest">Aggiornato ora</span>
 </div>
 </div>
 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -238,14 +200,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 <div class="flex justify-between items-start">
 <div>
-<h4 class="font-headline font-bold text-secondary text-lg">Appartamento Trilocale</h4>
+<h4 class="font-headline font-bold text-secondary text-lg">Trilocale</h4>
 <p class="text-sm text-tertiary flex items-center gap-1">
-<span class="material-symbols-outlined text-xs">location_on</span> Monza, San Biagio
+<span class="material-symbols-outlined text-xs">location_on</span> Milano
                                 </p>
 </div>
 <div class="text-right">
-<p class="text-xs font-bold text-primary uppercase tracking-tighter">Prezzo Finale</p>
-<p class="text-xl font-headline font-extrabold text-secondary">€ 540.000</p>
+<p class="text-xs font-bold text-primary uppercase tracking-tighter">Venduto a</p>
+<p class="text-xl font-headline font-extrabold text-secondary">€ 325.000</p>
 </div>
 </div>
 </div>
@@ -259,14 +221,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 <div class="flex justify-between items-start">
 <div>
-<h4 class="font-headline font-bold text-secondary text-lg">Villa Indipendente</h4>
+<h4 class="font-headline font-bold text-secondary text-lg">Bilocale</h4>
 <p class="text-sm text-tertiary flex items-center gap-1">
-<span class="material-symbols-outlined text-xs">location_on</span> Lissone, Monza e Brianza
+<span class="material-symbols-outlined text-xs">location_on</span> Monza
                                 </p>
 </div>
 <div class="text-right">
-<p class="text-xs font-bold text-primary uppercase tracking-tighter">Prezzo Finale</p>
-<p class="text-xl font-headline font-extrabold text-secondary">€ 685.000</p>
+<p class="text-xs font-bold text-primary uppercase tracking-tighter">Venduto a</p>
+<p class="text-xl font-headline font-extrabold text-secondary">€ 189.000</p>
 </div>
 </div>
 </div>
@@ -280,14 +242,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 <div class="flex justify-between items-start">
 <div>
-<h4 class="font-headline font-bold text-secondary text-lg">Trilocale con terrazzo</h4>
+<h4 class="font-headline font-bold text-secondary text-lg">Quadrilocale</h4>
 <p class="text-sm text-tertiary flex items-center gap-1">
-<span class="material-symbols-outlined text-xs">location_on</span> Cinisello Balsamo, Nord Milano
+<span class="material-symbols-outlined text-xs">location_on</span> Sesto San Giovanni
                                 </p>
 </div>
 <div class="text-right">
-<p class="text-xs font-bold text-primary uppercase tracking-tighter">Prezzo Finale</p>
-<p class="text-xl font-headline font-extrabold text-secondary">€ 186.000</p>
+<p class="text-xs font-bold text-primary uppercase tracking-tighter">Venduto a</p>
+<p class="text-xl font-headline font-extrabold text-secondary">€ 410.000</p>
 </div>
 </div>
 </div>
@@ -296,53 +258,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </section>
 <!-- Testimonial Section -->
 <section class="py-14 bg-surface">
-<div class="max-w-7xl mx-auto px-8">
-<div class="grid lg:grid-cols-2 gap-10 items-center">
-<div>
-<h2 class="text-4xl font-headline font-extrabold text-secondary mb-8 leading-tight tracking-tight">Perché si fidano di noi</h2>
-<div class="space-y-12">
-<div class="relative pl-12 border-l-4 border-primary-container">
-<p class="text-2xl font-headline italic text-secondary leading-relaxed mb-6">
-                                    "Avevo provato altri siti di valutazione automatica ma i prezzi erano fuori mercato. Qui la revisione dell'esperto ha fatto la differenza."
-                                </p>
-<div class="flex items-center gap-4">
-<img class="w-14 h-14 rounded-full" data-alt="happy male homeowner portrait with blurred backyard background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApMOiMlrQDMzYlu21b7ILBfvsri8WQikQPcGb5O_8-BsvXZL7JQ6-zDfiq4KqdUAaaU8Smq879x7TojWzj3p2nBxuvQGa2m2EfcToTY9LasERpw_KMlfkJuN6rMqOsHYL9ukr0B7f9Z3_nRiTfPCKnnNI9mP-yCJH8zzVfEx3WbbT4rVZ3i2mTiZIUOJl2vlepUXYrLvzV4vxRhCvt-mkyRdLkvP4MH8kL5EgIVMP3j6y2pF20JLCNQQxfxtLXA9Y0jF0dmXE2vZo"/>
-<div>
-<p class="font-bold text-secondary">Marco R.</p>
-<p class="text-sm text-tertiary">Proprietario a Milano</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="hidden lg:block"></div>
-</div>
-</div>
-</div>
-</section>
-<!-- Final CTA Section -->
-<section class="py-14">
-<div class="max-w-5xl mx-auto px-8">
-<div class="bg-secondary rounded-[2rem] p-8 lg:p-12 text-center relative overflow-hidden">
-<div class="relative z-10">
-<h2 class="text-4xl lg:text-5xl font-headline font-extrabold text-white mb-8">Fissa il sopralluogo gratuito per valutare la tua casa.</h2>
-<p class="text-secondary-fixed-dim text-lg mb-8 max-w-2xl mx-auto leading-relaxed">Il sopralluogo dura circa 20 minuti, è gratuito e non comporta alcun obbligo di mandato.</p>
-<a class="bg-primary text-white px-12 py-5 rounded-full font-headline font-bold text-xl shadow-2xl hover:bg-primary-container transition-colors inline-flex items-center justify-center" href="/valutazione/step-2c">
-                            Richiedi Appuntamento Gratuito
-                        </a>
-</div>
-<!-- Abstract Background Pattern -->
-<div class="absolute top-0 left-0 w-full h-full opacity-10">
-<svg height="100%" preserveaspectratio="none" viewbox="0 0 100 100" width="100%">
-<defs>
-<pattern height="10" id="grid" patternunits="userSpaceOnUse" width="10">
-<path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5"></path>
-</pattern>
-</defs>
-<rect fill="url(#grid)" height="100%" width="100%"></rect>
-</svg>
-</div>
-</div>
+<div class="max-w-3xl mx-auto px-8 text-center">
+<p class="text-xl md:text-2xl font-headline italic text-secondary leading-relaxed">
+“Professionale, preciso e molto chiaro nella valutazione. Abbiamo venduto casa in meno di 2 mesi.”
+</p>
 </div>
 </section>
 <section class="pb-12">
@@ -369,5 +288,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <a aria-label="WhatsApp" class="js-whatsapp-link fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full bg-[#25D366] text-white shadow-2xl flex items-center justify-center hover:scale-110 transition-transform" data-step="step_1" href="#">
   <svg class="h-7 w-7 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
 </a>
+<script>
+(function () {
+  const form = document.getElementById('step1-funnel-form');
+  const feedback = document.getElementById('step1-form-feedback');
+  if (!form || !feedback) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    feedback.textContent = '';
+    const city = form.city.value.trim();
+    const propertyType = form.propertyType.value;
+    const rawMq = String(form.squareMeters.value || '').trim();
+    const mq = parseInt(rawMq, 10);
+    if (!city) {
+      feedback.textContent = 'Inserisci il comune.';
+      return;
+    }
+    if (!propertyType) {
+      feedback.textContent = 'Seleziona la tipologia immobile.';
+      return;
+    }
+    if (!/^\d+$/.test(rawMq) || !Number.isFinite(mq) || mq < 1 || mq > 99999) {
+      feedback.textContent = 'Inserisci i metri quadri come numero intero.';
+      return;
+    }
+    try {
+      sessionStorage.setItem('vi_funnel', JSON.stringify({ city, propertyType, squareMeters: mq }));
+    } catch {
+      feedback.textContent = 'Impossibile salvare i dati. Verifica le impostazioni del browser.';
+      return;
+    }
+    window.location.href = '/valutazione/step-2c';
+  });
+})();
+</script>
 <script src="/valutazione/js/tracking.js"></script>
 </body></html>

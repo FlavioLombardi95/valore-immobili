@@ -94,6 +94,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
         }
+        #phone-live-feedback:empty,
+        #email-live-feedback:empty {
+            display: none;
+            margin: 0;
+            padding: 0;
+            min-height: 0;
+        }
     </style>
 </head>
 <body class="bg-background text-on-background font-body min-h-screen flex flex-col">
@@ -105,52 +112,60 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 </nav>
 <main class="flex-grow pt-16 pb-8 px-4 md:px-8">
-<div class="max-w-5xl mx-auto">
-<!-- Progress Stepper Container -->
+<div class="max-w-lg mx-auto">
 <div class="mb-8">
 <div class="flex justify-between items-center mb-4">
-<span class="font-label text-sm font-semibold text-secondary">Passaggio finale</span>
-<span class="font-label text-sm font-bold text-primary">90% Completato</span>
+<span class="font-label text-sm font-semibold text-secondary">Step 2 di 2</span>
+<span class="font-label text-sm font-bold text-primary">100%</span>
 </div>
 <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
-<div class="h-full bg-gradient-to-r from-primary to-primary-container transition-all duration-500" style="width: 90%;"></div>
+<div class="h-full bg-gradient-to-r from-primary to-primary-container transition-all duration-500" style="width: 100%;"></div>
 </div>
 </div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-<!-- Content Side -->
-<div class="lg:col-span-12 space-y-6">
-<div class="space-y-4">
-<h1 class="font-headline text-4xl md:text-5xl font-extrabold text-secondary tracking-tight leading-tight">
-                            Dove può contattarti il nostro agente per consegnarti il report?
-                        </h1>
-<p class="text-lg text-tertiary max-w-xl">
-                            Abbiamo quasi finito! Inserisci i tuoi recapiti per ricevere l'analisi completa della tua zona. Il nostro algoritmo ha elaborato i dati OMI e le tendenze di mercato locali.
-                        </p>
+<div class="text-center space-y-3 mb-8">
+<h1 class="font-headline text-3xl md:text-4xl font-extrabold text-secondary tracking-tight leading-tight">
+Step 2 di 2 – Completa la richiesta
+</h1>
+<p class="text-base md:text-lg text-tertiary">
+Inserisci i tuoi contatti per essere ricontattato e fissare il sopralluogo
+</p>
 </div>
-<div class="glass-panel rounded-[2rem] shadow-2xl border border-outline-variant/15 p-6 md:p-7">
-  <h3 class="font-headline text-2xl font-extrabold text-secondary mb-5">Completa i dati per il contatto</h3>
-  <form action="/valutazione/step-3" class="space-y-4" id="lead-form-step-2c" method="post" novalidate>
-    <div class="grid sm:grid-cols-2 gap-4">
-      <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="city" placeholder="Comune/Zona immobile" required type="text"/>
+<div class="glass-panel rounded-[2rem] shadow-2xl border border-outline-variant/15 p-6 md:p-8">
+  <form action="/valutazione/step-3" class="flex flex-col gap-4" id="lead-form-step-2c" method="post" novalidate>
+    <div class="flex flex-col gap-2">
+    <p class="text-sm font-semibold text-secondary">Dati immobile <span class="font-normal text-tertiary font-label">(modificabili)</span></p>
+    <div class="grid sm:grid-cols-2 gap-2">
+      <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary sm:col-span-2" name="city" placeholder="Comune / zona" required type="text" autocomplete="address-level2"/>
       <select class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="propertyType" required>
-        <option value="">Tipo immobile</option>
+        <option value="">Tipologia immobile</option>
         <option>Appartamento</option>
         <option>Villa</option>
         <option>Casa indipendente</option>
         <option>Garage</option>
         <option>Altro</option>
       </select>
+      <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="squareMeters" inputmode="numeric" min="1" max="99999" placeholder="Metri quadri" required step="1" type="number"/>
     </div>
-    <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="fullName" placeholder="Nome e Cognome" required type="text"/>
-    <div class="grid sm:grid-cols-2 gap-4">
-      <div>
-        <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="phone" placeholder="+39 333 123 4567" required type="tel"/>
-        <p class="text-xs mt-1 text-tertiary min-h-4" id="phone-live-feedback"></p>
+    </div>
+    <div class="flex flex-col gap-2">
+    <p class="text-sm font-semibold text-secondary">Inserisci i tuoi dati</p>
+    <div class="flex w-full items-center gap-2 rounded-xl bg-surface-container-highest px-3 py-3.5 font-medium focus-within:ring-2 focus-within:ring-secondary">
+      <span aria-hidden="true" class="material-symbols-outlined shrink-0 text-[22px] leading-none text-tertiary">person</span>
+      <input class="min-w-0 flex-1 border-none bg-transparent p-0 font-medium placeholder:text-tertiary/60 focus:outline-none focus:ring-0" name="fullName" placeholder="Nome e cognome" required type="text" autocomplete="name"/>
+    </div>
+    <div class="flex flex-col gap-0.5">
+      <div class="flex w-full items-center gap-2 rounded-xl bg-surface-container-highest px-3 py-3.5 font-medium focus-within:ring-2 focus-within:ring-secondary">
+        <span aria-hidden="true" class="material-symbols-outlined shrink-0 text-[22px] leading-none text-tertiary">call</span>
+        <input class="min-w-0 flex-1 border-none bg-transparent p-0 font-medium placeholder:text-tertiary/60 focus:outline-none focus:ring-0" name="phone" placeholder="Telefono" required type="tel" autocomplete="tel"/>
       </div>
-      <div>
-        <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="email" placeholder="nome@email.it" required type="email"/>
-        <p class="text-xs mt-1 text-tertiary min-h-4" id="email-live-feedback"></p>
+      <p class="pl-1 text-xs leading-tight text-tertiary empty:hidden" id="phone-live-feedback"></p>
+    </div>
+    <div class="flex flex-col gap-0.5">
+      <div class="flex w-full items-center gap-2 rounded-xl bg-surface-container-highest px-3 py-3.5 font-medium focus-within:ring-2 focus-within:ring-secondary">
+        <span aria-hidden="true" class="material-symbols-outlined shrink-0 text-[22px] leading-none text-tertiary">mail</span>
+        <input class="min-w-0 flex-1 border-none bg-transparent p-0 font-medium placeholder:text-tertiary/60 focus:outline-none focus:ring-0" name="email" placeholder="Email" required type="email" autocomplete="email"/>
       </div>
+      <p class="pl-1 text-xs leading-tight text-tertiary empty:hidden" id="email-live-feedback"></p>
     </div>
     <select class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="timeframe" required>
       <option value="">Quando pensi di vendere?</option>
@@ -158,43 +173,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <option value="6">Entro 6 mesi</option>
       <option value="12">Entro 12 mesi</option>
     </select>
+    </div>
     <label class="flex items-start gap-2 text-xs text-tertiary leading-relaxed">
-      <input name="privacyAccepted" required type="checkbox"/>
+      <input class="mt-0.5 shrink-0" name="privacyAccepted" required type="checkbox"/>
       <span>Ho letto e accetto la <a class="underline" href="https://www.iubenda.com/privacy-policy/69451858" rel="noopener" target="_blank">Privacy Policy</a>.</span>
     </label>
-    <button class="w-full py-4 rounded-full bg-gradient-to-r from-primary to-primary-container text-white font-bold text-lg shadow-xl shadow-primary/20 hover:shadow-2xl transition-all" type="submit">Richiedi Appuntamento Gratuito</button>
-    <p class="text-sm text-center text-tertiary min-h-5" id="lead-form-feedback"></p>
+    <button class="w-full py-4 rounded-full bg-gradient-to-r from-primary to-primary-container text-white font-bold text-lg shadow-xl shadow-primary/20 hover:shadow-2xl transition-all" type="submit">Richiedi il sopralluogo gratuito</button>
+    <p class="text-xs text-center text-tertiary">Nessun obbligo di mandato – nessun costo – nessuna pubblicità</p>
+    <p class="text-sm text-center text-error min-h-5" id="lead-form-feedback"></p>
   </form>
 </div>
-<!-- Trust Cards Bento Style -->
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div class="p-6 bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/15 flex items-start gap-4">
-<div class="bg-secondary-container/20 p-3 rounded-full text-secondary">
-<span class="material-symbols-outlined" data-icon="lock">lock</span>
+<div class="mt-8 space-y-4 text-tertiary text-base leading-relaxed">
+<p>Ti contatteremo per <strong class="text-secondary font-semibold">fissare un sopralluogo gratuito</strong> di circa 20 minuti presso il tuo immobile.</p>
+<p>Durante l’incontro verrà effettuata una <strong class="text-secondary font-semibold">valutazione</strong> reale e, a seguito dell’analisi, verrà rilasciato un certificato di <strong class="text-secondary font-semibold">valutazione immobiliare</strong>.</p>
 </div>
-<div>
-<h3 class="font-bold text-on-surface">Privacy protected</h3>
-<p class="text-sm text-tertiary">I tuoi dati sono crittografati e mai condivisi con terzi senza consenso.</p>
-</div>
-</div>
-<div class="p-6 bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/15 flex items-start gap-4">
-<div class="bg-primary-container/10 p-3 rounded-full text-primary">
-<span class="material-symbols-outlined" data-icon="verified">verified</span>
-</div>
-<div>
-<h3 class="font-bold text-on-surface">Certificato OMI</h3>
-<p class="text-sm text-tertiary">Valutazioni basate sui database ufficiali dell'Osservatorio Mercato Immobiliare.</p>
-</div>
-</div>
-</div>
-<!-- Visual Accent (Asymmetric Image) -->
-<div class="relative mt-6 rounded-2xl overflow-hidden shadow-2xl h-44 md:h-56">
-<img alt="Luxury apartment interior" class="w-full h-full object-cover" data-alt="Modern minimalist luxury apartment interior with floor to ceiling windows overlooking a city skyline at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCVOxqauIbl1cxuERuNxVRoevTSgsF35aNGYeVV3ZFng6FsXLWugsAw-L7JONcabnrf4EAtTzBF2qAPRHnTQPcpDmk_7zykOcmVHClZOlD0kQ8WQZiPEZkmEeRnKf1Wsgil-lDJaLD5sZSzuLUxTYzS2PjpjQ4ush-_y4bfp94DmlnCJMyPO4Oy82SOa-KN_USRc0TXaZ5HlfG0ebcf9lqY4hp1td1qF5GHI_7BAwpfl6myRItXsfjhGr4SqOJrA4ACUthMKk39Us"/>
-<div class="absolute inset-0 bg-gradient-to-t from-on-surface/60 to-transparent flex items-end p-8">
-<p class="text-white font-medium italic">"La precisione del dato trasforma un immobile in un investimento."</p>
-</div>
-</div>
-</div>
+<div class="mt-10 py-4 px-4 rounded-xl bg-secondary/10 border border-secondary/20 text-center">
+<p class="text-secondary font-headline font-semibold text-sm md:text-base">
+Analizziamo un <strong class="text-primary">numero limitato di richieste ogni giorno</strong>
+</p>
 </div>
 </div>
 </main>
@@ -219,6 +215,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     const phoneFeedback = document.getElementById('phone-live-feedback');
     const emailFeedback = document.getElementById('email-live-feedback');
     if (!form) return;
+
+    try {
+      const raw = sessionStorage.getItem('vi_funnel');
+      if (raw) {
+        const d = JSON.parse(raw);
+        if (d.city) form.city.value = d.city;
+        if (d.propertyType) form.propertyType.value = d.propertyType;
+        if (d.squareMeters != null && d.squareMeters !== '') form.squareMeters.value = String(d.squareMeters);
+      }
+    } catch {
+      /* ignore */
+    }
 
     const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     let phoneTimer = null;
@@ -309,9 +317,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       feedback.textContent = '';
       setLiveMessage(phoneFeedback, '', '');
       setLiveMessage(emailFeedback, '', '');
+      const rawMq = String(form.squareMeters.value || '').trim();
+      const mq = parseInt(rawMq, 10);
       const payload = {
         city: form.city.value.trim(),
         propertyType: form.propertyType.value,
+        squareMeters: mq,
         fullName: form.fullName.value.trim(),
         phone: form.phone.value.trim(),
         email: form.email.value.trim(),
@@ -325,6 +336,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }
       if (!payload.propertyType) {
         feedback.textContent = 'Seleziona il tipo di immobile.';
+        return;
+      }
+      if (!/^\d+$/.test(rawMq) || !Number.isFinite(mq) || mq < 1 || mq > 99999) {
+        feedback.textContent = 'Inserisci i metri quadri come numero intero.';
         return;
       }
       if (!payload.fullName) {

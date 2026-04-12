@@ -12,6 +12,10 @@ const validateLeadPayload = (payload) => {
   if (!String(payload.fullName || '').trim()) return 'Inserisci nome e cognome.'
   if (!String(payload.city || '').trim()) return 'Inserisci la città dell’immobile.'
   if (!String(payload.propertyType || '').trim()) return 'Seleziona il tipo di immobile.'
+  const sq = Number(payload.squareMeters)
+  if (!Number.isInteger(sq) || sq < 1 || sq > 99999) {
+    return 'Inserisci i metri quadri come numero intero.'
+  }
   if (!String(payload.phone || '').trim()) return 'Inserisci un numero di telefono.'
   if (!String(payload.email || '').trim()) return 'Inserisci un indirizzo email.'
   if (!String(payload.timeframe || '').trim()) return 'Seleziona una tempistica indicativa.'

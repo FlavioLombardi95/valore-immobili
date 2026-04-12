@@ -18,7 +18,7 @@ const getGoogleSheetConfig = () => {
   const sheetId = process.env.GOOGLE_SHEET_ID
   const rawCreds = process.env.GOOGLE_SERVICE_ACCOUNT_JSON
   const sheetName = process.env.GOOGLE_SHEET_NAME
-  const range = sheetName ? `${sheetName}!A:H` : 'A:H'
+  const range = sheetName ? `${sheetName}!A:I` : 'A:I'
 
   if (!sheetId || !rawCreds) {
     return null
@@ -54,6 +54,7 @@ export const appendLeadToGoogleSheet = async (payload) => {
     String(payload.fullName).trim(),
     String(payload.city).trim(),
     String(payload.propertyType || '').trim(),
+    String(payload.squareMeters ?? '').trim(),
     String(payload.phone).trim(),
     String(payload.email).trim(),
     String(payload.timeframe).trim(),
