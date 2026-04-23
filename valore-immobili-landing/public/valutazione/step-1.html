@@ -399,7 +399,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         body: JSON.stringify(payload)
       });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok) return (feedback.textContent = data.error || 'Errore durante l\\'invio.');
+      if (!res.ok) return (feedback.textContent = data.error || 'Errore durante l\'invio.');
 
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: 'lead_submit_success', lead_type: 'form', timeframe: payload.timeframe });
