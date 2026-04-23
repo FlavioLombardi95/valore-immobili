@@ -1,5 +1,5 @@
 const DEFAULT_MESSAGE =
-  'Ciao, ho visto la vostra pagina e vorrei informazioni per fissare un sopralluogo gratuito per la valutazione del mio immobile.'
+  'Salve, ho visto la vostra pagina e vorrei informazioni per fissare un sopralluogo gratuito per la valutazione del mio immobile.'
 
 const sanitizePhone = (value) => String(value || '').replace(/\D/g, '')
 

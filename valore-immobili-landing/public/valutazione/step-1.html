@@ -102,13 +102,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+        #phone-live-feedback:empty,
+        #email-live-feedback:empty,
+        #lead-form-feedback:empty {
+            display: none;
+        }
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary-fixed">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBQLNCSQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- TopNavBar (Execution from JSON) -->
 <header class="bg-[#f6fafd] dark:bg-slate-950 docked full-width top-0 z-50">
-<div class="flex justify-center items-center px-8 py-4 w-full max-w-7xl mx-auto">
+<div class="flex justify-center items-center px-6 py-2.5 w-full max-w-7xl mx-auto">
 <div class="flex flex-col md:flex-row items-center gap-3">
 <img alt="Valore Immobili" class="w-[220px] md:w-[280px] h-[56px] md:h-[68px] object-cover object-center" src="/valutazione/assets/logo-valore-immobili.png"/>
 <span class="hidden md:flex items-center gap-1 bg-surface-container-high px-3 py-1 rounded-full text-[10px] font-bold text-secondary uppercase tracking-widest">
@@ -119,168 +124,114 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 </header>
 <main>
-<!-- Hero + Step 1 -->
-<section class="relative overflow-hidden pt-12 pb-14 lg:pt-16 lg:pb-16 hero-gradient">
-<div class="max-w-3xl mx-auto px-8 relative z-10">
-<div class="text-center">
-<h1 class="text-4xl sm:text-5xl lg:text-6xl font-headline font-extrabold text-secondary leading-[1.15] tracking-tight">
-Scopri quanto vale davvero la tua casa
-</h1>
-<p class="text-lg sm:text-xl text-tertiary mt-5 max-w-2xl mx-auto leading-relaxed">
-Valutazione immobiliare professionale basata su immobili realmente venduti nella tua zona
-</p>
-</div>
-<div class="mt-10 max-w-2xl mx-auto w-full">
-<div class="border-t border-outline-variant/50"></div>
-<div class="flex flex-col sm:flex-row sm:justify-center gap-5 sm:gap-6 items-center py-8 sm:py-7 text-center">
-<img alt="Luca Minotti - consulente immobiliare" class="h-28 w-28 sm:h-32 sm:w-32 shrink-0 rounded-xl object-cover object-center shadow-md ring-1 ring-outline-variant/30" height="128" src="/valutazione/assets/luca.png" width="128"/>
-<div class="min-w-0 space-y-2">
-<p class="font-headline text-lg font-semibold text-secondary leading-snug">
-Valutazione a cura di <strong class="font-extrabold">Luca Minotti</strong>
-</p>
-<p class="text-sm text-tertiary leading-relaxed">
-Consulente immobiliare – Milano, Nord Milano, Monza e Brianza
-</p>
-<p class="text-sm text-tertiary leading-relaxed">
-Sopralluogo gratuito di circa <strong class="font-semibold text-secondary">20 minuti</strong> – <strong class="font-semibold text-secondary">nessun obbligo di mandato</strong>
-</p>
-</div>
-</div>
-<div class="border-b border-outline-variant/50"></div>
-</div>
-<div class="mt-10">
-<div class="flex items-center gap-3 mb-6">
-<div class="h-px flex-1 bg-outline-variant/40"></div>
-<span class="text-sm font-bold text-secondary uppercase tracking-wider whitespace-nowrap text-center">Step 1 di 2 – Dati immobile</span>
-<div class="h-px flex-1 bg-outline-variant/40"></div>
-</div>
-<form class="glass-card rounded-2xl p-6 md:p-8 shadow-xl border border-white/40 space-y-4 max-w-xl mx-auto w-full" id="step1-funnel-form" novalidate>
-<div class="space-y-4">
-<input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="city" placeholder="Comune" required type="text" autocomplete="address-level2"/>
-<select class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="propertyType" required>
-<option value="">Tipologia immobile</option>
-<option>Appartamento</option>
-<option>Villa</option>
-<option>Casa indipendente</option>
-<option>Garage</option>
-<option>Altro</option>
-</select>
-<input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3.5 font-medium focus:ring-2 focus:ring-secondary" name="squareMeters" inputmode="numeric" min="1" max="99999" placeholder="Metri quadri" required step="1" type="number"/>
-</div>
-<p class="text-xs text-center text-error min-h-4" id="step1-form-feedback"></p>
-<button class="w-full cta-gradient text-on-primary py-4 rounded-full font-headline font-bold text-lg shadow-xl shadow-primary/20 hover:scale-[1.02] transition-transform" type="submit">
-Continua
-</button>
-<p class="text-xs text-center text-tertiary">Nessun impegno – nessuna pubblicità – dati protetti</p>
-</form>
-</div>
-</div>
-<div class="absolute top-0 right-0 w-1/3 h-full bg-secondary/5 -skew-x-12 translate-x-1/2 pointer-events-none"></div>
+<section class="hero-gradient py-6 md:py-7">
+  <div class="max-w-6xl mx-auto px-4 md:px-7 space-y-4 md:space-y-5">
+    <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-4 md:gap-5 items-center">
+      <div class="space-y-3 text-center lg:text-left">
+        <h1 class="text-4xl md:text-5xl font-headline font-extrabold text-secondary leading-tight tracking-tight">Scopri quanto vale davvero la tua casa</h1>
+        <p class="text-lg text-tertiary max-w-2xl mx-auto lg:mx-0">Valutazione immobiliare professionale basata su immobili realmente venduti nella sua zona</p>
+        <ul class="space-y-2 text-tertiary text-sm md:text-base max-w-xl mx-auto lg:mx-0 text-left">
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-green-600 text-base mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span><span><strong class="text-secondary">Sopralluogo diretto</strong> da un consulente immobiliare</span></li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-green-600 text-base mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span><span><strong class="text-secondary">Analisi reale</strong> del suo immobile sul posto</span></li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-green-600 text-base mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span><span><strong class="text-secondary">Valutazione</strong> professionale basata sul mercato attuale</span></li>
+        </ul>
+      </div>
+      <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-2xl p-3.5 md:p-4 shadow-md flex flex-col text-center md:text-left md:flex-row md:items-center md:justify-between gap-3">
+        <div class="space-y-1.5 min-w-0 order-2 md:order-1">
+          <p class="font-headline text-lg md:text-xl font-bold text-secondary">Luca Minotti</p>
+          <p class="text-sm text-tertiary leading-relaxed">Consulente immobiliare – Milano, Nord Milano, Monza e Brianza</p>
+          <p class="text-sm text-tertiary leading-relaxed">Sopralluogo gratuito di circa <strong class="text-secondary">20 minuti</strong> – <strong class="text-secondary">nessun obbligo di mandato</strong></p>
+        </div>
+        <img alt="Luca Minotti - consulente immobiliare" class="h-28 w-28 md:h-36 md:w-36 rounded-xl object-cover object-center shrink-0 mx-auto md:mx-0 order-1 md:order-2" src="/valutazione/assets/luca.png"/>
+      </div>
+    </div>
+
+    <div class="glass-card rounded-2xl border border-outline-variant/30 shadow-xl p-3.5 md:p-5" id="form-top">
+      <h2 class="text-2xl md:text-3xl font-headline font-extrabold text-secondary mb-3 text-center">Richieda la valutazione gratuita</h2>
+      <form class="space-y-2.5" id="lead-form-combined" novalidate>
+        <div class="grid md:grid-cols-2 gap-2.5">
+          <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="firstName" placeholder="Nome" required type="text" autocomplete="given-name"/>
+          <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="lastName" placeholder="Cognome" required type="text" autocomplete="family-name"/>
+          <div class="space-y-1">
+            <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="email" placeholder="Email" required type="email" autocomplete="email"/>
+            <p class="text-xs text-tertiary" id="email-live-feedback"></p>
+          </div>
+          <div class="space-y-1">
+            <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="phone" placeholder="Telefono" required type="tel" autocomplete="tel"/>
+            <p class="text-xs text-tertiary" id="phone-live-feedback"></p>
+          </div>
+          <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="city" placeholder="Comune / zona" required type="text" autocomplete="address-level2"/>
+          <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="squareMeters" inputmode="numeric" min="1" max="99999" placeholder="Superficie (mq)" required step="1" type="number"/>
+          <select class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="propertyType" required>
+            <option value="">Tipologia immobile</option>
+            <option>Appartamento</option>
+            <option>Villa</option>
+            <option>Casa indipendente</option>
+            <option>Garage</option>
+            <option>Altro</option>
+          </select>
+          <select class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="timeframe" required>
+            <option value="">Quando prevede di vendere?</option>
+            <option value="3">Entro 3 mesi</option>
+            <option value="6">Entro 6 mesi</option>
+            <option value="12">Entro 12 mesi</option>
+          </select>
+        </div>
+        <label class="flex items-start gap-2 text-[11px] md:text-xs text-tertiary leading-relaxed">
+          <input class="mt-0.5 shrink-0 rounded border-outline-variant" name="privacyAccepted" required type="checkbox"/>
+          <span>Acconsento al trattamento dei dati come indicato nella <a class="underline underline-offset-2 font-semibold text-secondary" href="https://www.iubenda.com/privacy-policy/69451858" rel="noopener" target="_blank">Privacy Policy</a>.</span>
+        </label>
+        <button class="w-full cta-gradient text-on-primary py-4 rounded-full font-headline font-bold text-lg shadow-xl shadow-primary/20 -mt-0.5" type="submit">Richieda il sopralluogo gratuito</button>
+        <p class="text-xs text-center text-tertiary">Nessun obbligo di mandato – nessun costo – nessuna pubblicità</p>
+        <p class="text-sm text-center text-error" id="lead-form-feedback"></p>
+      </form>
+    </div>
+  </div>
 </section>
-<!-- Riceverai -->
-<section class="py-14 bg-surface">
-<div class="mx-auto flex w-full max-w-3xl flex-col items-center px-8 text-center">
-<h2 class="text-2xl md:text-3xl font-headline font-extrabold text-secondary mb-8 tracking-tight">Riceverai:</h2>
-<ul class="flex w-full flex-col items-center gap-5 text-tertiary text-lg leading-relaxed">
-<li class="inline-flex max-w-xl gap-3 items-start text-left">
-<span class="material-symbols-outlined shrink-0 text-green-600 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span><strong class="text-secondary">Sopralluogo diretto</strong> da un consulente immobiliare</span>
-</li>
-<li class="inline-flex max-w-xl gap-3 items-start text-left">
-<span class="material-symbols-outlined shrink-0 text-green-600 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span><strong class="text-secondary">Analisi reale</strong> del tuo immobile sul posto</span>
-</li>
-<li class="inline-flex max-w-xl gap-3 items-start text-left">
-<span class="material-symbols-outlined shrink-0 text-green-600 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span><strong class="text-secondary">Valutazione</strong> professionale basata sul mercato attuale</span>
-</li>
-</ul>
-</div>
+
+<section class="py-6 bg-surface">
+  <div class="max-w-6xl mx-auto px-4 md:px-7 space-y-3">
+    <h2 class="text-2xl md:text-3xl font-headline font-extrabold text-secondary text-center">Perché non una valutazione online?</h2>
+    <div class="grid md:grid-cols-3 gap-2.5">
+      <div class="bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-3 text-center">
+        <img class="w-full h-28 object-cover rounded-lg mb-2" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&h=675&q=80" alt="Valutazione su dati reali"/>
+        <p class="text-sm text-tertiary"><strong class="text-secondary">Analisi reale</strong> del suo immobile sul posto</p>
+      </div>
+      <div class="bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-3 text-center">
+        <img class="w-full h-28 object-cover rounded-lg mb-2" src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&w=1200&h=675&q=80" alt="Consulenza professionale"/>
+        <p class="text-sm text-tertiary"><strong class="text-secondary">Sopralluogo diretto</strong> da un consulente immobiliare</p>
+      </div>
+      <div class="bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-3 text-center">
+        <img class="w-full h-28 object-cover rounded-lg mb-2" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&h=675&q=80" alt="Valutazione professionale"/>
+        <p class="text-sm text-tertiary"><strong class="text-secondary">Valutazione professionale</strong> basata sul mercato attuale</p>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- Recent Valuations Feed -->
-<section class="py-14 bg-surface-container-low">
-<div class="max-w-7xl mx-auto px-8">
-<div class="mx-auto mb-10 max-w-3xl text-center">
-<h2 class="text-4xl font-headline font-extrabold text-secondary mb-4 tracking-tight">Esempi di compravendite</h2>
-<p class="text-tertiary">Immobili realmente venduti nei territori in cui operiamo.</p>
-<div class="mt-4 flex justify-center">
-<span class="inline-flex px-4 py-2 bg-surface-container-highest rounded-full text-xs font-bold text-secondary uppercase tracking-widest">Aggiornato ora</span>
-</div>
-</div>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-<!-- Valuation Card 1 -->
-<div class="w-full max-w-md bg-surface-container-lowest p-6 rounded-xl shadow-sm border-b-4 border-primary/20 hover:shadow-xl transition-all duration-300 group">
-<div class="aspect-video mb-6 rounded-lg overflow-hidden relative grayscale group-hover:grayscale-0 transition-all duration-500">
-<img class="w-full h-full object-cover blur-sm opacity-50" data-alt="blurred satellite map view of a residential neighborhood with street patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUla4rMPvBcubimpUvEaws8KbQjiX-v_4P7jI5BbEy449UGj4tqJJ2CYYD6a50oaZ-WBfmCP1DK_ACyTHd8Uxvk5hTlXeFBxu7_BDmN-IYdJHtsEDyBu6rpUOd4lU3GTftCLOURanbaedlXyr0KCvgTrc19YP9VtSfCw3JOFd3p_5qWHjM6e-d4IM_ufBdj9STjSj6NiBdyK0xq0iJobguuLgoywmhrEy-IzM5OWEet72rG7RweDKYny4_xL7lW1qAer-ZtFxbL14"/>
-<div class="absolute inset-0 flex items-center justify-center">
-<span class="bg-primary/90 text-on-primary px-4 py-2 rounded-full font-bold text-sm">VENDUTO</span>
-</div>
-</div>
-<div class="flex justify-between items-start">
-<div>
-<h4 class="font-headline font-bold text-secondary text-lg">Trilocale</h4>
-<p class="text-sm text-tertiary flex items-center gap-1">
-<span class="material-symbols-outlined text-xs">location_on</span> Milano
-                                </p>
-</div>
-<div class="text-right">
-<p class="text-xs font-bold text-primary uppercase tracking-tighter">Venduto a</p>
-<p class="text-xl font-headline font-extrabold text-secondary">€ 325.000</p>
-</div>
-</div>
-</div>
-<!-- Valuation Card 2 -->
-<div class="w-full max-w-md bg-surface-container-lowest p-6 rounded-xl shadow-sm border-b-4 border-primary/20 hover:shadow-xl transition-all duration-300 group">
-<div class="aspect-video mb-6 rounded-lg overflow-hidden relative grayscale group-hover:grayscale-0 transition-all duration-500">
-<img class="w-full h-full object-cover blur-sm opacity-50" data-alt="abstract blurred map of urban city blocks with soft focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjP3yaozFjEckZ3Iu4DtFB2v7QpWnGHbxCG2l7xkkLIbhEiAnGKAHA85wQFTp2Z3rL0KBqaPzhXQjC8HdJR2wCLZKQec5NaVHZsBLEO7TSBGc5RiW2BFhNZ2HPfUPmqLSMblnIUDQwwuzcJw7hAL1fX2KIpkFTbF97uZMHGAd3Fr7KwrN6ZNOsmE3kbZxIfQ4a8Nws0nnsr0PbPZ0nhoCQW9sxlC60GoFhFe24yzl3aSZOxzL3YrkQ5HOirIC4M1JOFYFplQh2uoM"/>
-<div class="absolute inset-0 flex items-center justify-center">
-<span class="bg-primary/90 text-on-primary px-4 py-2 rounded-full font-bold text-sm">VENDUTO</span>
-</div>
-</div>
-<div class="flex justify-between items-start">
-<div>
-<h4 class="font-headline font-bold text-secondary text-lg">Bilocale</h4>
-<p class="text-sm text-tertiary flex items-center gap-1">
-<span class="material-symbols-outlined text-xs">location_on</span> Monza
-                                </p>
-</div>
-<div class="text-right">
-<p class="text-xs font-bold text-primary uppercase tracking-tighter">Venduto a</p>
-<p class="text-xl font-headline font-extrabold text-secondary">€ 189.000</p>
-</div>
-</div>
-</div>
-<!-- Valuation Card 3 -->
-<div class="w-full max-w-md bg-surface-container-lowest p-6 rounded-xl shadow-sm border-b-4 border-primary/20 hover:shadow-xl transition-all duration-300 group">
-<div class="aspect-video mb-6 rounded-lg overflow-hidden relative grayscale group-hover:grayscale-0 transition-all duration-500">
-<img class="w-full h-full object-cover blur-sm opacity-50" data-alt="aerial satellite view of dense city planning with blurred artistic effect" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArYZIYWkBNjMld0K07S4NKRvn7iVKSO4tlzM9FHPtFdLIVEDAlEk-lzCwvIW14uWgN9UllYA8IzBtQL-RhGMCkVKYyh6TxJZzt0gBpOlh7wy_LSNVlaPnKj-SRZBH44Xtxfvpilb44tIn-zOGN-mrdXKZWhlcn7fVPLO15yp6fJOI71xecTc98AEvKbhD89C_01JG4WBDVeKP3nAsH3Jw_Pd5-dxsiTqvCYtC7rKiWmWjWY1e7rpykVjfV-VVoIrKVr3AQBBTd8J4"/>
-<div class="absolute inset-0 flex items-center justify-center">
-<span class="bg-primary/90 text-on-primary px-4 py-2 rounded-full font-bold text-sm">VENDUTO</span>
-</div>
-</div>
-<div class="flex justify-between items-start">
-<div>
-<h4 class="font-headline font-bold text-secondary text-lg">Quadrilocale</h4>
-<p class="text-sm text-tertiary flex items-center gap-1">
-<span class="material-symbols-outlined text-xs">location_on</span> Sesto San Giovanni
-                                </p>
-</div>
-<div class="text-right">
-<p class="text-xs font-bold text-primary uppercase tracking-tighter">Venduto a</p>
-<p class="text-xl font-headline font-extrabold text-secondary">€ 410.000</p>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+<section class="py-6 bg-surface-container-low">
+  <div class="max-w-6xl mx-auto px-4 md:px-7 space-y-3">
+    <h2 class="text-2xl md:text-3xl font-headline font-extrabold text-secondary text-center">Zero pressioni, zero vincoli</h2>
+    <div class="grid md:grid-cols-3 gap-2.5 text-sm text-tertiary">
+      <p class="flex items-start gap-2 bg-surface-container-lowest rounded-xl p-3"><span class="material-symbols-outlined text-green-600 text-base" style="font-variation-settings: 'FILL' 1;">check_circle</span><span>Nessun obbligo di mandato.</span></p>
+      <p class="flex items-start gap-2 bg-surface-container-lowest rounded-xl p-3"><span class="material-symbols-outlined text-green-600 text-base" style="font-variation-settings: 'FILL' 1;">check_circle</span><span>Nessun costo per la valutazione iniziale.</span></p>
+      <p class="flex items-start gap-2 bg-surface-container-lowest rounded-xl p-3"><span class="material-symbols-outlined text-green-600 text-base" style="font-variation-settings: 'FILL' 1;">check_circle</span><span>Consulenza professionale e trasparente.</span></p>
+    </div>
+  </div>
 </section>
-<!-- Testimonial Section -->
-<section class="py-14 bg-surface">
-<div class="max-w-3xl mx-auto px-8 text-center">
-<p class="text-xl md:text-2xl font-headline italic text-secondary leading-relaxed">
-“Professionale, preciso e molto chiaro nella valutazione. Abbiamo venduto casa in meno di 2 mesi.”
-</p>
-</div>
+
+<section class="py-6 bg-surface">
+  <div class="max-w-6xl mx-auto px-4 md:px-7 space-y-3">
+    <h2 class="text-2xl md:text-3xl font-headline font-extrabold text-secondary text-center">Dicono di noi</h2>
+    <div class="grid md:grid-cols-2 gap-2.5">
+      <div class="bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-4">
+        <p class="text-base md:text-lg font-headline italic text-secondary">“Professionale, preciso e molto chiaro nella valutazione. Abbiamo venduto casa in meno di 2 mesi.”</p>
+      </div>
+      <div class="bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-4">
+        <p class="text-base md:text-lg font-headline italic text-secondary">“Consulenza molto chiara e professionale: in pochi giorni ho ricevuto una valutazione precisa e ho capito come muovermi senza pressioni.”</p>
+      </div>
+    </div>
+  </div>
 </section>
 </main>
 <!-- Footer (Execution from JSON) -->
@@ -298,35 +249,132 @@ Continua
 </a>
 <script>
 (function () {
-  const form = document.getElementById('step1-funnel-form');
-  const feedback = document.getElementById('step1-form-feedback');
-  if (!form || !feedback) return;
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
+  const form = document.getElementById('lead-form-combined');
+  const feedback = document.getElementById('lead-form-feedback');
+  const phoneFeedback = document.getElementById('phone-live-feedback');
+  const emailFeedback = document.getElementById('email-live-feedback');
+  if (!form) return;
+
+  const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  let phoneTimer = null;
+  let emailTimer = null;
+
+  const verifyContacts = async (phone, email) => {
+    const res = await fetch('/api/contact-verify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ phone, email })
+    });
+    const data = await res.json().catch(() => ({}));
+    return { ok: res.ok, data };
+  };
+
+  const setLiveMessage = (target, text, type) => {
+    if (!target) return;
+    target.textContent = text || '';
+    target.classList.remove('text-tertiary', 'text-green-700', 'text-red-600');
+    if (!text) {
+      target.classList.add('text-tertiary');
+      return;
+    }
+    target.classList.add(type === 'ok' ? 'text-green-700' : 'text-red-600');
+  };
+
+  const checkPhoneRealtime = async () => {
+    const phone = form.phone.value.trim();
+    if (!phone) return setLiveMessage(phoneFeedback, '', '');
+    const digits = phone.replace(/\D/g, '');
+    if (digits.length < 8) return setLiveMessage(phoneFeedback, 'Numero troppo corto.', 'error');
+    setLiveMessage(phoneFeedback, 'Verifica numero in corso...', 'ok');
+    try {
+      const verification = await verifyContacts(phone, null);
+      const status = verification.data?.phone?.status || '';
+      setLiveMessage(phoneFeedback, verification.ok && status === 'valid' ? 'Numero valido.' : 'Numero di telefono invalido.', verification.ok && status === 'valid' ? 'ok' : 'error');
+    } catch {
+      setLiveMessage(phoneFeedback, 'Errore durante la verifica del numero.', 'error');
+    }
+  };
+
+  const checkEmailRealtime = async () => {
+    const email = form.email.value.trim().toLowerCase();
+    if (!email) return setLiveMessage(emailFeedback, '', '');
+    if (!EMAIL_REGEX.test(email)) return setLiveMessage(emailFeedback, 'Formato email non valido.', 'error');
+    setLiveMessage(emailFeedback, 'Verifica email in corso...', 'ok');
+    try {
+      const verification = await verifyContacts(null, email);
+      const status = verification.data?.email?.status || '';
+      setLiveMessage(emailFeedback, verification.ok && status === 'valid' ? 'Email valida.' : 'Indirizzo email invalido.', verification.ok && status === 'valid' ? 'ok' : 'error');
+    } catch {
+      setLiveMessage(emailFeedback, 'Errore durante la verifica email.', 'error');
+    }
+  };
+
+  form.phone.addEventListener('input', () => {
+    clearTimeout(phoneTimer);
+    phoneTimer = setTimeout(checkPhoneRealtime, 500);
+  });
+
+  form.email.addEventListener('input', () => {
+    clearTimeout(emailTimer);
+    emailTimer = setTimeout(checkEmailRealtime, 500);
+  });
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
     feedback.textContent = '';
-    const city = form.city.value.trim();
-    const propertyType = form.propertyType.value;
+    setLiveMessage(phoneFeedback, '', '');
+    setLiveMessage(emailFeedback, '', '');
+
     const rawMq = String(form.squareMeters.value || '').trim();
     const mq = parseInt(rawMq, 10);
-    if (!city) {
-      feedback.textContent = 'Inserisci il comune.';
-      return;
-    }
-    if (!propertyType) {
-      feedback.textContent = 'Seleziona la tipologia immobile.';
-      return;
-    }
-    if (!/^\d+$/.test(rawMq) || !Number.isFinite(mq) || mq < 1 || mq > 99999) {
-      feedback.textContent = 'Inserisci i metri quadri come numero intero.';
-      return;
-    }
+    const payload = {
+      city: form.city.value.trim(),
+      propertyType: form.propertyType.value,
+      squareMeters: mq,
+      fullName: `${form.firstName.value.trim()} ${form.lastName.value.trim()}`.trim(),
+      phone: form.phone.value.trim(),
+      email: form.email.value.trim(),
+      timeframe: form.timeframe.value,
+      privacyAccepted: Boolean(form.privacyAccepted.checked)
+    };
+
+    if (!payload.city) return (feedback.textContent = 'Inserisca il comune/zona dell’immobile.');
+    if (!payload.propertyType) return (feedback.textContent = 'Selezioni il tipo di immobile.');
+    if (!/^\d+$/.test(rawMq) || !Number.isFinite(mq) || mq < 1 || mq > 99999) return (feedback.textContent = 'Inserisca i metri quadri come numero intero.');
+    if (!form.firstName.value.trim()) return (feedback.textContent = 'Inserisca il nome.');
+    if (!form.lastName.value.trim()) return (feedback.textContent = 'Inserisca il cognome.');
+    if (!payload.phone) return (feedback.textContent = 'Inserisca il numero di telefono.');
+    if (!payload.email) return (feedback.textContent = 'Inserisca l’indirizzo email.');
+    if (!payload.timeframe) return (feedback.textContent = 'Selezioni quando prevede di vendere.');
+    if (!payload.privacyAccepted) return (feedback.textContent = 'Deve accettare la Privacy Policy per proseguire.');
+
     try {
-      sessionStorage.setItem('vi_funnel', JSON.stringify({ city, propertyType, squareMeters: mq }));
+      const phoneDigits = payload.phone.replace(/\D/g, '');
+      if (phoneDigits.length < 8) return (feedback.textContent = 'Numero di telefono invalido.');
+      if (!EMAIL_REGEX.test(payload.email.toLowerCase())) return (feedback.textContent = 'Indirizzo email invalido.');
+
+      const verification = await verifyContacts(payload.phone, payload.email);
+      if (!verification.ok) return (feedback.textContent = verification.data?.error || 'Impossibile verificare i contatti. Riprovi.');
+
+      const phoneStatus = verification.data?.phone?.status || '';
+      const emailStatus = verification.data?.email?.status || '';
+      if (phoneStatus !== 'valid') return setLiveMessage(phoneFeedback, 'Numero di telefono invalido.', 'error');
+      if (emailStatus !== 'valid') return setLiveMessage(emailFeedback, 'Indirizzo email invalido.', 'error');
+
+      const res = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) return (feedback.textContent = data.error || 'Errore durante l'invio.');
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'lead_submit_success', lead_type: 'form', timeframe: payload.timeframe });
+      window.location.href = '/valutazione/step-3?lead=ok';
     } catch {
-      feedback.textContent = 'Impossibile salvare i dati. Verifica le impostazioni del browser.';
-      return;
+      feedback.textContent = 'Errore di connessione. Riprovi.';
     }
-    window.location.href = '/valutazione/step-2c';
   });
 })();
 </script>
