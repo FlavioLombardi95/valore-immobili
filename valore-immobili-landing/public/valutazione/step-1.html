@@ -148,7 +148,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <div class="glass-card rounded-2xl border border-outline-variant/30 shadow-xl p-3.5 md:p-5" id="form-top">
       <h2 class="text-2xl md:text-3xl font-headline font-extrabold text-secondary mb-3 text-center">Richieda la valutazione gratuita</h2>
-      <form class="space-y-2.5" id="lead-form-combined" novalidate>
+      <form class="space-y-2.5" id="lead-form-combined" novalidate onsubmit="event.preventDefault();">
         <div class="grid md:grid-cols-2 gap-2.5">
           <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="firstName" placeholder="Nome" required type="text" autocomplete="given-name"/>
           <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="lastName" placeholder="Cognome" required type="text" autocomplete="family-name"/>
