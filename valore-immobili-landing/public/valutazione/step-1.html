@@ -253,6 +253,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   const feedback = document.getElementById('lead-form-feedback');
   const phoneFeedback = document.getElementById('phone-live-feedback');
   const emailFeedback = document.getElementById('email-live-feedback');
+  const formFields = form ? form.querySelectorAll('input, select') : [];
   if (!form) return;
 
   const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -279,6 +280,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     target.classList.add(type === 'ok' ? 'text-green-700' : 'text-red-600');
   };
+
+  const clearFieldErrors = () => {
+    formFields.forEach((field) => {
+      field.classList.remove('ring-2', 'ring-red-500');
+    });
+  };
+
+  const invalidateField = (field, message) => {
+    clearFieldErrors();
+    if (feedback) feedback.textContent = message;
+    if (!field) return;
+    field.classList.add('ring-2', 'ring-red-500');
+    field.focus();
+    field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+
+  formFields.forEach((field) => {
+    field.addEventListener('input', () => {
+      field.classList.remove('ring-2', 'ring-red-500');
+    });
+    field.addEventListener('change', () => {
+      field.classList.remove('ring-2', 'ring-red-500');
+    });
+  });
 
   const checkPhoneRealtime = async () => {
     const phone = form.phone.value.trim();
@@ -322,6 +347,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     feedback.textContent = '';
+    clearFieldErrors();
     setLiveMessage(phoneFeedback, '', '');
     setLiveMessage(emailFeedback, '', '');
 
@@ -338,28 +364,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       privacyAccepted: Boolean(form.privacyAccepted.checked)
     };
 
-    if (!payload.city) return (feedback.textContent = 'Inserisca il comune/zona dell’immobile.');
-    if (!payload.propertyType) return (feedback.textContent = 'Selezioni il tipo di immobile.');
-    if (!/^\d+$/.test(rawMq) || !Number.isFinite(mq) || mq < 1 || mq > 99999) return (feedback.textContent = 'Inserisca i metri quadri come numero intero.');
-    if (!form.firstName.value.trim()) return (feedback.textContent = 'Inserisca il nome.');
-    if (!form.lastName.value.trim()) return (feedback.textContent = 'Inserisca il cognome.');
-    if (!payload.phone) return (feedback.textContent = 'Inserisca il numero di telefono.');
-    if (!payload.email) return (feedback.textContent = 'Inserisca l’indirizzo email.');
-    if (!payload.timeframe) return (feedback.textContent = 'Selezioni quando prevede di vendere.');
-    if (!payload.privacyAccepted) return (feedback.textContent = 'Deve accettare la Privacy Policy per proseguire.');
+    if (!form.firstName.value.trim()) return invalidateField(form.firstName, 'Inserisca il nome.');
+    if (!form.lastName.value.trim()) return invalidateField(form.lastName, 'Inserisca il cognome.');
+    if (!payload.email) return invalidateField(form.email, 'Inserisca l’indirizzo email.');
+    if (!payload.phone) return invalidateField(form.phone, 'Inserisca il numero di telefono.');
+    if (!payload.city) return invalidateField(form.city, 'Inserisca il comune/zona dell’immobile.');
+    if (!payload.propertyType) return invalidateField(form.propertyType, 'Selezioni il tipo di immobile.');
+    if (!/^\d+$/.test(rawMq) || !Number.isFinite(mq) || mq < 1 || mq > 99999) return invalidateField(form.squareMeters, 'Inserisca i metri quadri come numero intero.');
+    if (!payload.timeframe) return invalidateField(form.timeframe, 'Selezioni quando prevede di vendere.');
+    if (!payload.privacyAccepted) return invalidateField(form.privacyAccepted, 'Deve accettare la Privacy Policy per proseguire.');
 
     try {
       const phoneDigits = payload.phone.replace(/\D/g, '');
-      if (phoneDigits.length < 8) return (feedback.textContent = 'Numero di telefono invalido.');
-      if (!EMAIL_REGEX.test(payload.email.toLowerCase())) return (feedback.textContent = 'Indirizzo email invalido.');
+      if (phoneDigits.length < 8) return invalidateField(form.phone, 'Numero di telefono invalido.');
+      if (!EMAIL_REGEX.test(payload.email.toLowerCase())) return invalidateField(form.email, 'Indirizzo email invalido.');
 
       const verification = await verifyContacts(payload.phone, payload.email);
       if (!verification.ok) return (feedback.textContent = verification.data?.error || 'Impossibile verificare i contatti. Riprovi.');
 
       const phoneStatus = verification.data?.phone?.status || '';
       const emailStatus = verification.data?.email?.status || '';
-      if (phoneStatus !== 'valid') return setLiveMessage(phoneFeedback, 'Numero di telefono invalido.', 'error');
-      if (emailStatus !== 'valid') return setLiveMessage(emailFeedback, 'Indirizzo email invalido.', 'error');
+      if (phoneStatus !== 'valid') {
+        setLiveMessage(phoneFeedback, 'Numero di telefono invalido.', 'error');
+        return invalidateField(form.phone, 'Numero di telefono invalido.');
+      }
+      if (emailStatus !== 'valid') {
+        setLiveMessage(emailFeedback, 'Indirizzo email invalido.', 'error');
+        return invalidateField(form.email, 'Indirizzo email invalido.');
+      }
 
       const res = await fetch('/api/lead', {
         method: 'POST',
@@ -367,7 +399,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         body: JSON.stringify(payload)
       });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok) return (feedback.textContent = data.error || 'Errore durante l'invio.');
+      if (!res.ok) return (feedback.textContent = data.error || 'Errore durante l\\'invio.');
 
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: 'lead_submit_success', lead_type: 'form', timeframe: payload.timeframe });
