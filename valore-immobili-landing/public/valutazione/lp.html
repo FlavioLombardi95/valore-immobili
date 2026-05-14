@@ -68,8 +68,7 @@
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     }
     #lead-form-feedback:empty,
-    #phone-live-feedback:empty,
-    #email-live-feedback:empty { display: none; }
+    #phone-live-feedback:empty { display: none; }
     /* Piedistallo chiaro su hero dark; img come step-1: dimensioni fisse + object-cover sul PNG quadrato */
     .lp-logo-pedestal {
       background: linear-gradient(180deg, #ffffff 0%, #eef2f7 100%);
@@ -145,10 +144,7 @@
               <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5">
                 <input class="w-full min-h-[48px] rounded-xl border border-line bg-white px-4 py-3 font-medium text-ink placeholder:text-slate/80 focus:border-brand focus:ring-2 focus:ring-brand/30 focus:outline-none" name="firstName" type="text" autocomplete="given-name" required placeholder="Nome"/>
                 <input class="w-full min-h-[48px] rounded-xl border border-line bg-white px-4 py-3 font-medium text-ink placeholder:text-slate/80 focus:border-brand focus:ring-2 focus:ring-brand/30 focus:outline-none" name="lastName" type="text" autocomplete="family-name" required placeholder="Cognome"/>
-                <div class="space-y-1 md:col-span-1">
-                  <input class="w-full min-h-[48px] rounded-xl border border-line bg-white px-4 py-3 font-medium text-ink placeholder:text-slate/80 focus:border-brand focus:ring-2 focus:ring-brand/30 focus:outline-none" name="email" type="email" autocomplete="email" required placeholder="Email"/>
-                  <p id="email-live-feedback" class="text-xs text-slate"></p>
-                </div>
+                <input class="w-full min-h-[48px] rounded-xl border border-line bg-white px-4 py-3 font-medium text-ink placeholder:text-slate/80 focus:border-brand focus:ring-2 focus:ring-brand/30 focus:outline-none" name="email" type="email" autocomplete="email" required placeholder="Email"/>
                 <div class="space-y-1 md:col-span-1">
                   <input class="w-full min-h-[48px] rounded-xl border border-line bg-white px-4 py-3 font-medium text-ink placeholder:text-slate/80 focus:border-brand focus:ring-2 focus:ring-brand/30 focus:outline-none" name="phone" type="tel" autocomplete="tel" required placeholder="Telefono"/>
                   <p id="phone-live-feedback" class="text-xs text-slate"></p>
@@ -260,13 +256,11 @@
       const feedback = document.getElementById('lead-form-feedback');
       const submitBtn = document.getElementById('submit-btn');
       const phoneFeedback = document.getElementById('phone-live-feedback');
-      const emailFeedback = document.getElementById('email-live-feedback');
       if (!form) return;
 
       const formFields = form.querySelectorAll('input, select');
       const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       let phoneTimer = null;
-      let emailTimer = null;
 
       const idleCta = 'Richiedi sopralluogo gratuito';
 
@@ -300,10 +294,13 @@
       };
 
       const verifyContacts = async (phone, email) => {
+        const body = {};
+        if (phone) body.phone = phone;
+        if (email) body.email = email;
         const res = await fetch('/api/contact-verify', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ phone, email })
+          body: JSON.stringify(body)
         });
         const data = await res.json().catch(() => ({}));
         return { ok: res.ok, data };
@@ -324,20 +321,6 @@
         }
       };
 
-      const checkEmailRealtime = async () => {
-        const email = form.email.value.trim().toLowerCase();
-        if (!email) return setLiveMessage(emailFeedback, '', '');
-        if (!EMAIL_REGEX.test(email)) return setLiveMessage(emailFeedback, 'Formato email non valido.', 'error');
-        setLiveMessage(emailFeedback, 'Verifica email in corso...', 'ok');
-        try {
-          const verification = await verifyContacts(null, email);
-          const status = verification.data?.email?.status || '';
-          setLiveMessage(emailFeedback, verification.ok && status === 'valid' ? 'Email valida.' : 'Indirizzo email invalido.', verification.ok && status === 'valid' ? 'ok' : 'error');
-        } catch {
-          setLiveMessage(emailFeedback, 'Errore durante la verifica email.', 'error');
-        }
-      };
-
       formFields.forEach((field) => {
         field.addEventListener('input', () => field.classList.remove('ring-2', 'ring-red-500'));
         field.addEventListener('change', () => field.classList.remove('ring-2', 'ring-red-500'));
@@ -346,11 +329,6 @@
       form.phone.addEventListener('input', () => {
         clearTimeout(phoneTimer);
         phoneTimer = setTimeout(checkPhoneRealtime, 450);
-      });
-
-      form.email.addEventListener('input', () => {
-        clearTimeout(emailTimer);
-        emailTimer = setTimeout(checkEmailRealtime, 450);
       });
 
       form.addEventListener('submit', async (event) => {
@@ -385,7 +363,7 @@
         if (!payload.privacyAccepted) { setLoading(false); return invalidateField(form.privacyAccepted, 'Deve accettare la Privacy Policy per proseguire.'); }
 
         try {
-          const verification = await verifyContacts(payload.phone, payload.email);
+          const verification = await verifyContacts(payload.phone, null);
           if (!verification.ok) {
             setLoading(false);
             feedback.textContent = verification.data?.error || 'Non siamo riusciti a verificare i contatti. Riprovi tra poco.';
@@ -396,12 +374,6 @@
             setLiveMessage(phoneFeedback, 'Numero di telefono invalido.', 'error');
             setLoading(false);
             return invalidateField(form.phone, 'Numero di telefono invalido.');
-          }
-
-          if ((verification.data?.email?.status || '') !== 'valid') {
-            setLiveMessage(emailFeedback, 'Indirizzo email invalido.', 'error');
-            setLoading(false);
-            return invalidateField(form.email, 'Indirizzo email invalido.');
           }
 
           const res = await fetch('/api/lead', {

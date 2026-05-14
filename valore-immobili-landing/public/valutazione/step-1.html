@@ -103,7 +103,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
         #phone-live-feedback:empty,
-        #email-live-feedback:empty,
         #lead-form-feedback:empty {
             display: none;
         }
@@ -152,10 +151,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="grid md:grid-cols-2 gap-2.5">
           <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="firstName" placeholder="Nome" required type="text" autocomplete="given-name"/>
           <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="lastName" placeholder="Cognome" required type="text" autocomplete="family-name"/>
-          <div class="space-y-1">
-            <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="email" placeholder="Email" required type="email" autocomplete="email"/>
-            <p class="text-xs text-tertiary" id="email-live-feedback"></p>
-          </div>
+          <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="email" placeholder="Email" required type="email" autocomplete="email"/>
           <div class="space-y-1">
             <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="phone" placeholder="Telefono" required type="tel" autocomplete="tel"/>
             <p class="text-xs text-tertiary" id="phone-live-feedback"></p>
@@ -251,19 +247,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   const form = document.getElementById('lead-form-combined');
   const feedback = document.getElementById('lead-form-feedback');
   const phoneFeedback = document.getElementById('phone-live-feedback');
-  const emailFeedback = document.getElementById('email-live-feedback');
   const formFields = form ? form.querySelectorAll('input, select') : [];
   if (!form) return;
 
   const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   let phoneTimer = null;
-  let emailTimer = null;
 
   const verifyContacts = async (phone, email) => {
+    const body = {};
+    if (phone) body.phone = phone;
+    if (email) body.email = email;
     const res = await fetch('/api/contact-verify', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ phone, email })
+      body: JSON.stringify(body)
     });
     const data = await res.json().catch(() => ({}));
     return { ok: res.ok, data };
@@ -319,28 +316,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
   };
 
-  const checkEmailRealtime = async () => {
-    const email = form.email.value.trim().toLowerCase();
-    if (!email) return setLiveMessage(emailFeedback, '', '');
-    if (!EMAIL_REGEX.test(email)) return setLiveMessage(emailFeedback, 'Formato email non valido.', 'error');
-    setLiveMessage(emailFeedback, 'Verifica email in corso...', 'ok');
-    try {
-      const verification = await verifyContacts(null, email);
-      const status = verification.data?.email?.status || '';
-      setLiveMessage(emailFeedback, verification.ok && status === 'valid' ? 'Email valida.' : 'Indirizzo email invalido.', verification.ok && status === 'valid' ? 'ok' : 'error');
-    } catch {
-      setLiveMessage(emailFeedback, 'Errore durante la verifica email.', 'error');
-    }
-  };
-
   form.phone.addEventListener('input', () => {
     clearTimeout(phoneTimer);
     phoneTimer = setTimeout(checkPhoneRealtime, 500);
-  });
-
-  form.email.addEventListener('input', () => {
-    clearTimeout(emailTimer);
-    emailTimer = setTimeout(checkEmailRealtime, 500);
   });
 
   form.addEventListener('submit', async (event) => {
@@ -348,7 +326,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     feedback.textContent = '';
     clearFieldErrors();
     setLiveMessage(phoneFeedback, '', '');
-    setLiveMessage(emailFeedback, '', '');
 
     const rawMq = String(form.squareMeters.value || '').trim();
     const mq = parseInt(rawMq, 10);
@@ -376,20 +353,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     try {
       const phoneDigits = payload.phone.replace(/\D/g, '');
       if (phoneDigits.length < 8) return invalidateField(form.phone, 'Numero di telefono invalido.');
-      if (!EMAIL_REGEX.test(payload.email.toLowerCase())) return invalidateField(form.email, 'Indirizzo email invalido.');
+      if (!EMAIL_REGEX.test(payload.email.toLowerCase())) return invalidateField(form.email, 'Inserisca un indirizzo email con formato valido.');
 
-      const verification = await verifyContacts(payload.phone, payload.email);
+      const verification = await verifyContacts(payload.phone, null);
       if (!verification.ok) return (feedback.textContent = verification.data?.error || 'Impossibile verificare i contatti. Riprovi.');
 
       const phoneStatus = verification.data?.phone?.status || '';
-      const emailStatus = verification.data?.email?.status || '';
       if (phoneStatus !== 'valid') {
         setLiveMessage(phoneFeedback, 'Numero di telefono invalido.', 'error');
         return invalidateField(form.phone, 'Numero di telefono invalido.');
-      }
-      if (emailStatus !== 'valid') {
-        setLiveMessage(emailFeedback, 'Indirizzo email invalido.', 'error');
-        return invalidateField(form.email, 'Indirizzo email invalido.');
       }
 
       const res = await fetch('/api/lead', {

@@ -36,14 +36,12 @@ La cartella `valore-immobili-landing` è l'unica sorgente deployabile su Vercel 
    - **Passo 1**: città immobile + tempistica indicativa (3/6/12 mesi)
    - **Passo 2**: nome e cognome + telefono + email + consenso Privacy Policy
 4. Durante la compilazione:
-   - telefono e email vengono verificati in tempo reale su `POST /api/contact-verify`
-   - il form mostra solo stato **verde/rosso**:
-     - verde: dato valido
-     - rosso: dato invalido
+   - il **telefono** viene verificato in tempo reale su `POST /api/contact-verify` (Twilio/Telesign)
+   - l’**email** non viene più verificata via API: solo controllo di formato (regex) in interfaccia e sul submit
 5. Al submit:
    - vengono effettuate le validazioni lato client
-   - `POST /api/lead` rifà la verifica server-side in modalità **strict**
-   - se email/telefono non sono validi, la lead viene rifiutata
+   - `POST /api/lead` verifica il telefono in modalità **strict**; l’email solo **sintassi** e filtri anti-finti lato server (nessun Kickbox)
+   - se il telefono non è valido, la lead viene rifiutata
    - se validi, la lead viene accettata e:
      - inoltrata al backend esterno via `LEAD_FORWARD_URL` (se presente), oppure
      - salvata direttamente su Google Sheet con `GOOGLE_SHEET_ID` + `GOOGLE_SERVICE_ACCOUNT_JSON`
@@ -68,15 +66,14 @@ VITE_IUBENDA_PRIVACY_URL=https://www.iubenda.com/privacy-policy/69451858
 
 In produzione (Vercel) aggiungi la stessa variabile nelle **Environment Variables** del progetto.
 
-Per le verifiche realtime e il blocco strict aggiungi anche:
+Per la verifica **telefono** in tempo reale e al salvataggio lead aggiungi:
 
 ```bash
 TWILIO_ACCOUNT_SID=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 TWILIO_AUTH_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-KICKBOX_API_KEY=live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-**Verifica email (Kickbox):** `undeliverable` e domini **disposable** restano bloccati. I risultati Kickbox **`unknown`** e **`risky`** (comuni su PEC, alcuni ISP o catch-all) con email non disposable vengono trattati come **accettati** per non scartare indirizzi reali. Errori HTTP Kickbox diversi da 401/403 (es. rate limit, 5xx) non bloccano l’invio. In locale, opzionale: `KICKBOX_SKIP_VERIFY=true` per validare solo sintassi e filtri anti-finti senza chiave Kickbox (non in produzione).
+L’**email** non richiede chiavi esterne: in `POST /api/lead` e `POST /api/contact-verify` (solo se richiesta esplicitamente) si applicano regex e filtri anti-indirizzi finti (`api/_lib/contact-verify.js`), senza Kickbox.
 
 Se vuoi mantenere un salvataggio su sistema esterno (Google Sheet, CRM, webhook), configura anche:
 
@@ -112,7 +109,7 @@ Dettagli principali della variante LP:
 - **Copy** allineata a `step-1.html` / pagina live (titolo, hero, bullet con Material Symbols, card Luca, form, sezioni “Perché non una valutazione online?”, “Zero pressioni, zero vincoli”, “Dicono di noi”, stesse citazioni e firme)
 - **Look dark premium**: hero/shell scuro con vetri e accenti brand arancio/marrone; form in card chiara (`form-shell`) per leggibilità e conversione; blocchi sotto hero su fondi scuri (non replica la palette chiara di step-1); footer scuro; logo in box bianco per contrasto
 - Griglia responsive (colonna sinistra: messaggio + Luca; destra: form sticky su desktop); su mobile ordine verticale hero → Luca → form → sezioni; touch target ≥ ~48px sui campi
-- Submit single-page su `POST /api/lead` con verifica preventiva su `POST /api/contact-verify`
+- Submit su `POST /api/lead`; prima del submit il **telefono** passa da `POST /api/contact-verify` (nessuna verifica esterna sull’email)
 - Form con **Nome** e **Cognome** separati in UI; il payload verso l’API concatena in `fullName` come atteso dal backend (`fullName`, `city`, `propertyType`, `squareMeters`, `phone`, `email`, `timeframe`, `privacyAccepted`)
 - Push tracking al successo:
   - `window.dataLayer.push({ event: 'lead_submit_success', lead_type: 'form', timeframe })`

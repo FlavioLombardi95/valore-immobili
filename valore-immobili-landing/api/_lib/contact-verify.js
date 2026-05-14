@@ -167,19 +167,8 @@ export const getPhoneValidation = async (phone) => {
   })
 }
 
+/** Solo sintassi e filtri anti-finti locali (nessuna chiamata esterna / Kickbox). */
 export const getEmailValidation = async (email) => {
-  const kickboxApiKey = process.env.KICKBOX_API_KEY
-
-  if (!kickboxApiKey) {
-    if (process.env.KICKBOX_SKIP_VERIFY === 'true') {
-      const trimmed = String(email || '').trim().toLowerCase()
-      if (!EMAIL_REGEX.test(trimmed)) return { status: 'invalid', reason: 'syntax' }
-      if (isDummyEmail(trimmed)) return { status: 'invalid', reason: 'dummy_pattern' }
-      return { status: 'valid', reason: 'kickbox_skipped' }
-    }
-    throw new Error('Missing Kickbox API key.')
-  }
-
   const trimmedEmail = String(email || '').trim().toLowerCase()
   if (!EMAIL_REGEX.test(trimmedEmail)) {
     return { status: 'invalid', reason: 'syntax' }
@@ -187,59 +176,6 @@ export const getEmailValidation = async (email) => {
   if (isDummyEmail(trimmedEmail)) {
     return { status: 'invalid', reason: 'dummy_pattern' }
   }
-
-  const query = new URLSearchParams({
-    apikey: kickboxApiKey,
-    email: trimmedEmail,
-  })
-  const response = await fetch(`https://api.kickbox.com/v2/verify?${query.toString()}`, {
-    method: 'GET',
-    headers: {
-      Accept: 'application/json',
-    },
-  })
-
-  if (!response.ok) {
-    // Chiave errata: fallimento esplicito. Altri errori Kickbox: non bloccare indirizzi plausibilmente validi.
-    if (response.status === 401 || response.status === 403) {
-      return { status: 'invalid', reason: 'kickbox_auth_failed' }
-    }
-    return { status: 'valid', reason: `kickbox_http_${response.status}` }
-  }
-
-  const payload = await response.json()
-  const result = String(payload?.result || '').toLowerCase()
-  const reason = String(payload?.reason || '').toLowerCase()
-  const isDisposable = Boolean(payload?.disposable)
-
-  if (result === 'deliverable' && !isDisposable) {
-    return { status: 'valid', reason: reason || 'deliverable' }
-  }
-
-  if (result === 'undeliverable' || isDisposable) {
-    return { status: 'invalid', reason: reason || 'undeliverable' }
-  }
-
-  // Kickbox spesso restituisce unknown/risky per domini PEC, alcuni ISP italiani o catch-all:
-  // non trattarli come "invalid" se la sintassi è ok e non sono disposable.
-  if (result === 'risky') {
-    if (isDisposable) return { status: 'invalid', reason: reason || 'risky_disposable' }
-    return { status: 'valid', reason: reason || 'risky_accepted' }
-  }
-
-  if (result === 'unknown') {
-    if (isDisposable) return { status: 'invalid', reason: reason || 'unknown_disposable' }
-    return { status: 'valid', reason: reason || 'unknown_accepted' }
-  }
-
-  if (result === 'accept_all' && !isDisposable) {
-    return { status: 'valid', reason: reason || 'accept_all' }
-  }
-
-  if (!result && !isDisposable) {
-    return { status: 'valid', reason: 'kickbox_empty_result' }
-  }
-
-  return { status: 'invalid', reason: reason || result || 'unrecognized' }
+  return { status: 'valid', reason: 'syntax_only' }
 }
 

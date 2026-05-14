@@ -44,8 +44,14 @@ function App() {
     const value = event.target.value
     setFormData((prev) => ({ ...prev, [field]: value }))
     setErrors((prev) => ({ ...prev, [field]: undefined }))
-    if (field === 'phone' || field === 'email') {
-      setContactFieldValidation(field, 'idle', '')
+    if (field === 'phone') {
+      setContactFieldValidation('phone', 'idle', '')
+    }
+    if (field === 'email') {
+      const t = value.trim()
+      if (!t) setContactFieldValidation('email', 'idle', '')
+      else if (!EMAIL_REGEX.test(t)) setContactFieldValidation('email', 'invalid', 'Formato email non valido')
+      else setContactFieldValidation('email', 'valid', '')
     }
   }
 
@@ -70,11 +76,11 @@ function App() {
     if (!formData.privacyAccepted) {
       nextErrors.privacyAccepted = 'Devi accettare la privacy policy per proseguire.'
     }
+    if (formData.email.trim() && !EMAIL_REGEX.test(formData.email.trim())) {
+      nextErrors.email = 'Inserisci un indirizzo email con formato valido.'
+    }
     if (formData.phone.trim() && !isContactFieldValid(contactValidation.phone)) {
       nextErrors.phone = 'Numero di telefono invalido.'
-    }
-    if (formData.email.trim() && !isContactFieldValid(contactValidation.email)) {
-      nextErrors.email = 'Indirizzo email invalido.'
     }
     return nextErrors
   }
@@ -121,41 +127,6 @@ function App() {
 
     return () => clearTimeout(timeoutId)
   }, [formData.phone])
-
-  useEffect(() => {
-    const trimmedEmail = formData.email.trim()
-    if (!trimmedEmail) {
-      setContactFieldValidation('email', 'idle', '')
-      return
-    }
-
-    if (!EMAIL_REGEX.test(trimmedEmail)) {
-      setContactFieldValidation('email', 'invalid', 'Email invalida')
-      return
-    }
-
-    const timeoutId = setTimeout(async () => {
-      setContactFieldValidation('email', 'checking', '')
-      try {
-        const res = await fetch('/api/contact-verify', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: trimmedEmail }),
-        })
-        const data = await res.json().catch(() => ({}))
-        const isValid = res.ok && data?.email?.status === 'valid'
-        setContactFieldValidation(
-          'email',
-          isValid ? 'valid' : 'invalid',
-          isValid ? 'Email valida' : 'Email invalida',
-        )
-      } catch {
-        setContactFieldValidation('email', 'invalid', 'Email invalida')
-      }
-    }, 700)
-
-    return () => clearTimeout(timeoutId)
-  }, [formData.email])
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -444,12 +415,6 @@ function App() {
                           value={formData.email}
                           onChange={handleChange('email')}
                         />
-                        {contactValidation.email.status === 'valid' && (
-                          <p className="valid-text">{contactValidation.email.message}</p>
-                        )}
-                        {contactValidation.email.status === 'invalid' && (
-                          <p className="error-text">{contactValidation.email.message}</p>
-                        )}
                         {errors.email && <p className="error-text">{errors.email}</p>}
                       </div>
                     </div>
