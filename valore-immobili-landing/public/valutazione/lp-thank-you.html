@@ -3,9 +3,12 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Valore Immobili | Richiesta Ricevuta</title>
+  <title>Valore Immobili | Richiesta ricevuta</title>
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MBQLNCSQ');</script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"/>
   <link rel="preload" as="font" href="/valutazione/assets/fonts/inter-400.ttf" type="font/ttf" crossorigin=""/>
   <link rel="preload" as="font" href="/valutazione/assets/fonts/inter-600.ttf" type="font/ttf" crossorigin=""/>
   <link rel="preload" as="font" href="/valutazione/assets/fonts/plusjakarta-800.ttf" type="font/ttf" crossorigin=""/>
@@ -20,7 +23,10 @@
             brand: '#f26522',
             'brand-dark': '#a63b00',
             cloud: '#f8fafc',
-            line: '#dbe4ef'
+            line: '#dbe4ef',
+            secondary: '#005fac',
+            'secondary-container': '#50a0fe',
+            tertiary: '#595e6f'
           },
           fontFamily: {
             headline: ['Plus Jakarta Sans'],
@@ -41,45 +47,62 @@
         linear-gradient(160deg, #0f172a 0%, #111827 45%, #1f2937 100%);
     }
     .cta { background: linear-gradient(135deg, #f26522 0%, #a63b00 100%); }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
   </style>
 </head>
 <body class="bg-cloud text-ink font-body antialiased">
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBQLNCSQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <main class="min-h-screen hero-bg px-4 py-8 flex items-center justify-center">
-    <div class="w-full max-w-2xl rounded-3xl border border-white/30 bg-white shadow-card p-6 md:p-8 text-center">
-      <div class="inline-flex items-center rounded-2xl border border-line bg-cloud px-4 py-2">
-        <img src="/valutazione/assets/logo-valore-immobili.png" alt="Valore Immobili" class="h-10 md:h-12 w-auto object-contain"/>
-      </div>
-      <p class="mt-4 inline-flex rounded-full bg-[#fff0e8] px-3 py-1 text-xs uppercase tracking-[0.12em] text-brand-dark font-semibold">Richiesta confermata</p>
-      <h1 class="mt-3 text-3xl md:text-5xl font-headline font-extrabold">Perfetto, ci siamo.</h1>
-      <p class="mt-3 text-slate text-base md:text-lg">Un consulente di Valore Immobili la contattera entro 1-2 giorni lavorativi per organizzare il sopralluogo gratuito.</p>
+    <div class="w-full max-w-md rounded-3xl border border-white/30 bg-white shadow-card p-6 md:p-8 text-center">
+      <img src="/valutazione/assets/logo-valore-immobili.png" width="500" height="500" alt="Valore Immobili" class="mx-auto block w-[min(220px,calc(100vw-3rem))] md:w-[280px] h-[56px] md:h-[68px] object-cover object-center"/>
 
-      <div class="mt-5 rounded-2xl border border-line bg-[#f8fafc] p-4 text-left">
-        <p class="text-sm uppercase tracking-wider text-brand-dark font-semibold">Prossimi step</p>
-        <ul class="mt-2 space-y-1 text-sm text-slate list-disc pl-5">
-          <li>Conferma immobile e contesto della zona.</li>
-          <li>Pianificazione del sopralluogo gratuito.</li>
-          <li>Valutazione reale, umana e senza impegno.</li>
-        </ul>
+      <h1 class="mt-6 font-headline font-extrabold text-3xl md:text-4xl text-secondary leading-tight tracking-tight">Grazie, abbiamo ricevuto la sua richiesta.</h1>
+      <p class="mt-4 text-tertiary text-base md:text-lg font-medium">Un consulente di Valore Immobili la contatterà entro 1-2 giorni lavorativi per organizzare il sopralluogo gratuito.</p>
+
+      <div class="mt-6 text-left">
+        <div class="flex items-end gap-2 pr-8 sm:pr-12">
+          <div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-white text-sm">security</span>
+          </div>
+          <div class="flex-1 rounded-2xl rounded-bl-none border border-line bg-cloud p-4 shadow-sm">
+            <p class="text-secondary text-sm font-medium">La sua richiesta è confermata. La contatteremo noi per fissare giorno e orario del sopralluogo per la valutazione, gratuita e senza impegno.</p>
+          </div>
+        </div>
       </div>
 
-      <a href="#" data-step="lp_thank_you" class="js-whatsapp-link cta mt-6 inline-flex items-center justify-center rounded-full px-7 py-4 text-white font-headline font-bold text-lg shadow-lg">Contattaci su WhatsApp</a>
-      <p class="mt-2 text-xs text-slate">Se preferisce, puo scriverci ora. Altrimenti la richiamiamo noi.</p>
+      <div class="mt-6 space-y-3 w-full text-left">
+        <a class="cta w-full py-4 md:py-5 px-5 md:px-6 rounded-full text-white font-headline font-bold text-base md:text-lg shadow-lg flex items-center justify-between gap-3 active:scale-[0.98] transition-transform" href="/valutazione/lp.html">
+          <span>Vuole aggiornare i dati? Torni al modulo</span>
+          <span class="material-symbols-outlined text-white text-xl shrink-0 bg-white/20 p-2 rounded-full" aria-hidden="true">edit_document</span>
+        </a>
+        <p class="text-xs text-tertiary text-center">Se vuole modificare o integrare la richiesta, può tornare al modulo in qualsiasi momento.</p>
+      </div>
+
+      <div class="mt-8 grid grid-cols-2 gap-3 w-full text-left">
+        <div class="rounded-3xl border border-line bg-[#f8fafc] p-4 space-y-2">
+          <span class="material-symbols-outlined text-brand" style="font-variation-settings: 'FILL' 1;">verified</span>
+          <h2 class="font-headline font-bold text-sm text-ink">Esperto Locale</h2>
+          <p class="text-xs text-tertiary">Il sopralluogo resta confermato: questo è un canale extra per parlare subito con noi.</p>
+        </div>
+        <div class="rounded-3xl border border-line bg-[#f8fafc] p-4 space-y-2">
+          <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">speed</span>
+          <h2 class="font-headline font-bold text-sm text-ink">Risposta Umana</h2>
+          <p class="text-xs text-tertiary">Le risponde un consulente del team, non un assistente automatico.</p>
+        </div>
+      </div>
     </div>
   </main>
 
   <footer class="bg-[#0f172a] text-white px-6 py-10 text-center">
-    <div class="inline-flex items-center rounded-2xl bg-white px-4 py-2">
-      <img src="/valutazione/assets/logo-valore-immobili.png" alt="Valore Immobili" class="h-10 md:h-12 w-auto object-contain"/>
+    <div class="inline-flex items-center rounded-2xl bg-white px-3 py-2">
+      <img src="/valutazione/assets/logo-valore-immobili.png" width="500" height="500" alt="Valore Immobili" class="block w-[200px] sm:w-[220px] h-[52px] sm:h-[56px] object-cover object-center"/>
     </div>
     <p class="text-xs tracking-wide uppercase text-slate-300 mt-3">© 2026 Valore Immobili. Tutti i diritti riservati.</p>
     <a href="https://www.iubenda.com/privacy-policy/69451858" target="_blank" rel="noopener" class="inline-block text-xs tracking-wide uppercase text-slate-300 hover:text-white mt-2">Privacy Policy</a>
   </footer>
-
-  <a href="#" data-step="lp_thank_you_fab" aria-label="WhatsApp" class="js-whatsapp-link fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full bg-[#25D366] text-white shadow-2xl flex items-center justify-center hover:scale-110 transition-transform">
-    <svg class="h-7 w-7 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
-  </a>
 
   <script src="/valutazione/js/tracking.js"></script>
 </body>

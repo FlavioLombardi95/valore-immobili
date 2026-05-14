@@ -107,16 +107,16 @@ E' stata aggiunta una nuova variante della landing per lead generation immobilia
 
 Dettagli principali della variante LP:
 
-- Hero snella con form immediato above-the-fold (mobile-first)
-- Copy orientato alla "valutazione reale" (no stima algoritmica)
+- **Copy** allineata a `step-1.html` / pagina live (titolo, hero, bullet con Material Symbols, card Luca, form, sezioni “Perché non una valutazione online?”, “Zero pressioni, zero vincoli”, “Dicono di noi”, stesse citazioni e firme)
+- **Look dark premium**: hero/shell scuro con vetri e accenti brand arancio/marrone; form in card chiara (`form-shell`) per leggibilità e conversione; blocchi sotto hero su fondi scuri (non replica la palette chiara di step-1); footer scuro; logo in box bianco per contrasto
+- Griglia responsive (colonna sinistra: messaggio + Luca; destra: form sticky su desktop); su mobile ordine verticale hero → Luca → form → sezioni; touch target ≥ ~48px sui campi
 - Submit single-page su `POST /api/lead` con verifica preventiva su `POST /api/contact-verify`
-- Campi richiesti compatibili con backend: `fullName`, `city`, `propertyType`, `squareMeters`, `phone`, `email`, `timeframe`, `privacyAccepted`
+- Form con **Nome** e **Cognome** separati in UI; il payload verso l’API concatena in `fullName` come atteso dal backend (`fullName`, `city`, `propertyType`, `squareMeters`, `phone`, `email`, `timeframe`, `privacyAccepted`)
 - Push tracking al successo:
   - `window.dataLayer.push({ event: 'lead_submit_success', lead_type: 'form', timeframe })`
 - Redirect success a:
   - `/valutazione/lp-thank-you.html?lead=ok`
-- Integrazione WhatsApp invariata via `public/valutazione/js/tracking.js` con link `.js-whatsapp-link` e `data-step` dedicati.
-- Aggiornamento design (v2): impostazione visual premium con hero dark, maggiore depth, migliore gestione logo (contenitori dedicati in header/footer) e thank-you coerente.
+- **WhatsApp**: solo su `lp.html` (link e FAB via `tracking.js` / `.js-whatsapp-link`). La thank-you `lp-thank-you.html` **non** include WhatsApp; copy e blocchi informativi sono allineati a `step-3.html`, con CTA «Torni al modulo» verso `/valutazione/lp.html`.
 
 ### Privacy Policy con Iubenda
 
