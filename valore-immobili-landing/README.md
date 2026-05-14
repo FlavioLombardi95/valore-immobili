@@ -76,6 +76,8 @@ TWILIO_AUTH_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 KICKBOX_API_KEY=live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
+**Verifica email (Kickbox):** `undeliverable` e domini **disposable** restano bloccati. I risultati Kickbox **`unknown`** e **`risky`** (comuni su PEC, alcuni ISP o catch-all) con email non disposable vengono trattati come **accettati** per non scartare indirizzi reali. Errori HTTP Kickbox diversi da 401/403 (es. rate limit, 5xx) non bloccano l’invio. In locale, opzionale: `KICKBOX_SKIP_VERIFY=true` per validare solo sintassi e filtri anti-finti senza chiave Kickbox (non in produzione).
+
 Se vuoi mantenere un salvataggio su sistema esterno (Google Sheet, CRM, webhook), configura anche:
 
 ```bash
