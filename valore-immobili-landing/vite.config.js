@@ -2,11 +2,11 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 const valutazioneHtmlRewrites = {
-  '/valutazione': '/valutazione/index.html',
-  '/valutazione/': '/valutazione/index.html',
+  '/valutazione': '/valutazione/step-1.html',
+  '/valutazione/': '/valutazione/step-1.html',
   '/valutazione/step-1': '/valutazione/step-1.html',
-  '/valutazione/step-2': '/valutazione/step-2.html',
-  '/valutazione/step-2c': '/valutazione/step-2c.html',
+  '/valutazione/step-2': '/valutazione/step-1.html',
+  '/valutazione/step-2c': '/valutazione/step-1.html',
   '/valutazione/step-3': '/valutazione/step-3.html',
 }
 

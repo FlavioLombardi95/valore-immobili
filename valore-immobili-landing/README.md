@@ -18,7 +18,9 @@ Landing page React/Vite per il progetto **valore-immobili.it**, pensata per racc
 - `index.html`: imposta il titolo della pagina mostrato nella tab del browser (`valore immobili`)
 - `logos/Logo_Valore_Immobili_orrizontale_piccolo-removebg-preview.png`: logo brand ufficiale usato nella hero.
 - In desktop viene mostrata un'immagine dell'immobile sotto il testo hero.
-- `public/favicon.png`: favicon aggiornata dal nuovo logo brand.
+- `public/favicon.png`: favicon (da `public/valutazione/assets/favicon-new.png`).
+- `public/valutazione/assets/logo-dark.png`: logo su sfondi chiari (`step-1.html`, `step-3.html`).
+- `public/valutazione/assets/logo-white.png`: logo su sfondi scuri (`lp.html`, `lp-thank-you.html`).
 - `api/`: endpoint serverless usati dalla landing (`/api/contact-verify`, `/api/lead`, `/api/sheet`).
 
 La cartella `valore-immobili-landing` è l'unica sorgente deployabile su Vercel (Root Directory del progetto).

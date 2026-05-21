@@ -4,6 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Valore Immobili | Valutazione Casa Milano Monza</title>
+  <link rel="icon" type="image/png" href="/favicon.png"/>
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MBQLNCSQ');</script>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -53,11 +54,6 @@
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
     }
-    .luca-glass {
-      background: linear-gradient(160deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-    }
     .form-shell {
       background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
     }
@@ -69,40 +65,23 @@
     }
     #lead-form-feedback:empty,
     #phone-live-feedback:empty { display: none; }
-    /* Piedistallo chiaro su hero dark; img come step-1: dimensioni fisse + object-cover sul PNG quadrato */
-    .lp-logo-pedestal {
-      background: linear-gradient(180deg, #ffffff 0%, #eef2f7 100%);
-      box-shadow:
-        0 14px 42px -22px rgba(0, 0, 0, 0.55),
-        0 0 0 1px rgba(255, 255, 255, 0.95),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
-      overflow: hidden;
-    }
   </style>
 </head>
 <body class="bg-ink text-cloud font-body antialiased pb-[max(6.5rem,env(safe-area-inset-bottom,0px)+5rem)]">
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBQLNCSQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <header class="hero-shell border-b border-white/10">
-    <div class="max-w-6xl mx-auto px-4 md:px-6 py-4 md:py-4">
-      <div class="flex w-full flex-col items-center justify-center gap-3 md:flex-row md:flex-wrap md:gap-x-6 md:gap-y-3">
-        <div class="lp-logo-pedestal inline-flex items-center justify-center rounded-xl md:rounded-2xl p-1.5 md:p-2">
-          <img src="/valutazione/assets/logo-valore-immobili.png" width="500" height="500" alt="Valore Immobili" class="block w-[min(220px,calc(100vw-2.5rem))] md:w-[280px] h-[56px] md:h-[68px] object-cover object-center"/>
-        </div>
-        <span class="hidden md:inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-wide text-slate-100 text-center leading-snug">
-          <span class="material-symbols-outlined text-lg text-emerald-400 shrink-0" aria-hidden="true" style="font-variation-settings: 'FILL' 1;">verified</span>
-          <span>Milano e Monza Brianza</span>
-        </span>
-      </div>
+    <div class="vi-header-bar max-w-6xl mx-auto px-4 md:px-6 pt-0 pb-0">
+      <span class="vi-logo-slot vi-logo-slot--header"><img src="/valutazione/assets/logo-white.png" alt="Valore Immobili" class="vi-logo"/></span>
     </div>
   </header>
 
   <main>
-    <section class="hero-shell px-4 md:px-6 pt-5 pb-8 md:pt-7 md:pb-10 overflow-x-hidden">
+    <section class="hero-shell px-4 md:px-6 pt-1 pb-8 md:pt-2 md:pb-10 overflow-x-hidden">
       <div class="max-w-6xl mx-auto">
         <div class="grid xl:grid-cols-[1.08fr_0.92fr] gap-5 md:gap-6 items-start">
           <div class="space-y-4 min-w-0 order-1">
-            <div class="flex w-full justify-center md:hidden">
+            <div class="flex w-full justify-center">
               <span class="inline-flex max-w-[min(20rem,calc(100vw-2rem))] items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-center text-[11px] font-semibold uppercase tracking-wide text-slate-100 leading-snug">
                 <span class="material-symbols-outlined text-lg text-emerald-400 shrink-0" aria-hidden="true" style="font-variation-settings: 'FILL' 1;">verified</span>
                 <span>Milano e Monza Brianza</span>
@@ -126,15 +105,6 @@
                   <span><strong class="text-white">Valutazione</strong> professionale basata sul mercato attuale</span>
                 </li>
               </ul>
-            </div>
-
-            <div class="luca-glass rounded-2xl border border-white/18 p-3.5 md:p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-center sm:text-left min-w-0">
-              <div class="space-y-1.5 min-w-0 order-2 sm:order-1">
-                <p class="font-headline text-lg md:text-xl font-bold text-white">Luca Minotti</p>
-                <p class="text-sm text-slate-200/90 leading-relaxed">Consulente immobiliare – Milano, Nord Milano, Monza e Brianza</p>
-                <p class="text-sm text-slate-200/90 leading-relaxed">Sopralluogo gratuito di circa <strong class="text-white">20 minuti</strong> – <strong class="text-white">nessun obbligo di mandato</strong></p>
-              </div>
-              <img src="/valutazione/assets/luca.png" alt="Luca Minotti - consulente immobiliare" class="h-28 w-28 md:h-32 md:w-32 rounded-xl object-cover object-center shrink-0 mx-auto sm:mx-0 order-1 sm:order-2"/>
             </div>
           </div>
 
@@ -236,13 +206,11 @@
     </section>
   </main>
 
-  <footer class="bg-[#070b12] text-white px-6 py-10 md:py-12 text-center border-t border-white/10">
-    <div class="flex justify-center">
-      <div class="lp-logo-pedestal inline-flex items-center justify-center rounded-xl md:rounded-2xl p-1.5 md:p-2">
-        <img src="/valutazione/assets/logo-valore-immobili.png" width="500" height="500" alt="Valore Immobili" class="block w-[min(220px,calc(100vw-2.5rem))] md:w-[280px] h-[56px] md:h-[68px] object-cover object-center"/>
-      </div>
+  <footer class="bg-[#070b12] text-white px-6 pt-2 pb-5 md:pt-2 md:pb-6 text-center border-t border-white/10">
+    <div class="vi-logo-bar vi-logo-bar--footer">
+      <span class="vi-logo-slot vi-logo-slot--footer"><img src="/valutazione/assets/logo-white.png" alt="Valore Immobili" class="vi-logo-footer"/></span>
     </div>
-    <p class="text-xs tracking-wide uppercase text-slate-400 mt-4">© 2026 Valore Immobili. Tutti i diritti riservati.</p>
+    <p class="text-xs tracking-wide uppercase text-slate-400 mt-0.5">© 2026 Valore Immobili. Tutti i diritti riservati.</p>
     <a href="https://www.iubenda.com/privacy-policy/69451858" target="_blank" rel="noopener" class="inline-block text-xs tracking-wide uppercase text-slate-400 hover:text-white mt-2 transition-colors">Privacy Policy</a>
   </footer>
 

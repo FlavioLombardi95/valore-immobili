@@ -4,6 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Valore Immobili | Richiesta ricevuta</title>
+  <link rel="icon" type="image/png" href="/favicon.png"/>
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MBQLNCSQ');</script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -55,11 +56,13 @@
 <body class="bg-cloud text-ink font-body antialiased">
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBQLNCSQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <main class="min-h-screen hero-bg px-4 py-8 flex items-center justify-center">
+  <main class="min-h-screen hero-bg px-4 py-5 flex items-center justify-center">
     <div class="w-full max-w-md rounded-3xl border border-white/30 bg-white shadow-card p-6 md:p-8 text-center">
-      <img src="/valutazione/assets/logo-valore-immobili.png" width="500" height="500" alt="Valore Immobili" class="mx-auto block w-[min(220px,calc(100vw-3rem))] md:w-[280px] h-[56px] md:h-[68px] object-cover object-center"/>
+      <div class="vi-logo-bar w-full">
+        <span class="vi-logo-slot vi-logo-slot--header"><img src="/valutazione/assets/logo-dark.png" alt="Valore Immobili" class="vi-logo"/></span>
+      </div>
 
-      <h1 class="mt-6 font-headline font-extrabold text-3xl md:text-4xl text-secondary leading-tight tracking-tight">Grazie, abbiamo ricevuto la sua richiesta.</h1>
+      <h1 class="mt-1 font-headline font-extrabold text-3xl md:text-4xl text-secondary leading-tight tracking-tight">Grazie, abbiamo ricevuto la sua richiesta.</h1>
       <p class="mt-4 text-tertiary text-base md:text-lg font-medium">Un consulente di Valore Immobili la contatterà entro 1-2 giorni lavorativi per organizzare il sopralluogo gratuito.</p>
 
       <div class="mt-6 text-left">
@@ -96,11 +99,11 @@
     </div>
   </main>
 
-  <footer class="bg-[#0f172a] text-white px-6 py-10 text-center">
-    <div class="inline-flex items-center rounded-2xl bg-white px-3 py-2">
-      <img src="/valutazione/assets/logo-valore-immobili.png" width="500" height="500" alt="Valore Immobili" class="block w-[200px] sm:w-[220px] h-[52px] sm:h-[56px] object-cover object-center"/>
+  <footer class="bg-[#0f172a] text-white px-6 pt-2 pb-5 text-center">
+    <div class="vi-logo-bar vi-logo-bar--footer w-full">
+      <span class="vi-logo-slot vi-logo-slot--footer"><img src="/valutazione/assets/logo-white.png" alt="Valore Immobili" class="vi-logo-footer"/></span>
     </div>
-    <p class="text-xs tracking-wide uppercase text-slate-300 mt-3">© 2026 Valore Immobili. Tutti i diritti riservati.</p>
+    <p class="text-xs tracking-wide uppercase text-slate-300 mt-0.5">© 2026 Valore Immobili. Tutti i diritti riservati.</p>
     <a href="https://www.iubenda.com/privacy-policy/69451858" target="_blank" rel="noopener" class="inline-block text-xs tracking-wide uppercase text-slate-300 hover:text-white mt-2">Privacy Policy</a>
   </footer>
 

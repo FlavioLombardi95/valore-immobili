@@ -45,3 +45,108 @@
   font-display: swap;
   src: url("/valutazione/assets/fonts/plusjakarta-800.ttf") format("truetype");
 }
+
+/* Loghi: bar e slot stessa altezza; crop solo padding trasparente nel PNG. */
+.vi-logo-slot {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  line-height: 0;
+  padding: 0;
+}
+
+.vi-header-bar,
+.vi-logo-bar {
+  --vi-logo-bar-height: 4.75rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: var(--vi-logo-bar-height);
+  max-height: var(--vi-logo-bar-height);
+  min-height: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0 auto;
+  line-height: 0;
+}
+
+.vi-logo-bar--footer {
+  --vi-logo-bar-height: 3.625rem;
+}
+
+@media (min-width: 768px) {
+  .vi-header-bar,
+  .vi-logo-bar {
+    --vi-logo-bar-height: 5rem;
+  }
+
+  .vi-logo-bar--footer {
+    --vi-logo-bar-height: 3.875rem;
+  }
+}
+
+.vi-header-bar .vi-logo-slot--header,
+.vi-logo-bar .vi-logo-slot--header,
+.vi-logo-bar .vi-logo-slot--footer {
+  height: 100%;
+  max-height: 100%;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vi-logo,
+.vi-logo-footer {
+  --vi-logo-crop-top: 35%;
+  --vi-logo-crop-bottom: 35%;
+  --vi-logo-max-w: 20rem;
+  display: block;
+  width: auto;
+  max-width: var(--vi-logo-max-w);
+  height: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  object-fit: contain;
+  object-position: center center;
+  object-view-box: inset(var(--vi-logo-crop-top) 0 var(--vi-logo-crop-bottom) 0);
+  clip-path: none;
+  transform: none;
+}
+
+@supports not (object-view-box: inset(0)) {
+  .vi-logo,
+  .vi-logo-footer {
+    clip-path: inset(var(--vi-logo-crop-top) 0 var(--vi-logo-crop-bottom) 0);
+    height: auto;
+    max-height: none;
+    width: min(100%, var(--vi-logo-max-w));
+    margin-top: -2.75rem;
+    margin-bottom: -1.75rem;
+  }
+
+  .vi-header-bar .vi-logo,
+  .vi-logo-bar .vi-logo,
+  .vi-logo-bar .vi-logo-footer {
+    height: 100%;
+    max-height: 100%;
+    margin: 0;
+    clip-path: none;
+    object-view-box: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .vi-logo,
+  .vi-logo-footer {
+    --vi-logo-max-w: 23rem;
+  }
+}
