@@ -128,6 +128,19 @@ La pagina della privacy è gestita con **Iubenda**. Il link nel form (checkbox c
 3. Vai su **Embed** e copia il **Direct link** (es. `https://www.iubenda.com/privacy-policy/12345678`).
 4. Imposta la variabile d’ambiente `VITE_IUBENDA_PRIVACY_URL` con quell’URL (in locale in `.env`, in produzione in Vercel).
 
+### SEO (LP live `public/valutazione/step-1.html`)
+
+Strategia: **una sola URL indicizzabile** (`https://valore-immobili.it/`), focus query locali Monza e Brianza. Dettaglio analisi e checklist GSC in `docs/SEO.md` (repo root).
+
+- **Head:** title e meta description allineati alle query GSC; canonical, Open Graph, JSON-LD `Service` (senza indirizzo agenzia).
+- **Footer:** riga geo Monza/Brianza + link esterni istituzionali (Comune, Provincia) oltre a Privacy Iubenda.
+- **`public/robots.txt`:** consente `/`; esclude step-3, lp ads e thank-you.
+- **`public/sitemap.xml`:** solo homepage — da inviare in Search Console dopo il deploy.
+- **Pagine secondarie** (`step-3`, `lp.html`, thank-you): `noindex` + canonical verso `/`.
+- **www:** redirect 301 verso apex in `vercel.json` (se il deploy Vercel serve anche `www`).
+
+Copy hero/H1 invariati; modifiche visibili minime solo in footer (approvazione consigliata prima del deploy).
+
 ### Note su integrazioni future
 
 - Invio email di conferma/benvenuto

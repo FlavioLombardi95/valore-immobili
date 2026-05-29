@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /valutazione/step-3
+Disallow: /valutazione/lp-thank-you
+Disallow: /valutazione/lp
+Disallow: /valutazione/lp/
+
+Sitemap: https://valore-immobili.it/sitemap.xml
