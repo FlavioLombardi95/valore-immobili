@@ -132,14 +132,14 @@ La pagina della privacy è gestita con **Iubenda**. Il link nel form (checkbox c
 
 Strategia: **una sola URL indicizzabile** (`https://valore-immobili.it/`), focus query locali Monza e Brianza. Dettaglio analisi e checklist GSC in `docs/SEO.md` (repo root).
 
-- **Head:** title e meta description allineati alle query GSC; canonical, Open Graph, JSON-LD `Service` (senza indirizzo agenzia).
+- **Head:** title/description su query «valutazione immobiliare monza»; canonical, Open Graph, JSON-LD `Service` + `FAQPage`.
+- **Hero:** badge «Monza e Brianza»; H2 «Valutazione immobiliare gratuita a Monza» (H1 invariato).
+- **FAQ:** 3 domande Monza in pagina su `step-1.html` e `lp.html` (stesso testo dello schema).
 - **Footer:** riga geo Monza/Brianza + link esterni istituzionali (Comune, Provincia) oltre a Privacy Iubenda.
 - **`public/robots.txt`:** consente `/`; esclude step-3, lp ads e thank-you.
 - **`public/sitemap.xml`:** solo homepage — da inviare in Search Console dopo il deploy.
 - **Pagine secondarie** (`step-3`, `lp.html`, thank-you): `noindex` + canonical verso `/`.
 - **www:** redirect 301 verso apex in `vercel.json` (se il deploy Vercel serve anche `www`).
-
-Copy hero/H1 invariati; modifiche visibili minime solo in footer (approvazione consigliata prima del deploy).
 
 ### Note su integrazioni future
 

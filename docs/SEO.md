@@ -37,14 +37,16 @@ Documento di riferimento per strategia e interventi (aggiornato maggio 2026).
 
 ## Interventi tecnici nel repo
 
-1. **Title + meta description** sulla LP live (`step-1.html`) allineati alle query Monza/Brianza (solo `<head>`, copy hero invariato).
+1. **Title + meta description** sulla LP live (`step-1.html`) allineati alle query GSC «valutazione immobiliare/immobile monza».
 2. **Canonical** su `https://valore-immobili.it/`.
 3. **Open Graph** base per condivisione.
-4. **JSON-LD** `Service` + `Organization` con `areaServed` Monza / Monza e Brianza (senza indirizzo fisico agenzia).
-5. `**robots.txt`** + `**sitemap.xml**` (un solo URL).
-6. `**noindex**` su step-3, lp ads, thank-you (evita duplicati).
-7. **Footer:** riga geo + link esterni istituzionali (Monza / provincia).
-8. **Redirect www → apex** in `vercel.json` (quando il deploy Vercel gestisce anche `www`).
+4. **JSON-LD** `Service` + `Organization` con `areaServed` Monza / Monza e Brianza (senza indirizzo fisico agenzia); `FAQPage` (3 Q&A Monza).
+5. **FAQ on-page** su `step-1.html` e `lp.html` (allineata allo schema).
+6. **Hero:** badge Monza e Brianza; H2 valutazione immobiliare gratuita a Monza.
+7. `**robots.txt`** + `**sitemap.xml**` (un solo URL).
+8. `**noindex**` su step-3, lp ads, thank-you (evita duplicati).
+9. **Footer:** riga geo + link esterni istituzionali (Monza / provincia).
+10. **Redirect www → apex** in `vercel.json` (quando il deploy Vercel gestisce anche `www`).
 
 ## Azioni manuali (GSC)
 
@@ -53,13 +55,13 @@ Documento di riferimento per strategia e interventi (aggiornato maggio 2026).
 3. **Controllo URL:** richiedere indicizzazione di `/` dopo ogni deploy SEO rilevante.
 4. Monitorare **Rendimento → Query** e **CTR** dopo meta description (2–4 settimane).
 
-## Copy da approvare (solo meta, non hero)
+## Copy live (giugno 2026)
 
-- **Title:** `Valutazione gratuita immobile Monza e Brianza | Valore Immobili`
-- **Description:** `Richiedi una valutazione immobiliare gratuita a Monza e in Brianza: sopralluogo sul posto, senza impegno. Scopri il valore reale del tuo immobile.`
+- **Title:** `Valutazione immobiliare Monza gratuita | immobile senza impegno`
+- **Description:** `Valutazione immobiliare a Monza: sopralluogo gratuito sul posto e senza impegno. Richiedi online in pochi minuti.`
+- **Hero (sotto H1):** H2 `Valutazione immobiliare gratuita a Monza`; badge `Monza e Brianza`.
+- **FAQ:** sezione visibile + JSON-LD `FAQPage` (3 domande Monza) su `step-1.html` e `lp.html`.
 - **Footer (riga):** `Valutazione immobiliare gratuita con sopralluogo a Monza e nella provincia di Monza e Brianza.`
-
-Modifiche al **H1** o al testo hero richiedono approvazione esplicita.
 
 ## Prossimi passi (senza nuove pagine)
 
