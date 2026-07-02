@@ -2,6 +2,12 @@ import type { LeadInput } from '@/lib/leads'
 
 const RESEND_API_URL = 'https://api.resend.com/emails'
 const DEFAULT_NOTIFICATION_EMAIL = 'info@valore-immobili.it'
+const SITE_URL = 'https://valore-immobili.it'
+const LOGO_URL = `${SITE_URL}/assets/logo-email.png`
+const PRIVACY_URL = 'https://www.iubenda.com/privacy-policy/69451858'
+
+const FONT_BODY = "'Inter', system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif"
+const FONT_HEAD = "'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif"
 
 const escapeHtml = (value: string) =>
   value
@@ -99,38 +105,73 @@ const thankYouHtmlBody = (input: LeadInput) => {
 
   return `<!doctype html>
 <html lang="it">
-  <body>
-    <main>
-      <p>Valore Immobili - Monza e Brianza</p>
-      <h1>Grazie, ${firstName}!</h1>
-      <p>Abbiamo ricevuto la tua richiesta di valutazione gratuita.</p>
-
-      <p>
-        Un consulente locale di <strong>Valore Immobili</strong> ti contattera entro
-        <strong>1-2 giorni lavorativi</strong> per organizzare il sopralluogo sul posto.
-      </p>
-
-      <h2>Riepilogo richiesta</h2>
-      <ul>
-        <li><strong>Zona:</strong> ${city}</li>
-        <li><strong>Immobile:</strong> ${propertyType} - ${squareMeters} mq</li>
-        <li><strong>Tempistica vendita:</strong> ${timeframe}</li>
-      </ul>
-
-      <p>
-        La valutazione e <strong>gratuita</strong> e <strong>senza impegno</strong>:
-        nessun costo, nessun obbligo di affidare la vendita.
-      </p>
-
-      <p>A presto,<br><strong>Il team Valore Immobili</strong></p>
-
-      <hr>
-      <p>
-        <a href="https://valore-immobili.it">valore-immobili.it</a>
-        -
-        <a href="https://www.iubenda.com/privacy-policy/69451858">Privacy Policy</a>
-      </p>
-    </main>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light only">
+    <title>Grazie per la tua richiesta</title>
+  </head>
+  <body style="margin:0;padding:0;background-color:#f6fafd;">
+    <div style="display:none;max-height:0;overflow:hidden;opacity:0;">Ti ricontattiamo entro 1-2 giorni lavorativi per il sopralluogo gratuito.</div>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f6fafd;padding:24px 12px;font-family:${FONT_BODY};">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background-color:#f8fafc;border:1px solid #dbe4ef;border-radius:24px;overflow:hidden;">
+            <tr>
+              <td style="padding:32px 32px 0;text-align:center;">
+                <img src="${LOGO_URL}" width="210" alt="Valore Immobili" style="display:inline-block;width:210px;max-width:62%;height:auto;border:0;outline:none;text-decoration:none;">
+                <div style="margin:18px auto 0;height:3px;width:44px;background-color:#f26522;border-radius:9999px;"></div>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:24px 32px 0;text-align:center;">
+                <h1 style="margin:0;font-family:${FONT_HEAD};font-size:26px;line-height:1.2;font-weight:800;letter-spacing:-0.02em;color:#0f172a;">Grazie, ${firstName}!</h1>
+                <p style="margin:10px 0 0;font-size:16px;line-height:1.55;color:#475569;">Abbiamo ricevuto la tua richiesta di valutazione gratuita.</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:24px 32px 0;">
+                <p style="margin:0;font-size:15px;line-height:1.65;color:#171c1f;">Un consulente locale di <strong style="color:#0f172a;">Valore Immobili</strong> ti contatter&agrave; entro <strong style="color:#0f172a;">1-2 giorni lavorativi</strong> per organizzare il sopralluogo sul posto.</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:20px 32px 0;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#eaeef2;border-radius:12px;">
+                  <tr>
+                    <td style="padding:16px 18px;">
+                      <p style="margin:0 0 12px;font-family:${FONT_HEAD};font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#005fac;">Riepilogo richiesta</p>
+                      <p style="margin:0 0 6px;font-size:14px;line-height:1.5;color:#171c1f;"><strong style="color:#0f172a;">Zona:</strong> ${city}</p>
+                      <p style="margin:0 0 6px;font-size:14px;line-height:1.5;color:#171c1f;"><strong style="color:#0f172a;">Immobile:</strong> ${propertyType} &middot; ${squareMeters} mq</p>
+                      <p style="margin:0;font-size:14px;line-height:1.5;color:#171c1f;"><strong style="color:#0f172a;">Tempistica vendita:</strong> ${timeframe}</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:20px 32px 0;">
+                <p style="margin:0;font-size:14px;line-height:1.6;color:#475569;">La valutazione &egrave; <strong style="color:#0f172a;">gratuita</strong> e <strong style="color:#0f172a;">senza impegno</strong>: nessun costo, nessun obbligo di affidare la vendita.</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:22px 32px 30px;">
+                <p style="margin:0;font-size:14px;line-height:1.6;color:#171c1f;">A presto,<br><strong style="color:#005fac;">Il team Valore Immobili</strong></p>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:18px 32px 26px;border-top:1px solid #dbe4ef;background-color:#eaeef2;">
+                <p style="margin:0;font-size:12px;line-height:1.5;color:#475569;text-align:center;">
+                  <a href="${SITE_URL}" style="color:#005fac;text-decoration:none;">valore-immobili.it</a>
+                  &nbsp;&middot;&nbsp;
+                  <a href="${PRIVACY_URL}" style="color:#005fac;text-decoration:none;">Privacy Policy</a>
+                </p>
+              </td>
+            </tr>
+          </table>
+          <p style="margin:16px auto 0;max-width:560px;font-family:${FONT_BODY};font-size:11px;line-height:1.5;color:#475569;text-align:center;">Ricevi questa email perch&eacute; hai richiesto una valutazione su valore-immobili.it.</p>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>`
 }
