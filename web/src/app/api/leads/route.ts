@@ -4,6 +4,7 @@ import {
   getPhoneValidation,
   STRICT_INVALID_STATUSES,
 } from '@/lib/contact-verify'
+import { sendLeadThankYouEmail } from '@/lib/lead-thank-you-email'
 import { insertLead } from '@/lib/leads'
 
 const validatePayload = (payload: Record<string, unknown>) => {
@@ -62,6 +63,10 @@ export async function POST(request: Request) {
     }
 
     const lead = await insertLead(validated)
+    await sendLeadThankYouEmail(validated).catch((error) => {
+      console.error('thank-you email failed', error)
+    })
+
     return NextResponse.json({ ok: true, id: lead.id })
   } catch (error) {
     console.error('lead submit failed', error)
