@@ -1,58 +1,165 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
 import { LeadForm } from '@/components/LeadForm'
+import { RelatedLinks } from '@/components/RelatedLinks'
+import heroImage from '../../public/assets/hero-villa-reale-monza.jpg'
 
 export const metadata: Metadata = {
   title: 'Valutazione immobiliare Monza gratuita | immobile senza impegno',
   description:
-    'Valutazione immobiliare a Monza: sopralluogo gratuito sul posto e senza impegno. Richiedi online in pochi minuti.',
+    'Valutazione immobiliare a Monza e Brianza: sopralluogo gratuito sul posto e senza impegno. Un consulente locale analizza il tuo immobile e i prezzi reali della zona.',
   alternates: { canonical: 'https://valore-immobili.it/' },
 }
 
+const highlights = [
+  'Sopralluogo diretto con un consulente della zona, non una stima automatica',
+  'Analisi reale di stato, esposizione, piano, contesto e classe energetica',
+  'Confronto con vendite recenti nel tuo quartiere, non medie nazionali',
+  'Nessun costo e nessun obbligo di affidare la vendita',
+]
+
+const steps = [
+  {
+    title: 'Compili il modulo',
+    text: 'Bastano i dati principali dell’immobile e un recapito. Meno di due minuti.',
+  },
+  {
+    title: 'Ti richiamiamo',
+    text: 'Un consulente locale ti contatta entro 1-2 giorni lavorativi per fissare il sopralluogo.',
+  },
+  {
+    title: 'Sopralluogo sul posto',
+    text: 'Vediamo l’immobile di persona: stato, luminosità, planimetria, contesto condominiale.',
+  },
+  {
+    title: 'Ricevi la valutazione',
+    text: 'Una stima motivata sul mercato reale della zona, con cui decidere prezzo e tempi.',
+  },
+]
+
 export default function HomePage() {
   return (
-    <div className="bg-gradient-to-br from-surface to-surface-container">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-8 md:py-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-        <section className="order-2 space-y-6 lg:order-1">
-          <div className="space-y-3 text-center lg:text-left">
-            <span className="inline-flex rounded-full bg-white px-3 py-1 text-xs font-semibold text-secondary">
+    <>
+      <section className="relative isolate overflow-hidden">
+        <Image
+          src={heroImage}
+          alt="La Villa Reale di Monza al tramonto, vista dai giardini"
+          placeholder="blur"
+          priority
+          sizes="100vw"
+          className="absolute inset-0 -z-10 h-full w-full object-cover"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/90 via-ink/70 to-ink/40"
+        />
+        <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
+          <div className="max-w-2xl space-y-4">
+            <span className="inline-flex rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-cloud ring-1 ring-white/20 backdrop-blur-sm">
               Monza e Brianza
             </span>
-            <h1 className="font-headline text-3xl font-extrabold tracking-tight text-ink md:text-5xl text-balance">
-              Scopri quanto vale realmente la tua casa
+            <h1 className="font-headline text-4xl font-extrabold tracking-tight text-cloud text-balance md:text-5xl">
+              Scopri quanto vale davvero la tua casa
             </h1>
-            <p className="text-base text-slate text-pretty md:text-lg">
-              Sopralluogo gratuito a Monza e in Brianza, basato su vendite reali nella tua zona.
+            <p className="max-w-xl text-base text-slate-200 text-pretty md:text-lg">
+              Valutazione gratuita con sopralluogo a Monza e in Brianza, basata su vendite reali nella tua
+              zona. Un parere concreto prima di decidere se e come vendere.
             </p>
+            <div className="pt-2">
+              <a
+                href="#richiesta"
+                className="inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-br from-brand to-brand-rust px-6 font-headline text-base font-bold text-white shadow-lg"
+              >
+                Richiedi la valutazione gratuita
+              </a>
+            </div>
           </div>
-
-          <ul className="space-y-3 text-sm text-body md:text-base">
-            {[
-              'Sopralluogo diretto da un consulente immobiliare',
-              'Analisi reale del tuo immobile sul posto',
-              'Stima di mercato aggiornata, senza impegno',
-            ].map((item) => (
-              <li key={item} className="flex items-start gap-2">
-                <span className="mt-1 text-success" aria-hidden="true">
-                  ✓
-                </span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-
-          <div className="rounded-2xl border border-line bg-white p-5">
-            <h2 className="font-headline text-lg font-bold text-secondary">Perché non una valutazione online?</h2>
-            <p className="mt-2 text-sm text-slate">
-              Le stime automatiche non vedono lo stato dell’immobile, la luminosità, i lavori fatti o il contesto
-              condominiale. Per questo valutiamo sul posto, senza costi e senza obbligo di mandato.
-            </p>
-          </div>
-        </section>
-
-        <div className="order-1 lg:order-2 lg:sticky lg:top-6" id="richiesta">
-          <LeadForm sourcePage="/" />
         </div>
-      </div>
-    </div>
+      </section>
+
+      <section className="bg-gradient-to-br from-surface to-surface-container">
+        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:py-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+          <div className="order-2 space-y-7 lg:order-1">
+            <ul className="space-y-3 text-sm text-body md:text-base">
+              {highlights.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span
+                    aria-hidden="true"
+                    className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-secondary/10 text-xs font-bold text-secondary"
+                  >
+                    ✓
+                  </span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="rich-content border-t border-line pt-6">
+              <h2>Perché una valutazione sul posto e non online</h2>
+              <p>
+                Le stime automatiche partono da medie e metrature: non vedono lo stato reale dell’immobile, la
+                luminosità, il piano, i lavori fatti, la vista o il contesto condominiale. A Monza e in Brianza
+                due appartamenti con gli stessi metri quadri possono valere in modo molto diverso a seconda
+                della via, dell’esposizione e della manutenzione. Per questo la stima nasce da un{' '}
+                <strong>sopralluogo reale</strong>, non da un algoritmo.
+              </p>
+
+              <h2>Come funziona, passo per passo</h2>
+              <ol>
+                {steps.map((step) => (
+                  <li key={step.title}>
+                    <strong>{step.title}.</strong> {step.text}
+                  </li>
+                ))}
+              </ol>
+              <p>
+                Vuoi i dettagli del percorso? Leggi <Link href="/come-funziona">come funziona la valutazione</Link>{' '}
+                oppure le <Link href="/faq">domande frequenti</Link> su costi e tempi.
+              </p>
+
+              <h2>Un servizio locale, per la tua zona</h2>
+              <p>
+                Lavoriamo su Monza e sui comuni della Brianza: conoscere il mercato di{' '}
+                <Link href="/monza">Monza</Link> e della{' '}
+                <Link href="/brianza">provincia di Monza e Brianza</Link> significa valutare un immobile per la
+                sua zona reale, non per una media provinciale. Se stai pensando di vendere, puoi partire dalla{' '}
+                <Link href="/vendere-casa-monza">guida per vendere casa a Monza</Link>.
+              </p>
+            </div>
+
+            <RelatedLinks
+              title="Approfondimenti utili"
+              items={[
+                {
+                  href: '/monza',
+                  label: 'Valutazione a Monza',
+                  description: 'Come cambia il valore tra i quartieri della città.',
+                },
+                {
+                  href: '/brianza',
+                  label: 'Valutazione in Brianza',
+                  description: 'Il servizio nei comuni della provincia.',
+                },
+                {
+                  href: '/come-funziona',
+                  label: 'Come funziona',
+                  description: 'Dalla richiesta al sopralluogo, passo per passo.',
+                },
+                {
+                  href: '/vendere-casa-monza',
+                  label: 'Vendere casa a Monza',
+                  description: 'Da dove partire prima di fissare il prezzo.',
+                },
+              ]}
+            />
+          </div>
+
+          <div className="order-1 lg:order-2 lg:sticky lg:top-6" id="richiesta">
+            <LeadForm sourcePage="/" />
+          </div>
+        </div>
+      </section>
+    </>
   )
 }
