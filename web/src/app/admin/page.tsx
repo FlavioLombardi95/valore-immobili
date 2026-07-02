@@ -1,11 +1,11 @@
 import { redirect } from 'next/navigation'
-import { auth } from '@/lib/auth'
+import { auth, isDevAdminBypass } from '@/lib/auth'
 import { AdminLeadsPanel } from '@/components/AdminLeadsPanel'
 
 export default async function AdminPage() {
   const session = await auth()
-  if (!session) {
+  if (!session && !isDevAdminBypass()) {
     redirect('/admin/login')
   }
-  return <AdminLeadsPanel />
+  return <AdminLeadsPanel preview={isDevAdminBypass()} />
 }

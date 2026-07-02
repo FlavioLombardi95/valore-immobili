@@ -50,7 +50,7 @@ const formatDate = (value: string) =>
     year: 'numeric',
   })
 
-export function AdminLeadsPanel() {
+export function AdminLeadsPanel({ preview = false }: { preview?: boolean }) {
   const [leads, setLeads] = useState<Lead[]>([])
   const [status, setStatus] = useState('')
   const [q, setQ] = useState('')
@@ -105,14 +105,19 @@ export function AdminLeadsPanel() {
         <div>
           <h1 className="font-headline text-2xl font-extrabold text-ink">Lead</h1>
           <p className="text-sm text-slate">Gestione richieste di valutazione immobiliare.</p>
+          {preview && (
+            <p className="mt-1 text-xs font-semibold text-amber-800">Anteprima locale — modifiche visibili in tempo reale</p>
+          )}
         </div>
-        <button
-          type="button"
-          onClick={() => signOut({ callbackUrl: '/' })}
-          className="rounded-full border border-line px-4 py-2 text-sm font-semibold text-secondary"
-        >
-          Esci
-        </button>
+        {!preview && (
+          <button
+            type="button"
+            onClick={() => signOut({ callbackUrl: '/' })}
+            className="rounded-full border border-line px-4 py-2 text-sm font-semibold text-secondary"
+          >
+            Esci
+          </button>
+        )}
       </div>
 
       <div className="grid gap-3 md:grid-cols-[180px_1fr_auto]">

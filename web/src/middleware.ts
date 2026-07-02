@@ -1,8 +1,9 @@
-import { auth } from '@/lib/auth'
+import { auth, isDevAdminBypass } from '@/lib/auth'
 
 export default auth((req) => {
   const { pathname } = req.nextUrl
   const isLogin = pathname === '/admin/login'
+  if (isDevAdminBypass()) return
   if (pathname.startsWith('/admin') && !isLogin && !req.auth) {
     const url = new URL('/admin/login', req.nextUrl.origin)
     url.searchParams.set('callbackUrl', pathname)
