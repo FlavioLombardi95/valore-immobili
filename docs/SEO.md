@@ -8,7 +8,7 @@ Documento di riferimento per strategia e interventi (aggiornato maggio 2026).
 - **Paid:** Google Ads, budget limitato, corrispondenza esatta → traffico verso il form (LP unica).
 - **Geo:** focus **Monza e Brianza**; Milano secondaria.
 - **Modello:** lead gen, nessun brand agenzia, nessun Google Business Profile, nessuna citazione NAP su portali.
-- **Sito:** singola LP indicizzabile (`/` → `/valutazione`); varianti ads/thank-you in `noindex`.
+- **Sito:** mini-sito Next.js in `web/` con pagine SEO indicizzabili + form lead; sitemap dinamica in `/sitemap.xml`.
 
 ## Stato Search Console (ultimi 28 gg, indicativo)
 
@@ -43,7 +43,7 @@ Documento di riferimento per strategia e interventi (aggiornato maggio 2026).
 4. **JSON-LD** `Service` + `Organization` con `areaServed` Monza / Monza e Brianza (senza indirizzo fisico agenzia); `FAQPage` (3 Q&A Monza).
 5. **FAQ on-page** su `step-1.html` e `lp.html` (allineata allo schema).
 6. **Hero:** badge Monza e Brianza; H2 valutazione immobiliare gratuita a Monza.
-7. `**robots.txt`** + `**sitemap.xml**` (un solo URL).
+7. **Sitemap** dinamica Next.js (`/sitemap.xml`) con home + pagine locali SEO.
 8. `**noindex**` su step-3, lp ads, thank-you (evita duplicati).
 9. **Footer:** riga geo + link esterni istituzionali (Monza / provincia).
 10. **Redirect www → apex** in `vercel.json` (quando il deploy Vercel gestisce anche `www`).
@@ -59,15 +59,24 @@ Documento di riferimento per strategia e interventi (aggiornato maggio 2026).
 
 - **Title:** `Valutazione immobiliare Monza gratuita | immobile senza impegno`
 - **Description:** `Valutazione immobiliare a Monza: sopralluogo gratuito sul posto e senza impegno. Richiedi online in pochi minuti.`
-- **Hero (sotto H1):** H2 `Valutazione immobiliare gratuita a Monza`; badge `Monza e Brianza`.
+- **Hero (sotto H1):** riga visibile con Monza/Brianza; badge `Monza e Brianza` (H1 emotivo invariato; Monza nel sottotitolo, non in H2 duplicato).
 - **FAQ:** sezione visibile + JSON-LD `FAQPage` (3 domande Monza) su `step-1.html` e `lp.html`.
 - **Footer (riga):** `Valutazione immobiliare gratuita con sopralluogo a Monza e nella provincia di Monza e Brianza.`
 
 ## Prossimi passi (senza nuove pagine)
 
 - Dopo 4–6 settimane: rivalutare CTR; se impressioni salgono ma clic restano 0, test A/B solo su **title/description** (non hero).
+- Monitorare query GSC post-layout (sezioni con «Monza» in H2, FAQ `<details>`, alt immagini locali).
 - Valutare **link footer** aggiuntivi (guide consumer, dati mercato) solo se utili all’utente.
 - **www:** se resta “under construction”, verificare DNS/hosting del sottodominio oltre a Vercel.
+
+## Ottimizzazioni SEO prioritarie (focus Monza)
+
+1. **Snippet (CTR):** title/description allineati a «valutazione immobiliare monza»; non toccare H1 senza test.
+2. **Contenuto visibile:** Monza in sottotitolo hero, H2 sezioni, FAQ, footer; testimonial Monza prima di Milano.
+3. **Tecnico:** canonical `/`, FAQPage JSON-LD, sitemap, richiesta indicizzazione post-deploy.
+4. **Performance:** `loading="lazy"` su immagini below-the-fold; ridurre script blocking (Tailwind CDN è il trade-off attuale).
+5. **Fuori pagina (manuale):** GSC sitemap, controllo URL, Ads su stesse query mentre l’organico sale.
 
 ## Fuori scope (per scelta progetto)
 

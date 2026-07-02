@@ -133,7 +133,9 @@ La pagina della privacy è gestita con **Iubenda**. Il link nel form (checkbox c
 Strategia: **una sola URL indicizzabile** (`https://valore-immobili.it/`), focus query locali Monza e Brianza. Dettaglio analisi e checklist GSC in `docs/SEO.md` (repo root).
 
 - **Head:** title/description su query «valutazione immobiliare monza»; canonical, Open Graph, JSON-LD `Service` + `FAQPage`.
-- **Hero:** badge «Monza e Brianza»; H2 «Valutazione immobiliare gratuita a Monza» (H1 invariato).
+- **Hero:** badge «Monza e Brianza»; H1 emotivo + riga «Sopralluogo gratuito a Monza e in Brianza…»; su mobile il form compare prima dell’hero (`step-1` e `lp`).
+- **Form:** due blocchi («Il tuo immobile» / «I tuoi contatti») con label visibili; submit con stato «Invio in corso…».
+- **Layout (giu 2026):** sezione split immagine+lista al posto delle 3 card; «Zero pressioni» come lista; testimonial in blockquote; FAQ con `<details>` (testo sempre in HTML per SEO).
 - **FAQ:** 3 domande Monza in pagina su `step-1.html` e `lp.html` (stesso testo dello schema).
 - **Footer:** riga geo Monza/Brianza + link esterni istituzionali (Comune, Provincia) oltre a Privacy Iubenda.
 - **`public/robots.txt`:** consente `/`; esclude step-3, lp ads e thank-you.

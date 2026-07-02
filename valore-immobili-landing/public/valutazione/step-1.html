@@ -104,23 +104,55 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }
     </script>
 <style>
-        .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-        }
         .hero-gradient {
             background: linear-gradient(135deg, #f6fafd 0%, #eaeef2 100%);
         }
         .cta-gradient {
             background: linear-gradient(to bottom right, #a63b00, #f26522);
         }
+        .form-shell {
+            background: #ffffff;
+            box-shadow: 0 12px 40px rgba(23, 28, 31, 0.08);
+        }
+        .section-pad {
+            padding-block: clamp(2rem, 5vw, 3.25rem);
+        }
+        .faq-details {
+            border-bottom: 1px solid rgba(225, 191, 179, 0.45);
+        }
+        .faq-details summary {
+            cursor: pointer;
+            list-style: none;
+        }
+        .faq-details summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-details[open] summary {
+            color: #005fac;
+        }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        input::placeholder {
+            color: #4a4f5c;
+            opacity: 0.85;
+        }
+        input:focus-visible,
+        select:focus-visible,
+        button:focus-visible,
+        a:focus-visible {
+            outline: 2px solid #005fac;
+            outline-offset: 2px;
         }
         #phone-live-feedback:empty,
         #lead-form-feedback:empty {
             display: none;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
         }
     </style>
 </head>
@@ -134,128 +166,132 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </header>
 <main>
 <section class="hero-gradient pt-0 pb-6 md:py-7">
-  <div class="max-w-6xl mx-auto px-4 md:px-7 space-y-3 md:space-y-5">
-    <div class="space-y-2 md:space-y-3 text-center -mt-1 md:mt-0">
-      <div class="flex w-full justify-center">
-        <span class="inline-flex items-center gap-1 bg-surface-container-high px-3 py-1 rounded-full text-[10px] font-bold text-secondary uppercase tracking-widest">
-          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
-          Monza e Brianza
-        </span>
-      </div>
-      <h1 class="text-4xl md:text-5xl font-headline font-extrabold text-secondary leading-tight tracking-tight">Scopri quanto vale realmente la tua casa</h1>
-      <h2 class="text-lg md:text-xl font-headline font-bold text-secondary max-w-2xl mx-auto">Valutazione immobiliare gratuita a Monza</h2>
-      <p class="text-lg text-tertiary max-w-2xl mx-auto">Valutazione immobiliare professionale basata su immobili realmente venduti nella sua zona</p>
-      <ul class="space-y-2 text-tertiary text-sm md:text-base max-w-xl mx-auto text-center">
-        <li class="flex items-start justify-center gap-2 text-center"><span class="material-symbols-outlined text-green-600 text-base mt-0.5 shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span><span><strong class="text-secondary">Sopralluogo diretto</strong> da un consulente immobiliare</span></li>
-        <li class="flex items-start justify-center gap-2 text-center"><span class="material-symbols-outlined text-green-600 text-base mt-0.5 shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span><span><strong class="text-secondary">Analisi reale</strong> del suo immobile sul posto</span></li>
-        <li class="flex items-start justify-center gap-2 text-center"><span class="material-symbols-outlined text-green-600 text-base mt-0.5 shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span><span><strong class="text-secondary">Valutazione</strong> professionale basata sul mercato attuale</span></li>
-      </ul>
-    </div>
-
-    <div class="glass-card rounded-2xl border border-outline-variant/30 shadow-xl p-3.5 md:p-5" id="form-top">
+  <div class="max-w-6xl mx-auto px-4 md:px-7 flex flex-col gap-3 md:gap-5">
+    <div class="order-1 md:order-2 form-shell rounded-2xl border border-outline-variant/25 p-3.5 md:p-6" id="form-top">
       <h2 class="text-2xl md:text-3xl font-headline font-extrabold text-secondary mb-3 text-center">Richiedi una valutazione gratuita</h2>
-      <form class="space-y-2.5" id="lead-form-combined" novalidate onsubmit="event.preventDefault();">
-        <div class="grid md:grid-cols-2 gap-2.5">
-          <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="firstName" placeholder="Nome" required type="text" autocomplete="given-name"/>
-          <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="lastName" placeholder="Cognome" required type="text" autocomplete="family-name"/>
-          <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="email" placeholder="Email" required type="email" autocomplete="email"/>
-          <div class="space-y-1">
-            <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="phone" placeholder="Telefono" required type="tel" autocomplete="tel"/>
-            <p class="text-xs text-tertiary" id="phone-live-feedback"></p>
-          </div>
-          <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="city" placeholder="Comune / zona" required type="text" autocomplete="address-level2"/>
-          <input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="squareMeters" inputmode="numeric" min="1" max="99999" placeholder="Superficie (mq)" required step="1" type="number"/>
-          <select class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="propertyType" required>
-            <option value="">Tipologia immobile</option>
+      <form class="space-y-3" id="lead-form-combined" novalidate onsubmit="event.preventDefault();">
+        <div class="space-y-3">
+          <div class="space-y-2">
+            <h3 class="text-sm font-headline font-bold text-secondary">Il tuo immobile</h3>
+            <div class="grid md:grid-cols-2 gap-2.5">
+              <label class="block space-y-1 md:col-span-2"><span class="text-xs font-semibold text-on-surface">Comune / zona</span><input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="city" placeholder="Es. Monza" required type="text" autocomplete="address-level2"/></label>
+              <label class="block space-y-1"><span class="text-xs font-semibold text-on-surface">Superficie (mq)</span><input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="squareMeters" inputmode="numeric" min="1" max="99999" placeholder="Es. 85" required step="1" type="number"/></label>
+              <label class="block space-y-1"><span class="text-xs font-semibold text-on-surface">Tipologia</span><select class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="propertyType" required>
+            <option value="">Seleziona</option>
             <option>Appartamento</option>
             <option>Villa</option>
             <option>Casa indipendente</option>
             <option>Garage</option>
             <option>Altro</option>
-          </select>
-          <select class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="timeframe" required>
-            <option value="">Quando prevede di vendere?</option>
+          </select></label>
+              <label class="block space-y-1 md:col-span-2"><span class="text-xs font-semibold text-on-surface">Quando prevedi di vendere?</span><select class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="timeframe" required>
+            <option value="">Seleziona</option>
             <option value="3">Entro 3 mesi</option>
             <option value="6">Entro 6 mesi</option>
             <option value="12">Entro 12 mesi</option>
-          </select>
+          </select></label>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-sm font-headline font-bold text-secondary">I tuoi contatti</h3>
+            <div class="grid md:grid-cols-2 gap-2.5">
+              <label class="block space-y-1"><span class="text-xs font-semibold text-on-surface">Nome</span><input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="firstName" placeholder="Mario" required type="text" autocomplete="given-name"/></label>
+              <label class="block space-y-1"><span class="text-xs font-semibold text-on-surface">Cognome</span><input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="lastName" placeholder="Rossi" required type="text" autocomplete="family-name"/></label>
+              <label class="block space-y-1"><span class="text-xs font-semibold text-on-surface">Email</span><input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="email" placeholder="nome@email.it" required type="email" autocomplete="email"/></label>
+              <div class="space-y-1">
+                <label class="block space-y-1"><span class="text-xs font-semibold text-on-surface">Telefono</span><input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-secondary" name="phone" placeholder="333 1234567" required type="tel" autocomplete="tel"/></label>
+                <p class="text-xs text-on-surface-variant" id="phone-live-feedback"></p>
+              </div>
+            </div>
+          </div>
         </div>
-        <label class="flex items-start gap-2 text-[11px] md:text-xs text-tertiary leading-relaxed">
-          <input class="mt-0.5 shrink-0 rounded border-outline-variant" name="privacyAccepted" required type="checkbox"/>
+        <label class="flex items-start gap-2 text-xs text-on-surface-variant leading-relaxed">
+          <input class="mt-0.5 shrink-0 min-h-[1.25rem] min-w-[1.25rem] rounded border-outline-variant" name="privacyAccepted" required type="checkbox"/>
           <span>Acconsento al trattamento dei dati come indicato nella <a class="underline underline-offset-2 font-semibold text-secondary" href="https://www.iubenda.com/privacy-policy/69451858" rel="noopener" target="_blank">Privacy Policy</a>.</span>
         </label>
-        <button class="w-full cta-gradient text-on-primary py-4 rounded-full font-headline font-bold text-lg shadow-xl shadow-primary/20 -mt-0.5" type="submit">Richiedi sopralluogo gratuito</button>
-        <p class="text-xs text-center text-tertiary">Nessun obbligo di mandato – nessun costo – nessuna pubblicità</p>
+        <button id="submit-btn" class="w-full min-h-[52px] cta-gradient text-on-primary py-4 rounded-full font-headline font-bold text-lg shadow-xl shadow-primary/20 disabled:opacity-70 disabled:cursor-not-allowed transition-opacity" type="submit">Richiedi sopralluogo gratuito</button>
+        <p class="text-xs text-center text-on-surface-variant">Nessun obbligo di mandato – nessun costo – nessuna pubblicità</p>
         <p class="text-sm text-center text-error" id="lead-form-feedback"></p>
       </form>
     </div>
-  </div>
-</section>
 
-<section class="py-6 bg-surface">
-  <div class="max-w-6xl mx-auto px-4 md:px-7 space-y-3">
-    <h2 class="text-2xl md:text-3xl font-headline font-extrabold text-secondary text-center">Perché non una valutazione online?</h2>
-    <div class="grid md:grid-cols-3 gap-2.5">
-      <div class="bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-3 text-center">
-        <img class="w-full h-28 object-cover rounded-lg mb-2" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&h=675&q=80" alt="Valutazione su dati reali"/>
-        <p class="text-sm text-tertiary">Gli algoritmi sbagliano fino al 30%</p>
+    <div class="order-2 md:order-1 space-y-2 md:space-y-3 text-center -mt-1 md:mt-0">
+      <div class="flex w-full justify-center">
+        <span class="inline-flex items-center gap-1 bg-surface-container-high px-3 py-1.5 rounded-full text-xs font-semibold text-secondary">
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+          Monza e Brianza
+        </span>
       </div>
-      <div class="bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-3 text-center">
-        <img class="w-full h-28 object-cover rounded-lg mb-2" src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&w=1200&h=675&q=80" alt="Consulenza professionale"/>
-        <p class="text-sm text-tertiary">Ogni casa è unica, la valutiamo di persona</p>
-      </div>
-      <div class="bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-3 text-center">
-        <img class="w-full h-28 object-cover rounded-lg mb-2" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&h=675&q=80" alt="Valutazione professionale"/>
-        <p class="text-sm text-tertiary">Ti forniamo il valore reale di mercato</p>
-      </div>
+      <h1 class="text-4xl md:text-5xl font-headline font-extrabold text-secondary leading-tight tracking-tight text-balance">Scopri quanto vale realmente la tua casa</h1>
+      <p class="text-lg text-on-surface-variant max-w-2xl mx-auto text-pretty">Sopralluogo gratuito a Monza e in Brianza, basato su vendite reali nella tua zona.</p>
+      <ul class="space-y-2 text-on-surface-variant text-sm md:text-base max-w-xl mx-auto text-center">
+        <li class="flex items-start justify-center gap-2 text-center"><span class="material-symbols-outlined text-green-600 text-base mt-0.5 shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span><span><strong class="text-secondary">Sopralluogo diretto</strong> da un consulente immobiliare</span></li>
+        <li class="flex items-start justify-center gap-2 text-center"><span class="material-symbols-outlined text-green-600 text-base mt-0.5 shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span><span><strong class="text-secondary">Analisi reale</strong> del tuo immobile sul posto</span></li>
+        <li class="flex items-start justify-center gap-2 text-center"><span class="material-symbols-outlined text-green-600 text-base mt-0.5 shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span><span><strong class="text-secondary">Stima di mercato</strong> aggiornata, senza impegno</span></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section class="py-6 bg-surface-container-low">
-  <div class="max-w-6xl mx-auto px-4 md:px-7 space-y-3">
-    <h2 class="text-2xl md:text-3xl font-headline font-extrabold text-secondary text-center">Zero pressioni, zero vincoli</h2>
-    <div class="grid md:grid-cols-3 gap-2.5 text-sm text-tertiary">
-      <p class="flex items-start gap-2 bg-surface-container-lowest rounded-xl p-3"><span class="material-symbols-outlined text-green-600 text-base" style="font-variation-settings: 'FILL' 1;">check_circle</span><span>Nessun obbligo di mandato.</span></p>
-      <p class="flex items-start gap-2 bg-surface-container-lowest rounded-xl p-3"><span class="material-symbols-outlined text-green-600 text-base" style="font-variation-settings: 'FILL' 1;">check_circle</span><span>Nessun costo per la valutazione iniziale.</span></p>
-      <p class="flex items-start gap-2 bg-surface-container-lowest rounded-xl p-3"><span class="material-symbols-outlined text-green-600 text-base" style="font-variation-settings: 'FILL' 1;">check_circle</span><span>Consulenza professionale e trasparente.</span></p>
+<section class="section-pad bg-surface">
+  <div class="max-w-6xl mx-auto px-4 md:px-7 grid md:grid-cols-[0.95fr_1.05fr] gap-6 md:gap-10 items-center">
+    <div class="rounded-2xl overflow-hidden ring-1 ring-outline-variant/30">
+      <img class="w-full h-52 md:h-72 object-cover" src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&amp;fit=crop&amp;w=1200&amp;h=800&amp;q=80" alt="Sopralluogo per valutazione immobiliare a Monza" width="1200" height="800" loading="lazy"/>
+    </div>
+    <div class="space-y-4">
+      <h2 class="text-2xl md:text-3xl font-headline font-extrabold text-secondary text-balance">Perché non una valutazione online a Monza?</h2>
+      <p class="text-sm md:text-base text-on-surface-variant text-pretty">Per un immobile a Monza conta la zona, le finiture e lo stato reale: un algoritmo non li vede dal divano.</p>
+      <ul class="space-y-3 text-sm md:text-base text-on-surface-variant">
+        <li class="flex items-start gap-2.5"><span class="material-symbols-outlined text-green-600 text-lg shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span><span>Le stime automatiche possono sbagliare fino al <strong class="text-secondary">30%</strong> sul prezzo finale.</span></li>
+        <li class="flex items-start gap-2.5"><span class="material-symbols-outlined text-green-600 text-lg shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span><span>Ogni immobile è diverso: la <strong class="text-secondary">valutazione immobiliare</strong> la facciamo sul posto.</span></li>
+        <li class="flex items-start gap-2.5"><span class="material-symbols-outlined text-green-600 text-lg shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span><span>Ti indichiamo il <strong class="text-secondary">valore di mercato</strong> aggiornato per Monza e Brianza.</span></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section class="py-6 bg-surface">
-  <div class="max-w-6xl mx-auto px-4 md:px-7 space-y-3">
-    <h2 class="text-2xl md:text-3xl font-headline font-extrabold text-secondary text-center">Dicono di noi</h2>
-    <div class="grid md:grid-cols-2 gap-2.5">
-      <div class="bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-4">
-        <p class="text-base md:text-lg font-headline italic text-secondary">“Professionale, preciso e molto chiaro nella valutazione. Abbiamo venduto casa in meno di 2 mesi.”</p>
-        <p class="mt-2 text-sm font-semibold text-black">Francesco, Milano</p>
-      </div>
-      <div class="bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-4">
-        <p class="text-base md:text-lg font-headline italic text-secondary">“Consulenza molto chiara e professionale: in pochi giorni ho ricevuto una valutazione precisa e ho capito come muovermi senza pressioni.”</p>
-        <p class="mt-2 text-sm font-semibold text-black">Elisabetta, Monza</p>
-      </div>
+<section class="section-pad bg-surface-container-low">
+  <div class="max-w-3xl mx-auto px-4 md:px-7 text-center space-y-4">
+    <h2 class="text-2xl md:text-3xl font-headline font-extrabold text-secondary text-balance">Zero pressioni, zero vincoli</h2>
+    <ul class="text-sm md:text-base text-on-surface-variant space-y-3 text-left max-w-xl mx-auto">
+      <li class="flex items-start gap-2.5"><span class="material-symbols-outlined text-green-600 text-lg shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span><span>Nessun obbligo di mandato dopo la valutazione.</span></li>
+      <li class="flex items-start gap-2.5"><span class="material-symbols-outlined text-green-600 text-lg shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span><span>Nessun costo per il sopralluogo iniziale a Monza.</span></li>
+      <li class="flex items-start gap-2.5"><span class="material-symbols-outlined text-green-600 text-lg shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span><span>Consulenza chiara: decidi tu i tempi di vendita.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section-pad bg-surface">
+  <div class="max-w-6xl mx-auto px-4 md:px-7 space-y-5">
+    <h2 class="text-2xl md:text-3xl font-headline font-extrabold text-secondary text-center text-balance">Chi ha richiesto una valutazione a Monza</h2>
+    <div class="grid md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+      <figure class="space-y-2">
+        <blockquote class="text-base md:text-lg font-headline italic text-secondary leading-relaxed">“Consulenza molto chiara e professionale: in pochi giorni ho ricevuto una valutazione precisa e ho capito come muovermi senza pressioni.”</blockquote>
+        <figcaption class="text-sm font-semibold text-on-surface">Elisabetta, Monza</figcaption>
+      </figure>
+      <figure class="space-y-2">
+        <blockquote class="text-base md:text-lg font-headline italic text-secondary leading-relaxed">“Professionale, preciso e molto chiaro nella valutazione. Abbiamo venduto casa in meno di 2 mesi.”</blockquote>
+        <figcaption class="text-sm font-semibold text-on-surface">Francesco, Milano</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<section class="py-6 bg-surface-container-low">
-  <div class="max-w-6xl mx-auto px-4 md:px-7 space-y-4">
-    <h2 class="text-2xl md:text-3xl font-headline font-extrabold text-secondary text-center">Domande frequenti sulla valutazione a Monza</h2>
-    <div class="space-y-4 max-w-3xl mx-auto">
-      <article class="bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-4">
-        <h3 class="text-base md:text-lg font-headline font-bold text-secondary">Quanto costa una valutazione immobiliare a Monza?</h3>
-        <p class="mt-2 text-sm text-tertiary">La valutazione immobiliare con sopralluogo a Monza è gratuita: nessun costo iniziale, nessun obbligo di mandato e nessuna pubblicità.</p>
-      </article>
-      <article class="bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-4">
-        <h3 class="text-base md:text-lg font-headline font-bold text-secondary">Come funziona la valutazione del mio immobile a Monza?</h3>
-        <p class="mt-2 text-sm text-tertiary">Compili il modulo con i dati del tuo immobile a Monza; ti contattiamo per fissare un sopralluogo gratuito sul posto con un consulente immobiliare.</p>
-      </article>
-      <article class="bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-4">
-        <h3 class="text-base md:text-lg font-headline font-bold text-secondary">Valutazione immobile online o sul posto a Monza?</h3>
-        <p class="mt-2 text-sm text-tertiary">Per un immobile a Monza la valutazione sul posto è più attendibile: valutiamo di persona caratteristiche e zona, oltre ai dati di mercato.</p>
-      </article>
-    </div>
+<section class="section-pad bg-surface-container-low">
+  <div class="max-w-3xl mx-auto px-4 md:px-7 space-y-2">
+    <h2 class="text-2xl md:text-3xl font-headline font-extrabold text-secondary text-center text-balance mb-4">Domande frequenti sulla valutazione a Monza</h2>
+    <details class="faq-details py-4 group" open>
+      <summary class="text-base md:text-lg font-headline font-bold text-secondary pr-6">Quanto costa una valutazione immobiliare a Monza?</summary>
+      <p class="mt-2 text-sm md:text-base text-on-surface-variant text-pretty">La valutazione immobiliare con sopralluogo a Monza è gratuita: nessun costo iniziale, nessun obbligo di mandato e nessuna pubblicità.</p>
+    </details>
+    <details class="faq-details py-4 group">
+      <summary class="text-base md:text-lg font-headline font-bold text-secondary pr-6">Come funziona la valutazione del mio immobile a Monza?</summary>
+      <p class="mt-2 text-sm md:text-base text-on-surface-variant text-pretty">Compili il modulo con i dati del tuo immobile a Monza; ti contattiamo per fissare un sopralluogo gratuito sul posto con un consulente immobiliare.</p>
+    </details>
+    <details class="faq-details py-4 group">
+      <summary class="text-base md:text-lg font-headline font-bold text-secondary pr-6">Valutazione immobile online o sul posto a Monza?</summary>
+      <p class="mt-2 text-sm md:text-base text-on-surface-variant text-pretty">Per un immobile a Monza la valutazione sul posto è più attendibile: valutiamo di persona caratteristiche e zona, oltre ai dati di mercato.</p>
+    </details>
   </div>
 </section>
 </main>
@@ -279,12 +315,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 (function () {
   const form = document.getElementById('lead-form-combined');
   const feedback = document.getElementById('lead-form-feedback');
+  const submitBtn = document.getElementById('submit-btn');
   const phoneFeedback = document.getElementById('phone-live-feedback');
   const formFields = form ? form.querySelectorAll('input, select') : [];
   if (!form) return;
 
   const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const idleCta = 'Richiedi sopralluogo gratuito';
   let phoneTimer = null;
+
+  const setLoading = (loading) => {
+    if (!submitBtn) return;
+    submitBtn.disabled = loading;
+    submitBtn.textContent = loading ? 'Invio in corso...' : idleCta;
+  };
 
   const verifyContacts = async (phone, email) => {
     const body = {};
@@ -302,9 +346,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   const setLiveMessage = (target, text, type) => {
     if (!target) return;
     target.textContent = text || '';
-    target.classList.remove('text-tertiary', 'text-green-700', 'text-red-600');
+    target.classList.remove('text-on-surface-variant', 'text-green-700', 'text-red-600');
     if (!text) {
-      target.classList.add('text-tertiary');
+      target.classList.add('text-on-surface-variant');
       return;
     }
     target.classList.add(type === 'ok' ? 'text-green-700' : 'text-red-600');
@@ -359,6 +403,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     feedback.textContent = '';
     clearFieldErrors();
     setLiveMessage(phoneFeedback, '', '');
+    setLoading(true);
 
     const rawMq = String(form.squareMeters.value || '').trim();
     const mq = parseInt(rawMq, 10);
@@ -373,28 +418,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       privacyAccepted: Boolean(form.privacyAccepted.checked)
     };
 
-    if (!form.firstName.value.trim()) return invalidateField(form.firstName, 'Inserisca il nome.');
-    if (!form.lastName.value.trim()) return invalidateField(form.lastName, 'Inserisca il cognome.');
-    if (!payload.email) return invalidateField(form.email, 'Inserisca l’indirizzo email.');
-    if (!payload.phone) return invalidateField(form.phone, 'Inserisca il numero di telefono.');
-    if (!payload.city) return invalidateField(form.city, 'Inserisca il comune/zona dell’immobile.');
-    if (!payload.propertyType) return invalidateField(form.propertyType, 'Selezioni il tipo di immobile.');
-    if (!/^\d+$/.test(rawMq) || !Number.isFinite(mq) || mq < 1 || mq > 99999) return invalidateField(form.squareMeters, 'Inserisca i metri quadri come numero intero.');
-    if (!payload.timeframe) return invalidateField(form.timeframe, 'Selezioni quando prevede di vendere.');
-    if (!payload.privacyAccepted) return invalidateField(form.privacyAccepted, 'Deve accettare la Privacy Policy per proseguire.');
+    if (!form.firstName.value.trim()) { setLoading(false); return invalidateField(form.firstName, 'Inserisci il nome.'); }
+    if (!form.lastName.value.trim()) { setLoading(false); return invalidateField(form.lastName, 'Inserisci il cognome.'); }
+    if (!payload.email) { setLoading(false); return invalidateField(form.email, 'Inserisci l’indirizzo email.'); }
+    if (!payload.phone) { setLoading(false); return invalidateField(form.phone, 'Inserisci il numero di telefono.'); }
+    if (!payload.city) { setLoading(false); return invalidateField(form.city, 'Inserisci il comune o la zona dell’immobile.'); }
+    if (!payload.propertyType) { setLoading(false); return invalidateField(form.propertyType, 'Seleziona il tipo di immobile.'); }
+    if (!/^\d+$/.test(rawMq) || !Number.isFinite(mq) || mq < 1 || mq > 99999) { setLoading(false); return invalidateField(form.squareMeters, 'Inserisci i metri quadri come numero intero.'); }
+    if (!payload.timeframe) { setLoading(false); return invalidateField(form.timeframe, 'Seleziona quando prevedi di vendere.'); }
+    if (!payload.privacyAccepted) { setLoading(false); return invalidateField(form.privacyAccepted, 'Devi accettare la Privacy Policy per proseguire.'); }
 
     try {
       const phoneDigits = payload.phone.replace(/\D/g, '');
-      if (phoneDigits.length < 8) return invalidateField(form.phone, 'Numero di telefono invalido.');
-      if (!EMAIL_REGEX.test(payload.email.toLowerCase())) return invalidateField(form.email, 'Inserisca un indirizzo email con formato valido.');
+      if (phoneDigits.length < 8) { setLoading(false); return invalidateField(form.phone, 'Numero di telefono non valido.'); }
+      if (!EMAIL_REGEX.test(payload.email.toLowerCase())) { setLoading(false); return invalidateField(form.email, 'Inserisci un indirizzo email valido.'); }
 
       const verification = await verifyContacts(payload.phone, null);
-      if (!verification.ok) return (feedback.textContent = verification.data?.error || 'Impossibile verificare i contatti. Riprovi.');
+      if (!verification.ok) {
+        setLoading(false);
+        feedback.textContent = verification.data?.error || 'Impossibile verificare i contatti. Riprova.';
+        return;
+      }
 
       const phoneStatus = verification.data?.phone?.status || '';
       if (phoneStatus !== 'valid') {
-        setLiveMessage(phoneFeedback, 'Numero di telefono invalido.', 'error');
-        return invalidateField(form.phone, 'Numero di telefono invalido.');
+        setLiveMessage(phoneFeedback, 'Numero di telefono non valido.', 'error');
+        setLoading(false);
+        return invalidateField(form.phone, 'Numero di telefono non valido.');
       }
 
       const res = await fetch('/api/lead', {
@@ -403,13 +453,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         body: JSON.stringify(payload)
       });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok) return (feedback.textContent = data.error || 'Errore durante l\'invio.');
+      if (!res.ok) {
+        setLoading(false);
+        feedback.textContent = data.error || 'Errore durante l\'invio.';
+        return;
+      }
 
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: 'lead_submit_success', lead_type: 'form', timeframe: payload.timeframe });
       window.location.href = '/valutazione/step-3?lead=ok';
     } catch {
-      feedback.textContent = 'Errore di connessione. Riprovi.';
+      setLoading(false);
+      feedback.textContent = 'Errore di connessione. Riprova.';
     }
   });
 })();

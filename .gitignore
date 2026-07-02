@@ -35,3 +35,8 @@ dist-ssr
 
 # Chiavi Google / account di servizio (NON committare mai)
 valore-immobili-746c6fbe1d58.json
+
+# Tooling AI / skill Impeccable (solo locale, non nel repo)
+.cursor/
+.claude/
+.impeccable/hook.cache.json

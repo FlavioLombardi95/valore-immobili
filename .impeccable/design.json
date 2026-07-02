@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-02T09:11:00.000Z",
+  "title": "Design System: Valore Immobili",
+  "extensions": {
+    "northStar": "Lo Sportello Locale",
+    "summary": "A local, human, organic-first design system for property valuation requests in Monza and Brianza, with a future lightweight admin surface for lead operations.",
+    "colorMeta": {
+      "brand-orange": {
+        "role": "primary",
+        "displayName": "Valuation Orange",
+        "canonical": "#f26522",
+        "usage": "Primary CTA, selected states, and moments that must feel actionable."
+      },
+      "brand-rust": {
+        "role": "primary-deep",
+        "displayName": "Grounded Rust",
+        "canonical": "#a63b00",
+        "usage": "Hover states, deep gradients, and stronger brand emphasis."
+      },
+      "consultative-blue": {
+        "role": "secondary",
+        "displayName": "Consultative Blue",
+        "canonical": "#005fac",
+        "usage": "Headings, trust details, FAQ open states, and advisor-like emphasis."
+      },
+      "surface": {
+        "role": "neutral-bg",
+        "displayName": "Local Cloud Surface",
+        "canonical": "#f6fafd",
+        "usage": "Primary indexed-page background and quiet content surfaces."
+      },
+      "ink": {
+        "role": "neutral-ink",
+        "displayName": "Ink Navy",
+        "canonical": "#0f172a",
+        "usage": "Dark shell, footer, and high-contrast text."
+      }
+    },
+    "elevation": {
+      "formLift": "0 12px 40px rgba(23, 28, 31, 0.08)",
+      "premiumCard": "0 24px 60px -28px rgba(15, 23, 42, 0.42)",
+      "softShell": "0 18px 40px rgba(15, 23, 42, 0.12)"
+    },
+    "motion": {
+      "default": "Subtle, fast, and never required to understand or complete the form.",
+      "reducedMotion": "Respect prefers-reduced-motion; conversion flow must not depend on animation."
+    },
+    "componentNotes": {
+      "primaryButton": "Pill CTA, minimum 52px height, orange or rust/orange gradient, white text.",
+      "formField": "Visible label, soft filled background, 48px minimum height, strong focus ring.",
+      "localValuationPath": "Signature process component: property context, contact details, advisor follow-up, on-site valuation.",
+      "seoPage": "Readable local content pages with clear headings, internal links, and conversion proximity.",
+      "adminSurface": "Quiet internal UI for lead lists, filters, statuses, notes, and approved Google-login access.",
+      "futureLogo": "Explore a local, one-color-capable mark. Avoid roof icons, generic house outlines, and luxury monograms."
+    },
+    "rules": [
+      "Orange means action.",
+      "Text on tinted surfaces must remain comfortably readable.",
+      "The form gets the depth.",
+      "Organic SEO is the primary acquisition strategy.",
+      "SEO content must answer real local questions.",
+      "Admin screens should be dense, legible, and task-oriented.",
+      "Do not make the service feel like an instant automatic-estimate portal."
+    ],
+    "antiReferences": [
+      "Automatic valuation portals",
+      "Aggressive real estate ads",
+      "Cold luxury agency styling",
+      "Generic AI/SaaS landing templates"
+    ]
+  }
+}
