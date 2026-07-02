@@ -9,6 +9,7 @@ CREATE TABLE IF NOT EXISTS leads (
   timeframe TEXT NOT NULL,
   privacy_accepted BOOLEAN NOT NULL DEFAULT true,
   status TEXT NOT NULL DEFAULT 'new',
+  trattativa_status TEXT,
   notes TEXT,
   source_page TEXT,
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),

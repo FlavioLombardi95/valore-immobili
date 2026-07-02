@@ -1,9 +1,7 @@
 import { NextResponse } from 'next/server'
 import { requireAdmin } from '@/lib/auth'
-import { listLeads, type LeadStatus } from '@/lib/leads'
-
-const isLeadStatus = (value: string): value is LeadStatus =>
-  ['new', 'contacted', 'appointment', 'discarded'].includes(value)
+import { listLeads } from '@/lib/leads'
+import { isLeadStatus } from '@/lib/lead-status'
 
 export async function GET(request: Request) {
   const session = await requireAdmin()

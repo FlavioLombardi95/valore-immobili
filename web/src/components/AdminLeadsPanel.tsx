@@ -2,6 +2,11 @@
 
 import { useCallback, useEffect, useState } from 'react'
 import { signOut } from 'next-auth/react'
+import {
+  TRATTATIVA_STATUS_LABELS,
+  TRATTATIVA_STATUSES,
+  type TrattativaStatus,
+} from '@/lib/lead-status'
 
 type Lead = {
   id: string
@@ -13,6 +18,7 @@ type Lead = {
   email: string
   timeframe: string
   status: 'new' | 'contacted' | 'appointment' | 'discarded'
+  trattativa_status: TrattativaStatus | null
   notes: string | null
   source_page: string | null
   created_at: string
@@ -23,6 +29,19 @@ const STATUS_LABELS: Record<Lead['status'], string> = {
   contacted: 'Contattata',
   appointment: 'Appuntamento',
   discarded: 'Scartata',
+}
+
+const trattativaSelectClass = (value: TrattativaStatus | null) => {
+  switch (value) {
+    case 'ko':
+      return 'border-error/30 bg-error/10 text-error'
+    case 'in_trattativa':
+      return 'border-amber-300 bg-amber-50 text-amber-900'
+    case 'venduta':
+      return 'border-emerald-300 bg-emerald-50 text-emerald-900'
+    default:
+      return 'border-line bg-cloud text-slate'
+  }
 }
 
 export function AdminLeadsPanel() {
@@ -54,7 +73,14 @@ export function AdminLeadsPanel() {
     void loadLeads()
   }, [loadLeads])
 
-  const updateLead = async (id: string, patch: { status?: Lead['status']; notes?: string | null }) => {
+  const updateLead = async (
+    id: string,
+    patch: {
+      status?: Lead['status']
+      trattativaStatus?: TrattativaStatus | null
+      notes?: string | null
+    },
+  ) => {
     const res = await fetch(`/api/admin/leads/${id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
@@ -146,20 +172,42 @@ export function AdminLeadsPanel() {
                     {lead.source_page ? ` · ${lead.source_page}` : ''}
                   </p>
                 </div>
-                <label className="block min-w-[180px] space-y-1">
-                  <span className="text-xs font-semibold text-body">Stato</span>
-                  <select
-                    value={lead.status}
-                    onChange={(e) => void updateLead(lead.id, { status: e.target.value as Lead['status'] })}
-                    className="w-full rounded-xl border border-line bg-cloud px-3 py-2 text-sm font-semibold"
-                  >
-                    {Object.entries(STATUS_LABELS).map(([value, label]) => (
-                      <option key={value} value={value}>
-                        {label}
-                      </option>
-                    ))}
-                  </select>
-                </label>
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-end">
+                  <label className="block min-w-[180px] space-y-1">
+                    <span className="text-xs font-semibold text-body">Stato</span>
+                    <select
+                      value={lead.status}
+                      onChange={(e) => void updateLead(lead.id, { status: e.target.value as Lead['status'] })}
+                      className="w-full rounded-xl border border-line bg-cloud px-3 py-2 text-sm font-semibold"
+                    >
+                      {Object.entries(STATUS_LABELS).map(([value, label]) => (
+                        <option key={value} value={value}>
+                          {label}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                  <label className="block min-w-[200px] space-y-1">
+                    <span className="text-xs font-semibold text-body">Status trattativa</span>
+                    <select
+                      value={lead.trattativa_status ?? ''}
+                      onChange={(e) => {
+                        const value = e.target.value
+                        void updateLead(lead.id, {
+                          trattativaStatus: value ? (value as TrattativaStatus) : null,
+                        })
+                      }}
+                      className={`w-full rounded-xl border px-3 py-2 text-sm font-semibold ${trattativaSelectClass(lead.trattativa_status)}`}
+                    >
+                      <option value="">— Da impostare —</option>
+                      {TRATTATIVA_STATUSES.map((value) => (
+                        <option key={value} value={value}>
+                          {TRATTATIVA_STATUS_LABELS[value]}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                </div>
               </div>
               <label className="mt-4 block space-y-1">
                 <span className="text-xs font-semibold text-body">Note interne</span>

@@ -1,9 +1,7 @@
 import { NextResponse } from 'next/server'
 import { requireAdmin } from '@/lib/auth'
-import { updateLead, type LeadStatus } from '@/lib/leads'
-
-const isLeadStatus = (value: string): value is LeadStatus =>
-  ['new', 'contacted', 'appointment', 'discarded'].includes(value)
+import { updateLead } from '@/lib/leads'
+import { isLeadStatus, isTrattativaStatus } from '@/lib/lead-status'
 
 export async function PATCH(
   request: Request,
@@ -20,8 +18,14 @@ export async function PATCH(
     ? body.status
     : undefined
   const notes = typeof body.notes === 'string' ? body.notes : body.notes === null ? null : undefined
+  const trattativaStatus =
+    typeof body.trattativaStatus === 'string' && isTrattativaStatus(body.trattativaStatus)
+      ? body.trattativaStatus
+      : body.trattativaStatus === null
+        ? null
+        : undefined
 
-  const lead = await updateLead(id, { status, notes })
+  const lead = await updateLead(id, { status, trattativaStatus, notes })
   if (!lead) {
     return NextResponse.json({ error: 'Lead non trovata.' }, { status: 404 })
   }

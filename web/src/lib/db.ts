@@ -31,12 +31,14 @@ export async function ensureSchema() {
           timeframe TEXT NOT NULL,
           privacy_accepted BOOLEAN NOT NULL DEFAULT true,
           status TEXT NOT NULL DEFAULT 'new',
+          trattativa_status TEXT,
           notes TEXT,
           source_page TEXT,
           created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
           updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
         )
       `
+      await sql`ALTER TABLE leads ADD COLUMN IF NOT EXISTS trattativa_status TEXT`
       await sql`CREATE INDEX IF NOT EXISTS leads_status_idx ON leads (status)`
       await sql`CREATE INDEX IF NOT EXISTS leads_created_at_idx ON leads (created_at DESC)`
       await sql`CREATE INDEX IF NOT EXISTS leads_city_idx ON leads (city)`
