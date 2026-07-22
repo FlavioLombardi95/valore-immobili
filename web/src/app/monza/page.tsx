@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { SeoPageLayout } from '@/components/SeoPageLayout'
+import { propertyTypePath } from '@/lib/property-types'
 
 export const metadata: Metadata = {
   title: 'Valutazione immobiliare a Monza: stima sul posto',
@@ -19,14 +20,14 @@ export default function MonzaPage() {
       breadcrumb="Monza"
       related={[
         {
-          href: '/vendere-casa-monza',
-          label: 'Vendere casa a Monza',
-          description: 'La guida pratica per partire con il piede giusto.',
+          href: propertyTypePath('appartamenti-monza'),
+          label: 'Valutazione appartamenti',
+          description: 'Piano, spese e condominio a Monza.',
         },
         {
-          href: '/come-funziona',
-          label: 'Come funziona',
-          description: 'Il percorso dalla richiesta alla stima finale.',
+          href: propertyTypePath('ville-brianza'),
+          label: 'Valutazione ville',
+          description: 'Ville e case indipendenti in Brianza.',
         },
         {
           href: '/brianza',
@@ -34,9 +35,9 @@ export default function MonzaPage() {
           description: 'Se il tuo immobile è fuori Monza città.',
         },
         {
-          href: '/faq',
-          label: 'Domande frequenti',
-          description: 'Costi, tempi e cosa succede dopo la richiesta.',
+          href: '/vendere-casa-monza',
+          label: 'Vendere casa a Monza',
+          description: 'La guida pratica per partire con il piede giusto.',
         },
       ]}
     >
@@ -60,6 +61,14 @@ export default function MonzaPage() {
         <li>Spazi accessori: box, cantina, terrazzo o giardino</li>
         <li>Contesto condominiale e spese ordinarie</li>
       </ul>
+
+      <h2>Appartamenti e ville</h2>
+      <p>
+        Se sai già la tipologia, parti dalla pagina dedicata:{' '}
+        <Link href={propertyTypePath('appartamenti-monza')}>valutazione appartamenti a Monza</Link> oppure{' '}
+        <Link href={propertyTypePath('ville-brianza')}>valutazione ville in Brianza</Link>. Il modulo è lo
+        stesso: cambia il focus su cosa pesa davvero nella stima.
+      </p>
 
       <h2>Come funziona la richiesta</h2>
       <p>

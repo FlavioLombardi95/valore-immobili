@@ -76,6 +76,8 @@ Successo = più **clic qualificati** sulle query di valutazione, poi lead. Le im
 | `/monza` | Hub geo Monza | Si |
 | `/brianza` | Hub geo Brianza + indice comuni | Si |
 | `/valutazione/{comune}` | Leaf geo (8 comuni vicini a Monza) | Si |
+| `/valutazione/appartamenti-monza` | Tipologica appartamenti | Si |
+| `/valutazione/ville-brianza` | Tipologica ville / indipendenti | Si |
 | `/come-funziona` | Processo | No (solo CTA) |
 | `/faq` | FAQ + FAQPage schema | No (solo CTA) |
 | `/vendere-casa-monza` | Guida vendita | No (solo CTA) |
@@ -86,6 +88,15 @@ Successo = più **clic qualificati** sulle query di valutazione, poi lead. Le im
 Lissone, Vimodrone, Brugherio, Villasanta, Muggio, Desio, Concorezzo, Cologno Monzese.
 
 Dati in `web/src/lib/localities.ts`.
+
+### Tipologiche (`/valutazione/...`)
+
+| Slug | Focus |
+|------|--------|
+| `appartamenti-monza` | Condominio / piano / spese a Monza |
+| `ville-brianza` | Ville e case indipendenti in Brianza |
+
+Dati in `web/src/lib/property-types.ts`. Stessa route dinamica dei comuni.
 
 ### Non indicizzate / private
 
@@ -104,6 +115,7 @@ Dati in `web/src/lib/localities.ts`.
 |-------------|------|
 | Hub: `/`, `/monza`, `/brianza` | **Si** (sticky) |
 | Leaf geo: `/valutazione/{comune}` | **Si** (intent valutazione) |
+| Tipologiche: `/valutazione/appartamenti-monza`, `/valutazione/ville-brianza` | **Si** |
 | Guide e supporto: `/faq`, `/come-funziona`, `/vendere-casa-monza`, `/comprare-casa-monza` | **No** — CTA verso `/#richiesta` |
 
 Implementato via `showForm` in `SeoPageLayout`.
@@ -123,7 +135,7 @@ Prossime ondate: altri comuni MB + quartieri Monza, sempre con copy specifico.
 
 1. **Posizione SERP tipicamente bassa** (storicamente ~pagina 2): anche con title buoni, CTR naturale è bassissimo.
 2. **Snippet non differenziano** abbastanza da portali stima automatica / agenzie (stesse query, competitor più noti).
-3. **Inventory già multi-pagina** ma sottile: tipologiche (appartamenti, ville) e geo leaf mancano come URL dedicate, mentre le query GSC le chiedono già.
+3. **Inventory tipologiche** (appartamenti, ville) live sotto `/valutazione/…` — da misurare CTR/posizioni 2–4 settimane post-indicizzazione.
 4. Aggiungere solo “comprare casa” **non** sblocca i 1.5k impressioni di valutazione: serve lavoro su title/description + pagine allineate a quelle query.
 
 ---
@@ -148,7 +160,8 @@ Prossime ondate: altri comuni MB + quartieri Monza, sempre con copy specifico.
 2. [x] `/comprare-casa-monza`
 3. [x] Title/description CTR su home e `/monza` (+ `/brianza`)
 4. [x] JSON-LD Service + Organization
-5. [ ] Seconda ondata comuni / quartieri Monza
+5. [x] Tipologiche: `/valutazione/appartamenti-monza`, `/valutazione/ville-brianza`
+6. [ ] Seconda ondata comuni / quartieri Monza
 
 ### Fase D — Misura
 
@@ -170,8 +183,9 @@ Prossime ondate: altri comuni MB + quartieri Monza, sempre con copy specifico.
 - [x] Prima ondata comuni `/valutazione/*`
 - [x] Service + Organization JSON-LD globale
 - [x] Title/description ottimizzati CTR (home, monza, brianza)
+- [x] Tipologiche appartamenti + ville sotto `/valutazione/`
 - [ ] Seconda ondata comuni / quartieri Monza
-- [ ] Richiedere indicizzazione GSC post-deploy
+- [ ] Richiedere indicizzazione GSC post-deploy (incl. tipologiche)
 
 ---
 
@@ -206,5 +220,6 @@ Indice docs: [`README.md`](README.md).
 | Pagine SEO | `web/src/app/*/page.tsx` |
 | Layout SEO + form | `web/src/components/SeoPageLayout.tsx` |
 | Comuni + layoutVariant | `web/src/lib/localities.ts` |
+| Tipologiche | `web/src/lib/property-types.ts` |
 | Sitemap routes | `web/src/lib/seo.ts`, `web/src/app/sitemap.ts` |
 | Product / design tokens | `PRODUCT.md`, `DESIGN.md` (root) |

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { SeoPageLayout } from '@/components/SeoPageLayout'
 import { NEAR_MONZA_LOCALITIES, localityPath } from '@/lib/localities'
+import { propertyTypePath } from '@/lib/property-types'
 
 export const metadata: Metadata = {
   title: 'Valutazione immobiliare in Brianza: comuni e zone',
@@ -24,19 +25,19 @@ export default function BrianzaPage() {
           description: 'Se il tuo immobile è nel comune di Monza.',
         },
         {
+          href: propertyTypePath('ville-brianza'),
+          label: 'Valutazione ville',
+          description: 'Ville e case indipendenti in Brianza.',
+        },
+        {
+          href: propertyTypePath('appartamenti-monza'),
+          label: 'Valutazione appartamenti',
+          description: 'Focus condominio a Monza e dintorni.',
+        },
+        {
           href: '/come-funziona',
           label: 'Come funziona',
           description: 'Il percorso dalla richiesta alla stima.',
-        },
-        {
-          href: '/vendere-casa-monza',
-          label: 'Vendere casa',
-          description: 'Da dove iniziare prima di fissare il prezzo.',
-        },
-        {
-          href: '/comprare-casa-monza',
-          label: 'Comprare casa',
-          description: 'Come leggere i valori locali se acquisti.',
         },
       ]}
     >
@@ -59,6 +60,13 @@ export default function BrianzaPage() {
           </li>
         ))}
       </ul>
+
+      <h2>Per tipologia</h2>
+      <p>
+        Oltre al comune, puoi partire dalla tipologica:{' '}
+        <Link href={propertyTypePath('appartamenti-monza')}>appartamenti a Monza</Link> oppure{' '}
+        <Link href={propertyTypePath('ville-brianza')}>ville in Brianza</Link>.
+      </p>
 
       <h2>Cosa consideriamo durante il sopralluogo</h2>
       <ul>

@@ -154,14 +154,14 @@ export default function HomePage() {
                 description: 'Il servizio nei comuni della provincia.',
               },
               {
-                href: '/come-funziona',
-                label: 'Come funziona',
-                description: 'Dalla richiesta al sopralluogo, passo per passo.',
+                href: '/valutazione/appartamenti-monza',
+                label: 'Valutazione appartamenti',
+                description: 'Piano, spese e condominio a Monza.',
               },
               {
-                href: '/vendere-casa-monza',
-                label: 'Vendere casa a Monza',
-                description: 'Da dove partire prima di fissare il prezzo.',
+                href: '/valutazione/ville-brianza',
+                label: 'Valutazione ville',
+                description: 'Ville e case indipendenti in Brianza.',
               },
             ]}
           />

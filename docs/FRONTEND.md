@@ -83,10 +83,13 @@ File: `web/src/app/page.tsx`
 
 ---
 
-## 5. Pagine comuni (`/valutazione/{slug}`)
+## 5. Pagine `/valutazione/{slug}`
 
-Dati: `web/src/lib/localities.ts`  
-Route: `web/src/app/valutazione/[slug]/page.tsx`
+Stessa route per **comuni** e **tipologiche**.
+
+### 5.1 Comuni
+
+Dati: `web/src/lib/localities.ts`
 
 Ogni comune ha **copy propria** e un **`layoutVariant`** per variare l’ordine dei blocchi (anti near-duplicate strutturale):
 
@@ -98,6 +101,17 @@ Ogni comune ha **copy propria** e un **`layoutVariant`** per variare l’ordine 
 | `faq-led` | FAQ locali → look → richiesta → sibling | Villasanta, Concorezzo |
 
 Nuovi comuni: obbligatorio scegliere un `layoutVariant` e copy non clonata. Non aggiungere comuni in massa solo per SEO.
+
+### 5.2 Tipologiche
+
+Dati: `web/src/lib/property-types.ts`
+
+| Slug | Pagina |
+|------|--------|
+| `appartamenti-monza` | Appartamenti / condominio |
+| `ville-brianza` | Ville e indipendenti |
+
+Copy specifica tipologica + FAQ; form on (come i comuni). Link da home, hub Monza/Brianza, footer.
 
 ---
 
@@ -125,7 +139,8 @@ Nuovi comuni: obbligatorio scegliere un `layoutVariant` e copy non clonata. Non 
 1. Legge questo file + `DESIGN.md` se tocca colori/font/CTA  
 2. Se nuova URL SEO: aggiorna anche `SEO.md` + sitemap  
 3. Form: rispetta tabella §3  
-4. Leaf comune: `layoutVariant` + copy unica  
+4. Leaf comune: `layoutVariant` + copy unica; tipologiche: entry in `property-types.ts`  
+
 5. Mobile: contenuto prima del form; niente scroll orizzontale (`overflow-x: clip`)  
 6. Non introdurre skill/theme Hallmark catalog senza allineo a `DESIGN.md`
 
@@ -139,6 +154,7 @@ Nuovi comuni: obbligatorio scegliere un `layoutVariant` e copy non clonata. Non 
 | 21–22 lug | 8 comuni, comprare-casa, form off guide, accenti/copy |
 | 22 lug | Tipografia Bricolage/Source Sans; audit Hallmark |
 | 22 lug | Fix chrome (nav/footer/related/CTA); **home ritmo + layoutVariant comuni**; doc unificato qui |
+| 22 lug | Tipologiche `/valutazione/appartamenti-monza` e `/valutazione/ville-brianza` |
 
 ---
 
@@ -151,5 +167,5 @@ Nuovi comuni: obbligatorio scegliere un `layoutVariant` e copy non clonata. Non 
 | Form | `web/src/components/LeadForm.tsx` |
 | Header / Footer | `web/src/components/SiteHeader.tsx`, `SiteFooter.tsx` |
 | Related | `web/src/components/RelatedLinks.tsx` |
-| Comuni | `web/src/lib/localities.ts`, `web/src/app/valutazione/[slug]/page.tsx` |
+| Comuni / tipologiche | `web/src/lib/localities.ts`, `web/src/lib/property-types.ts`, `web/src/app/valutazione/[slug]/page.tsx` |
 | Token CSS | `web/src/app/globals.css`, `web/src/app/layout.tsx` |

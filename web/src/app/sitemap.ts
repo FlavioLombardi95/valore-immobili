@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { NEAR_MONZA_LOCALITIES, localityPath } from '@/lib/localities'
+import { PROPERTY_TYPE_PAGES, propertyTypePath } from '@/lib/property-types'
 import { INDEXABLE_ROUTES, SITE_URL } from '@/lib/seo'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -17,5 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  return [...core, ...localities]
+  const propertyTypes = PROPERTY_TYPE_PAGES.map((item) => ({
+    url: `${SITE_URL}${propertyTypePath(item.slug)}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }))
+
+  return [...core, ...localities, ...propertyTypes]
 }

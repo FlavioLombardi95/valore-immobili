@@ -5,9 +5,10 @@ import { PRIVACY_POLICY_URL } from '@/lib/seo'
 const links = [
   { href: '/monza', label: 'Monza' },
   { href: '/brianza', label: 'Brianza' },
+  { href: '/valutazione/appartamenti-monza', label: 'Appartamenti' },
+  { href: '/valutazione/ville-brianza', label: 'Ville' },
   { href: '/come-funziona', label: 'Come funziona' },
   { href: '/vendere-casa-monza', label: 'Vendere casa' },
-  { href: '/comprare-casa-monza', label: 'Comprare casa' },
   { href: '/faq', label: 'FAQ' },
 ]
 
