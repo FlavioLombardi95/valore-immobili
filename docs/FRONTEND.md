@@ -3,9 +3,11 @@
 **Documento unico** per layout, conversione, anti-slop e decisioni UI del mini-sito Next.js in `web/`.  
 Ultimo aggiornamento: **22 luglio 2026**.
 
-> Per SEO / GSC / roadmap URL → [`SEO.md`](SEO.md)  
-> Per brand, colori, tipografia → [`DESIGN.md`](../DESIGN.md) (root)  
-> Per prodotto e scope → [`PRODUCT.md`](../PRODUCT.md) (root)
+Indice di tutta la documentazione: [`README.md`](README.md).
+
+> SEO / GSC → [`SEO.md`](SEO.md)  
+> Brand / token → [`DESIGN.md`](../DESIGN.md) (root)  
+> Prodotto → [`PRODUCT.md`](../PRODUCT.md) (root)
 
 ---
 
@@ -13,12 +15,13 @@ Ultimo aggiornamento: **22 luglio 2026**.
 
 | Documento | Ruolo | Quando aprirlo |
 |-----------|--------|----------------|
-| **Questo file (`FRONTEND.md`)** | Decisioni UI, form, nav, home, comuni, skill Impeccable/Hallmark | Qualsiasi modifica a pagine pubbliche / componenti shell |
-| `SEO.md` | Keyword, GSC, inventario URL, roadmap contenuti | Nuove URL, title/meta, indicizzazione |
-| `DESIGN.md` | Token brand (colori, font, bottoni) | Cambi visuali che devono restare di sistema |
-| `PRODUCT.md` | Cosa è il prodotto e cosa non è | Scope, tono, vincoli di business |
+| **Questo file (`FRONTEND.md`)** | Decisioni UI, form, nav, home, comuni, skill | Modifiche a pagine pubbliche / shell |
+| [`SEO.md`](SEO.md) | Keyword, GSC, inventario URL, roadmap | Nuove URL, title/meta |
+| [`DESIGN.md`](../DESIGN.md) | Token brand | Cambi visuali di sistema |
+| [`PRODUCT.md`](../PRODUCT.md) | Scope e voce | Scope / tono di business |
+| [`README.md`](README.md) | Indice docs | Onboarding collega |
 
-**Non creare** altri file `REDESIGN-*` / backlog UI sparsi: aggiorna **questo** documento.
+**Non creare** altri file `REDESIGN-*` / backlog UI sparsi: aggiorna **questo** documento (e l’indice in [`README.md`](README.md)).
 
 ---
 

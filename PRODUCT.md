@@ -62,9 +62,11 @@ Motion, if used, should be subtle and must respect reduced-motion preferences. T
 
 ## Documentation map
 
+Full index: [`docs/README.md`](docs/README.md).
+
 | Doc | Role |
 |-----|------|
-| `docs/FRONTEND.md` | Single source for public UI / form / Hallmark–Impeccable decisions |
+| `docs/FRONTEND.md` | Public UI / form / Hallmark–Impeccable decisions |
 | `docs/SEO.md` | Search Console, URL inventory, SEO roadmap |
-| `DESIGN.md` | Visual tokens (colors, type, components) |
-| `PRODUCT.md` | This file — product scope and voice |
+| `DESIGN.md` | Visual tokens (colors, type, components) — keep at repo root |
+| `PRODUCT.md` | This file — product scope and voice — keep at repo root |

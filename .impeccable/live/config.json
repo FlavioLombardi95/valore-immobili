@@ -1,7 +1,7 @@
 {
   "files": [
-    "valore-immobili-landing/index.html",
-    "valore-immobili-landing/public/**/*.html"
+    "web/src/app/**/page.tsx",
+    "web/src/components/**/*.tsx"
   ],
   "insertBefore": "</body>",
   "commentSyntax": "html",

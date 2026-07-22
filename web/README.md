@@ -54,12 +54,14 @@ Robots: `/robots.txt`
 
 ## Documentazione (repo)
 
+Indice: [`docs/README.md`](../docs/README.md).
+
 | Doc | Contenuto |
 |-----|-----------|
 | [`docs/FRONTEND.md`](../docs/FRONTEND.md) | UI, form, nav, home, comuni, skill review |
 | [`docs/SEO.md`](../docs/SEO.md) | GSC, URL, roadmap SEO |
-| [`DESIGN.md`](../DESIGN.md) | Token brand |
-| [`PRODUCT.md`](../PRODUCT.md) | Scope prodotto |
+| [`DESIGN.md`](../DESIGN.md) | Token brand (root) |
+| [`PRODUCT.md`](../PRODUCT.md) | Scope prodotto (root) |
 
 ## Admin
 
@@ -68,14 +70,10 @@ Robots: `/robots.txt`
 
 ## Deploy Vercel
 
-Imposta **Root Directory** del progetto Vercel su `web` (non più `valore-immobili-landing`).
+Imposta **Root Directory** del progetto Vercel su `web`.
 
 Dopo il deploy:
 
 1. Verifica `https://valore-immobili.it/sitemap.xml`
 2. In Google Search Console, invia di nuovo la sitemap
 3. Richiedi indicizzazione delle nuove URL
-
-## Migrazione dalla landing Vite
-
-Vedi `docs/MIGRAZIONE-NEXT.md` alla root del repo.

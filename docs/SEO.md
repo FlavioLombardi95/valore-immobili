@@ -198,11 +198,13 @@ Aperte (non bloccanti):
 
 ## 10. Riferimenti codice e documenti
 
+Indice docs: [`README.md`](README.md).
+
 | Area | Path |
 |------|------|
-| **UI / layout / form / Hallmark** | [`docs/FRONTEND.md`](FRONTEND.md) ← documento unico frontend |
+| **UI / layout / form / Hallmark** | [`FRONTEND.md`](FRONTEND.md) |
 | Pagine SEO | `web/src/app/*/page.tsx` |
 | Layout SEO + form | `web/src/components/SeoPageLayout.tsx` |
 | Comuni + layoutVariant | `web/src/lib/localities.ts` |
 | Sitemap routes | `web/src/lib/seo.ts`, `web/src/app/sitemap.ts` |
-| Product / design tokens | `PRODUCT.md`, `DESIGN.md` |
+| Product / design tokens | `PRODUCT.md`, `DESIGN.md` (root) |
