@@ -1,6 +1,6 @@
 # SEO — valore-immobili.it
 
-Documento operativo. Ultimo aggiornamento: **21 luglio 2026**.
+Documento operativo. Ultimo aggiornamento: **22 luglio 2026**.
 
 Fonte codice: mini-sito Next.js in `web/`.  
 Fonte dati: Google Search Console (Web, ultimi 28 giorni ≈ 22 giu – 18 lug 2026).
@@ -196,11 +196,13 @@ Aperte (non bloccanti):
 
 ---
 
-## 10. Riferimenti codice
+## 10. Riferimenti codice e documenti
 
 | Area | Path |
 |------|------|
+| **UI / layout / form / Hallmark** | [`docs/FRONTEND.md`](FRONTEND.md) ← documento unico frontend |
 | Pagine SEO | `web/src/app/*/page.tsx` |
 | Layout SEO + form | `web/src/components/SeoPageLayout.tsx` |
+| Comuni + layoutVariant | `web/src/lib/localities.ts` |
 | Sitemap routes | `web/src/lib/seo.ts`, `web/src/app/sitemap.ts` |
-| Product / design | `PRODUCT.md`, `DESIGN.md` |
+| Product / design tokens | `PRODUCT.md`, `DESIGN.md` |

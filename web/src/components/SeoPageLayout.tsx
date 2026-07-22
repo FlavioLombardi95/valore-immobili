@@ -43,9 +43,6 @@ export function SeoPageLayout({
               <span aria-hidden="true">/</span>
               <span className="text-body">{breadcrumb ?? title}</span>
             </nav>
-            <span className="inline-flex rounded-full bg-surface-container px-3 py-1 text-xs font-semibold text-secondary">
-              Monza e Brianza
-            </span>
             <h1 className="font-headline text-3xl font-extrabold tracking-tight text-ink text-balance md:text-4xl">
               {title}
             </h1>
@@ -53,14 +50,14 @@ export function SeoPageLayout({
           </div>
           <div className="rich-content">{children}</div>
           {!showForm && (
-            <div className="rounded-2xl border border-line bg-white p-5">
+            <div className="border-t border-line pt-5">
               <p className="font-headline text-base font-bold text-ink">Vuoi una valutazione sul posto?</p>
               <p className="mt-1 text-sm text-slate">
                 Sopralluogo gratuito a Monza e in Brianza, senza impegno.
               </p>
               <Link
                 href={`/?from=${encodeURIComponent(sourcePage)}#richiesta`}
-                className="mt-4 inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-br from-brand to-brand-rust px-6 font-headline text-sm font-bold text-white"
+                className="mt-4 inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-6 font-headline text-sm font-bold text-white transition hover:bg-brand-rust focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 active:translate-y-px"
               >
                 Richiedi la valutazione gratuita
               </Link>

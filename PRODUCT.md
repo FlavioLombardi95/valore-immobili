@@ -59,3 +59,12 @@ Use WCAG AA as the practical baseline. Body text and form labels need strong con
 The form must be usable on small screens without excessive scrolling or cognitive load. Error messages should be specific, close to the field, and written in plain Italian.
 
 Motion, if used, should be subtle and must respect reduced-motion preferences. The conversion path should not depend on animation, hover-only behavior, or color alone.
+
+## Documentation map
+
+| Doc | Role |
+|-----|------|
+| `docs/FRONTEND.md` | Single source for public UI / form / Hallmark–Impeccable decisions |
+| `docs/SEO.md` | Search Console, URL inventory, SEO roadmap |
+| `DESIGN.md` | Visual tokens (colors, type, components) |
+| `PRODUCT.md` | This file — product scope and voice |

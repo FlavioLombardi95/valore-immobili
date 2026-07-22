@@ -46,9 +46,20 @@ Al primo submit lead lo schema viene anche creato automaticamente se mancante.
 - `/come-funziona`
 - `/faq`
 - `/vendere-casa-monza`
+- `/comprare-casa-monza`
+- `/valutazione/{comune}` (8 comuni — vedi `docs/FRONTEND.md`)
 
 Sitemap dinamica: `/sitemap.xml`  
 Robots: `/robots.txt`
+
+## Documentazione (repo)
+
+| Doc | Contenuto |
+|-----|-----------|
+| [`docs/FRONTEND.md`](../docs/FRONTEND.md) | UI, form, nav, home, comuni, skill review |
+| [`docs/SEO.md`](../docs/SEO.md) | GSC, URL, roadmap SEO |
+| [`DESIGN.md`](../DESIGN.md) | Token brand |
+| [`PRODUCT.md`](../PRODUCT.md) | Scope prodotto |
 
 ## Admin
 

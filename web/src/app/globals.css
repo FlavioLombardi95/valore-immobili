@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+/* Hallmark · design-system: DESIGN.md · project: valore-immobili */
+
 :root {
   --brand-orange: #f26522;
   --brand-rust: #a63b00;
@@ -39,6 +41,11 @@ body {
   background: var(--surface);
   color: var(--body-ink);
   font-family: var(--font-source-sans), system-ui, sans-serif;
+}
+
+html,
+body {
+  overflow-x: clip;
 }
 
 @media (prefers-reduced-motion: reduce) {

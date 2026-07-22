@@ -1,17 +1,24 @@
+export type LocalityLayoutVariant = 'angle-first' | 'look-first' | 'faq-led' | 'compare-monza'
+
+export type LocalityFaq = {
+  question: string
+  answer: string
+}
+
 export type Locality = {
   slug: string
   name: string
   provinceHint: string
-  /** Intro sotto l’H1 */
+  /** Ordine dei blocchi sulla pagina — vedi docs/FRONTEND.md §5 */
+  layoutVariant: LocalityLayoutVariant
   intro: string
-  /** Primo H2 + corpo: angolo locale unico */
   angleHeading: string
   angleBody: string
-  /** Secondo H2 + elenco specifico */
   lookHeading: string
   lookItems: string[]
-  /** Nota breve sul modulo (terzo blocco) */
   requestNote: string
+  /** Solo per layoutVariant `faq-led` */
+  faqs?: LocalityFaq[]
 }
 
 /** Comuni operativi a ridosso di Monza. */
@@ -20,6 +27,7 @@ export const NEAR_MONZA_LOCALITIES: Locality[] = [
     slug: 'lissone',
     name: 'Lissone',
     provinceHint: 'Monza e Brianza',
+    layoutVariant: 'compare-monza',
     intro:
       'Sopralluogo gratuito a Lissone: stimiamo l’immobile di persona e lo confrontiamo con le vendite reali del comune, non con medie di Monza o della provincia.',
     angleHeading: 'Lissone non è Monza: il mercato ha una voce propria',
@@ -40,6 +48,7 @@ export const NEAR_MONZA_LOCALITIES: Locality[] = [
     slug: 'vimodrone',
     name: 'Vimodrone',
     provinceHint: 'area Monza–Milano',
+    layoutVariant: 'look-first',
     intro:
       'Sopralluogo gratuito a Vimodrone: valutiamo l’immobile sul posto e lo confrontiamo con le vendite reali tra Monza e l’hinterland milanese.',
     angleHeading: 'A Vimodrone conta l’asse verso Milano (e non solo i metri quadri)',
@@ -60,6 +69,7 @@ export const NEAR_MONZA_LOCALITIES: Locality[] = [
     slug: 'brugherio',
     name: 'Brugherio',
     provinceHint: 'Monza e Brianza',
+    layoutVariant: 'angle-first',
     intro:
       'Sopralluogo gratuito a Brugherio: stimiamo l’immobile di persona e lo confrontiamo con le vendite reali del comune, verso Monza e Milano Est.',
     angleHeading: 'Brugherio: tra Monza e Milano Est, zona per zona',
@@ -80,6 +90,7 @@ export const NEAR_MONZA_LOCALITIES: Locality[] = [
     slug: 'villasanta',
     name: 'Villasanta',
     provinceHint: 'Monza e Brianza',
+    layoutVariant: 'faq-led',
     intro:
       'Sopralluogo gratuito a Villasanta: valutazione sul posto a nord di Monza, confrontata con le vendite reali del comune.',
     angleHeading: 'Villasanta: residenziale quieto, valore legato al contesto di via',
@@ -95,11 +106,29 @@ export const NEAR_MONZA_LOCALITIES: Locality[] = [
     ],
     requestNote:
       'Compila il modulo indicando Villasanta: ti richiamiamo per fissare un sopralluogo gratuito senza impegno.',
+    faqs: [
+      {
+        question: 'Villasanta vale come Monza nord?',
+        answer:
+          'No: è un comune a sé. Può essere comodo rispetto a Monza, ma domanda e prezzi chiudono sul mercato di Villasanta, non su una media monzese.',
+      },
+      {
+        question: 'Cosa conta di più in una stima qui?',
+        answer:
+          'Contesto di via, spazi esterni e stato reale dell’immobile. Due case con metratura simile possono divergere molto se una è su una via di passaggio.',
+      },
+      {
+        question: 'Il sopralluogo è obbligatorio per avere un numero?',
+        answer:
+          'Per una stima seria sì: senza vedere l’immobile restano solo medie e annunci. Il sopralluogo è gratuito e senza impegno.',
+      },
+    ],
   },
   {
     slug: 'muggio',
     name: 'Muggiò',
     provinceHint: 'Monza e Brianza',
+    layoutVariant: 'compare-monza',
     intro:
       'Sopralluogo gratuito a Muggiò: stimiamo l’immobile di persona, tenendo conto del confine con Monza e della domanda locale.',
     angleHeading: 'Muggiò confina con Monza: attenzione a non “prezzare” come Monza',
@@ -120,6 +149,7 @@ export const NEAR_MONZA_LOCALITIES: Locality[] = [
     slug: 'desio',
     name: 'Desio',
     provinceHint: 'Monza e Brianza',
+    layoutVariant: 'look-first',
     intro:
       'Sopralluogo gratuito a Desio: uno dei comuni più ampi della Brianza nord, con valori che cambiano molto tra zone e tipologiche.',
     angleHeading: 'Desio è grande: la zona conta più della “media comunale”',
@@ -140,6 +170,7 @@ export const NEAR_MONZA_LOCALITIES: Locality[] = [
     slug: 'concorezzo',
     name: 'Concorezzo',
     provinceHint: 'Monza e Brianza',
+    layoutVariant: 'faq-led',
     intro:
       'Sopralluogo gratuito a Concorezzo: valutazione sul posto in Brianza orientale, vicino a Vimercate e Agrate.',
     angleHeading: 'Concorezzo: Brianza orientale, meno “Monza centro” e più contesto locale',
@@ -155,11 +186,29 @@ export const NEAR_MONZA_LOCALITIES: Locality[] = [
     ],
     requestNote:
       'Compila il modulo con i dati principali: ti contattiamo per un sopralluogo gratuito a Concorezzo.',
+    faqs: [
+      {
+        question: 'Concorezzo è lo stesso mercato di Monza?',
+        answer:
+          'No. L’orientamento è verso Vimercate e Agrate. Usare listini di Monza centro spesso porta a aspettative sbagliate.',
+      },
+      {
+        question: 'Meglio un’offerta basata sugli annunci online?',
+        answer:
+          'Gli annunci mostrano richieste, non chiusure. Una stima sul posto confronta con vendite reali nella stessa fascia di Concorezzo.',
+      },
+      {
+        question: 'Quanto tempo serve per il sopralluogo?',
+        answer:
+          'In genere fissiamo un appuntamento entro 1–2 giorni lavorativi dalla richiesta. Il servizio è gratuito e senza mandato.',
+      },
+    ],
   },
   {
     slug: 'cologno-monzese',
     name: 'Cologno Monzese',
     provinceHint: 'area Monza–Milano',
+    layoutVariant: 'angle-first',
     intro:
       'Sopralluogo gratuito a Cologno Monzese: a sud di Monza verso Milano, dove zona e collegamenti (anche MM2) pesano sul valore.',
     angleHeading: 'Cologno Monzese: densità urbana e metro, non lo stesso mercato di Monza',

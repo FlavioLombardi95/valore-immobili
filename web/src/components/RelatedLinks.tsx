@@ -13,12 +13,12 @@ export function RelatedLinks({ items, title = 'Continua a leggere' }: { items: R
       <h2 id="related-title" className="font-headline text-lg font-bold text-ink">
         {title}
       </h2>
-      <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+      <ul className="mt-4 divide-y divide-line">
         {items.map((item) => (
           <li key={item.href}>
             <Link
               href={item.href}
-              className="group flex h-full flex-col gap-1 rounded-2xl border border-line bg-white p-4 transition-colors hover:border-secondary/50"
+              className="group flex flex-col gap-0.5 py-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2"
             >
               <span className="font-headline text-sm font-bold text-secondary group-hover:text-brand-rust">
                 {item.label}

@@ -183,7 +183,7 @@ The system uses a hybrid of tonal layering and soft elevation. Light pages shoul
 ### Buttons
 
 - **Shape:** Pill-shaped for primary conversion actions (`9999px`), medium rounded only for smaller secondary controls.
-- **Primary:** Orange/rust gradient or solid orange, white text, minimum height `52px`, strong font weight, full-width on mobile forms.
+- **Primary:** Solid brand orange, white text, minimum height `52px`, strong font weight, full-width on mobile forms. Hover deepens to rust; avoid decorative orange→rust gradients on CTAs.
 - **Hover / Focus:** Hover may deepen toward `#a63b00`; focus must keep a visible 2px outline or ring with strong contrast.
 - **Secondary:** White or transparent surface with consultative-blue text. It should never compete visually with the primary action.
 

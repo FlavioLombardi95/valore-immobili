@@ -118,12 +118,12 @@ export function LeadForm({ sourcePage = '/', defaultCity = '' }: LeadFormProps) 
   }
 
   const fieldClass = (field: string) =>
-    `w-full min-h-12 rounded-xl border bg-white px-4 py-3 text-body focus:outline-none focus:ring-2 focus:ring-secondary/30 ${
+    `w-full min-h-12 rounded-xl border bg-surface px-4 py-3 text-body transition focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary/40 active:border-secondary/50 disabled:cursor-not-allowed disabled:opacity-60 ${
       errors[field] ? 'border-error' : 'border-line'
     }`
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="space-y-4 rounded-3xl border border-line bg-white p-5 shadow-[0_12px_40px_rgba(23,28,31,0.08)] md:p-6">
+    <form onSubmit={handleSubmit} noValidate className="space-y-4 rounded-3xl border border-line bg-surface p-5 shadow-[0_8px_28px_rgba(23,28,31,0.06)] md:p-6">
       <div>
         <h2 className="font-headline text-2xl font-extrabold text-secondary md:text-3xl">
           Richiedi una valutazione gratuita
@@ -283,7 +283,7 @@ export function LeadForm({ sourcePage = '/', defaultCity = '' }: LeadFormProps) 
       <button
         type="submit"
         disabled={submitting || phoneStatus === 'checking'}
-        className="min-h-[52px] w-full rounded-full bg-gradient-to-br from-brand to-brand-rust font-headline text-lg font-bold text-white shadow-lg disabled:cursor-not-allowed disabled:opacity-70"
+        className="min-h-[52px] w-full rounded-full bg-brand font-headline text-lg font-bold text-white transition hover:bg-brand-rust focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 active:translate-y-px disabled:cursor-not-allowed disabled:opacity-70"
       >
         {submitting ? 'Invio in corso…' : 'Richiedi sopralluogo gratuito'}
       </button>
