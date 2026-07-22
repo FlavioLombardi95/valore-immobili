@@ -132,8 +132,8 @@ Prossime ondate: altri comuni MB + quartieri Monza, sempre con copy specifico.
 
 ### Fase A — Quick win CTR (senza nuove URL)
 
-1. Revisione **title + meta description** di `/` e `/monza` (e in second ordine `/brianza`, tipologiche nei title se utili).
-2. Ripristino JSON-LD **Service + Organization** (`areaServed` Monza / MB).
+1. [x] Revisione **title + meta description** di `/`, `/monza` e `/brianza` (lug 2026): keyword query GSC + differenziatore “sopralluogo / non algoritmo”.
+2. [x] JSON-LD **Service + Organization** in `web/src/lib/structured-data.ts` (layout globale).
 3. In GSC: richiedere indicizzazione dopo deploy; monitorare CTR 2–4 settimane.
 
 ### Fase B — Layout conversione vs contenuto
@@ -146,8 +146,8 @@ Prossime ondate: altri comuni MB + quartieri Monza, sempre con copy specifico.
 
 1. [x] Prima ondata: 8 comuni vicini a Monza
 2. [x] `/comprare-casa-monza`
-3. [ ] Title/description CTR su home e `/monza`
-4. [ ] JSON-LD Service + Organization
+3. [x] Title/description CTR su home e `/monza` (+ `/brianza`)
+4. [x] JSON-LD Service + Organization
 5. [ ] Seconda ondata comuni / quartieri Monza
 
 ### Fase D — Misura
@@ -168,8 +168,8 @@ Prossime ondate: altri comuni MB + quartieri Monza, sempre con copy specifico.
 - [x] Form non sticky su pagine informative
 - [x] `/comprare-casa-monza`
 - [x] Prima ondata comuni `/valutazione/*`
-- [ ] Service + Organization JSON-LD globale
-- [ ] Title/description ottimizzati CTR (home, monza)
+- [x] Service + Organization JSON-LD globale
+- [x] Title/description ottimizzati CTR (home, monza, brianza)
 - [ ] Seconda ondata comuni / quartieri Monza
 - [ ] Richiedere indicizzazione GSC post-deploy
 

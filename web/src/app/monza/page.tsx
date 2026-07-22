@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { SeoPageLayout } from '@/components/SeoPageLayout'
 
 export const metadata: Metadata = {
-  title: 'Valutazione immobiliare a Monza',
+  title: 'Valutazione immobiliare a Monza: stima sul posto',
   description:
-    'Valutazione immobiliare gratuita a Monza con sopralluogo sul posto. Come cambia il valore tra i quartieri della città e cosa incide davvero sul prezzo.',
+    'Quanto vale casa a Monza? Sopralluogo gratuito e stima sul mercato reale del quartiere (Centro, San Fruttuoso, Cederna…). Senza impegno.',
   alternates: { canonical: 'https://valore-immobili.it/monza' },
 }
 

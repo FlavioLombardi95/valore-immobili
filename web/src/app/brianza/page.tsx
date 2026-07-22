@@ -4,9 +4,9 @@ import { SeoPageLayout } from '@/components/SeoPageLayout'
 import { NEAR_MONZA_LOCALITIES, localityPath } from '@/lib/localities'
 
 export const metadata: Metadata = {
-  title: 'Valutazione immobiliare in Brianza',
+  title: 'Valutazione immobiliare in Brianza: comuni e zone',
   description:
-    'Valutazione immobiliare gratuita nei comuni della provincia di Monza e Brianza, con sopralluogo sul posto e confronto con le vendite reali della zona.',
+    'Sopralluogo gratuito nei comuni di Monza e Brianza. Stima locale per Lissone, Brugherio, Desio e altri — non medie provinciali. Senza impegno.',
   alternates: { canonical: 'https://valore-immobili.it/brianza' },
 }
 

@@ -6,9 +6,9 @@ import { RelatedLinks } from '@/components/RelatedLinks'
 import heroImage from '../../public/assets/hero-villa-reale-monza.jpg'
 
 export const metadata: Metadata = {
-  title: 'Valutazione immobiliare Monza gratuita | immobile senza impegno',
+  title: 'Valutazione immobiliare Monza gratuita con sopralluogo',
   description:
-    'Valutazione immobiliare a Monza e Brianza: sopralluogo gratuito sul posto e senza impegno. Un consulente locale analizza il tuo immobile e i prezzi reali della zona.',
+    'Sopralluogo gratuito a Monza e Brianza, senza impegno. Stima basata su vendite reali della zona, non su algoritmi. Richiedi in pochi minuti.',
   alternates: { canonical: 'https://valore-immobili.it/' },
 }
 

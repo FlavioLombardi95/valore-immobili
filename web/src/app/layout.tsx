@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { SiteFooter } from '@/components/SiteFooter'
 import { SiteHeader } from '@/components/SiteHeader'
+import { siteGraphSchema } from '@/lib/structured-data'
 import './globals.css'
 
 const bricolage = Bricolage_Grotesque({
@@ -21,11 +22,11 @@ const sourceSans = Source_Sans_3({
 export const metadata: Metadata = {
   metadataBase: new URL('https://valore-immobili.it'),
   title: {
-    default: 'Valutazione immobiliare Monza gratuita | Valore Immobili',
+    default: 'Valutazione immobiliare Monza gratuita con sopralluogo',
     template: '%s | Valore Immobili',
   },
   description:
-    'Valutazione immobiliare a Monza e Brianza: sopralluogo gratuito sul posto e senza impegno. Richiedi online in pochi minuti.',
+    'Sopralluogo gratuito a Monza e Brianza, senza impegno. Stima basata su vendite reali della zona, non su algoritmi. Richiedi in pochi minuti.',
   openGraph: {
     locale: 'it_IT',
     siteName: 'Valore Immobili',
@@ -41,6 +42,10 @@ export default function RootLayout({
   return (
     <html lang="it" className={`${bricolage.variable} ${sourceSans.variable} h-full`}>
       <body className="flex min-h-full flex-col bg-surface text-body antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteGraphSchema) }}
+        />
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
