@@ -8,6 +8,7 @@ const columns = [
     links: [
       { href: '/come-funziona', label: 'Come funziona' },
       { href: '/vendere-casa-monza', label: 'Vendere casa a Monza' },
+      { href: '/comprare-casa-monza', label: 'Comprare casa a Monza' },
       { href: '/faq', label: 'Domande frequenti' },
     ],
   },
@@ -16,6 +17,8 @@ const columns = [
     links: [
       { href: '/monza', label: 'Valutazione a Monza' },
       { href: '/brianza', label: 'Valutazione in Brianza' },
+      { href: '/valutazione/lissone', label: 'Lissone' },
+      { href: '/valutazione/brugherio', label: 'Brugherio' },
     ],
   },
 ]

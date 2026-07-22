@@ -80,7 +80,7 @@ export default function HomePage() {
 
       <section className="bg-gradient-to-br from-surface to-surface-container">
         <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:py-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-          <div className="order-2 space-y-7 lg:order-1">
+          <div className="space-y-7">
             <ul className="space-y-3 text-sm text-body md:text-base">
               {highlights.map((item) => (
                 <li key={item} className="flex items-start gap-3">
@@ -155,7 +155,7 @@ export default function HomePage() {
             />
           </div>
 
-          <div className="order-1 lg:order-2 lg:sticky lg:top-6" id="richiesta">
+          <div className="lg:sticky lg:top-6" id="richiesta">
             <LeadForm sourcePage="/" />
           </div>
         </div>

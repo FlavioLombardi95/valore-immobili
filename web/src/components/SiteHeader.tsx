@@ -7,6 +7,7 @@ const links = [
   { href: '/come-funziona', label: 'Come funziona' },
   { href: '/faq', label: 'FAQ' },
   { href: '/vendere-casa-monza', label: 'Vendere casa' },
+  { href: '/comprare-casa-monza', label: 'Comprare casa' },
 ]
 
 export function SiteHeader() {

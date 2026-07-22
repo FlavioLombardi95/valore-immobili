@@ -169,7 +169,7 @@ export function AdminLeadsPanel({ preview = false }: { preview?: boolean }) {
                 <th scope="col" className="px-3 py-3 font-semibold">Tipologia</th>
                 <th scope="col" className="px-3 py-3 text-right font-semibold">mq</th>
                 <th scope="col" className="px-3 py-3 font-semibold">Contatti</th>
-                <th scope="col" className="px-3 py-3 font-semibold">Vendita</th>
+                <th scope="col" className="px-3 py-3 font-semibold">Tempistica</th>
                 <th scope="col" className="px-3 py-3 font-semibold">Stato</th>
                 <th scope="col" className="px-3 py-3 font-semibold">Status trattativa</th>
               </tr>

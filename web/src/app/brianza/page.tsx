@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { SeoPageLayout } from '@/components/SeoPageLayout'
+import { NEAR_MONZA_LOCALITIES, localityPath } from '@/lib/localities'
 
 export const metadata: Metadata = {
   title: 'Valutazione immobiliare in Brianza',
@@ -33,21 +34,31 @@ export default function BrianzaPage() {
           description: 'Da dove iniziare prima di fissare il prezzo.',
         },
         {
-          href: '/faq',
-          label: 'Domande frequenti',
-          description: 'Risposte su costi, tempi e modalità.',
+          href: '/comprare-casa-monza',
+          label: 'Comprare casa',
+          description: 'Come leggere i valori locali se acquisti.',
         },
       ]}
     >
       <h2>Un mercato diverso in ogni comune</h2>
       <p>
         La provincia di Monza e Brianza mette insieme centri storici, quartieri residenziali, ville con
-        giardino e case indipendenti. Il valore di un immobile a <strong>Lissone</strong>,{' '}
-        <strong>Desio</strong>, <strong>Seregno</strong>, <strong>Brugherio</strong>,{' '}
-        <strong>Villasanta</strong>, <strong>Vimercate</strong>, <strong>Concorezzo</strong> o{' '}
-        <strong>Arcore</strong> risente della domanda locale, dei collegamenti con Monza e Milano e della
-        tipologia prevalente in zona. Per questo la stima parte dal contesto specifico del comune e della via.
+        giardino e case indipendenti. Il valore di un immobile cambia tra un comune e l’altro: per
+        questo la stima parte dal contesto specifico e dalla via, non da una media provinciale.
       </p>
+
+      <h2>Comuni vicini a Monza</h2>
+      <p>
+        Abbiamo pagine dedicate per i comuni a ridosso di Monza. Apri quella della tua zona per una
+        valutazione locale:
+      </p>
+      <ul>
+        {NEAR_MONZA_LOCALITIES.map((item) => (
+          <li key={item.slug}>
+            <Link href={localityPath(item.slug)}>Valutazione immobiliare a {item.name}</Link>
+          </li>
+        ))}
+      </ul>
 
       <h2>Cosa consideriamo durante il sopralluogo</h2>
       <ul>

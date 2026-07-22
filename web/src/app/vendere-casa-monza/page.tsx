@@ -17,7 +17,13 @@ export default function VendereCasaMonzaPage() {
       sourcePage="/vendere-casa-monza"
       defaultCity="Monza"
       breadcrumb="Vendere casa a Monza"
+      showForm={false}
       related={[
+        {
+          href: '/comprare-casa-monza',
+          label: 'Comprare casa a Monza',
+          description: 'Come leggere il mercato se stai acquistando.',
+        },
         {
           href: '/monza',
           label: 'Valutazione a Monza',
@@ -32,11 +38,6 @@ export default function VendereCasaMonzaPage() {
           href: '/faq',
           label: 'Domande frequenti',
           description: 'Costi, tempi e dubbi più comuni.',
-        },
-        {
-          href: '/brianza',
-          label: 'Valutazione in Brianza',
-          description: 'Se vendi fuori dal comune di Monza.',
         },
       ]}
     >

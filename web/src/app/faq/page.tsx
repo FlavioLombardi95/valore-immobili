@@ -60,6 +60,7 @@ export default function FaqPage() {
       intro="Risposte chiare su costi, tempi, documenti e modalità del servizio di valutazione immobiliare locale."
       sourcePage="/faq"
       breadcrumb="FAQ"
+      showForm={false}
       related={[
         {
           href: '/come-funziona',

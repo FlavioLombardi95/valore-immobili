@@ -18,29 +18,29 @@ colors:
   error: "#ba1a1a"
 typography:
   display:
-    fontFamily: "Plus Jakarta Sans, system-ui, sans-serif"
+    fontFamily: "Bricolage Grotesque, system-ui, sans-serif"
     fontSize: "clamp(2rem, 4vw, 3.5rem)"
     fontWeight: 800
     lineHeight: 1.05
     letterSpacing: "-0.04em"
   headline:
-    fontFamily: "Plus Jakarta Sans, system-ui, sans-serif"
+    fontFamily: "Bricolage Grotesque, system-ui, sans-serif"
     fontSize: "clamp(1.5rem, 2vw, 2.25rem)"
     fontWeight: 800
     lineHeight: 1.12
     letterSpacing: "-0.03em"
   title:
-    fontFamily: "Plus Jakarta Sans, system-ui, sans-serif"
+    fontFamily: "Bricolage Grotesque, system-ui, sans-serif"
     fontSize: "1rem"
     fontWeight: 700
     lineHeight: 1.25
   body:
-    fontFamily: "Inter, system-ui, sans-serif"
+    fontFamily: "Source Sans 3, system-ui, sans-serif"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.55
   label:
-    fontFamily: "Inter, system-ui, sans-serif"
+    fontFamily: "Source Sans 3, system-ui, sans-serif"
     fontSize: "0.75rem"
     fontWeight: 600
     lineHeight: 1.25
@@ -142,11 +142,11 @@ The palette pairs a decisive valuation orange with a calmer consultative blue an
 
 ## 3. Typography
 
-**Display Font:** Plus Jakarta Sans, with system sans fallback.  
-**Body Font:** Inter, with system sans fallback.  
-**Label Font:** Inter.
+**Display Font:** Bricolage Grotesque, with system sans fallback.  
+**Body Font:** Source Sans 3, with system sans fallback.  
+**Label Font:** Source Sans 3.
 
-**Character:** The pairing is practical and digital, with enough weight to make the form feel reliable. Plus Jakarta Sans is already committed in the shipping pages; keep it for continuity, but avoid using it as a generic startup voice. Let hierarchy, local copy, imagery, and layout make the system distinctive.
+**Character:** Bricolage carries local, slightly civic personality in headlines without looking like a generic SaaS stack. Source Sans 3 keeps forms and long SEO copy readable. Hierarchy, local copy, and imagery still do most of the brand work.
 
 ### Hierarchy
 

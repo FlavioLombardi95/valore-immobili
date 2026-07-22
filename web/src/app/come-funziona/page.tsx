@@ -16,6 +16,7 @@ export default function ComeFunzionaPage() {
       intro="Un percorso semplice e senza impegno: richiesta online, contatto telefonico, sopralluogo gratuito e una stima basata sul mercato reale della tua zona."
       sourcePage="/come-funziona"
       breadcrumb="Come funziona"
+      showForm={false}
       related={[
         {
           href: '/monza',

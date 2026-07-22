@@ -182,7 +182,7 @@ export function LeadForm({ sourcePage = '/', defaultCity = '' }: LeadFormProps) 
             {errors.propertyType && <p className="text-xs text-error">{errors.propertyType}</p>}
           </label>
           <label className="block space-y-1 md:col-span-2">
-            <span className="text-xs font-semibold text-body">Quando prevedi di vendere?</span>
+            <span className="text-xs font-semibold text-body">Quando prevedi di comprare/vendere?</span>
             <select
               className={fieldClass('timeframe')}
               name="timeframe"

@@ -7,6 +7,7 @@ export const INDEXABLE_ROUTES = [
   { path: '/come-funziona', priority: 0.8, changeFrequency: 'monthly' as const },
   { path: '/faq', priority: 0.8, changeFrequency: 'monthly' as const },
   { path: '/vendere-casa-monza', priority: 0.85, changeFrequency: 'monthly' as const },
+  { path: '/comprare-casa-monza', priority: 0.85, changeFrequency: 'monthly' as const },
 ]
 
 export const PRIVACY_POLICY_URL =

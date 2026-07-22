@@ -6,8 +6,8 @@ const SITE_URL = 'https://valore-immobili.it'
 const LOGO_URL = `${SITE_URL}/assets/logo-email.png`
 const PRIVACY_URL = 'https://www.iubenda.com/privacy-policy/69451858'
 
-const FONT_BODY = "'Inter', system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif"
-const FONT_HEAD = "'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif"
+const FONT_BODY = "'Source Sans 3', system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif"
+const FONT_HEAD = "'Bricolage Grotesque', 'Source Sans 3', system-ui, -apple-system, sans-serif"
 
 const escapeHtml = (value: string) =>
   value
@@ -86,7 +86,7 @@ grazie per aver richiesto una valutazione gratuita con Valore Immobili.
 Riepilogo richiesta:
 - Zona: ${input.city}
 - Immobile: ${input.propertyType} - ${input.squareMeters} mq
-- Tempistica vendita: ${timeframeLabel(input.timeframe)}
+- Tempistica: ${timeframeLabel(input.timeframe)}
 
 Un consulente locale ti contattera entro 1-2 giorni lavorativi per organizzare il sopralluogo sul posto.
 
@@ -142,7 +142,7 @@ const thankYouHtmlBody = (input: LeadInput) => {
                       <p style="margin:0 0 12px;font-family:${FONT_HEAD};font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#005fac;">Riepilogo richiesta</p>
                       <p style="margin:0 0 6px;font-size:14px;line-height:1.5;color:#171c1f;"><strong style="color:#0f172a;">Zona:</strong> ${city}</p>
                       <p style="margin:0 0 6px;font-size:14px;line-height:1.5;color:#171c1f;"><strong style="color:#0f172a;">Immobile:</strong> ${propertyType} &middot; ${squareMeters} mq</p>
-                      <p style="margin:0;font-size:14px;line-height:1.5;color:#171c1f;"><strong style="color:#0f172a;">Tempistica vendita:</strong> ${timeframe}</p>
+                      <p style="margin:0;font-size:14px;line-height:1.5;color:#171c1f;"><strong style="color:#0f172a;">Tempistica:</strong> ${timeframe}</p>
                     </td>
                   </tr>
                 </table>
@@ -184,7 +184,7 @@ Email: ${input.email}
 Zona: ${input.city}
 Tipologia: ${input.propertyType}
 Metratura: ${input.squareMeters} mq
-Tempistica vendita: ${timeframeLabel(input.timeframe)}
+Tempistica: ${timeframeLabel(input.timeframe)}
 Pagina: ${input.sourcePage ?? '/'}
 Privacy accettata: si
 
@@ -213,7 +213,7 @@ const notificationHtmlBody = (input: LeadInput) => {
         <li><strong>Zona:</strong> ${city}</li>
         <li><strong>Tipologia:</strong> ${propertyType}</li>
         <li><strong>Metratura:</strong> ${squareMeters} mq</li>
-        <li><strong>Tempistica vendita:</strong> ${timeframe}</li>
+        <li><strong>Tempistica:</strong> ${timeframe}</li>
         <li><strong>Pagina:</strong> ${sourcePage}</li>
       </ul>
       <p><a href="https://valore-immobili.it/admin">Apri pannello admin</a></p>
