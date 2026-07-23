@@ -107,10 +107,9 @@ export const NEAR_MONZA_LOCALITIES: Locality[] = [
       'Anche il rumore conta: una via di scorrimento e una strada residenziale non sono lo stesso prodotto. Piano, ascensore e spese condominiali chiudono il quadro, soprattutto su tipologiche in condominio.',
     ],
     contextLinks: [
-      { href: 'https://www.comune.vimodrone.mi.it/', label: 'Comune di Vimodrone' },
       { href: 'https://www.atm.it/', label: 'ATM: linee metropolitane' },
     ],
-    contextLinksLead: 'Per orientarti su comune e collegamenti:',
+    contextLinksLead: 'Per i collegamenti verso Milano:',
     requestNote:
       'Nel modulo indica indirizzo e piano: a Vimodrone questi dettagli cambiano spesso la lettura del mercato.',
     requestHeading: 'Parti dalla richiesta (poi fissiamo il sopralluogo)',
