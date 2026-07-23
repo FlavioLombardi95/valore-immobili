@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: 'In quanto tempo vengo ricontattato?',
-    a: 'In genere entro 1-2 giorni lavorativi dalla richiesta, per concordare giorno e orario del sopralluogo.',
+    a: 'In genere entro 1 o 2 giorni lavorativi dalla richiesta, per concordare giorno e orario del sopralluogo.',
   },
   {
     q: 'Sono obbligato ad affidarvi la vendita dopo la valutazione?',

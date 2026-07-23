@@ -95,12 +95,14 @@ Ogni comune ha **copy propria** e un **`layoutVariant`** per variare l’ordine 
 
 | Variant | Ordine blocchi | Usato da (es.) |
 |---------|----------------|----------------|
-| `compare-monza` | Angolo (vs Monza) → look list → richiesta → sibling | Lissone, Muggiò |
-| `look-first` | Look list → angolo → richiesta → sibling | Vimodrone, Desio |
-| `angle-first` | Angolo → look → richiesta → sibling | Brugherio, Cologno Monzese |
-| `faq-led` | FAQ locali → look → richiesta → sibling | Villasanta, Concorezzo |
+| `compare-monza` | Angolo → **contesto locale** → look → richiesta → sibling | Lissone, Muggiò |
+| `look-first` | Look → **contesto** → angolo → richiesta → sibling | Vimodrone, Desio |
+| `angle-first` | Angolo → look → **contesto** → richiesta → sibling | Brugherio, Cologno Monzese |
+| `faq-led` | FAQ → **contesto** → look → angolo → richiesta → sibling | Villasanta, Concorezzo |
 
-Nuovi comuni: obbligatorio scegliere un `layoutVariant` e copy non clonata. Non aggiungere comuni in massa solo per SEO.
+Ogni comune ha anche `contextHeading` + `contextParagraphs` (+ max 1–2 `contextLinks` istituzionali/trasporto, non competitor). Copy di zona obbligatoria e non clonata.
+
+Nuovi comuni: obbligatorio scegliere un `layoutVariant`, contesto locale unico e copy non clonata. Non aggiungere comuni in massa solo per SEO.
 
 ### 5.2 Tipologiche
 
@@ -155,6 +157,7 @@ Copy specifica tipologica + FAQ; form on (come i comuni). Link da home, hub Monz
 | 22 lug | Tipografia Bricolage/Source Sans; audit Hallmark |
 | 22 lug | Fix chrome (nav/footer/related/CTA); **home ritmo + layoutVariant comuni**; doc unificato qui |
 | 22 lug | Tipologiche `/valutazione/appartamenti-monza` e `/valutazione/ville-brianza` |
+| 22 lug | Contesto locale 8 comuni + fix Hallmark (chrome copy, stamp, de-pill header) |
 
 ---
 

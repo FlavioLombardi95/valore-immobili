@@ -1,3 +1,6 @@
+/* Hallmark · design-system: DESIGN.md · component: SeoPageLayout
+ * Conversion shell: breadcrumb + H1 + prose + optional sticky form
+ */
 import type { ReactNode } from 'react'
 import Link from 'next/link'
 import { LeadForm } from '@/components/LeadForm'
@@ -11,6 +14,8 @@ type SeoPageProps = {
   defaultCity?: string
   breadcrumb?: string
   related?: RelatedLink[]
+  /** Titolo sezione related — evita H2 clone “Continua a leggere” */
+  relatedTitle?: string
   /** Se false: niente form sticky, solo CTA verso la richiesta. Default true sugli hub. */
   showForm?: boolean
 }
@@ -23,6 +28,7 @@ export function SeoPageLayout({
   defaultCity,
   breadcrumb,
   related = [],
+  relatedTitle = 'Continua a leggere',
   showForm = true,
 }: SeoPageProps) {
   return (
@@ -57,13 +63,13 @@ export function SeoPageLayout({
               </p>
               <Link
                 href={`/?from=${encodeURIComponent(sourcePage)}#richiesta`}
-                className="mt-4 inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-6 font-headline text-sm font-bold text-white transition hover:bg-brand-rust focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 active:translate-y-px"
+                className="mt-4 inline-flex min-h-12 items-center justify-center rounded-lg bg-brand px-6 font-headline text-sm font-bold text-white transition hover:bg-brand-rust focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 active:translate-y-px"
               >
                 Richiedi la valutazione gratuita
               </Link>
             </div>
           )}
-          <RelatedLinks items={related} />
+          <RelatedLinks title={relatedTitle} items={related} />
         </div>
         {showForm && (
           <div className="lg:sticky lg:top-6">

@@ -127,6 +127,7 @@ Live: `/comprare-casa-monza`. Guida mercato + CTA; non sostituisce le pagine di 
 ### 4.3 Comuni e quartieri
 
 Prima ondata live (8 comuni vicini a Monza): vedi §3.  
+Ogni leaf include blocco **contesto locale** (zone, collegamenti, errori tipici) + max 1–2 link istituzionali/trasporto.  
 Prossime ondate: altri comuni MB + quartieri Monza, sempre con copy specifico.
 
 ---

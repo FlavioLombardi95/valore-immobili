@@ -43,7 +43,7 @@ export default function ComeFunzionaPage() {
       <h2>I quattro passaggi</h2>
       <ol>
         <li>Compili il modulo con i dati principali dell’immobile e i tuoi contatti.</li>
-        <li>Ti richiamiamo entro 1-2 giorni lavorativi per organizzare giorno e orario del sopralluogo.</li>
+        <li>Ti richiamiamo entro 1 o 2 giorni lavorativi per organizzare giorno e orario del sopralluogo.</li>
         <li>Un consulente visita l’immobile e raccoglie le informazioni utili alla stima.</li>
         <li>Ricevi una valutazione motivata sul mercato reale della zona, senza impegno.</li>
       </ol>

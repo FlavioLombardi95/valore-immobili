@@ -50,7 +50,7 @@ export default function ComprareCasaMonzaPage() {
 
       <h2>Cosa confrontare prima di un’offerta</h2>
       <ul>
-        <li>Zona e micro-contesto (servizi, rumore, collegamenti)</li>
+        <li>Zona e contesto locale (servizi, rumore, collegamenti)</li>
         <li>Stato dell’immobile e lavori da fare nei prossimi anni</li>
         <li>Spese condominiali, box, giardino o terrazzo</li>
         <li>Classe energetica e impianti</li>

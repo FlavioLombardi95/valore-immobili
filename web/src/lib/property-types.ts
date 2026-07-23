@@ -32,14 +32,14 @@ export const PROPERTY_TYPE_PAGES: PropertyTypePage[] = [
       'Sopralluogo gratuito per appartamenti a Monza e nei comuni vicini: piano, spese, stato e contesto condominiale pesano quanto i metri quadri. Stima sul mercato reale della zona, non su medie online.',
     metaTitle: 'Valutazione appartamenti Monza: sopralluogo gratuito',
     metaDescription:
-      'Valutazione appartamenti a Monza e Brianza con sopralluogo gratuito. Piano, ascensore, spese e vendite reali del quartiere — senza impegno.',
+      'Valutazione appartamenti a Monza e Brianza con sopralluogo gratuito. Piano, ascensore, spese e vendite reali del quartiere. Senza impegno.',
     defaultCity: 'Monza',
     angleHeading: 'Perché due appartamenti con gli stessi mq valgono diversamente',
     angleBody:
-      'A Monza un bilocale in Centro o vicino alla Villa Reale non si confronta con uno in una zona più residenziale solo “per metratura”. Contano piano, ascensore, esposizione, stato interno, spese condominiali e domanda reale del micro-quartiere. Le stime automatiche appiattiscono tutto su una media: il sopralluogo riporta questi dettagli sul tavolo.',
+      'A Monza un bilocale in Centro o vicino alla Villa Reale non si confronta con uno in una zona più residenziale solo “per metratura”. Contano piano, ascensore, esposizione, stato interno, spese condominiali e domanda reale della zona. Le stime automatiche appiattiscono tutto su una media: il sopralluogo riporta questi dettagli sul tavolo.',
     lookHeading: 'Cosa osserviamo in un appartamento',
     lookItems: [
-      'Piano, presenza di ascensore e luminosità / affaccio',
+      'Piano, presenza di ascensore e luminosità e affaccio',
       'Stato di cucina, bagni, infissi e impianti',
       'Spese condominiali e qualità delle parti comuni',
       'Box, posto auto, cantina o ripostiglio',
@@ -68,7 +68,7 @@ export const PROPERTY_TYPE_PAGES: PropertyTypePage[] = [
       'Sopralluogo gratuito per ville e case indipendenti in Brianza: giardino, stato, via e domanda locale cambiano il valore più di una media €/mq. Stima sul posto, senza impegno.',
     metaTitle: 'Valutazione ville Brianza: sopralluogo gratuito',
     metaDescription:
-      'Valutazione ville e case indipendenti in Brianza con sopralluogo gratuito. Giardino, contesto e vendite reali della zona — senza impegno.',
+      'Valutazione ville e case indipendenti in Brianza con sopralluogo gratuito. Giardino, contesto e vendite reali della zona. Senza impegno.',
     defaultCity: '',
     angleHeading: 'Una villa non si valuta come un appartamento “più grande”',
     angleBody:
@@ -78,7 +78,7 @@ export const PROPERTY_TYPE_PAGES: PropertyTypePage[] = [
       'Tipologia: schiera, bifamiliare, indipendente',
       'Spazi esterni (giardino, cortile) e loro reale utilizzabilità',
       'Stato di tetto, impianti, serramenti e eventuali lavori da fare',
-      'Contesto di via e distanza da servizi / collegamenti',
+      'Contesto di via e distanza da servizi e collegamenti',
       'Vendite chiuse di tipologiche simili nello stesso comune o fascia',
     ],
     requestNote:

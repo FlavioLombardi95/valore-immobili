@@ -18,7 +18,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl space-y-6">
         <Logo variant="light" />
         <p className="max-w-xl font-headline text-xl font-bold tracking-tight text-cloud md:text-2xl">
-          Una stima sul posto, per Monza e Brianza — senza impegno.
+          Una stima sul posto, per Monza e Brianza, senza impegno.
         </p>
         <p className="max-w-lg text-sm text-slate-300">
           Valutazione immobiliare gratuita con sopralluogo. Nessun obbligo di mandato.

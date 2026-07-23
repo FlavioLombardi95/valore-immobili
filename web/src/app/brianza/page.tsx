@@ -7,7 +7,7 @@ import { propertyTypePath } from '@/lib/property-types'
 export const metadata: Metadata = {
   title: 'Valutazione immobiliare in Brianza: comuni e zone',
   description:
-    'Sopralluogo gratuito nei comuni di Monza e Brianza. Stima locale per Lissone, Brugherio, Desio e altri — non medie provinciali. Senza impegno.',
+    'Sopralluogo gratuito nei comuni di Monza e Brianza. Stima locale per Lissone, Brugherio, Desio e altri: non medie provinciali. Senza impegno.',
   alternates: { canonical: 'https://valore-immobili.it/brianza' },
 }
 

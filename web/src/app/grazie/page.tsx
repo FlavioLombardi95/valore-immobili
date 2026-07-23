@@ -12,7 +12,7 @@ export default function GraziePage() {
     <div className="mx-auto max-w-lg px-4 py-16 text-center">
       <h1 className="font-headline text-3xl font-extrabold text-secondary">Grazie, abbiamo ricevuto la tua richiesta</h1>
       <p className="mt-4 text-base text-slate">
-        Un consulente di Valore Immobili ti contatterà entro 1-2 giorni lavorativi per organizzare il
+        Un consulente di Valore Immobili ti contatterà entro 1 o 2 giorni lavorativi per organizzare il
         sopralluogo gratuito.
       </p>
       <Link

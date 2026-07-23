@@ -26,7 +26,7 @@ const steps = [
   },
   {
     title: 'Ti richiamiamo',
-    text: 'Un consulente locale ti contatta entro 1-2 giorni lavorativi per fissare il sopralluogo.',
+    text: 'Un consulente locale ti contatta entro 1 o 2 giorni lavorativi per fissare il sopralluogo.',
   },
   {
     title: 'Sopralluogo sul posto',
@@ -90,7 +90,7 @@ export default function HomePage() {
               ))}
             </ul>
             <p className="max-w-xl text-sm leading-relaxed text-slate md:text-base">
-              Compila il modulo: ti richiamiamo entro 1–2 giorni lavorativi per organizzare il sopralluogo.
+              Compila il modulo: ti richiamiamo entro 1 o 2 giorni lavorativi per organizzare il sopralluogo.
               Gratuito e senza impegno. Dettagli su{' '}
               <Link href="/come-funziona" className="font-semibold text-secondary underline underline-offset-2">
                 come funziona

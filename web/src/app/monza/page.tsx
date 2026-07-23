@@ -72,7 +72,7 @@ export default function MonzaPage() {
 
       <h2>Come funziona la richiesta</h2>
       <p>
-        Compili il modulo con i dati dell’immobile e i tuoi contatti. Ti richiamiamo entro 1-2 giorni
+        Compili il modulo con i dati dell’immobile e i tuoi contatti. Ti richiamiamo entro 1 o 2 giorni
         lavorativi per concordare giorno e orario del sopralluogo gratuito. Al termine ricevi una valutazione
         motivata, senza alcun obbligo di affidarci la vendita. Se vuoi capire prima ogni passaggio, leggi{' '}
         <Link href="/come-funziona">come funziona la valutazione</Link>.

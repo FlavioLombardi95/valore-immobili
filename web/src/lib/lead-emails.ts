@@ -88,7 +88,7 @@ Riepilogo richiesta:
 - Immobile: ${input.propertyType} - ${input.squareMeters} mq
 - Tempistica: ${timeframeLabel(input.timeframe)}
 
-Un consulente locale ti contattera entro 1-2 giorni lavorativi per organizzare il sopralluogo sul posto.
+Un consulente locale ti contattera entro 1 o 2 giorni lavorativi per organizzare il sopralluogo sul posto.
 
 La valutazione e gratuita e senza impegno: nessun costo, nessun obbligo di affidare la vendita.
 
@@ -112,7 +112,7 @@ const thankYouHtmlBody = (input: LeadInput) => {
     <title>Grazie per la tua richiesta</title>
   </head>
   <body style="margin:0;padding:0;background-color:#f6fafd;">
-    <div style="display:none;max-height:0;overflow:hidden;opacity:0;">Ti ricontattiamo entro 1-2 giorni lavorativi per il sopralluogo gratuito.</div>
+    <div style="display:none;max-height:0;overflow:hidden;opacity:0;">Ti ricontattiamo entro 1 o 2 giorni lavorativi per il sopralluogo gratuito.</div>
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f6fafd;padding:24px 12px;font-family:${FONT_BODY};">
       <tr>
         <td align="center">
@@ -131,7 +131,7 @@ const thankYouHtmlBody = (input: LeadInput) => {
             </tr>
             <tr>
               <td style="padding:24px 32px 0;">
-                <p style="margin:0;font-size:15px;line-height:1.65;color:#171c1f;">Un consulente locale di <strong style="color:#0f172a;">Valore Immobili</strong> ti contatter&agrave; entro <strong style="color:#0f172a;">1-2 giorni lavorativi</strong> per organizzare il sopralluogo sul posto.</p>
+                <p style="margin:0;font-size:15px;line-height:1.65;color:#171c1f;">Un consulente locale di <strong style="color:#0f172a;">Valore Immobili</strong> ti contatter&agrave; entro <strong style="color:#0f172a;">1 o 2 giorni lavorativi</strong> per organizzare il sopralluogo sul posto.</p>
               </td>
             </tr>
             <tr>
