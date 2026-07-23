@@ -1,3 +1,6 @@
+/* Hallmark · design-system: DESIGN.md · component: SiteHeader
+ * Nav: wordmark + geo links + primary CTA
+ */
 import Link from 'next/link'
 import { Logo } from '@/components/Logo'
 

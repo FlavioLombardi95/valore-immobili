@@ -158,6 +158,7 @@ Copy specifica tipologica + FAQ; form on (come i comuni). Link da home, hub Monz
 | 22 lug | Fix chrome (nav/footer/related/CTA); **home ritmo + layoutVariant comuni**; doc unificato qui |
 | 22 lug | Tipologiche `/valutazione/appartamenti-monza` e `/valutazione/ville-brianza` |
 | 22 lug | Contesto locale 8 comuni + fix Hallmark (chrome copy, stamp, de-pill header) |
+| 22 lug | Audit follow-up: stamp hub/chrome, tipologiche layoutVariant, H1/related unici, no eyebrow home |
 
 ---
 

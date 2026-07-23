@@ -1,3 +1,6 @@
+/* Hallmark · design-system: DESIGN.md · page: home
+ * Macrostructure: photo hero → conversion (trust + form) → SEO prose
+ */
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -57,7 +60,6 @@ export default function HomePage() {
         />
         <div className="mx-auto max-w-6xl px-4 py-14 md:py-20">
           <div className="max-w-2xl space-y-4">
-            <span className="text-xs font-semibold tracking-wide text-cloud/80">Monza e Brianza</span>
             <h1 className="font-headline text-4xl font-extrabold tracking-tight text-cloud text-balance md:text-5xl">
               Scopri quanto vale davvero la tua casa
             </h1>

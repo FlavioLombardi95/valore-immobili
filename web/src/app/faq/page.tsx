@@ -1,3 +1,4 @@
+/* Hallmark · design-system: DESIGN.md · page: faq */
 import type { Metadata } from 'next'
 import { SeoPageLayout } from '@/components/SeoPageLayout'
 

@@ -1,5 +1,8 @@
 'use client'
 
+/* Hallmark · design-system: DESIGN.md · component: LeadForm
+ * Conversion form: elevated shell, fields, primary pill submit (DESIGN.md)
+ */
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { PRIVACY_POLICY_URL } from '@/lib/seo'

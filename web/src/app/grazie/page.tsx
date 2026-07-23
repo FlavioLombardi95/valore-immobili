@@ -1,3 +1,4 @@
+/* Hallmark · design-system: DESIGN.md · page: grazie · noindex */
 import type { Metadata } from 'next'
 import Link from 'next/link'
 

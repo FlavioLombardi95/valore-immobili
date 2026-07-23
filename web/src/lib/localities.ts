@@ -13,6 +13,8 @@ export type LocalityExternalLink = {
 export type Locality = {
   slug: string
   name: string
+  /** H1 unico (anti template SERP) */
+  pageTitle: string
   provinceHint: string
   /** Ordine dei blocchi sulla pagina — vedi docs/FRONTEND.md §5 */
   layoutVariant: LocalityLayoutVariant
@@ -47,6 +49,7 @@ export const NEAR_MONZA_LOCALITIES: Locality[] = [
   {
     slug: 'lissone',
     name: 'Lissone',
+    pageTitle: 'Quanto vale casa a Lissone?',
     provinceHint: 'Monza e Brianza',
     layoutVariant: 'compare-monza',
     intro:
@@ -82,6 +85,7 @@ export const NEAR_MONZA_LOCALITIES: Locality[] = [
   {
     slug: 'vimodrone',
     name: 'Vimodrone',
+    pageTitle: 'Valutazione a Vimodrone: stima sul posto',
     provinceHint: 'area Monza e Milano',
     layoutVariant: 'look-first',
     intro:
@@ -118,6 +122,7 @@ export const NEAR_MONZA_LOCALITIES: Locality[] = [
   {
     slug: 'brugherio',
     name: 'Brugherio',
+    pageTitle: 'Valutazione immobiliare a Brugherio',
     provinceHint: 'Monza e Brianza',
     layoutVariant: 'angle-first',
     intro:
@@ -153,6 +158,7 @@ export const NEAR_MONZA_LOCALITIES: Locality[] = [
   {
     slug: 'villasanta',
     name: 'Villasanta',
+    pageTitle: 'Stima casa a Villasanta',
     provinceHint: 'Monza e Brianza',
     layoutVariant: 'faq-led',
     intro:
@@ -205,6 +211,7 @@ export const NEAR_MONZA_LOCALITIES: Locality[] = [
   {
     slug: 'muggio',
     name: 'Muggiò',
+    pageTitle: 'Valutazione a Muggiò, al confine con Monza',
     provinceHint: 'Monza e Brianza',
     layoutVariant: 'compare-monza',
     intro:
@@ -241,6 +248,7 @@ export const NEAR_MONZA_LOCALITIES: Locality[] = [
   {
     slug: 'desio',
     name: 'Desio',
+    pageTitle: 'Valutazione immobiliare a Desio',
     provinceHint: 'Monza e Brianza',
     layoutVariant: 'look-first',
     intro:
@@ -277,6 +285,7 @@ export const NEAR_MONZA_LOCALITIES: Locality[] = [
   {
     slug: 'concorezzo',
     name: 'Concorezzo',
+    pageTitle: 'Quanto vale un immobile a Concorezzo?',
     provinceHint: 'Monza e Brianza',
     layoutVariant: 'faq-led',
     intro:
@@ -329,6 +338,7 @@ export const NEAR_MONZA_LOCALITIES: Locality[] = [
   {
     slug: 'cologno-monzese',
     name: 'Cologno Monzese',
+    pageTitle: 'Valutazione a Cologno Monzese',
     provinceHint: 'area Monza e Milano',
     layoutVariant: 'angle-first',
     intro:

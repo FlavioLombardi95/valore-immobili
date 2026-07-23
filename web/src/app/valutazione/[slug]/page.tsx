@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const locality = getLocality(slug)
   if (locality) {
     return {
-      title: `Valutazione immobiliare a ${locality.name}`,
+      title: locality.pageTitle,
       description: `Valutazione immobiliare gratuita a ${locality.name}: sopralluogo sul posto e stima basata su vendite reali nella zona, senza impegno.`,
       alternates: { canonical: `${SITE_URL}${localityPath(locality.slug)}` },
     }
@@ -244,6 +244,139 @@ function TipologicheLinks({ currentSlug }: { currentSlug?: string }) {
   )
 }
 
+/** Related diversi per layoutVariant (anti pack clone sulle 8 leaf). */
+function localityRelated(locality: Locality) {
+  switch (locality.layoutVariant) {
+    case 'compare-monza':
+      return [
+        {
+          href: '/monza',
+          label: 'Valutazione a Monza',
+          description: `Utile se confronti ${locality.name} con i quartieri monzesi.`,
+        },
+        {
+          href: propertyTypePath('appartamenti-monza'),
+          label: 'Valutazione appartamenti',
+          description: 'Piano, spese e condominio.',
+        },
+        {
+          href: '/brianza',
+          label: 'Valutazione in Brianza',
+          description: 'Panoramica sui comuni della zona.',
+        },
+        {
+          href: '/vendere-casa-monza',
+          label: 'Vendere casa a Monza',
+          description: 'Da dove partire prima del prezzo.',
+        },
+      ]
+    case 'look-first':
+      return [
+        {
+          href: propertyTypePath('appartamenti-monza'),
+          label: 'Valutazione appartamenti',
+          description: 'Cosa pesa su condominio e collegamenti.',
+        },
+        {
+          href: propertyTypePath('ville-brianza'),
+          label: 'Valutazione ville',
+          description: 'Ville e case indipendenti in Brianza.',
+        },
+        {
+          href: '/come-funziona',
+          label: 'Come funziona',
+          description: 'Dalla richiesta al sopralluogo.',
+        },
+        {
+          href: '/brianza',
+          label: 'Valutazione in Brianza',
+          description: 'Altri comuni della provincia.',
+        },
+      ]
+    case 'faq-led':
+      return [
+        {
+          href: '/faq',
+          label: 'Domande frequenti',
+          description: 'Costi, tempi e obblighi.',
+        },
+        {
+          href: '/monza',
+          label: 'Valutazione a Monza',
+          description: 'Se l’immobile è in città.',
+        },
+        {
+          href: propertyTypePath('ville-brianza'),
+          label: 'Valutazione ville',
+          description: 'Quando conti giardino e contesto di via.',
+        },
+        {
+          href: '/brianza',
+          label: 'Valutazione in Brianza',
+          description: 'Indice dei comuni vicini.',
+        },
+      ]
+    case 'angle-first':
+    default:
+      return [
+        {
+          href: '/brianza',
+          label: 'Valutazione in Brianza',
+          description: 'Mercati locali oltre Monza.',
+        },
+        {
+          href: propertyTypePath('appartamenti-monza'),
+          label: 'Valutazione appartamenti',
+          description: 'Focus condominio e MM2 dove serve.',
+        },
+        {
+          href: '/comprare-casa-monza',
+          label: 'Comprare casa a Monza',
+          description: 'Come leggere i valori se acquisti.',
+        },
+        {
+          href: '/monza',
+          label: 'Valutazione a Monza',
+          description: 'Quartieri e mercato cittadino.',
+        },
+      ]
+  }
+}
+
+function PropertyTypeRequest({ page }: { page: PropertyTypePage }) {
+  return (
+    <>
+      <h2>{page.requestHeading}</h2>
+      <p>{page.requestNote}</p>
+      <p>
+        {page.requestFollowUp} <Link href="/come-funziona">Come funziona</Link>.
+      </p>
+    </>
+  )
+}
+
+function PropertyTypeZones({ page }: { page: PropertyTypePage }) {
+  return (
+    <>
+      <h2>{page.zonesHeading}</h2>
+      <p>
+        {page.zonesBody}{' '}
+        {page.slug === 'appartamenti-monza' ? (
+          <>
+            Vedi anche <Link href="/monza">Monza</Link>, <Link href="/brianza">Brianza</Link>,{' '}
+            <Link href="/valutazione/lissone">Lissone</Link> e{' '}
+            <Link href="/valutazione/brugherio">Brugherio</Link>.
+          </>
+        ) : (
+          <>
+            Approfondisci su <Link href="/monza">Monza</Link> e <Link href="/brianza">Brianza</Link>.
+          </>
+        )}
+      </p>
+    </>
+  )
+}
+
 function localityBody(locality: Locality): ReactNode {
   const angle = <AngleBlock heading={locality.angleHeading} body={locality.angleBody} />
   const look = <LookBlock heading={locality.lookHeading} items={locality.lookItems} />
@@ -300,29 +433,36 @@ function localityBody(locality: Locality): ReactNode {
 }
 
 function propertyTypeBody(page: PropertyTypePage): ReactNode {
+  const angle = <AngleBlock heading={page.angleHeading} body={page.angleBody} />
+  const look = <LookBlock heading={page.lookHeading} items={page.lookItems} />
+  const faq = page.faqs?.length ? (
+    <FaqBlock title={`Domande frequenti su ${page.shortLabel.toLowerCase()}`} faqs={page.faqs} />
+  ) : null
+  const request = <PropertyTypeRequest page={page} />
+  const tipologiche = <TipologicheLinks currentSlug={page.slug} />
+  const zones = <PropertyTypeZones page={page} />
+
+  if (page.layoutVariant === 'faq-led') {
+    return (
+      <>
+        {faq}
+        {look}
+        {angle}
+        {zones}
+        {tipologiche}
+        {request}
+      </>
+    )
+  }
+
   return (
     <>
-      <AngleBlock heading={page.angleHeading} body={page.angleBody} />
-      <LookBlock heading={page.lookHeading} items={page.lookItems} />
-      {page.faqs?.length ? (
-        <FaqBlock title={`Domande frequenti su ${page.shortLabel.toLowerCase()}`} faqs={page.faqs} />
-      ) : null}
-      <h2>Come richiedere la valutazione</h2>
-      <p>{page.requestNote}</p>
-      <p>
-        Compila il modulo: ti ricontattiamo entro 1 o 2 giorni lavorativi. Il servizio è{' '}
-        <strong>gratuito</strong> e <strong>senza impegno</strong>. Percorso completo:{' '}
-        <Link href="/come-funziona">come funziona</Link>.
-      </p>
-      <TipologicheLinks currentSlug={page.slug} />
-      <h2>Zone in cui operiamo</h2>
-      <p>
-        Il servizio copre <Link href="/monza">Monza</Link> e i{' '}
-        <Link href="/brianza">comuni della Brianza</Link>. Se conosci già il comune, apri la pagina
-        dedicata (es.{' '}
-        <Link href="/valutazione/lissone">Lissone</Link>,{' '}
-        <Link href="/valutazione/brugherio">Brugherio</Link>).
-      </p>
+      {angle}
+      {look}
+      {faq}
+      {request}
+      {tipologiche}
+      {zones}
     </>
   )
 }
@@ -333,34 +473,13 @@ export default async function ValutazioneSlugPage({ params }: PageProps) {
   if (locality) {
     return (
       <SeoPageLayout
-        title={`Valutazione immobiliare a ${locality.name}`}
+        title={locality.pageTitle}
         intro={locality.intro}
         sourcePage={localityPath(locality.slug)}
         defaultCity={locality.name}
         breadcrumb={locality.name}
         relatedTitle={locality.relatedTitle}
-        related={[
-          {
-            href: '/brianza',
-            label: 'Valutazione in Brianza',
-            description: 'Panoramica sui comuni della zona.',
-          },
-          {
-            href: '/monza',
-            label: 'Valutazione a Monza',
-            description: 'Se l’immobile è nel comune di Monza.',
-          },
-          {
-            href: propertyTypePath('appartamenti-monza'),
-            label: 'Valutazione appartamenti',
-            description: 'Cosa pesa su piano, spese e condominio.',
-          },
-          {
-            href: propertyTypePath('ville-brianza'),
-            label: 'Valutazione ville',
-            description: 'Ville e case indipendenti in Brianza.',
-          },
-        ]}
+        related={localityRelated(locality)}
       >
         {localityBody(locality)}
       </SeoPageLayout>
@@ -377,29 +496,58 @@ export default async function ValutazioneSlugPage({ params }: PageProps) {
       sourcePage={propertyTypePath(propertyType.slug)}
       defaultCity={propertyType.defaultCity}
       breadcrumb={propertyType.shortLabel}
-      relatedTitle={`Da ${propertyType.shortLabel.toLowerCase()} ad altre pagine`}
-      related={[
-        {
-          href: '/monza',
-          label: 'Valutazione a Monza',
-          description: 'Quartieri e mercato cittadino.',
-        },
-        {
-          href: '/brianza',
-          label: 'Valutazione in Brianza',
-          description: 'Comuni e mercati locali.',
-        },
-        {
-          href: '/vendere-casa-monza',
-          label: 'Vendere casa a Monza',
-          description: 'Da dove partire prima del prezzo.',
-        },
-        {
-          href: '/come-funziona',
-          label: 'Come funziona',
-          description: 'Dalla richiesta al sopralluogo.',
-        },
-      ]}
+      relatedTitle={
+        propertyType.slug === 'appartamenti-monza'
+          ? 'Da appartamenti a zone e guide'
+          : 'Da ville a Monza e Brianza'
+      }
+      related={
+        propertyType.slug === 'appartamenti-monza'
+          ? [
+              {
+                href: '/monza',
+                label: 'Valutazione a Monza',
+                description: 'Quartieri e mercato cittadino.',
+              },
+              {
+                href: propertyTypePath('ville-brianza'),
+                label: 'Valutazione ville',
+                description: 'Se confronti con indipendenti.',
+              },
+              {
+                href: '/come-funziona',
+                label: 'Come funziona',
+                description: 'Dalla richiesta al sopralluogo.',
+              },
+              {
+                href: '/faq',
+                label: 'Domande frequenti',
+                description: 'Costi, tempi e obblighi.',
+              },
+            ]
+          : [
+              {
+                href: '/brianza',
+                label: 'Valutazione in Brianza',
+                description: 'Comuni e mercati locali.',
+              },
+              {
+                href: propertyTypePath('appartamenti-monza'),
+                label: 'Valutazione appartamenti',
+                description: 'Focus condominio a Monza.',
+              },
+              {
+                href: '/vendere-casa-monza',
+                label: 'Vendere casa a Monza',
+                description: 'Da dove partire prima del prezzo.',
+              },
+              {
+                href: '/monza',
+                label: 'Valutazione a Monza',
+                description: 'Se l’immobile è in città.',
+              },
+            ]
+      }
     >
       {propertyTypeBody(propertyType)}
     </SeoPageLayout>

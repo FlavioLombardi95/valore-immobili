@@ -1,3 +1,6 @@
+/* Hallmark · design-system: DESIGN.md · component: SiteFooter
+ * Footer: statement + flat link row (no SaaS column grid)
+ */
 import Link from 'next/link'
 import { Logo } from '@/components/Logo'
 import { PRIVACY_POLICY_URL } from '@/lib/seo'

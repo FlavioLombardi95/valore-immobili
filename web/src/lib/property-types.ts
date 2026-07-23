@@ -5,6 +5,8 @@ export type PropertyTypeFaq = {
   answer: string
 }
 
+export type PropertyTypeLayoutVariant = 'angle-led' | 'faq-led'
+
 /** Pagine tipologiche sotto `/valutazione/{slug}` (non comuni). */
 export type PropertyTypePage = {
   slug: string
@@ -15,11 +17,16 @@ export type PropertyTypePage = {
   metaTitle: string
   metaDescription: string
   defaultCity: string
+  layoutVariant: PropertyTypeLayoutVariant
   angleHeading: string
   angleBody: string
   lookHeading: string
   lookItems: string[]
+  requestHeading: string
   requestNote: string
+  requestFollowUp: string
+  zonesHeading: string
+  zonesBody: string
   faqs?: PropertyTypeFaq[]
 }
 
@@ -34,6 +41,7 @@ export const PROPERTY_TYPE_PAGES: PropertyTypePage[] = [
     metaDescription:
       'Valutazione appartamenti a Monza e Brianza con sopralluogo gratuito. Piano, ascensore, spese e vendite reali del quartiere. Senza impegno.',
     defaultCity: 'Monza',
+    layoutVariant: 'angle-led',
     angleHeading: 'Perché due appartamenti con gli stessi mq valgono diversamente',
     angleBody:
       'A Monza un bilocale in Centro o vicino alla Villa Reale non si confronta con uno in una zona più residenziale solo “per metratura”. Contano piano, ascensore, esposizione, stato interno, spese condominiali e domanda reale della zona. Le stime automatiche appiattiscono tutto su una media: il sopralluogo riporta questi dettagli sul tavolo.',
@@ -45,8 +53,13 @@ export const PROPERTY_TYPE_PAGES: PropertyTypePage[] = [
       'Box, posto auto, cantina o ripostiglio',
       'Confronto con vendite chiuse di appartamenti simili nella stessa zona',
     ],
+    requestHeading: 'Richiedi il sopralluogo per un appartamento',
     requestNote:
       'Nel modulo indica comune (es. Monza) e tipologia “Appartamento”: organizziamo un sopralluogo gratuito senza impegno.',
+    requestFollowUp:
+      'Ti ricontattiamo entro 1 o 2 giorni lavorativi. Gratuito e senza impegno. Percorso completo:',
+    zonesHeading: 'Dove valutiamo appartamenti',
+    zonesBody: 'Operiamo su Monza città e sui comuni limitrofi.',
     faqs: [
       {
         question: 'La valutazione appartamento è diversa da quella di una casa?',
@@ -70,6 +83,7 @@ export const PROPERTY_TYPE_PAGES: PropertyTypePage[] = [
     metaDescription:
       'Valutazione ville e case indipendenti in Brianza con sopralluogo gratuito. Giardino, contesto e vendite reali della zona. Senza impegno.',
     defaultCity: '',
+    layoutVariant: 'faq-led',
     angleHeading: 'Una villa non si valuta come un appartamento “più grande”',
     angleBody:
       'In Brianza ville a schiera, bifamiliari e indipendenti hanno acquirenti e tempi diversi dagli appartamenti in condominio. Pesano giardino o cortile utilizzabile, privacy, stato strutturale, impianti e quanto la via è residenziale o di passaggio. Usare listini di appartamenti monzesi come riferimento è uno degli errori più frequenti.',
@@ -81,8 +95,13 @@ export const PROPERTY_TYPE_PAGES: PropertyTypePage[] = [
       'Contesto di via e distanza da servizi e collegamenti',
       'Vendite chiuse di tipologiche simili nello stesso comune o fascia',
     ],
+    requestHeading: 'Fissa il sopralluogo per una villa o casa indipendente',
     requestNote:
       'Nel modulo scegli “Villa” (o “Casa indipendente”) e indica il comune in Brianza: ti contattiamo per il sopralluogo gratuito.',
+    requestFollowUp:
+      'Richiamo in 1 o 2 giorni lavorativi, senza costi né mandato. Dettaglio del processo:',
+    zonesHeading: 'Comuni e tipologiche collegate',
+    zonesBody: 'Il servizio copre Monza città e la Brianza residenziale.',
     faqs: [
       {
         question: 'Valutate solo ville di prestigio?',

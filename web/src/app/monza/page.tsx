@@ -1,3 +1,4 @@
+/* Hallmark · design-system: DESIGN.md · page: monza-hub */
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { SeoPageLayout } from '@/components/SeoPageLayout'
