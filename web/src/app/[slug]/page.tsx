@@ -4,6 +4,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { GuideSections } from '@/components/GuideSections'
+import { MonzaQuartieriMap } from '@/components/MonzaQuartieriMap'
 import { SeoPageLayout } from '@/components/SeoPageLayout'
 import { GUIDE_SLUGS, getGuideBySlug, guidePath } from '@/lib/guides'
 import { SITE_URL } from '@/lib/seo'
@@ -47,7 +48,9 @@ export default async function GuidePage({ params }: PageProps) {
       related={guide.related}
       relatedTitle={guide.relatedTitle}
     >
-      <GuideSections sections={guide.sections} />
+      <GuideSections sections={guide.sections.slice(0, 1)} />
+      {guide.slug === 'quartieri-monza' ? <MonzaQuartieriMap /> : null}
+      <GuideSections sections={guide.sections.slice(1)} />
     </SeoPageLayout>
   )
 }

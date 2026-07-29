@@ -215,7 +215,14 @@ export const GUIDE_PAGES: GuidePage[] = [
         heading: 'Non esiste “il” prezzo di Monza',
         paragraphs: [
           'Due appartamenti con la stessa metratura possono valere in modo diverso a pochi chilometri di distanza. Contano via, piano, stato, condominio e domanda reale di quella micro-zona.',
-          'Se stai confrontando annunci, allinea sempre quartiere e contesto — non solo i metri quadri.',
+          'Se stai confrontando annunci, allinea sempre quartiere e contesto — non solo i metri quadri. La mappa sotto aiuta a collocare i nomi che trovi nelle ricerche.',
+        ],
+      },
+      {
+        heading: 'I quartieri in sintesi',
+        paragraphs: [
+          'Il Comune usa una suddivisione statistica in dieci aggregati (oltre all’area del Parco a nord): Centro–San Gerardo, Libertà, San Carlo–San Giuseppe, Triante, San Fruttuoso, San Biagio–Cazzaniga, Cederna–Cantalupo, Sant’Albino, Regina Pacis–San Donato e San Rocco.',
+          'Non sono “prezzi fissi” di listino: dentro lo stesso quartiere via, piano e stato possono spostare molto la trattativa. Servono però come bussola quando filtri gli annunci o chiedi una consulenza su zone precise.',
         ],
       },
       {
