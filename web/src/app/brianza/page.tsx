@@ -1,6 +1,7 @@
 /* Hallmark · design-system: DESIGN.md · page: brianza-hub */
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { BrianzaComuniMap } from '@/components/BrianzaComuniMap'
 import { SeoPageLayout } from '@/components/SeoPageLayout'
 import { NEAR_MONZA_LOCALITIES, localityPath } from '@/lib/localities'
 import { propertyTypePath } from '@/lib/property-types'
@@ -48,6 +49,8 @@ export default function BrianzaPage() {
         giardino e case indipendenti. Il valore di un immobile cambia tra un comune e l’altro: per
         questo la stima parte dal contesto specifico e dalla via, non da una media provinciale.
       </p>
+
+      <BrianzaComuniMap />
 
       <h2>Comuni vicini a Monza</h2>
       <p>
