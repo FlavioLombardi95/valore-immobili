@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next'
+import { GUIDE_PAGES, guidePath } from '@/lib/guides'
 import { NEAR_MONZA_LOCALITIES, localityPath } from '@/lib/localities'
 import { PROPERTY_TYPE_PAGES, propertyTypePath } from '@/lib/property-types'
 import { INDEXABLE_ROUTES, SITE_URL } from '@/lib/seo'
@@ -25,5 +26,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }))
 
-  return [...core, ...localities, ...propertyTypes]
+  const guides = GUIDE_PAGES.map((item) => ({
+    url: `${SITE_URL}${guidePath(item.slug)}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }))
+
+  return [...core, ...localities, ...propertyTypes, ...guides]
 }

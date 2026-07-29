@@ -1,7 +1,7 @@
 # Frontend & UI — valore-immobili.it
 
 **Documento unico** per layout, conversione, anti-slop e decisioni UI del mini-sito Next.js in `web/`.  
-Ultimo aggiornamento: **22 luglio 2026**.
+Ultimo aggiornamento: **29 luglio 2026**.
 
 Indice di tutta la documentazione: [`README.md`](README.md).
 
@@ -44,7 +44,7 @@ Audit Hallmark (22 lug 2026) → fix critical/major chirurgici + piccolo redesig
 
 - Link primari: **Monza · Brianza · Come funziona · FAQ**
 - CTA header: **Valutazione** → `/#richiesta`
-- **Vendere / Comprare** solo in footer (meno rumore “SaaS nav”)
+- **Vendere / Comprare / Annunci** solo in footer (meno rumore “SaaS nav”)
 
 File: `web/src/components/SiteHeader.tsx`
 
@@ -60,7 +60,7 @@ File: `web/src/components/SiteFooter.tsx`
 | Pagine | Form |
 |--------|------|
 | `/`, `/monza`, `/brianza`, `/valutazione/*` | Sì |
-| `/faq`, `/come-funziona`, `/vendere-casa-monza`, `/comprare-casa-monza` | No → CTA a `/#richiesta` |
+| `/faq`, `/come-funziona`, `/vendere-casa-monza`, `/comprare-casa-monza`, guide `/{slug}` | No → CTA a `/#richiesta` |
 
 Implementazione: `showForm` in `SeoPageLayout`.  
 Ordine mobile: **contenuto prima, form dopo** (niente `order` che inverte).
@@ -115,6 +115,15 @@ Dati: `web/src/lib/property-types.ts`
 
 Copy specifica tipologica + FAQ; form on (come i comuni). Link da home, hub Monza/Brianza, footer.
 
+### 5.3 Guide acquisto (`/{slug}`)
+
+Dati: `web/src/lib/guides.ts` · route: `web/src/app/[slug]/page.tsx` · body: `GuideSections`.
+
+- `showForm={false}`; CTA arancione verso `/?from=…#richiesta`
+- Link esterni tipografici in prosa (`target="_blank" rel="noopener noreferrer"`): portali annunci e fonti istituzionali, non card/badge
+- Related tipografici tra guide (niente card grid)
+- Hub `/comprare-casa-monza` collega il cluster
+
 ---
 
 ## 6. Pattern UI da mantenere / evitare
@@ -159,6 +168,7 @@ Copy specifica tipologica + FAQ; form on (come i comuni). Link da home, hub Monz
 | 22 lug | Tipologiche `/valutazione/appartamenti-monza` e `/valutazione/ville-brianza` |
 | 22 lug | Contesto locale 8 comuni + fix Hallmark (chrome copy, stamp, de-pill header) |
 | 22 lug | Audit follow-up: stamp hub/chrome, tipologiche layoutVariant, H1/related unici, no eyebrow home |
+| 29 lug | Cluster 13 guide acquisto + hub comprare + footer Comprare/Annunci; sitemap ≥ 30 |
 
 ---
 
@@ -172,4 +182,5 @@ Copy specifica tipologica + FAQ; form on (come i comuni). Link da home, hub Monz
 | Header / Footer | `web/src/components/SiteHeader.tsx`, `SiteFooter.tsx` |
 | Related | `web/src/components/RelatedLinks.tsx` |
 | Comuni / tipologiche | `web/src/lib/localities.ts`, `web/src/lib/property-types.ts`, `web/src/app/valutazione/[slug]/page.tsx` |
+| Guide acquisto | `web/src/lib/guides.ts`, `web/src/app/[slug]/page.tsx`, `web/src/components/GuideSections.tsx` |
 | Token CSS | `web/src/app/globals.css`, `web/src/app/layout.tsx` |

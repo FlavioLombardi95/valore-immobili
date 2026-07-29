@@ -1,6 +1,6 @@
 # SEO — valore-immobili.it
 
-Documento operativo. Ultimo aggiornamento: **22 luglio 2026**.
+Documento operativo. Ultimo aggiornamento: **29 luglio 2026**.
 
 Fonte codice: mini-sito Next.js in `web/`.  
 Fonte dati: Google Search Console (Web, ultimi 28 giorni ≈ 22 giu – 18 lug 2026).
@@ -81,7 +81,32 @@ Successo = più **clic qualificati** sulle query di valutazione, poi lead. Le im
 | `/come-funziona` | Processo | No (solo CTA) |
 | `/faq` | FAQ + FAQPage schema | No (solo CTA) |
 | `/vendere-casa-monza` | Guida vendita | No (solo CTA) |
-| `/comprare-casa-monza` | Guida acquisto | No (solo CTA) |
+| `/comprare-casa-monza` | Hub guida acquisto | No (solo CTA) |
+| `/{slug}` guide acquisto | 13 guide (annunci, spese, mutuo, …) | No (solo CTA) |
+
+**Totale sitemap target:** ≥ 30 URL (7 core + 8 comuni + 2 tipologiche + 13 guide = **30**).
+
+Dati guide: `web/src/lib/guides.ts`. Route: `web/src/app/[slug]/page.tsx`.
+
+### Guide acquisto (`/{slug}`)
+
+| Slug | Focus |
+|------|--------|
+| `comprare-casa-brianza` | Acquisto nei comuni della Brianza |
+| `annunci-casa-monza` | Come leggere i portali + link Immobiliare/Idealista/Casa.it |
+| `quartieri-monza` | Zone di Monza per chi compra |
+| `spese-acquisto-casa` | Imposte, notaio, costi accessori |
+| `mutuo-prima-casa` | Finanziamento e tempi |
+| `offerta-acquisto-casa` | Proposta e valori locali |
+| `documenti-acquisto-casa` | Visure, APE, conformità |
+| `checklist-visita-immobile` | Controlli in visita |
+| `appartamenti-in-vendita-monza` | Focus condominio + annunci |
+| `ville-in-vendita-brianza` | Focus indipendenti + annunci |
+| `casa-nuova-o-usata` | Trade-off nuovo vs usato |
+| `tempi-acquisto-casa` | Dalla visita al rogito |
+| `agevolazioni-prima-casa` | Requisiti + link Agenzia Entrate / Notariato |
+
+Link esterni: portali annunci (coerenti col pezzo) + fonti istituzionali (Agenzia Entrate, Notariato, Comune, Banca d’Italia). Non sostituiscono la CTA valutazione.
 
 ### Prima ondata comuni (`/valutazione/...`)
 
@@ -116,13 +141,15 @@ Dati in `web/src/lib/property-types.ts`. Stessa route dinamica dei comuni.
 | Hub: `/`, `/monza`, `/brianza` | **Si** (sticky) |
 | Leaf geo: `/valutazione/{comune}` | **Si** (intent valutazione) |
 | Tipologiche: `/valutazione/appartamenti-monza`, `/valutazione/ville-brianza` | **Si** |
-| Guide e supporto: `/faq`, `/come-funziona`, `/vendere-casa-monza`, `/comprare-casa-monza` | **No** — CTA verso `/#richiesta` |
+| Guide e supporto: `/faq`, `/come-funziona`, `/vendere-casa-monza`, `/comprare-casa-monza`, guide `/{slug}` | **No** — CTA verso `/#richiesta` |
 
 Implementato via `showForm` in `SeoPageLayout`.
 
-### 4.2 Pagina “comprare casa”
+### 4.2 Cluster “comprare casa”
 
-Live: `/comprare-casa-monza`. Guida mercato + CTA; non sostituisce le pagine di valutazione.
+Hub: `/comprare-casa-monza` (+ related alle guide).  
+13 guide flat in `guides.ts` (sitemap ≥ 30 URL).  
+Tono: utile a chi compra; conversione primaria resta la valutazione per proprietari.
 
 ### 4.3 Comuni e quartieri
 
@@ -162,7 +189,8 @@ Prossime ondate: altri comuni MB + quartieri Monza, sempre con copy specifico.
 3. [x] Title/description CTR su home e `/monza` (+ `/brianza`)
 4. [x] JSON-LD Service + Organization
 5. [x] Tipologiche: `/valutazione/appartamenti-monza`, `/valutazione/ville-brianza`
-6. [ ] Seconda ondata comuni / quartieri Monza
+6. [x] Cluster guide acquisto (13 URL) + hub comprare rafforzato
+7. [ ] Seconda ondata comuni / quartieri Monza
 
 ### Fase D — Misura
 
@@ -185,8 +213,9 @@ Prossime ondate: altri comuni MB + quartieri Monza, sempre con copy specifico.
 - [x] Service + Organization JSON-LD globale
 - [x] Title/description ottimizzati CTR (home, monza, brianza)
 - [x] Tipologiche appartamenti + ville sotto `/valutazione/`
+- [x] Cluster 13 guide acquisto + sitemap ≥ 30
 - [ ] Seconda ondata comuni / quartieri Monza
-- [ ] Richiedere indicizzazione GSC post-deploy (incl. tipologiche)
+- [ ] Richiedere indicizzazione GSC post-deploy (incl. tipologiche + guide)
 
 ---
 
@@ -218,9 +247,10 @@ Indice docs: [`README.md`](README.md).
 | Area | Path |
 |------|------|
 | **UI / layout / form / Hallmark** | [`FRONTEND.md`](FRONTEND.md) |
-| Pagine SEO | `web/src/app/*/page.tsx` |
+| Pagine SEO | `web/src/app/*/page.tsx`, `web/src/app/[slug]/page.tsx` |
 | Layout SEO + form | `web/src/components/SeoPageLayout.tsx` |
 | Comuni + layoutVariant | `web/src/lib/localities.ts` |
 | Tipologiche | `web/src/lib/property-types.ts` |
+| Guide acquisto | `web/src/lib/guides.ts` |
 | Sitemap routes | `web/src/lib/seo.ts`, `web/src/app/sitemap.ts` |
 | Product / design tokens | `PRODUCT.md`, `DESIGN.md` (root) |

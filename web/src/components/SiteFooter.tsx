@@ -12,6 +12,8 @@ const links = [
   { href: '/valutazione/ville-brianza', label: 'Ville' },
   { href: '/come-funziona', label: 'Come funziona' },
   { href: '/vendere-casa-monza', label: 'Vendere casa' },
+  { href: '/comprare-casa-monza', label: 'Comprare casa' },
+  { href: '/annunci-casa-monza', label: 'Annunci casa' },
   { href: '/faq', label: 'FAQ' },
 ]
 
