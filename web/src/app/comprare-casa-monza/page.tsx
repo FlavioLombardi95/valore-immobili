@@ -20,6 +20,7 @@ export default function ComprareCasaMonzaPage() {
       defaultCity="Monza"
       breadcrumb="Comprare casa a Monza"
       showForm={false}
+      ctaVariant="purchase"
       relatedTitle="Guide per chi compra"
       related={[
         {
@@ -107,12 +108,19 @@ export default function ComprareCasaMonzaPage() {
         .
       </p>
 
+      <h2>Immobili che non trovi online</h2>
+      <p>
+        I portali mostrano solo una parte del mercato. A Monza e in Brianza seguiamo anche immobili che{' '}
+        <strong>non pubblichiamo sui siti di annunci</strong>: vendite riservate, proprietari che preferiscono
+        discrezione, proposte in fase di definizione. Se stai cercando casa con criteri precisi, una consulenza
+        può farti scoprire opzioni che non compaiono nelle ricerche standard.
+      </p>
+
       <h2>Perché i valori locali contano</h2>
       <p>
-        Capire quanto vale davvero un immobile nella tua zona di interesse aiuta a fare offerte più
-        credibili e a evitare di pagare un premio senza motivo. Il nostro servizio principale è la{' '}
-        <strong>valutazione con sopralluogo</strong> per proprietari; se stai comprando, le stesse logiche
-        di mercato locale ti aiutano a leggere meglio Monza e i comuni vicini.
+        Capire quanto vale davvero un immobile nella tua zona di interesse aiuta a fare offerte più credibili e
+        a evitare di pagare un premio senza motivo. Confronta sempre immobili comparabili nella stessa
+        micro-zona — non solo il prezzo in vetrina.
       </p>
 
       <h2>Monza, quartieri e comuni limitrofi</h2>

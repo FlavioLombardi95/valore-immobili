@@ -18,6 +18,8 @@ type SeoPageProps = {
   relatedTitle?: string
   /** Se false: niente form sticky, solo CTA verso la richiesta. Default true sugli hub. */
   showForm?: boolean
+  /** CTA in fondo al contenuto quando showForm è false. Default: valutazione (proprietari). */
+  ctaVariant?: 'valuation' | 'purchase'
 }
 
 export function SeoPageLayout({
@@ -30,6 +32,7 @@ export function SeoPageLayout({
   related = [],
   relatedTitle = 'Continua a leggere',
   showForm = true,
+  ctaVariant = 'valuation',
 }: SeoPageProps) {
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 md:py-10">
@@ -57,16 +60,37 @@ export function SeoPageLayout({
           <div className="rich-content">{children}</div>
           {!showForm && (
             <div className="border-t border-line pt-5">
-              <p className="font-headline text-base font-bold text-ink">Vuoi una valutazione sul posto?</p>
-              <p className="mt-1 text-sm text-slate">
-                Sopralluogo gratuito a Monza e in Brianza, senza impegno.
-              </p>
-              <Link
-                href={`/?from=${encodeURIComponent(sourcePage)}#richiesta`}
-                className="mt-4 inline-flex min-h-12 items-center justify-center rounded-lg bg-brand px-6 font-headline text-sm font-bold text-white transition hover:bg-brand-rust focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 active:translate-y-px"
-              >
-                Richiedi la valutazione gratuita
-              </Link>
+              {ctaVariant === 'purchase' ? (
+                <>
+                  <p className="font-headline text-base font-bold text-ink">
+                    Cerchi casa a Monza e in Brianza?
+                  </p>
+                  <p className="mt-1 text-sm text-slate">
+                    Oltre agli annunci online, seguiamo immobili che{' '}
+                    <strong>non pubblichiamo sui portali</strong>. Raccontaci zona, metratura e budget: ti
+                    richiamiamo per una consulenza gratuita sull’acquisto, senza impegno.
+                  </p>
+                  <Link
+                    href={`/?from=${encodeURIComponent(sourcePage)}&intent=acquisto#richiesta`}
+                    className="mt-4 inline-flex min-h-12 items-center justify-center rounded-lg bg-brand px-6 font-headline text-sm font-bold text-white transition hover:bg-brand-rust focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 active:translate-y-px"
+                  >
+                    Richiedi una consulenza per l’acquisto
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <p className="font-headline text-base font-bold text-ink">Vuoi una valutazione sul posto?</p>
+                  <p className="mt-1 text-sm text-slate">
+                    Sopralluogo gratuito a Monza e in Brianza, senza impegno.
+                  </p>
+                  <Link
+                    href={`/?from=${encodeURIComponent(sourcePage)}#richiesta`}
+                    className="mt-4 inline-flex min-h-12 items-center justify-center rounded-lg bg-brand px-6 font-headline text-sm font-bold text-white transition hover:bg-brand-rust focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 active:translate-y-px"
+                  >
+                    Richiedi la valutazione gratuita
+                  </Link>
+                </>
+              )}
             </div>
           )}
           <RelatedLinks title={relatedTitle} items={related} />

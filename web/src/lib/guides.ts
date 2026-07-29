@@ -402,7 +402,7 @@ export const GUIDE_PAGES: GuidePage[] = [
       {
         heading: 'Perché i valori di zona contano',
         paragraphs: [
-          'A Monza e in Brianza due richieste vicine possono chiudere a livelli diversi. Prima di offrire, confronta immobili davvero comparabili e tieni conto di stato e lavori da fare. Il servizio di valutazione con sopralluogo è pensato soprattutto per i proprietari, ma le stesse logiche di mercato locale aiutano anche chi compra a non pagare un premio senza motivo.',
+          'A Monza e in Brianza due richieste vicine possono chiudere a livelli diversi. Prima di offrire, confronta immobili davvero comparabili e tieni conto di stato e lavori da fare. Se non trovi nulla di adatto online, possiamo orientarti anche su immobili che non pubblichiamo sui portali.',
         ],
       },
       {
@@ -531,7 +531,7 @@ export const GUIDE_PAGES: GuidePage[] = [
       {
         heading: 'Dopo il sopralluogo “da compratore”',
         paragraphs: [
-          'Confronta gli immobili visitati con criteri uguali, non a sensazione. Se stai anche vendendo per poi comprare, una valutazione sul tuo immobile aiuta a capire budget e tempi reali.',
+          'Confronta gli immobili visitati con criteri uguali, non a sensazione. Se la shortlist online non basta, raccontaci cosa cerchi: abbiamo proposte in zona che non compaiono sui portali.',
         ],
         externalLinksLead: 'Per allargare il confronto sugli annunci in zona:',
         externalLinks: [EXTERNAL.immobiliareMonza, EXTERNAL.idealistaMonza],
@@ -590,9 +590,9 @@ export const GUIDE_PAGES: GuidePage[] = [
         externalLinks: [EXTERNAL.immobiliareMonza, EXTERNAL.casaMonza, EXTERNAL.idealistaMonza],
       },
       {
-        heading: 'Se stai vendendo un appartamento',
+        heading: 'Se non trovi quello che cerchi',
         paragraphs: [
-          'Molti compratori arrivano dopo aver messo in vendita il proprio immobile. In quel caso una stima con sopralluogo sul tuo appartamento aiuta a capire tempi e budget in modo concreto.',
+          'Lo stock online non è tutto. Se stai cercando un appartamento con requisiti precisi, possiamo farti sapere se in zona abbiamo immobili riservati — proposte che non pubblichiamo sui portali.',
         ],
       },
     ],
@@ -649,9 +649,9 @@ export const GUIDE_PAGES: GuidePage[] = [
         externalLinks: [EXTERNAL.immobiliareBrianza, EXTERNAL.idealistaMonza, EXTERNAL.casaMonza],
       },
       {
-        heading: 'Valutazione se stai vendendo',
+        heading: 'Oltre gli annunci pubblici',
         paragraphs: [
-          'Per le indipendenti il sopralluogo conta ancora di più: foto e planimetrie online raramente raccontano umidità, esposizione e stato del lotto. Se stai valutando di vendere, una stima sul posto è il punto di partenza più onesto.',
+          'Per ville e indipendenti lo stock online è ancora più sottile. Se stai cercando con criteri precisi, chiedi una consulenza: seguiamo anche immobili che non pubblichiamo sui portali.',
         ],
       },
     ],

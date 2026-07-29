@@ -3,8 +3,8 @@
 /* Hallmark · design-system: DESIGN.md · component: LeadForm
  * Conversion form: elevated shell, fields, primary pill submit (DESIGN.md)
  */
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { Suspense, useEffect, useState } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { PRIVACY_POLICY_URL } from '@/lib/seo'
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -16,8 +16,30 @@ type LeadFormProps = {
   defaultCity?: string
 }
 
-export function LeadForm({ sourcePage = '/', defaultCity = '' }: LeadFormProps) {
+export function LeadForm(props: LeadFormProps) {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-[480px] animate-pulse rounded-3xl border border-line bg-surface p-6" aria-hidden="true" />
+      }
+    >
+      <LeadFormInner {...props} />
+    </Suspense>
+  )
+}
+
+function LeadFormInner({ sourcePage = '/', defaultCity = '' }: LeadFormProps) {
   const router = useRouter()
+  const searchParams = useSearchParams()
+  const purchaseIntent = searchParams.get('intent') === 'acquisto'
+  const fromPage = searchParams.get('from')
+  const effectiveSourcePage = fromPage
+    ? purchaseIntent
+      ? `${fromPage}?intent=acquisto`
+      : fromPage
+    : purchaseIntent
+      ? `${sourcePage}?intent=acquisto`
+      : sourcePage
   const [form, setForm] = useState({
     firstName: '',
     lastName: '',
@@ -67,7 +89,7 @@ export function LeadForm({ sourcePage = '/', defaultCity = '' }: LeadFormProps) 
     const next: FieldErrors = {}
     if (!form.firstName.trim()) next.firstName = 'Inserisci il nome.'
     if (!form.lastName.trim()) next.lastName = 'Inserisci il cognome.'
-    if (!form.city.trim()) next.city = 'Inserisci la città dell’immobile.'
+    if (!form.city.trim()) next.city = purchaseIntent ? 'Inserisci la zona che ti interessa.' : 'Inserisci la città dell’immobile.'
     if (!form.propertyType) next.propertyType = 'Seleziona il tipo di immobile.'
     const sq = Number(form.squareMeters)
     if (!Number.isInteger(sq) || sq < 1) next.squareMeters = 'Inserisci i metri quadri.'
@@ -104,7 +126,7 @@ export function LeadForm({ sourcePage = '/', defaultCity = '' }: LeadFormProps) 
           email: form.email.trim(),
           timeframe: form.timeframe,
           privacyAccepted: form.privacyAccepted,
-          sourcePage,
+          sourcePage: effectiveSourcePage,
         }),
       })
       const data = await res.json()
@@ -126,18 +148,69 @@ export function LeadForm({ sourcePage = '/', defaultCity = '' }: LeadFormProps) 
     }`
 
   return (
+    <LeadFormShell
+      purchaseIntent={purchaseIntent}
+      submitting={submitting}
+      phoneStatus={phoneStatus}
+      form={form}
+      errors={errors}
+      fieldClass={fieldClass}
+      updateField={updateField}
+      handleSubmit={handleSubmit}
+    />
+  )
+}
+
+type FormState = {
+  firstName: string
+  lastName: string
+  city: string
+  squareMeters: string
+  propertyType: string
+  timeframe: string
+  phone: string
+  email: string
+  privacyAccepted: boolean
+}
+
+type LeadFormShellProps = {
+  purchaseIntent: boolean
+  submitting: boolean
+  phoneStatus: 'idle' | 'checking' | 'valid' | 'invalid'
+  form: FormState
+  errors: FieldErrors
+  fieldClass: (field: string) => string
+  updateField: (field: keyof FormState, value: string | boolean) => void
+  handleSubmit: (e: React.FormEvent) => void
+}
+
+function LeadFormShell({
+  purchaseIntent,
+  submitting,
+  phoneStatus,
+  form,
+  errors,
+  fieldClass,
+  updateField,
+  handleSubmit,
+}: LeadFormShellProps) {
+  return (
     <form onSubmit={handleSubmit} noValidate className="space-y-4 rounded-3xl border border-line bg-surface p-5 shadow-[0_8px_28px_rgba(23,28,31,0.06)] md:p-6">
       <div>
         <h2 className="font-headline text-2xl font-extrabold text-secondary md:text-3xl">
-          Richiedi una valutazione gratuita
+          {purchaseIntent ? 'Richiedi una consulenza per l’acquisto' : 'Richiedi una valutazione gratuita'}
         </h2>
         <p className="mt-2 text-sm text-slate">
-          Compila il modulo: ti richiamiamo per organizzare il sopralluogo sul posto.
+          {purchaseIntent
+            ? 'Raccontaci cosa cerchi: ti richiamiamo anche per immobili non pubblicati online, senza impegno.'
+            : 'Compila il modulo: ti richiamiamo per organizzare il sopralluogo sul posto.'}
         </p>
       </div>
 
       <div className="space-y-3">
-        <h3 className="font-headline text-sm font-bold text-secondary">Il tuo immobile</h3>
+        <h3 className="font-headline text-sm font-bold text-secondary">
+          {purchaseIntent ? 'Cosa cerchi' : 'Il tuo immobile'}
+        </h3>
         <div className="grid gap-3 md:grid-cols-2">
           <label className="block space-y-1 md:col-span-2">
             <span className="text-xs font-semibold text-body">Comune / zona</span>
@@ -185,7 +258,9 @@ export function LeadForm({ sourcePage = '/', defaultCity = '' }: LeadFormProps) 
             {errors.propertyType && <p className="text-xs text-error">{errors.propertyType}</p>}
           </label>
           <label className="block space-y-1 md:col-span-2">
-            <span className="text-xs font-semibold text-body">Quando prevedi di comprare/vendere?</span>
+            <span className="text-xs font-semibold text-body">
+              {purchaseIntent ? 'Quando prevedi di comprare?' : 'Quando prevedi di comprare/vendere?'}
+            </span>
             <select
               className={fieldClass('timeframe')}
               name="timeframe"
@@ -288,9 +363,13 @@ export function LeadForm({ sourcePage = '/', defaultCity = '' }: LeadFormProps) 
         disabled={submitting || phoneStatus === 'checking'}
         className="min-h-[52px] w-full rounded-full bg-brand font-headline text-lg font-bold text-white transition hover:bg-brand-rust focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 active:translate-y-px disabled:cursor-not-allowed disabled:opacity-70"
       >
-        {submitting ? 'Invio in corso…' : 'Richiedi sopralluogo gratuito'}
+        {submitting ? 'Invio in corso…' : purchaseIntent ? 'Richiedi la consulenza gratuita' : 'Richiedi sopralluogo gratuito'}
       </button>
-      <p className="text-center text-xs text-slate">Nessun obbligo di mandato, nessun costo, nessuna pubblicità.</p>
+      <p className="text-center text-xs text-slate">
+        {purchaseIntent
+          ? 'Consulenza gratuita, senza impegno di acquisto.'
+          : 'Nessun obbligo di mandato, nessun costo, nessuna pubblicità.'}
+      </p>
       {errors.submit && <p className="text-center text-sm text-error">{errors.submit}</p>}
     </form>
   )
