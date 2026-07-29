@@ -7,6 +7,7 @@ import { Logo } from '@/components/Logo'
 const links = [
   { href: '/monza', label: 'Monza' },
   { href: '/brianza', label: 'Brianza' },
+  { href: '/comprare-casa-monza', label: 'Comprare casa' },
   { href: '/come-funziona', label: 'Come funziona' },
   { href: '/faq', label: 'FAQ' },
 ]

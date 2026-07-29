@@ -42,9 +42,10 @@ Audit Hallmark (22 lug 2026) → fix critical/major chirurgici + piccolo redesig
 
 ### Navigazione
 
-- Link primari: **Monza · Brianza · Come funziona · FAQ**
+- Link primari: **Monza · Brianza · Comprare casa · Come funziona · FAQ**
 - CTA header: **Valutazione** → `/#richiesta`
-- **Vendere / Comprare / Annunci** solo in footer (meno rumore “SaaS nav”)
+- **Comprare casa** in header → `/comprare-casa-monza` (hub acquisto + consulenza)
+- **Vendere / Annunci** solo in footer (meno rumore “SaaS nav”)
 
 File: `web/src/components/SiteHeader.tsx`
 
@@ -169,6 +170,7 @@ Dati: `web/src/lib/guides.ts` · route: `web/src/app/[slug]/page.tsx` · body: `
 | 22 lug | Contesto locale 8 comuni + fix Hallmark (chrome copy, stamp, de-pill header) |
 | 22 lug | Audit follow-up: stamp hub/chrome, tipologiche layoutVariant, H1/related unici, no eyebrow home |
 | 29 lug | Cluster 13 guide acquisto + hub comprare + footer Comprare/Annunci; sitemap ≥ 30 |
+| 29 lug | Header: link **Comprare casa** → hub acquisto |
 
 ---
 
