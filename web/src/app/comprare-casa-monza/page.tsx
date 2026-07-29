@@ -2,6 +2,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { SeoPageLayout } from '@/components/SeoPageLayout'
+import { EXTERNAL } from '@/lib/guides'
 
 export const metadata: Metadata = {
   title: 'Comprare casa a Monza: guida pratica',
@@ -19,26 +20,37 @@ export default function ComprareCasaMonzaPage() {
       defaultCity="Monza"
       breadcrumb="Comprare casa a Monza"
       showForm={false}
+      relatedTitle="Guide per chi compra"
       related={[
+        {
+          href: '/annunci-casa-monza',
+          label: 'Annunci casa a Monza',
+          description: 'Come leggere i portali senza farsi fuorviare.',
+        },
+        {
+          href: '/quartieri-monza',
+          label: 'Quartieri di Monza',
+          description: 'Dove cercare e cosa cambia tra le zone.',
+        },
+        {
+          href: '/spese-acquisto-casa',
+          label: 'Spese di acquisto',
+          description: 'Imposte, notaio e costi oltre il prezzo.',
+        },
+        {
+          href: '/offerta-acquisto-casa',
+          label: 'Offerta di acquisto',
+          description: 'Come impostare una proposta credibile.',
+        },
+        {
+          href: '/comprare-casa-brianza',
+          label: 'Comprare in Brianza',
+          description: 'Quando conviene ampliare il raggio ai comuni vicini.',
+        },
         {
           href: '/vendere-casa-monza',
           label: 'Vendere casa a Monza',
-          description: 'La guida per chi valuta la vendita.',
-        },
-        {
-          href: '/monza',
-          label: 'Valutazione a Monza',
-          description: 'Come cambia il valore tra i quartieri.',
-        },
-        {
-          href: '/brianza',
-          label: 'Valutazione in Brianza',
-          description: 'Comuni vicini e mercati locali.',
-        },
-        {
-          href: '/faq',
-          label: 'Domande frequenti',
-          description: 'Costi, tempi e modalità del servizio.',
+          description: 'Se stai vendendo per poi comprare.',
         },
       ]}
     >
@@ -49,6 +61,25 @@ export default function ComprareCasaMonzaPage() {
         sembrare “di mercato” prezzi che in zona non si chiudono.
       </p>
 
+      <h2>Se cerchi casa, consulta anche i portali</h2>
+      <p>
+        Per capire cosa c’è in vendita oggi, attraversa più vetrine e confronta richieste nella stessa zona —
+        non un solo annuncio isolato. Puoi partire da{' '}
+        <a href={EXTERNAL.immobiliareMonza.href} target="_blank" rel="noopener noreferrer">
+          {EXTERNAL.immobiliareMonza.label}
+        </a>
+        ,{' '}
+        <a href={EXTERNAL.idealistaMonza.href} target="_blank" rel="noopener noreferrer">
+          {EXTERNAL.idealistaMonza.label}
+        </a>{' '}
+        e{' '}
+        <a href={EXTERNAL.casaMonza.href} target="_blank" rel="noopener noreferrer">
+          {EXTERNAL.casaMonza.label}
+        </a>
+        . Poi approfondisci con la guida agli{' '}
+        <Link href="/annunci-casa-monza">annunci casa a Monza</Link>.
+      </p>
+
       <h2>Cosa confrontare prima di un’offerta</h2>
       <ul>
         <li>Zona e contesto locale (servizi, rumore, collegamenti)</li>
@@ -57,6 +88,24 @@ export default function ComprareCasaMonzaPage() {
         <li>Classe energetica e impianti</li>
         <li>Tempi medi di trattativa nella stessa zona</li>
       </ul>
+      <p>
+        Porta una <Link href="/checklist-visita-immobile">checklist in visita</Link> e, quando sei pronto,
+        struttura un’<Link href="/offerta-acquisto-casa">offerta di acquisto</Link> coerente con i valori
+        locali — non solo con il prezzo pubblicato.
+      </p>
+
+      <h2>Budget: spese, mutuo e agevolazioni</h2>
+      <p>
+        Il prezzo concordato non è il costo totale. Metti in conto{' '}
+        <Link href="/spese-acquisto-casa">spese di acquisto</Link>, tempi del{' '}
+        <Link href="/mutuo-prima-casa">mutuo</Link> e, se ti spettano, le{' '}
+        <Link href="/agevolazioni-prima-casa">agevolazioni prima casa</Link>. Per le regole fiscali aggiornate
+        consulta anche l’
+        <a href={EXTERNAL.agenziaEntrate.href} target="_blank" rel="noopener noreferrer">
+          Agenzia delle Entrate
+        </a>
+        .
+      </p>
 
       <h2>Perché i valori locali contano</h2>
       <p>
@@ -66,13 +115,13 @@ export default function ComprareCasaMonzaPage() {
         di mercato locale ti aiutano a leggere meglio Monza e i comuni vicini.
       </p>
 
-      <h2>Monza e comuni limitrofi</h2>
+      <h2>Monza, quartieri e comuni limitrofi</h2>
       <p>
-        Se stai cercando fuori dal solo comune di Monza, confronta anche i mercati di{' '}
-        <Link href="/valutazione/lissone">Lissone</Link>,{' '}
+        Se stai scegliendo la zona, parti dai <Link href="/quartieri-monza">quartieri di Monza</Link>. Fuori
+        dal solo comune, confronta anche i mercati di <Link href="/valutazione/lissone">Lissone</Link>,{' '}
         <Link href="/valutazione/brugherio">Brugherio</Link>,{' '}
-        <Link href="/valutazione/villasanta">Villasanta</Link> e degli altri comuni a ridosso della città.
-        Ogni zona ha una domanda diversa.
+        <Link href="/valutazione/villasanta">Villasanta</Link> e degli altri comuni a ridosso della città —
+        oppure leggi la guida per <Link href="/comprare-casa-brianza">comprare casa in Brianza</Link>.
       </p>
 
       <h2>Se stai anche valutando di vendere</h2>

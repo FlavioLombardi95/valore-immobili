@@ -40,16 +40,13 @@ Al primo submit lead lo schema viene anche creato automaticamente se mancante.
 
 ## Pagine pubbliche indicizzate
 
-- `/`
-- `/monza`
-- `/brianza`
-- `/come-funziona`
-- `/faq`
-- `/vendere-casa-monza`
-- `/comprare-casa-monza`
-- `/valutazione/{comune}` (8 comuni — vedi `docs/FRONTEND.md`)
+- `/` · `/monza` · `/brianza`
+- `/come-funziona` · `/faq`
+- `/vendere-casa-monza` · `/comprare-casa-monza` (hub acquisto)
+- 13 guide acquisto flat (`/annunci-casa-monza`, `/spese-acquisto-casa`, … — vedi `src/lib/guides.ts`)
+- `/valutazione/{comune}` (8 comuni) + tipologiche appartamenti/ville
 
-Sitemap dinamica: `/sitemap.xml`  
+Sitemap dinamica: `/sitemap.xml` (≥ 30 URL)  
 Robots: `/robots.txt`
 
 ## Documentazione (repo)

@@ -138,7 +138,8 @@ export default function HomePage() {
               <Link href="/monza">Monza</Link> e della{' '}
               <Link href="/brianza">provincia di Monza e Brianza</Link> significa valutare un immobile per la
               sua zona reale, non per una media provinciale. Se stai pensando di vendere, puoi partire dalla{' '}
-              <Link href="/vendere-casa-monza">guida per vendere casa a Monza</Link>.
+              <Link href="/vendere-casa-monza">guida per vendere casa a Monza</Link>. Se stai cercando casa,
+              leggi la guida per <Link href="/comprare-casa-monza">comprare casa a Monza</Link>.
             </p>
           </div>
 
@@ -156,14 +157,14 @@ export default function HomePage() {
                 description: 'Il servizio nei comuni della provincia.',
               },
               {
-                href: '/valutazione/appartamenti-monza',
-                label: 'Valutazione appartamenti',
-                description: 'Piano, spese e condominio a Monza.',
+                href: '/comprare-casa-monza',
+                label: 'Comprare casa a Monza',
+                description: 'Mercato locale, annunci e costi di acquisto.',
               },
               {
-                href: '/valutazione/ville-brianza',
-                label: 'Valutazione ville',
-                description: 'Ville e case indipendenti in Brianza.',
+                href: '/vendere-casa-monza',
+                label: 'Vendere casa a Monza',
+                description: 'Da dove iniziare prima di fissare un prezzo.',
               },
             ]}
           />
