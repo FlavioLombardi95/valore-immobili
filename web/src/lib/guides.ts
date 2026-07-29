@@ -55,7 +55,7 @@ export const EXTERNAL = {
     label: 'Agenzia delle Entrate',
   },
   agevolazioniPrimaCasa: {
-    href: 'https://www.agenziaentrate.gov.it/portale/web/guest/schede/fabbricatiterreni/agevolazioni-prima-casa',
+    href: 'https://www.agenziaentrate.gov.it/portale/aree-tematiche/casa/agevolazioni/agevolazioni-per-acquisto-della-prima-casa',
     label: 'Agevolazioni prima casa — Agenzia delle Entrate',
   },
   visuraCatastale: {
@@ -67,8 +67,8 @@ export const EXTERNAL = {
     label: 'Consiglio Nazionale del Notariato',
   },
   bancaItaliaMutui: {
-    href: 'https://www.bancaditalia.it/servizi-cittadino/servizi/educazione-finanziaria/',
-    label: 'Educazione finanziaria — Banca d’Italia',
+    href: 'https://www.bancaditalia.it/pubblicazioni/guide-bi/guida-mutuo/index.html',
+    label: 'Guida al mutuo — Banca d’Italia',
   },
 } as const
 
