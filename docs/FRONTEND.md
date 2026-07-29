@@ -171,6 +171,7 @@ Dati: `web/src/lib/guides.ts` · route: `web/src/app/[slug]/page.tsx` · body: `
 | 22 lug | Audit follow-up: stamp hub/chrome, tipologiche layoutVariant, H1/related unici, no eyebrow home |
 | 29 lug | Cluster 13 guide acquisto + hub comprare + footer Comprare/Annunci; sitemap ≥ 30 |
 | 29 lug | Header: link **Comprare casa** → hub acquisto |
+| 29 lug | Mappe reali Leaflet + OpenStreetMap su `/brianza` e `/quartieri-monza` |
 
 ---
 
