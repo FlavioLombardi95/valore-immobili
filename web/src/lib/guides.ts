@@ -457,37 +457,92 @@ export const GUIDE_PAGES: GuidePage[] = [
   {
     slug: 'spese-acquisto-casa',
     shortLabel: 'Spese di acquisto',
-    metaTitle: 'Spese acquisto casa: cosa mettere in conto',
+    metaTitle: 'Spese acquisto casa a Monza: cosa mettere in budget',
     metaDescription:
-      'Spese per acquistare casa a Monza e in Brianza: imposte, notaio, eventuali mediazioni e costi da non dimenticare oltre al prezzo.',
+      'Spese per acquistare casa a Monza e in Brianza: imposte, notaio, mutuo, mediazioni e costi oltre il prezzo. Come ragionare sul budget reale prima dell’offerta.',
     title: 'Spese di acquisto casa: oltre il prezzo dell’immobile',
     intro:
-      'Il prezzo concordato non è tutto. Imposte, notaio e altri costi cambiano il budget reale — soprattutto sulla prima casa.',
+      'Il prezzo concordato **non è il costo totale**. Imposte, notaio, eventuale mutuo e lavori cambiano il budget reale, a Monza come in Brianza. Ecco le voci da mettere in conto prima di un’offerta.',
     breadcrumb: 'Spese di acquisto',
     relatedTitle: 'Documenti e agevolazioni',
     sections: [
       {
+        heading: 'Perché il prezzo dell’annuncio non basta',
+        paragraphs: [
+          'Molti acquirenti fissano il budget sul prezzo richiesto e scoprono dopo, in trattativa o al rogito, che mancavano pezzi. Un immobile “più economico” in vetrina può costare di più dopo fiscalità, mediazione e lavori urgenti.',
+          'Meglio ragionare sul **costo complessivo** prima della proposta formale. Così confronti appartamenti e case nello stesso modo, senza sorprese a metà percorso.',
+        ],
+        internalLinksLead: 'Quadro acquisto e offerta:',
+        internalLinks: [
+          { href: '/comprare-casa-monza', label: 'comprare casa a Monza' },
+          { href: '/offerta-acquisto-casa', label: 'offerta di acquisto' },
+          { href: '/annunci-casa-monza', label: 'leggere gli annunci' },
+        ],
+      },
+      {
         heading: 'Voci tipiche da mettere in conto',
+        paragraphs: [
+          'L’elenco non sostituisce un calcolo personalizzato con notaio o consulente fiscale: le aliquote e i casi (privato, impresa, prima casa, seconda casa) cambiano. Serve a non dimenticare le caselle.',
+        ],
         bullets: [
-          'Imposte di registro / IVA a seconda della tipologia di vendita',
+          'Imposte di registro o IVA, a seconda della tipologia di vendita',
           'Onorario notarile e adempimenti collegati al rogito',
           'Eventuale provvigione dell’agenzia (se prevista dal mandato)',
           'Visure, perizie bancarie e costi legati al mutuo',
           'Spese condominiali arretrate o lavori già deliberati',
+          'Lavori minimi subito dopo il rogito (se l’immobile lo richiede)',
+          'Trasloco, utenze e piccoli costi di ingresso',
         ],
       },
       {
-        heading: 'Prima casa e non solo',
+        heading: 'Prima casa e requisiti: verifica sulle fonti ufficiali',
         paragraphs: [
-          'Le agevolazioni “prima casa” possono ridurre in modo sensibile le imposte, ma hanno requisiti precisi. Non basarti sul sentito dire: verifica le condizioni aggiornate sulle fonti ufficiali prima di firmare una proposta.',
+          'Le agevolazioni “prima casa” possono ridurre in modo sensibile le imposte, ma hanno requisiti precisi (e aggiornamenti normativi). Non basarti sul sentito dire o su riassunti di forum prima di firmare una proposta.',
+          'Usa le guide istituzionali e, se serve, chiedi conferma al notaio sul tuo caso. Qui trovi anche una pagina orientativa sul sito, con link ufficiali.',
         ],
         externalLinksLead: 'Fonti istituzionali da consultare:',
         externalLinks: [EXTERNAL.agevolazioniPrimaCasa, EXTERNAL.agenziaEntrate, EXTERNAL.notariato],
+        internalLinksLead: 'Approfondimento sul sito:',
+        internalLinks: [{ href: '/agevolazioni-prima-casa', label: 'agevolazioni prima casa' }],
       },
       {
-        heading: 'Budget e trattativa',
+        heading: 'Mutuo: rata, anticipo e costi accessori',
         paragraphs: [
-          'Quando fai un’offerta a Monza o in Brianza, ragiona sul costo complessivo: un immobile “più economico” sull’annuncio può costare di più dopo lavori, spese e fiscalità. Meglio chiarirlo prima della proposta formale.',
+          'Se finanzi l’acquisto, il budget non è solo “prezzo meno mutuo”. Contano anticipo richiesto dalla banca, perizia, istruttoria e tempi di delibera. Un’offerta nata senza ordine di grandezza sul finanziamento rischia di nascere fragile.',
+          'Allinea shortlist e proposta a ciò che la banca può sostenere, non solo a ciò che vorresti spendere sull’annuncio.',
+        ],
+        internalLinksLead: 'Passaggio dedicato:',
+        internalLinks: [
+          { href: '/mutuo-prima-casa', label: 'mutuo prima casa' },
+          { href: '/tempi-acquisto-casa', label: 'tempi fino al rogito' },
+        ],
+        externalLinksLead: 'Guida istituzionale:',
+        externalLinks: [EXTERNAL.bancaItaliaMutui],
+      },
+      {
+        heading: 'Condominio e indipendenti: costi che cambiano il confronto',
+        paragraphs: [
+          'Su un appartamento a Monza pesano spese condominiali e lavori deliberati: chiedili prima dell’offerta, non dopo. Su una villa o casa in Brianza pesano tetto, impianti e gestione del lotto: l’annuncio spesso li sottovaluta.',
+          'Due immobili con prezzo richiesto simile possono avere costi di possesso molto diversi nei primi anni. Mettili nella stessa tabella di confronto.',
+        ],
+        internalLinksLead: 'Focus tipologici:',
+        internalLinks: [
+          { href: '/appartamenti-in-vendita-monza', label: 'appartamenti a Monza' },
+          { href: '/ville-in-vendita-brianza', label: 'ville in Brianza' },
+          { href: '/documenti-acquisto-casa', label: 'documenti per l’acquisto' },
+        ],
+      },
+      {
+        heading: 'Come usare queste voci in trattativa',
+        paragraphs: [
+          'Quando confronti due case a Monza o in Brianza, ordina il pensiero così: prezzo chiedibile e chiudibile in quella micro-zona; costi di atto e fiscalità; lavori e gestione nei 12-24 mesi successivi. Solo dopo ha senso “quanto posso offrire”.',
+          'Se vuoi un parere locale su zona e prezzo richiesto (anche per capire se il listino sta in piedi), la consulenza all’acquisto è gratuita e senza impegno. Non sostituisce notaio o commercialista sulle imposte.',
+        ],
+        internalLinksLead: 'Continua il percorso:',
+        internalLinks: [
+          { href: '/checklist-visita-immobile', label: 'checklist di visita' },
+          { href: '/offerta-acquisto-casa', label: 'offerta di acquisto' },
+          { href: '/comprare-casa-brianza', label: 'comprare in Brianza' },
         ],
       },
     ],
@@ -511,6 +566,16 @@ export const GUIDE_PAGES: GuidePage[] = [
         href: '/offerta-acquisto-casa',
         label: 'Offerta di acquisto',
         description: 'Come strutturare la proposta.',
+      },
+      {
+        href: '/tempi-acquisto-casa',
+        label: 'Tempi di acquisto',
+        description: 'Dalla visita al rogito.',
+      },
+      {
+        href: '/comprare-casa-monza',
+        label: 'Comprare casa a Monza',
+        description: 'Hub acquisto locale.',
       },
     ],
   },
