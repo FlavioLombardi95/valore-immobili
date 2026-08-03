@@ -130,11 +130,11 @@ export const GUIDE_PAGES: GuidePage[] = [
         paragraphs: [
           'Prima di innamorarti di un annuncio, metti nero su bianco vincoli e raggio. Non serve un business plan: basta sapere budget massimo realistico (incluso mutuo e costi di atto), tipologica accettabile e quanti comuni sei disposto a seguire davvero. Se il mutuo non è ancora simulato, fallo prima di restringere i filtri: cambia il raggio più di quanto pensi.',
           'Scegli **due o tre comuni**, non “tutta la Brianza”. Allargare troppo diluisce le visite e rende i confronti inutili. Una regola pratica: se in due settimane non riesci a visitare almeno un paio di immobili per comune, il raggio è troppo largo.',
-          'Poi filtra i portali **per comune** — non solo per “Monza e provincia” — e confronta immobili nella stessa fascia di domanda: stessa tipologica, stato simile, contesto di via confrontabile. In visita usa una checklist concreta. Solo dopo, se l’immobile regge, costruisci un’offerta credibile sul mercato di quel comune, non su una media stampata da qualche stimatore online.',
+          'Poi filtra i portali **per comune**, non solo per “Monza e provincia”, e confronta immobili nella stessa fascia di domanda: stessa tipologica, stato simile, contesto di via confrontabile. In visita usa una checklist concreta. Solo dopo, se l’immobile regge, costruisci un’offerta credibile sul mercato di quel comune, non su una media stampata da qualche stimatore online.',
         ],
         bullets: [
           'Fissa budget, tempi e tipologica (anche con un primo giro mutuo)',
-          'Seleziona 2–3 comuni e resta lì per qualche settimana di ricerca',
+          'Seleziona 2 o 3 comuni e resta lì per qualche settimana di ricerca',
           'Filtra gli annunci per comune e aggiorna i salvataggi spesso',
           'Confronta nella stessa fascia di domanda, non solo per metratura',
           'Visita con criteri chiari, poi valuta l’offerta',
@@ -202,7 +202,7 @@ export const GUIDE_PAGES: GuidePage[] = [
       {
         heading: 'Dopo la visita: documenti, tempi e agevolazioni',
         paragraphs: [
-          'Una visita convincente **non chiude il percorso**. Prima di impegnarti, allinea documenti, tempi verso il rogito e — se ti riguarda — i requisiti delle agevolazioni prima casa. Sono passaggi noiosi quanto utili: evitano sorprese quando sei già emotivamente “dentro” l’immobile.',
+          'Una visita convincente **non chiude il percorso**. Prima di impegnarti, allinea documenti, tempi verso il rogito e, se ti riguarda, i requisiti delle agevolazioni prima casa. Sono passaggi noiosi quanto utili: evitano sorprese quando sei già emotivamente “dentro” l’immobile.',
           'Non serve ripetere qui ogni voce di costo o ogni scadenziario. Meglio usare le guide dedicate e tornare su questa pagina solo per il confronto tra comuni.',
         ],
         internalLinksLead: 'Checklist dopo la visita:',
@@ -217,7 +217,7 @@ export const GUIDE_PAGES: GuidePage[] = [
         heading: 'Quando ha senso una consulenza locale',
         paragraphs: [
           'Se stai confrontando due o tre comuni, hai poco tempo per le visite, cerchi una tipologica stretta o vuoi capire se un prezzo richiesto sta in piedi in quella zona, un parere locale riduce i giri a vuoto.',
-          'La consulenza sull’acquisto è **gratuita e senza impegno** di comprare con noi. Serve a leggere mercato e opportunità — anche immobili che non trovi in vetrina — con lo stesso approccio concreto che usiamo sul territorio: niente stima automatica come unica bussola.',
+          'La consulenza sull’acquisto è **gratuita e senza impegno** di comprare con noi. Serve a leggere mercato e opportunità, anche immobili che non trovi in vetrina, con lo stesso approccio concreto che usiamo sul territorio: niente stima automatica come unica bussola.',
           'Se invece stai vendendo per poi comprare, tieni aperti entrambi i percorsi: valutazione con sopralluogo sull’immobile attuale e ricerca sul prossimo.',
         ],
         internalLinksLead: 'Due porte d’ingresso, a seconda di dove sei nel percorso:',

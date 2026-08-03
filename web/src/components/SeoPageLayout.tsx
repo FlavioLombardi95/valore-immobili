@@ -5,6 +5,7 @@ import type { ReactNode } from 'react'
 import Link from 'next/link'
 import { LeadForm } from '@/components/LeadForm'
 import { RelatedLinks, type RelatedLink } from '@/components/RelatedLinks'
+import { renderInlineEmphasis } from '@/lib/inline-emphasis'
 
 type SeoPageProps = {
   title: string
@@ -55,7 +56,7 @@ export function SeoPageLayout({
             <h1 className="font-headline text-3xl font-extrabold tracking-tight text-ink text-balance md:text-4xl">
               {title}
             </h1>
-            <p className="text-base text-slate text-pretty md:text-lg">{intro}</p>
+            <p className="text-base text-slate text-pretty md:text-lg">{renderInlineEmphasis(intro)}</p>
           </div>
           <div className="rich-content">{children}</div>
           {!showForm && (
