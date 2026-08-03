@@ -115,8 +115,13 @@ export default function HomePage() {
               Le stime automatiche partono da medie e metrature: non vedono lo stato reale dell’immobile, la
               luminosità, il piano, i lavori fatti, la vista o il contesto condominiale. A Monza e in Brianza
               due appartamenti con gli stessi metri quadri possono valere in modo molto diverso a seconda
-              della via, dell’esposizione e della manutenzione. Per questo la stima nasce da un{' '}
-              <strong>sopralluogo reale</strong>, non da un algoritmo.
+              della via, dell’esposizione e della manutenzione.
+            </p>
+            <p>
+              Per questo la stima nasce da un <strong>sopralluogo reale</strong> e dal confronto con vendite e
+              domanda locali, non da un unico numero generico di città. È lo stesso motivo per cui, in
+              ricerca, ha senso guardare i <Link href="/quartieri-monza">quartieri di Monza</Link> e non
+              solo “prezzo medio Monza”.
             </p>
 
             <h2>Come funziona, passo per passo</h2>
@@ -128,24 +133,52 @@ export default function HomePage() {
               ))}
             </ol>
             <p>
-              Vuoi i dettagli del percorso? Leggi <Link href="/come-funziona">come funziona la valutazione</Link>{' '}
-              oppure le <Link href="/faq">domande frequenti</Link> su costi e tempi.
+              Il percorso è <strong>gratuito e senza impegno</strong>: nessun obbligo di affidare la vendita
+              dopo la stima. Dettagli su <Link href="/come-funziona">come funziona la valutazione</Link>;
+              costi, tempi e documenti nelle <Link href="/faq">domande frequenti</Link>.
             </p>
 
-            <h2>Un servizio locale, per la tua zona</h2>
+            <h2>Monza e Brianza: mercato locale, non medie provinciali</h2>
             <p>
-              Lavoriamo su Monza e sui comuni della Brianza: conoscere il mercato di{' '}
-              <Link href="/monza">Monza</Link> e della{' '}
-              <Link href="/brianza">provincia di Monza e Brianza</Link> significa valutare un immobile per la
-              sua zona reale, non per una media provinciale. Se stai pensando di vendere, puoi partire dalla{' '}
-              <Link href="/vendere-casa-monza">guida per vendere casa a Monza</Link>. Se stai cercando casa,
-              leggi la guida per <Link href="/comprare-casa-monza">comprare casa a Monza</Link>.
+              Lavoriamo su <Link href="/monza">Monza</Link> e sui comuni della{' '}
+              <Link href="/brianza">provincia di Monza e Brianza</Link>. Valutare un immobile per la sua zona
+              reale (via, tipologica, stato) evita di partire da una media provinciale che non descrive né il
+              centro né i comuni più esterni.
+            </p>
+            <p>
+              Se cerchi un focus tipologico, puoi approfondire gli{' '}
+              <Link href="/appartamenti-in-vendita-monza">appartamenti in vendita a Monza</Link> o le{' '}
+              <Link href="/ville-in-vendita-brianza">ville in vendita in Brianza</Link>: sono guide di
+              orientamento, non listini.
+            </p>
+
+            <h2>Per chi vende e per chi compra</h2>
+            <p>
+              Se stai pensando di vendere, la valutazione con sopralluogo ti dà un punto di partenza prima di
+              fissare il prezzo o pubblicare. La guida{' '}
+              <Link href="/vendere-casa-monza">vendere casa a Monza</Link> aiuta a mettere in ordine tempi e
+              documenti.
+            </p>
+            <p>
+              Se stai cercando casa, parti da <Link href="/comprare-casa-monza">comprare casa a Monza</Link>{' '}
+              o da <Link href="/comprare-casa-brianza">comprare casa in Brianza</Link>. Oltre agli annunci
+              online puoi anche richiedere una consulenza gratuita sull’acquisto, senza impegno.
             </p>
           </div>
 
           <RelatedLinks
             title="Approfondimenti utili"
             items={[
+              {
+                href: '/come-funziona',
+                label: 'Come funziona',
+                description: 'Richiesta, sopralluogo e stima passo per passo.',
+              },
+              {
+                href: '/faq',
+                label: 'Domande frequenti',
+                description: 'Costi, tempi, documenti e obblighi.',
+              },
               {
                 href: '/monza',
                 label: 'Valutazione a Monza',
@@ -157,14 +190,14 @@ export default function HomePage() {
                 description: 'Il servizio nei comuni della provincia.',
               },
               {
-                href: '/comprare-casa-monza',
-                label: 'Comprare casa a Monza',
-                description: 'Mercato locale, annunci e costi di acquisto.',
-              },
-              {
                 href: '/vendere-casa-monza',
                 label: 'Vendere casa a Monza',
                 description: 'Da dove iniziare prima di fissare un prezzo.',
+              },
+              {
+                href: '/comprare-casa-monza',
+                label: 'Comprare casa a Monza',
+                description: 'Mercato locale, annunci e costi di acquisto.',
               },
             ]}
           />
