@@ -955,41 +955,98 @@ export const GUIDE_PAGES: GuidePage[] = [
   {
     slug: 'checklist-visita-immobile',
     shortLabel: 'Checklist visita',
-    metaTitle: 'Checklist visita immobile: cosa controllare',
+    metaTitle: 'Checklist visita immobile a Monza: cosa controllare',
     metaDescription:
-      'Checklist per visitare una casa in vendita a Monza o in Brianza: stato, rumori, impianti, condominio e domande da fare prima di un’offerta.',
+      'Checklist per visitare una casa in vendita a Monza o in Brianza: luce, rumori, impianti, condominio, indipendenti e domande prima di un’offerta.',
     title: 'Checklist visita immobile: cosa non dimenticare',
     intro:
-      'La visita è il momento in cui l’annuncio diventa concreto. Porta un elenco e non affidarti solo alle foto.',
+      'La visita è il momento in cui l’annuncio diventa concreto. Porta un **elenco scritto** e non affidarti solo alle foto: a Monza e in Brianza i dettagli di via, piano e stato spostano il confronto.',
     breadcrumb: 'Checklist visita',
     relatedTitle: 'Dopo la visita',
     sections: [
       {
+        heading: 'Prima di entrare: prepara il confronto',
+        paragraphs: [
+          'Arriva con i punti dell’annuncio a portata di mano: prezzo richiesto, piano, mq dichiarati, box, spese se indicate. Segna già le domande. Confronta ogni visita con gli stessi criteri, non a sensazione dopo tre case di fila.',
+          'Se stai vedendo più tipologiche (appartamento vs indipendente), tieni checklist separate: mescolarle confonde il giudizio.',
+        ],
+        internalLinksLead: 'Prima della visita:',
+        internalLinks: [
+          { href: '/annunci-casa-monza', label: 'leggere gli annunci' },
+          { href: '/appartamenti-in-vendita-monza', label: 'appartamenti a Monza' },
+          { href: '/ville-in-vendita-brianza', label: 'ville in Brianza' },
+        ],
+      },
+      {
         heading: 'Dentro l’immobile',
+        paragraphs: [
+          'Qui l’annuncio si verifica o si smentisce. Non serve essere tecnici: serve attenzione sistematica.',
+        ],
         bullets: [
           'Luce naturale nelle stanze principali nelle ore tipiche d’uso',
           'Stato di pavimenti, infissi, umidità e eventuali crepe',
           'Impianti: caldaia, elettrico, termosifoni o pavimento radiante',
           'Distribuzione degli spazi rispetto alle tue esigenze reali',
           'Rumori da strada, cortile, locali o vicini',
+          'Odori di umidità o chiuso persistente',
+          'Balconi, cantina, ripostigli: utilità reale, non solo “ci sono”',
         ],
       },
       {
-        heading: 'Condominio e contesto',
+        heading: 'Condominio e contesto (tipico a Monza)',
+        paragraphs: [
+          'Su un appartamento il contesto condominiale e di via pesa quanto l’interno. Chiedi spese e lavori deliberati: meglio saperlo in visita che dopo l’offerta.',
+        ],
         bullets: [
-          'Parti comuni: ingresso, scale, ascensore, cortile',
+          'Parti comuni: ingresso, scale, ascensore, cortile, facciata',
           'Spese ordinarie e lavori già approvati o in discussione',
           'Parcheggio, box, accessi e traffico nelle ore di punta',
           'Servizi a piedi: negozi, scuole, mezzi',
+          'Rumore di via di passaggio vs strada residenziale quieta',
+        ],
+        internalLinksLead: 'Zona e tipologica:',
+        internalLinks: [
+          { href: '/quartieri-monza', label: 'quartieri di Monza' },
+          { href: '/documenti-acquisto-casa', label: 'documenti da chiedere' },
         ],
       },
       {
-        heading: 'Dopo il sopralluogo “da compratore”',
+        heading: 'Se visiti una villa o casa indipendente',
         paragraphs: [
-          'Confronta gli immobili visitati con criteri uguali, non a sensazione. Se la shortlist online non basta, raccontaci cosa cerchi: abbiamo proposte in zona che non compaiono sui portali.',
+          'Aggiungi controlli che in condominio non esistono o pesano meno: tetto e grondaie (per quanto visibili), confini e privacy, giardino davvero utilizzabile, accessi e parcheggio, stato di caldaia e impianti “da casa”, non solo da appartamento.',
+          'Il costo di gestione nei prossimi anni fa parte del confronto, anche se l’annuncio non lo dice.',
+        ],
+        internalLinksLead: 'Approfondimento tipologico:',
+        internalLinks: [{ href: '/ville-in-vendita-brianza', label: 'ville in vendita in Brianza' }],
+      },
+      {
+        heading: 'Domande utili da fare in visita',
+        paragraphs: [
+          'Non tutte le risposte saranno definitive, ma le evasive sono già un segnale.',
+        ],
+        bullets: [
+          'Da quanto è in vendita e se il prezzo è già sceso',
+          'Motivazione della vendita (senza pressare: serve contesto)',
+          'Spese condominiali e ultimi lavori (o costi di gestione se indipendente)',
+          'Documenti pronti: planimetria, APE, situazione spese',
+          'Cosa è incluso nel prezzo (box, cantina, arredi)',
+        ],
+      },
+      {
+        heading: 'Dopo il sopralluogo da compratore',
+        paragraphs: [
+          'Appena uscito, segna pro e contro a caldo con la stessa griglia usata per le altre visite. Poi, se l’immobile regge, passa a documenti e offerta; se no, sostituiscilo in shortlist nella stessa fascia di domanda.',
+          'Se la shortlist online non basta, una consulenza locale (gratuita e senza impegno) può affiancare la ricerca anche su proposte non in vetrina.',
         ],
         externalLinksLead: 'Per allargare il confronto sugli annunci in zona:',
         externalLinks: [EXTERNAL.immobiliareMonza, EXTERNAL.idealistaMonza],
+        internalLinksLead: 'Passi successivi:',
+        internalLinks: [
+          { href: '/offerta-acquisto-casa', label: 'offerta di acquisto' },
+          { href: '/documenti-acquisto-casa', label: 'documenti' },
+          { href: '/spese-acquisto-casa', label: 'spese di acquisto' },
+          { href: '/comprare-casa-monza', label: 'hub comprare a Monza' },
+        ],
       },
     ],
     related: [
@@ -1012,6 +1069,16 @@ export const GUIDE_PAGES: GuidePage[] = [
         href: '/documenti-acquisto-casa',
         label: 'Documenti acquisto',
         description: 'Carta da richiedere al venditore.',
+      },
+      {
+        href: '/appartamenti-in-vendita-monza',
+        label: 'Appartamenti a Monza',
+        description: 'Cosa pesa in condominio.',
+      },
+      {
+        href: '/ville-in-vendita-brianza',
+        label: 'Ville in Brianza',
+        description: 'Checklist tipologica indipendenti.',
       },
     ],
   },
