@@ -1399,37 +1399,94 @@ export const GUIDE_PAGES: GuidePage[] = [
   {
     slug: 'tempi-acquisto-casa',
     shortLabel: 'Tempi di acquisto',
-    metaTitle: 'Tempi acquisto casa: dalla visita al rogito',
+    metaTitle: 'Tempi acquisto casa a Monza: dalla visita al rogito',
     metaDescription:
-      'Tempi per comprare casa a Monza e in Brianza: dalla prima visita al rogito, cosa allunga il percorso e come evitare ritardi evitabili.',
+      'Tempi per comprare casa a Monza e in Brianza: fasi dalla ricerca al rogito, cosa allunga il percorso e come scrivere scadenze realistiche in proposta.',
     title: 'Tempi di acquisto casa: le fasi che contano',
     intro:
-      'Tra il “mi piace” e le chiavi in mano passano settimane o mesi. Conoscere le fasi aiuta a non firmare scadenze impossibili.',
+      'Tra il “mi piace” e le chiavi in mano passano settimane o mesi. Conoscere le **fasi tipiche** a Monza e in Brianza aiuta a non firmare scadenze impossibili.',
     breadcrumb: 'Tempi di acquisto',
     relatedTitle: 'Organizzare l’acquisto',
     sections: [
       {
-        heading: 'Fasi tipiche',
+        heading: 'Perché i tempi fanno parte dell’offerta',
+        paragraphs: [
+          'Un prezzo “giusto” con scadenze irrealistiche è comunque una proposta debole. Venditore, banca e notaio hanno calendari diversi: se non li allinei, la trattativa si inceppa anche quando c’è accordo sul numero.',
+          'Meglio una timeline chiara (anche se più lunga) che una corsa all’ultimo giorno utile.',
+        ],
+        internalLinksLead: 'Proposta e finanziamento:',
+        internalLinks: [
+          { href: '/offerta-acquisto-casa', label: 'offerta di acquisto' },
+          { href: '/mutuo-prima-casa', label: 'mutuo prima casa' },
+        ],
+      },
+      {
+        heading: 'Fasi tipiche (orientative)',
+        paragraphs: [
+          'I giorni esatti dipendono da mutuo, documenti e se stai vendendo in parallelo. L’ordine, però, è quasi sempre questo.',
+        ],
         bullets: [
-          'Ricerca e visite',
+          'Ricerca e visite (shortlist nella stessa fascia di domanda)',
           'Offerta / proposta accettata',
           'Due diligence documentale e (spesso) istruttoria mutuo',
           'Compromesso',
           'Rogito notarile e consegna',
         ],
+        internalLinksLead: 'Supporto alle fasi iniziali:',
+        internalLinks: [
+          { href: '/checklist-visita-immobile', label: 'checklist di visita' },
+          { href: '/annunci-casa-monza', label: 'annunci casa' },
+          { href: '/documenti-acquisto-casa', label: 'documenti' },
+        ],
       },
       {
-        heading: 'Cosa allunga i tempi',
+        heading: 'Cosa allunga i tempi (e come anticiparlo)',
         paragraphs: [
-          'Documenti incompleti, perizia bancaria in ritardo, lavori condominiali da chiarire o una vendita collegata non ancora chiusa. Se stai vendendo per comprare, allinea i due percorsi con margini realistici.',
+          'Documenti incompleti, perizia bancaria in ritardo, lavori condominiali da chiarire, planimetria che non torna, o una vendita collegata non ancora chiusa. Molti ritardi si evitano chiedendo carta e tempi banca prima di stringere scadenze aggressive.',
+        ],
+        bullets: [
+          'Mutuo: delibera e perizia non “in un weekend”',
+          'Condominio: spese e delibere da verificare',
+          'Indipendenti: più controlli su impianti e confini',
+          'Catena vendita-acquisto: due calendari da tenere insieme',
         ],
         externalLinksLead: 'Per il passaggio formale dal compromesso al rogito:',
         externalLinks: [EXTERNAL.notariato, EXTERNAL.visuraCatastale],
       },
       {
+        heading: 'Se stai vendendo per comprare',
+        paragraphs: [
+          'Allinea i due percorsi con margini realistici. Non usare la data “sperata” della vendita come certezza per il rogito dell’acquisto. Parti da una stima concreta su ciò che vendi e da un metodo serio su ciò che cerchi.',
+        ],
+        internalLinksLead: 'Entrambi i lati:',
+        internalLinks: [
+          { href: '/vendere-casa-monza', label: 'vendere casa a Monza' },
+          { href: '/comprare-casa-monza', label: 'comprare casa a Monza' },
+          { href: '/come-funziona', label: 'come funziona la valutazione' },
+        ],
+      },
+      {
         heading: 'Come tenerti sul pezzo',
         paragraphs: [
-          'Tieni una timeline condivisa con agenzia (se c’è), banca e notaio. Meglio una proposta con tempi chiari che una corsa all’ultimo giorno utile.',
+          'Tieni una timeline condivisa con agenzia (se c’è), banca e notaio. Scrivi in proposta tempi di compromesso e rogito coerenti con mutuo e documenti. Aggiorna la shortlist solo con immobili che puoi davvero visitare e sostenere nei tempi.',
+          'I costi accessori (imposte, notaio, lavori) entrano nel calendario mentale quanto nella cifra: un budget stretto allunga le decisioni.',
+        ],
+        internalLinksLead: 'Budget e tipologiche:',
+        internalLinks: [
+          { href: '/spese-acquisto-casa', label: 'spese di acquisto' },
+          { href: '/appartamenti-in-vendita-monza', label: 'appartamenti a Monza' },
+          { href: '/ville-in-vendita-brianza', label: 'ville in Brianza' },
+        ],
+      },
+      {
+        heading: 'Quando chiedere una mano sul territorio',
+        paragraphs: [
+          'Se i tempi si allungano perché non trovi stock adatto, o perché stai confrontando più comuni della Brianza, una consulenza locale sull’acquisto può ridurre i giri a vuoto. È gratuita e senza impegno: non sostituisce banca o notaio.',
+        ],
+        internalLinksLead: 'Hub utili:',
+        internalLinks: [
+          { href: '/comprare-casa-brianza', label: 'comprare in Brianza' },
+          { href: '/agevolazioni-prima-casa', label: 'agevolazioni prima casa' },
         ],
       },
     ],
@@ -1453,6 +1510,16 @@ export const GUIDE_PAGES: GuidePage[] = [
         href: '/vendere-casa-monza',
         label: 'Vendere casa a Monza',
         description: 'Se stai vendendo per poi comprare.',
+      },
+      {
+        href: '/checklist-visita-immobile',
+        label: 'Checklist visita',
+        description: 'Prima fase sul posto.',
+      },
+      {
+        href: '/spese-acquisto-casa',
+        label: 'Spese di acquisto',
+        description: 'Costi nel percorso.',
       },
     ],
   },

@@ -17,8 +17,8 @@ Stato: **1 fatto** · resto in coda. Procediamo **una pagina alla volta**.
 | 9 | `/mutuo-prima-casa` | Media | Intent informativo | **Fatto** (2026-08-03) |
 | 10 | `/documenti-acquisto-casa` | Media | Thin → allungare | **Fatto** (2026-08-03) |
 | 11 | `/checklist-visita-immobile` | Media | Thin → allungare | **Fatto** (2026-08-03) |
-| 12 | `/tempi-acquisto-casa` | Bassa | Supporto cluster | **Prossima** |
-| 13 | `/casa-nuova-o-usata` | Bassa | Supporto cluster | Coda |
+| 12 | `/tempi-acquisto-casa` | Bassa | Supporto cluster | **Fatto** (2026-08-03) |
+| 13 | `/casa-nuova-o-usata` | Bassa | Supporto cluster | **Prossima** |
 | 14 | `/agevolazioni-prima-casa` | Bassa | Già ha link istituzionali; rinforzo copy | Coda |
 | 15 | `/quartieri-monza` | Media | Ha mappa; copy da rafforzare | Coda |
 | 16 | `/come-funziona` | Media | Trust + processo | Coda |
