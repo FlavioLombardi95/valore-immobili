@@ -1590,22 +1590,38 @@ export const GUIDE_PAGES: GuidePage[] = [
   {
     slug: 'agevolazioni-prima-casa',
     shortLabel: 'Agevolazioni prima casa',
-    metaTitle: 'Agevolazioni prima casa: requisiti e fonti',
+    metaTitle: 'Agevolazioni prima casa: requisiti e fonti ufficiali',
     metaDescription:
-      'Agevolazioni prima casa: quadro orientativo su requisiti e dove verificare le regole aggiornate su Agenzia delle Entrate e Notariato.',
+      'Agevolazioni prima casa a Monza e Brianza: quadro orientativo su requisiti, dove verificare le regole aggiornate e come inserirle nel budget di acquisto.',
     title: 'Agevolazioni prima casa: orientarsi senza scorciatoie',
     intro:
-      'Le agevolazioni possono cambiare il costo fiscale dell’acquisto, ma i requisiti vanno verificati sulle fonti ufficiali — non su riassunti di forum.',
+      'Le agevolazioni possono cambiare il **costo fiscale** dell’acquisto, ma i requisiti vanno verificati sulle fonti ufficiali, non su riassunti di forum. Ecco come orientarti prima di un’offerta a Monza o in Brianza.',
     breadcrumb: 'Agevolazioni prima casa',
     relatedTitle: 'Costi e finanziamento',
     sections: [
       {
+        heading: 'Cosa sono (e cosa non sono)',
+        paragraphs: [
+          'In sintesi, “prima casa” indica un insieme di benefici fiscali legati all’acquisto dell’abitazione principale, con condizioni precise. Non è uno sconto automatico sul prezzo dell’annuncio e non coincide con le condizioni del mutuo della banca.',
+          'Le regole cambiano nel tempo: questa pagina non elenca aliquote. Serve a sapere cosa verificare e dove confermarlo sul tuo caso.',
+        ],
+        internalLinksLead: 'Budget e finanziamento:',
+        internalLinks: [
+          { href: '/spese-acquisto-casa', label: 'spese di acquisto' },
+          { href: '/mutuo-prima-casa', label: 'mutuo prima casa' },
+        ],
+      },
+      {
         heading: 'Cosa verificare sempre',
+        paragraphs: [
+          'Prima di firmare una proposta, chiarisci almeno questi punti con notaio o professionista. Non basarti sul “ho sentito che…”.',
+        ],
         bullets: [
           'Requisiti soggettivi (residenza, possesso di altre abitazioni, ecc.)',
-          'Tipologia di immobile e di atto',
+          'Tipologia di immobile e di atto (privato, impresa, ecc.)',
           'Compatibilità con eventuali altri benefici',
           'Tempistiche di trasferimento della residenza, se richieste',
+          'Cosa succede se i requisiti non restano soddisfatti dopo l’acquisto',
         ],
       },
       {
@@ -1620,6 +1636,39 @@ export const GUIDE_PAGES: GuidePage[] = [
         heading: 'Collegamento con mutuo e offerta',
         paragraphs: [
           'Inserisci le agevolazioni nel budget complessivo insieme a notaio, eventuali mediazioni e costi del mutuo. Una stima realistica evita offerte che poi non reggono al momento del rogito.',
+          'In proposta, i tempi devono restare coerenti con documenti e banca: le agevolazioni non accelerano da sole la delibera.',
+        ],
+        internalLinksLead: 'Allineare i pezzi:',
+        internalLinks: [
+          { href: '/offerta-acquisto-casa', label: 'offerta di acquisto' },
+          { href: '/tempi-acquisto-casa', label: 'tempi di acquisto' },
+          { href: '/documenti-acquisto-casa', label: 'documenti' },
+        ],
+      },
+      {
+        heading: 'Monza, Brianza e tipologica: il fiscale non sostituisce il mercato',
+        paragraphs: [
+          'Anche con agevolazioni, il prezzo deve stare in piedi sul mercato locale: quartiere a Monza, comune in Brianza, stato dell’immobile. Un beneficio fiscale non ripara un listino fuori domanda.',
+          'Confronta sempre costo complessivo e tipologica (appartamento vs indipendente, nuovo vs usato) prima di restringere la shortlist “solo perché prima casa”.',
+        ],
+        internalLinksLead: 'Mercato locale:',
+        internalLinks: [
+          { href: '/comprare-casa-monza', label: 'comprare a Monza' },
+          { href: '/comprare-casa-brianza', label: 'comprare in Brianza' },
+          { href: '/casa-nuova-o-usata', label: 'nuova o usata' },
+          { href: '/appartamenti-in-vendita-monza', label: 'appartamenti a Monza' },
+        ],
+      },
+      {
+        heading: 'Cosa possiamo (e non possiamo) fare noi',
+        paragraphs: [
+          'Possiamo aiutarti a leggere zona, stock e prezzo richiesto, anche con consulenza gratuita e senza impegno sull’acquisto. Non sostituiamo Agenzia delle Entrate, notaio o consulente fiscale sulle agevolazioni del tuo caso.',
+          'Se i requisiti ufficiali non ti sono chiari, parti dai link istituzionali sopra e fai una verifica professionale prima del compromesso.',
+        ],
+        internalLinksLead: 'Continua il percorso:',
+        internalLinks: [
+          { href: '/annunci-casa-monza', label: 'annunci casa' },
+          { href: '/checklist-visita-immobile', label: 'checklist di visita' },
         ],
       },
     ],
@@ -1643,6 +1692,16 @@ export const GUIDE_PAGES: GuidePage[] = [
         href: '/comprare-casa-monza',
         label: 'Comprare casa a Monza',
         description: 'Torna alla guida hub.',
+      },
+      {
+        href: '/offerta-acquisto-casa',
+        label: 'Offerta di acquisto',
+        description: 'Proposta e budget.',
+      },
+      {
+        href: '/tempi-acquisto-casa',
+        label: 'Tempi di acquisto',
+        description: 'Scadenze realistiche.',
       },
     ],
   },
