@@ -1338,39 +1338,93 @@ export const GUIDE_PAGES: GuidePage[] = [
   {
     slug: 'casa-nuova-o-usata',
     shortLabel: 'Nuova o usata',
-    metaTitle: 'Casa nuova o usata: come scegliere',
+    metaTitle: 'Casa nuova o usata a Monza: come scegliere',
     metaDescription:
-      'Casa nuova o usata a Monza e in Brianza: vantaggi, costi nascosti, tempi e cosa confrontare prima di decidere.',
+      'Casa nuova o usata a Monza e in Brianza: vantaggi, costi nascosti, tempi, mutuo e cosa confrontare prima di decidere.',
     title: 'Casa nuova o usata: un confronto concreto',
     intro:
-      'Non esiste la risposta giusta per tutti. Contano budget, tempi, tolleranza ai lavori e disponibilità reale in zona.',
+      'Non esiste la risposta giusta per tutti. A Monza e in Brianza contano **budget, tempi, tolleranza ai lavori** e cosa offre davvero lo stock in zona. Ecco un confronto pratico prima di restringere i filtri.',
     breadcrumb: 'Nuova o usata',
     relatedTitle: 'Scelte di acquisto',
     sections: [
       {
+        heading: 'Non è solo una preferenza estetica',
+        paragraphs: [
+          'Nuovo e usato cambiano fiscalità tipica, margine di trattativa, tempi di ingresso e costi nei primi anni. Confrontarli solo sul prezzo al metro quadro porta fuori strada.',
+          'Prima di decidere “solo nuovo” o “solo usato”, fissa vincoli: quando ti serve entrare, quanto puoi mettere in lavori, se c’è mutuo e se stai vendendo in parallelo.',
+        ],
+        internalLinksLead: 'Vincoli di percorso:',
+        internalLinks: [
+          { href: '/spese-acquisto-casa', label: 'spese di acquisto' },
+          { href: '/mutuo-prima-casa', label: 'mutuo' },
+          { href: '/tempi-acquisto-casa', label: 'tempi di acquisto' },
+          { href: '/comprare-casa-monza', label: 'comprare a Monza' },
+        ],
+      },
+      {
         heading: 'Immobile usato: pro e contro tipici',
+        paragraphs: [
+          'L’usato domina lo stock a Monza (soprattutto condominio) e gran parte della Brianza. Spesso puoi entrare prima e scegliere zone consolidate; in cambio metti in conto lavori e controlli documentali più attenti.',
+        ],
         bullets: [
-          'Più scelta di zone consolidate e metrature “abitabili” subito',
-          'Possibili lavori da mettere in conto (impianti, infissi, bagno)',
+          'Più scelta di zone consolidate e metrature abitabili subito',
+          'Possibili lavori (impianti, infissi, bagno, cucina)',
           'Trattativa sul prezzo spesso più aperta rispetto al listino nuovo',
           'Documentazione e conformità da verificare con attenzione',
+          'Spese condominiali o costi di gestione da leggere prima dell’offerta',
         ],
       },
       {
         heading: 'Nuovo o ristrutturato a nuovo',
+        paragraphs: [
+          'Meno interventi immediati e classi energetiche spesso migliori; prezzo al metro in genere più alto e meno margine in trattativa. I tempi di consegna vanno allineati a mutuo e all’eventuale vendita della casa attuale.',
+        ],
         bullets: [
-          'Meno interventi immediati, classi energetiche spesso migliori',
-          'Prezzo al metro in genere più alto; meno margine in trattativa',
-          'Tempi di consegna da allineare a mutuo e vendita dell’eventuale casa attuale',
+          'Meno lavori day-one; attenzione comunque a finiture e capitolato',
+          'Prezzo richiesto di solito più rigido',
+          'Consegna e rogito da sincronizzare con banca e trasloco',
+          'Stock più sottile: filtri da aggiornare spesso',
         ],
       },
       {
-        heading: 'Come decidere sul campo',
+        heading: 'Come confrontarli sul campo (stessa checklist)',
         paragraphs: [
-          'Visita entrambe le tipologie con la stessa checklist. Confronta il costo complessivo (prezzo + lavori + spese) e usa i portali per capire cosa offre oggi il mercato a Monza e in Brianza.',
+          'Visita entrambe le tipologie con la stessa griglia: luce, rumore, contesto di via, costi di possesso, documenti disponibili. Poi confronta il **costo complessivo** (prezzo + lavori + spese), non solo il listino.',
+          'Su appartamenti a Monza e su ville in Brianza il trade-off cambia: in indipendente i lavori sull’usato pesano di più; sul nuovo conta il lotto e la consegna.',
         ],
         externalLinksLead: 'Panoramica annunci in zona:',
         externalLinks: [EXTERNAL.immobiliareMonza, EXTERNAL.immobiliareBrianza],
+        internalLinksLead: 'Checklist e tipologiche:',
+        internalLinks: [
+          { href: '/checklist-visita-immobile', label: 'checklist di visita' },
+          { href: '/appartamenti-in-vendita-monza', label: 'appartamenti a Monza' },
+          { href: '/ville-in-vendita-brianza', label: 'ville in Brianza' },
+          { href: '/annunci-casa-monza', label: 'leggere gli annunci' },
+        ],
+      },
+      {
+        heading: 'Offerta e documenti: dove cambia il ritmo',
+        paragraphs: [
+          'Sull’usato la proposta spesso nasce dopo visita e chiarimenti su spese/lavori. Sul nuovo entrano capitolato, stati avanzamento e scadenze di consegna: scrivili in modo chiaro quanto il prezzo.',
+          'In entrambi i casi anticipa carta e tempi banca se c’è mutuo.',
+        ],
+        internalLinksLead: 'Passaggi successivi:',
+        internalLinks: [
+          { href: '/offerta-acquisto-casa', label: 'offerta di acquisto' },
+          { href: '/documenti-acquisto-casa', label: 'documenti' },
+          { href: '/agevolazioni-prima-casa', label: 'agevolazioni prima casa' },
+        ],
+      },
+      {
+        heading: 'Se lo stock non ti convince',
+        paragraphs: [
+          'A volte né il nuovo né l’usato in vetrina chiudono i tuoi criteri. Una consulenza locale sull’acquisto (gratuita e senza impegno) può affiancare i portali e segnalare anche proposte non pubblicate. Non sostituisce notaio o banca.',
+        ],
+        internalLinksLead: 'Allarga il raggio con metodo:',
+        internalLinks: [
+          { href: '/comprare-casa-brianza', label: 'comprare in Brianza' },
+          { href: '/comprare-casa-monza', label: 'hub comprare a Monza' },
+        ],
       },
     ],
     related: [
@@ -1393,6 +1447,16 @@ export const GUIDE_PAGES: GuidePage[] = [
         href: '/ville-in-vendita-brianza',
         label: 'Ville in Brianza',
         description: 'Focus indipendenti.',
+      },
+      {
+        href: '/tempi-acquisto-casa',
+        label: 'Tempi di acquisto',
+        description: 'Consegna e scadenze.',
+      },
+      {
+        href: '/offerta-acquisto-casa',
+        label: 'Offerta di acquisto',
+        description: 'Come strutturare la proposta.',
       },
     ],
   },
