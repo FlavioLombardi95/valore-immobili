@@ -24,9 +24,9 @@ Stato: **1 fatto** · resto in coda. Procediamo **una pagina alla volta**.
 | 16 | `/come-funziona` | Media | Trust + processo | **Fatto** (2026-08-03) |
 | 17 | `/faq` | Media | Snippet / PAA | **Fatto** (2026-08-03) |
 | 18 | `/` home prose SEO | Media | Sezioni sotto il form | **Fatto** (2026-08-03) |
-| 19 | `/monza` | Media | Hub geo vendita | **Prossima** |
-| 20 | `/brianza` | Media | Hub geo; allineare anche intent acquisto | Coda |
-| 21 | `/valutazione/*` comuni (8) | Bassa* | Già contestuali; review a campioni o se thin | Coda |
+| 19 | `/monza` | Media | Hub geo vendita | **Fatto** (2026-08-03) |
+| 20 | `/brianza` | Media | Hub geo; allineare anche intent acquisto | **Fatto** (2026-08-03) |
+| 21 | `/valutazione/*` comuni (8) | Bassa* | Già contestuali; review a campioni o se thin | **Prossima** |
 | 22 | `/valutazione/appartamenti-monza` | Bassa* | Tipologica valutazione | Coda |
 | 23 | `/valutazione/ville-brianza` | Bassa* | Tipologica valutazione | Coda |
 
