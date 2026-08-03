@@ -36,7 +36,7 @@ export const PROPERTY_TYPE_PAGES: PropertyTypePage[] = [
     shortLabel: 'Appartamenti',
     title: 'Valutazione appartamenti a Monza',
     intro:
-      'Sopralluogo gratuito per appartamenti a Monza e nei comuni vicini: piano, spese, stato e contesto condominiale pesano quanto i metri quadri. Stima sul mercato reale della zona, non su medie online.',
+      'Sopralluogo **gratuito** per appartamenti a Monza e nei comuni vicini: piano, spese, stato e contesto condominiale pesano quanto i metri quadri. Stima sul mercato reale della zona, non su medie online.',
     metaTitle: 'Valutazione appartamenti Monza: sopralluogo gratuito',
     metaDescription:
       'Valutazione appartamenti a Monza e Brianza con sopralluogo gratuito. Piano, ascensore, spese e vendite reali del quartiere. Senza impegno.',
@@ -44,10 +44,10 @@ export const PROPERTY_TYPE_PAGES: PropertyTypePage[] = [
     layoutVariant: 'angle-led',
     angleHeading: 'Perché due appartamenti con gli stessi mq valgono diversamente',
     angleBody:
-      'A Monza un bilocale in Centro o vicino alla Villa Reale non si confronta con uno in una zona più residenziale solo “per metratura”. Contano piano, ascensore, esposizione, stato interno, spese condominiali e domanda reale della zona. Le stime automatiche appiattiscono tutto su una media: il sopralluogo riporta questi dettagli sul tavolo.',
+      'A Monza un bilocale in Centro o vicino alla Villa Reale non si confronta con uno in una zona più residenziale solo “per metratura”. Contano piano, ascensore, esposizione, stato interno, spese condominiali e domanda reale della zona. Le stime automatiche appiattiscono tutto su una media: il sopralluogo riporta questi dettagli sul tavolo e confronta con chiusure di appartamenti simili, non con annunci generici “Monza”.',
     lookHeading: 'Cosa osserviamo in un appartamento',
     lookItems: [
-      'Piano, presenza di ascensore e luminosità e affaccio',
+      'Piano, presenza di ascensore, luminosità e affaccio',
       'Stato di cucina, bagni, infissi e impianti',
       'Spese condominiali e qualità delle parti comuni',
       'Box, posto auto, cantina o ripostiglio',
@@ -59,7 +59,8 @@ export const PROPERTY_TYPE_PAGES: PropertyTypePage[] = [
     requestFollowUp:
       'Ti ricontattiamo entro 1 o 2 giorni lavorativi. Gratuito e senza impegno. Percorso completo:',
     zonesHeading: 'Dove valutiamo appartamenti',
-    zonesBody: 'Operiamo su Monza città e sui comuni limitrofi.',
+    zonesBody:
+      'Operiamo su Monza città e sui comuni limitrofi. Il valore cambia tra quartieri e via: meglio partire dalla micro-zona, non da una media cittadina.',
     faqs: [
       {
         question: 'La valutazione appartamento è diversa da quella di una casa?',
@@ -71,6 +72,11 @@ export const PROPERTY_TYPE_PAGES: PropertyTypePage[] = [
         answer:
           'Non è obbligatorio per richiedere il sopralluogo, ma se ce l’hai accelera la lettura energetica e dei costi di gestione.',
       },
+      {
+        question: 'Posso chiedere la stima anche se non ho deciso di vendere?',
+        answer:
+          'Sì. Molte richieste servono a capire un punto di partenza realistico prima di pubblicare o affidare. Nessun obbligo di mandato dopo la valutazione.',
+      },
     ],
   },
   {
@@ -78,7 +84,7 @@ export const PROPERTY_TYPE_PAGES: PropertyTypePage[] = [
     shortLabel: 'Ville',
     title: 'Valutazione ville in Brianza',
     intro:
-      'Sopralluogo gratuito per ville e case indipendenti in Brianza: giardino, stato, via e domanda locale cambiano il valore più di una media €/mq. Stima sul posto, senza impegno.',
+      'Sopralluogo **gratuito** per ville e case indipendenti in Brianza: giardino, stato, via e domanda locale cambiano il valore più di una media €/mq. Stima sul posto, senza impegno.',
     metaTitle: 'Valutazione ville Brianza: sopralluogo gratuito',
     metaDescription:
       'Valutazione ville e case indipendenti in Brianza con sopralluogo gratuito. Giardino, contesto e vendite reali della zona. Senza impegno.',
@@ -86,7 +92,7 @@ export const PROPERTY_TYPE_PAGES: PropertyTypePage[] = [
     layoutVariant: 'faq-led',
     angleHeading: 'Una villa non si valuta come un appartamento “più grande”',
     angleBody:
-      'In Brianza ville a schiera, bifamiliari e indipendenti hanno acquirenti e tempi diversi dagli appartamenti in condominio. Pesano giardino o cortile utilizzabile, privacy, stato strutturale, impianti e quanto la via è residenziale o di passaggio. Usare listini di appartamenti monzesi come riferimento è uno degli errori più frequenti.',
+      'In Brianza ville a schiera, bifamiliari e indipendenti hanno acquirenti e tempi diversi dagli appartamenti in condominio. Pesano giardino o cortile utilizzabile, privacy, stato strutturale, impianti e quanto la via è residenziale o di passaggio. Usare listini di appartamenti monzesi come riferimento è uno degli errori più frequenti: la stima deve restare sulla tipologica e sul comune giusti.',
     lookHeading: 'Cosa pesa di più su una villa o casa indipendente',
     lookItems: [
       'Tipologia: schiera, bifamiliare, indipendente',
@@ -101,7 +107,8 @@ export const PROPERTY_TYPE_PAGES: PropertyTypePage[] = [
     requestFollowUp:
       'Richiamo in 1 o 2 giorni lavorativi, senza costi né mandato. Dettaglio del processo:',
     zonesHeading: 'Comuni e tipologiche collegate',
-    zonesBody: 'Il servizio copre Monza città e la Brianza residenziale.',
+    zonesBody:
+      'Il servizio copre Monza città e la Brianza residenziale. Tra un comune e l’altro (e tra schiera e indipendente) domanda e tempi di chiusura possono cambiare molto.',
     faqs: [
       {
         question: 'Valutate solo ville di prestigio?',
@@ -112,6 +119,11 @@ export const PROPERTY_TYPE_PAGES: PropertyTypePage[] = [
         question: 'I tempi di vendita sono più lunghi delle unità in condominio?',
         answer:
           'Spesso sì, soprattutto se prezzo e stato non sono allineati alla domanda locale. Una stima realistica aiuta a non partire troppo alti.',
+      },
+      {
+        question: 'Serve una planimetria o documenti catastali?',
+        answer:
+          'Non sono obbligatori al primo contatto. Se li hai, velocizzano la stima; altrimenti si possono integrare dopo il sopralluogo.',
       },
     ],
   },

@@ -146,7 +146,22 @@ function RequestBlock({ locality }: { locality: Locality }) {
       <p>{locality.requestNote}</p>
       <p>
         {locality.requestFollowUp}{' '}
-        <Link href="/come-funziona">Come funziona</Link>.
+        <Link href="/come-funziona">Come funziona</Link>. Dubbi su costi e documenti:{' '}
+        <Link href="/faq">FAQ</Link>.
+      </p>
+    </>
+  )
+}
+
+function BuyBridge({ placeLabel }: { placeLabel: string }) {
+  return (
+    <>
+      <h2>Se stai cercando casa a {placeLabel}</h2>
+      <p>
+        Questa pagina è per chi valuta di vendere o vuole una stima sul posto. Se invece stai comprando,
+        parti da <Link href="/comprare-casa-brianza">comprare casa in Brianza</Link> o da{' '}
+        <Link href="/comprare-casa-monza">comprare casa a Monza</Link>: puoi anche richiedere una
+        consulenza gratuita sull’acquisto, senza impegno.
       </p>
     </>
   )
@@ -269,6 +284,11 @@ function localityRelated(locality: Locality) {
           label: 'Vendere casa a Monza',
           description: 'Da dove partire prima del prezzo.',
         },
+        {
+          href: '/comprare-casa-brianza',
+          label: 'Comprare casa in Brianza',
+          description: 'Se stai cercando casa, non solo vendendo.',
+        },
       ]
     case 'look-first':
       return [
@@ -292,6 +312,11 @@ function localityRelated(locality: Locality) {
           label: 'Valutazione in Brianza',
           description: 'Altri comuni della provincia.',
         },
+        {
+          href: '/comprare-casa-monza',
+          label: 'Comprare casa a Monza',
+          description: 'Mercato locale se stai acquistando.',
+        },
       ]
     case 'faq-led':
       return [
@@ -314,6 +339,11 @@ function localityRelated(locality: Locality) {
           href: '/brianza',
           label: 'Valutazione in Brianza',
           description: 'Indice dei comuni vicini.',
+        },
+        {
+          href: '/comprare-casa-brianza',
+          label: 'Comprare casa in Brianza',
+          description: 'Se cerchi casa in provincia.',
         },
       ]
     case 'angle-first':
@@ -339,6 +369,11 @@ function localityRelated(locality: Locality) {
           label: 'Valutazione a Monza',
           description: 'Quartieri e mercato cittadino.',
         },
+        {
+          href: '/vendere-casa-monza',
+          label: 'Vendere casa a Monza',
+          description: 'Prezzo e documenti prima di pubblicare.',
+        },
       ]
   }
 }
@@ -349,7 +384,8 @@ function PropertyTypeRequest({ page }: { page: PropertyTypePage }) {
       <h2>{page.requestHeading}</h2>
       <p>{page.requestNote}</p>
       <p>
-        {page.requestFollowUp} <Link href="/come-funziona">Come funziona</Link>.
+        {page.requestFollowUp} <Link href="/come-funziona">Come funziona</Link>. Dubbi su costi e
+        documenti: <Link href="/faq">FAQ</Link>.
       </p>
     </>
   )
@@ -359,17 +395,23 @@ function PropertyTypeZones({ page }: { page: PropertyTypePage }) {
   return (
     <>
       <h2>{page.zonesHeading}</h2>
+      <p>{page.zonesBody}</p>
       <p>
-        {page.zonesBody}{' '}
         {page.slug === 'appartamenti-monza' ? (
           <>
-            Vedi anche <Link href="/monza">Monza</Link>, <Link href="/brianza">Brianza</Link>,{' '}
-            <Link href="/valutazione/lissone">Lissone</Link> e{' '}
-            <Link href="/valutazione/brugherio">Brugherio</Link>.
+            Contesto geo: <Link href="/monza">Monza</Link>, <Link href="/brianza">Brianza</Link>,{' '}
+            <Link href="/quartieri-monza">quartieri di Monza</Link>. Comuni esempio:{' '}
+            <Link href="/valutazione/lissone">Lissone</Link>,{' '}
+            <Link href="/valutazione/brugherio">Brugherio</Link>. Sul lato ricerca:{' '}
+            <Link href="/appartamenti-in-vendita-monza">appartamenti in vendita a Monza</Link>.
           </>
         ) : (
           <>
-            Approfondisci su <Link href="/monza">Monza</Link> e <Link href="/brianza">Brianza</Link>.
+            Contesto geo: <Link href="/monza">Monza</Link> e <Link href="/brianza">Brianza</Link>.
+            Comuni esempio: <Link href="/valutazione/desio">Desio</Link>,{' '}
+            <Link href="/valutazione/villasanta">Villasanta</Link>,{' '}
+            <Link href="/valutazione/concorezzo">Concorezzo</Link>. Sul lato ricerca:{' '}
+            <Link href="/ville-in-vendita-brianza">ville in vendita in Brianza</Link>.
           </>
         )}
       </p>
@@ -383,6 +425,7 @@ function localityBody(locality: Locality): ReactNode {
   const context = <ContextBlock locality={locality} />
   const request = <RequestBlock locality={locality} />
   const siblings = <SiblingBlock locality={locality} />
+  const buy = <BuyBridge placeLabel={locality.name} />
 
   switch (locality.layoutVariant) {
     case 'look-first':
@@ -393,6 +436,7 @@ function localityBody(locality: Locality): ReactNode {
           {angle}
           {siblings}
           {request}
+          {buy}
         </>
       )
     case 'faq-led':
@@ -406,6 +450,7 @@ function localityBody(locality: Locality): ReactNode {
           {angle}
           {request}
           {siblings}
+          {buy}
         </>
       )
     case 'compare-monza':
@@ -416,6 +461,7 @@ function localityBody(locality: Locality): ReactNode {
           {look}
           {request}
           {siblings}
+          {buy}
         </>
       )
     case 'angle-first':
@@ -427,6 +473,7 @@ function localityBody(locality: Locality): ReactNode {
           {context}
           {siblings}
           {request}
+          {buy}
         </>
       )
   }
@@ -441,6 +488,12 @@ function propertyTypeBody(page: PropertyTypePage): ReactNode {
   const request = <PropertyTypeRequest page={page} />
   const tipologiche = <TipologicheLinks currentSlug={page.slug} />
   const zones = <PropertyTypeZones page={page} />
+  const buy =
+    page.slug === 'appartamenti-monza' ? (
+      <BuyBridge placeLabel="Monza" />
+    ) : (
+      <BuyBridge placeLabel="Brianza" />
+    )
 
   if (page.layoutVariant === 'faq-led') {
     return (
@@ -451,6 +504,7 @@ function propertyTypeBody(page: PropertyTypePage): ReactNode {
         {zones}
         {tipologiche}
         {request}
+        {buy}
       </>
     )
   }
@@ -463,6 +517,7 @@ function propertyTypeBody(page: PropertyTypePage): ReactNode {
       {request}
       {tipologiche}
       {zones}
+      {buy}
     </>
   )
 }
@@ -515,6 +570,16 @@ export default async function ValutazioneSlugPage({ params }: PageProps) {
                 description: 'Se confronti con indipendenti.',
               },
               {
+                href: '/appartamenti-in-vendita-monza',
+                label: 'Appartamenti in vendita',
+                description: 'Come leggere l’offerta in condominio.',
+              },
+              {
+                href: '/comprare-casa-monza',
+                label: 'Comprare casa a Monza',
+                description: 'Se stai cercando, non solo vendendo.',
+              },
+              {
                 href: '/come-funziona',
                 label: 'Come funziona',
                 description: 'Dalla richiesta al sopralluogo.',
@@ -535,6 +600,16 @@ export default async function ValutazioneSlugPage({ params }: PageProps) {
                 href: propertyTypePath('appartamenti-monza'),
                 label: 'Valutazione appartamenti',
                 description: 'Focus condominio a Monza.',
+              },
+              {
+                href: '/ville-in-vendita-brianza',
+                label: 'Ville in vendita in Brianza',
+                description: 'Orientamento tipologico lato ricerca.',
+              },
+              {
+                href: '/comprare-casa-brianza',
+                label: 'Comprare casa in Brianza',
+                description: 'Quando allarghi il raggio da Monza.',
               },
               {
                 href: '/vendere-casa-monza',

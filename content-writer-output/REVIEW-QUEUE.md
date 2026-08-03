@@ -26,9 +26,9 @@ Stato: **1 fatto** · resto in coda. Procediamo **una pagina alla volta**.
 | 18 | `/` home prose SEO | Media | Sezioni sotto il form | **Fatto** (2026-08-03) |
 | 19 | `/monza` | Media | Hub geo vendita | **Fatto** (2026-08-03) |
 | 20 | `/brianza` | Media | Hub geo; allineare anche intent acquisto | **Fatto** (2026-08-03) |
-| 21 | `/valutazione/*` comuni (8) | Bassa* | Già contestuali; review a campioni o se thin | **Prossima** |
-| 22 | `/valutazione/appartamenti-monza` | Bassa* | Tipologica valutazione | Coda |
-| 23 | `/valutazione/ville-brianza` | Bassa* | Tipologica valutazione | Coda |
+| 21 | `/valutazione/*` comuni (8) | Bassa* | Già contestuali; review a campioni o se thin | **Fatto** (2026-08-03) |
+| 22 | `/valutazione/appartamenti-monza` | Bassa* | Tipologica valutazione | **Fatto** (2026-08-03) |
+| 23 | `/valutazione/ville-brianza` | Bassa* | Tipologica valutazione | **Fatto** (2026-08-03) |
 
 \*Le leaf valutazione hanno già copy locale: in review, puntare a chiarezza + eventuale ponte verso cluster comprare, non a gonfiare a caso.
 
