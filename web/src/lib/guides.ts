@@ -758,36 +758,93 @@ export const GUIDE_PAGES: GuidePage[] = [
   {
     slug: 'appartamenti-in-vendita-monza',
     shortLabel: 'Appartamenti in vendita',
-    metaTitle: 'Appartamenti in vendita a Monza: guida pratica',
+    metaTitle: 'Appartamenti in vendita a Monza: piano, spese e cosa confrontare',
     metaDescription:
-      'Appartamenti in vendita a Monza: cosa valutare in condominio, dove cercare gli annunci e come confrontare piani, spese e stato prima di offrire.',
+      'Appartamenti in vendita a Monza: cosa valutare in condominio, come leggere gli annunci per quartiere e come passare dalla shortlist all’offerta.',
     title: 'Appartamenti in vendita a Monza: cosa confrontare',
     intro:
-      'Il mercato residenziale monzese è fatto soprattutto di condominio. Piano, spese e stato pesano quanto i metri quadri.',
+      'A Monza il residenziale è soprattutto **condominio**. Piano, spese, stato e micro-zona pesano quanto i metri quadri. Ecco come leggere gli annunci e costruire un confronto serio prima di offrire.',
     breadcrumb: 'Appartamenti in vendita',
     relatedTitle: 'Tipologie e valori',
     sections: [
       {
-        heading: 'Variabili tipiche del condominio',
-        bullets: [
-          'Piano e ascensore',
-          'Spese condominiali e fondo lavori',
-          'Doppi servizi, balconi, cantina e box',
-          'Ristrutturato vs da aggiornare (infissi, impianti, bagno)',
+        heading: 'Perché il condominio ha regole sue',
+        paragraphs: [
+          'Due bilocali con la stessa metratura possono essere prodotti diversi: uno al piano alto con ascensore e box, uno al secondo senza ascensore su via di passaggio, con spese alte o lavori deliberati. Confrontare solo il prezzo al metro quadro ignora proprio ciò che a Monza sposta la domanda.',
+          'Il quartiere conta: centro, San Fruttuoso, San Giuseppe, Triante e le altre zone non rispondono allo stesso modo. Allinea sempre micro-zona e tipologica prima di salvare “tutto ciò che sembra simile”.',
+        ],
+        internalLinksLead: 'Contesto città e tipologica:',
+        internalLinks: [
+          { href: '/comprare-casa-monza', label: 'comprare casa a Monza' },
+          { href: '/quartieri-monza', label: 'quartieri di Monza' },
+          { href: '/valutazione/appartamenti-monza', label: 'valutazione appartamenti' },
         ],
       },
       {
-        heading: 'Dove guardare gli annunci',
+        heading: 'Variabili tipiche da mettere in checklist',
         paragraphs: [
-          'Filtra per Monza e poi per zona; confronta più portali perché lo stesso appartamento può comparire con testi diversi. Diffida delle descrizioni vaghe: chiedi metri commerciali, piano e spese nere su bianco.',
+          'In visita e già in lettura annuncio, queste voci spiegano più di una media di città.',
+        ],
+        bullets: [
+          'Piano e ascensore (e quanto pesano nella domanda di quel condominio)',
+          'Spese condominiali e fondo lavori (deliberati o previsibili)',
+          'Stato: ristrutturato vs da aggiornare (infissi, impianti, bagno, cucina)',
+          'Doppi servizi, balconi, cantina e box o posto auto',
+          'Esposizione, luminosità e rumore di via',
+          'Parti comuni: scale, cortile, facciata, tetto in agenda assemblea',
+        ],
+      },
+      {
+        heading: 'Dove guardare gli annunci (e come filtrarli)',
+        paragraphs: [
+          'I portali mostrano **richieste, non chiusure**. Filtra per Monza e poi per zona; confronta più vetrine perché lo stesso appartamento può comparire con testi diversi. Diffida delle descrizioni vaghe: chiedi metri, piano e spese nere su bianco.',
+          'Un annuncio fermo da mesi allo stesso prezzo merita domande in più. Un ribasso recente è un segnale utile quanto le foto nuove.',
         ],
         externalLinksLead: 'Annunci residenziali a Monza:',
         externalLinks: [EXTERNAL.immobiliareMonza, EXTERNAL.casaMonza, EXTERNAL.idealistaMonza],
+        internalLinksLead: 'Metodo di lettura:',
+        internalLinks: [
+          { href: '/annunci-casa-monza', label: 'guida annunci casa' },
+          { href: '/checklist-visita-immobile', label: 'checklist di visita' },
+        ],
       },
       {
-        heading: 'Se non trovi quello che cerchi',
+        heading: 'Shortlist: pochi candidati nella stessa fascia',
         paragraphs: [
-          'Lo stock online non è tutto. Se stai cercando un appartamento con requisiti precisi, possiamo farti sapere se in zona abbiamo immobili riservati — proposte che non pubblichiamo sui portali.',
+          'Tieni una shortlist corta (5-8 appartamenti) nella stessa fascia di domanda: stesso tipo di zona, stato simile, accessori confrontabili. Se mescoli un attico ristrutturato e un terzo piano da rifare “perché hanno gli stessi mq”, il confronto non tiene.',
+          'Quando scarti dopo la visita, sostituisci con un candidato nella stessa fascia, non con un comune della Brianza “perché costa meno”: quello è un altro prodotto. Se vuoi allargare agli indipendenti, usa la guida dedicata.',
+        ],
+        internalLinksLead: 'Se cambi tipologica o raggio:',
+        internalLinks: [
+          { href: '/ville-in-vendita-brianza', label: 'ville in vendita in Brianza' },
+          { href: '/comprare-casa-brianza', label: 'comprare in Brianza' },
+          { href: '/casa-nuova-o-usata', label: 'nuova o usata' },
+        ],
+      },
+      {
+        heading: 'Dalla visita all’offerta (e al budget reale)',
+        paragraphs: [
+          'In casa verifica ciò che l’annuncio non mostra: luce reale, rumore, odori di umidità, stato delle parti comuni, praticità del box. Poi, se l’immobile regge, costruisci un’offerta sul mercato di quella micro-zona, non sul solo prezzo pubblicato.',
+          'Metti in conto spese di atto, eventuale mutuo e lavori subito dopo il rogito. Il prezzo concordato non è il costo totale.',
+        ],
+        internalLinksLead: 'Passaggi successivi:',
+        internalLinks: [
+          { href: '/offerta-acquisto-casa', label: 'offerta di acquisto' },
+          { href: '/spese-acquisto-casa', label: 'spese di acquisto' },
+          { href: '/mutuo-prima-casa', label: 'mutuo' },
+          { href: '/documenti-acquisto-casa', label: 'documenti' },
+        ],
+      },
+      {
+        heading: 'Se non trovi quello che cerchi online',
+        paragraphs: [
+          'Lo stock online non è tutto. Se cerchi un appartamento con requisiti precisi (zona, piano, box, budget), una consulenza locale può segnalare anche proposte riservate che non pubblichiamo sui portali.',
+          'È **gratuita e senza impegno** di acquisto. Se invece stai valutando di vendere un appartamento a Monza, il percorso è la valutazione con sopralluogo sulla tipologica condominio.',
+        ],
+        internalLinksLead: 'Due direzioni:',
+        internalLinks: [
+          { href: '/valutazione/appartamenti-monza', label: 'sopralluogo appartamenti Monza' },
+          { href: '/vendere-casa-monza', label: 'vendere casa a Monza' },
         ],
       },
     ],
@@ -811,6 +868,16 @@ export const GUIDE_PAGES: GuidePage[] = [
         href: '/quartieri-monza',
         label: 'Quartieri di Monza',
         description: 'Come cambia la domanda per zona.',
+      },
+      {
+        href: '/annunci-casa-monza',
+        label: 'Annunci casa',
+        description: 'Come leggere i portali con metodo.',
+      },
+      {
+        href: '/checklist-visita-immobile',
+        label: 'Checklist visita',
+        description: 'Cosa controllare in casa.',
       },
     ],
   },
