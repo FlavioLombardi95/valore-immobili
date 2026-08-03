@@ -390,12 +390,12 @@ export const GUIDE_PAGES: GuidePage[] = [
   {
     slug: 'quartieri-monza',
     shortLabel: 'Quartieri Monza',
-    metaTitle: 'Quartieri Monza: dove cercare casa',
+    metaTitle: 'Quartieri di Monza: dove cercare casa',
     metaDescription:
-      'Quartieri di Monza per chi compra: come orientarsi tra centro, semicentro e periferia, servizi e collegamenti senza affidarsi solo agli annunci.',
+      'Quartieri di Monza per chi compra: come orientarsi tra centro, semicentro e periferia, cosa confrontare tra zone e come usare annunci e mappa senza medie di città.',
     title: 'Quartieri di Monza: dove ha senso cercare casa',
     intro:
-      'Il prezzo al metro quadro cambia molto tra centro, semicentro e periferia. Ecco una mappa pratica per chi compra, senza slogan da brochure.',
+      'A Monza **non esiste un solo prezzo di città**. Centro, San Fruttuoso, Triante, San Rocco e le altre zone rispondono in modo diverso. Ecco una bussola pratica per chi compra, con mappa e metodo di confronto.',
     breadcrumb: 'Quartieri di Monza',
     relatedTitle: 'Zone e valori',
     sections: [
@@ -403,32 +403,75 @@ export const GUIDE_PAGES: GuidePage[] = [
         heading: 'Non esiste “il” prezzo di Monza',
         paragraphs: [
           'Due appartamenti con la stessa metratura possono valere in modo diverso a pochi chilometri di distanza. Contano via, piano, stato, condominio e domanda reale di quella micro-zona.',
-          'Se stai confrontando annunci, allinea sempre quartiere e contesto — non solo i metri quadri. La mappa sotto aiuta a collocare i nomi che trovi nelle ricerche.',
+          'Se stai confrontando annunci, allinea sempre quartiere e contesto, non solo i metri quadri. La mappa sotto aiuta a collocare i nomi che trovi nelle ricerche.',
         ],
       },
       {
-        heading: 'I quartieri in sintesi',
+        heading: 'I quartieri in sintesi (bussola, non listino)',
         paragraphs: [
-          'Il Comune usa una suddivisione statistica in dieci aggregati (oltre all’area del Parco a nord): Centro–San Gerardo, Libertà, San Carlo–San Giuseppe, Triante, San Fruttuoso, San Biagio–Cazzaniga, Cederna–Cantalupo, Sant’Albino, Regina Pacis–San Donato e San Rocco.',
-          'Non sono “prezzi fissi” di listino: dentro lo stesso quartiere via, piano e stato possono spostare molto la trattativa. Servono però come bussola quando filtri gli annunci o chiedi una consulenza su zone precise.',
+          'Il Comune usa una suddivisione statistica in dieci aggregati (oltre all’area del Parco a nord): Centro-San Gerardo, Libertà, San Carlo-San Giuseppe, Triante, San Fruttuoso, San Biagio-Cazzaniga, Cederna-Cantalupo, Sant’Albino, Regina Pacis-San Donato e San Rocco.',
+          'Non sono prezzi fissi di listino: dentro lo stesso quartiere via, piano e stato possono spostare molto la trattativa. Servono però come bussola quando filtri gli annunci o chiedi una consulenza su zone precise.',
+        ],
+      },
+      {
+        heading: 'Come usare i quartieri nella shortlist',
+        paragraphs: [
+          'Scegli una o due zone prioritarie, non “tutta Monza”. Se in due settimane non riesci a visitare con criterio, il raggio è troppo largo. Confronta solo immobili nella stessa fascia di domanda: stessa tipologica, stato simile, contesto di via confrontabile.',
+          'Un annuncio “Monza” senza quartiere chiaro è incompleto: chiedi la via e collocala sulla mappa prima di innamorarti del prezzo al metro quadro.',
+        ],
+        bullets: [
+          'Filtra i portali per zona o CAP, non solo per città',
+          'Segna su ogni salvataggio: quartiere, piano, box, spese se note',
+          'Non mescolare attico ristrutturato e terzo piano da rifare “perché stessi mq”',
+          'Se allarghi alla Brianza, tieni i comuni in una shortlist separata',
+        ],
+        internalLinksLead: 'Metodo acquisto e annunci:',
+        internalLinks: [
+          { href: '/comprare-casa-monza', label: 'comprare casa a Monza' },
+          { href: '/annunci-casa-monza', label: 'leggere gli annunci' },
+          { href: '/appartamenti-in-vendita-monza', label: 'appartamenti in vendita' },
+          { href: '/comprare-casa-brianza', label: 'comprare in Brianza' },
         ],
       },
       {
         heading: 'Cosa pesa nella scelta del quartiere',
+        paragraphs: [
+          'Oltre al “nome” della zona, valuta la quotidianità: quanto ci metti a Milano o in Brianza, servizi a piedi, rumore, densità commerciale. Più offerta in una fascia può dare più potere in trattativa; meno stock richiede pazienza e filtri aggiornati.',
+        ],
         bullets: [
           'Collegamenti verso Milano e verso i comuni della Brianza',
-          'Scuole, servizi e vivibilità quotidiana (non solo “centralità”)',
+          'Scuole, servizi e vivibilità quotidiana (non solo centralità)',
           'Rumore, traffico e densità commerciale',
-          'Stock disponibile: più offerta può significare più potere in trattativa',
+          'Stock disponibile e tempi di trattativa tipici in quella fascia',
+          'Condominio: spese, lavori deliberati, box e parti comuni',
         ],
       },
       {
-        heading: 'Fonti locali e annunci per zona',
+        heading: 'Visita e offerta: stessi criteri tra una zona e l’altra',
         paragraphs: [
-          'Per il contesto urbano puoi partire dal sito del Comune; per lo stock in vendita, filtra i portali per zona o CAP e confronta più richieste nella stessa fascia.',
+          'Porta la stessa checklist in ogni visita. Poi confronta costo complessivo (prezzo + lavori + spese) nella micro-zona, non una media di città. Se l’immobile regge, costruisci l’offerta su valori locali comparabili.',
+        ],
+        internalLinksLead: 'Dopo la mappa:',
+        internalLinks: [
+          { href: '/checklist-visita-immobile', label: 'checklist di visita' },
+          { href: '/offerta-acquisto-casa', label: 'offerta di acquisto' },
+          { href: '/spese-acquisto-casa', label: 'spese di acquisto' },
+          { href: '/documenti-acquisto-casa', label: 'documenti' },
+        ],
+      },
+      {
+        heading: 'Fonti locali, annunci e consulenza',
+        paragraphs: [
+          'Per il contesto urbano puoi partire dal sito del Comune; per lo stock in vendita, filtra i portali per zona e confronta più richieste nella stessa fascia. Se i criteri sono stretti o esiti tra due quartieri, una consulenza locale sull’acquisto (gratuita e senza impegno) aiuta a restringere il raggio senza mescolare mercati diversi.',
+          'Se invece stai valutando di vendere, il percorso è la valutazione con sopralluogo sul mercato cittadino.',
         ],
         externalLinksLead: 'Contesto e annunci:',
         externalLinks: [EXTERNAL.comuneMonza, EXTERNAL.immobiliareMonza, EXTERNAL.idealistaMonza],
+        internalLinksLead: 'Due direzioni:',
+        internalLinks: [
+          { href: '/monza', label: 'valutazione a Monza' },
+          { href: '/vendere-casa-monza', label: 'vendere casa a Monza' },
+        ],
       },
     ],
     related: [
@@ -451,6 +494,16 @@ export const GUIDE_PAGES: GuidePage[] = [
         href: '/annunci-casa-monza',
         label: 'Annunci casa a Monza',
         description: 'Come usare i portali in modo critico.',
+      },
+      {
+        href: '/appartamenti-in-vendita-monza',
+        label: 'Appartamenti in vendita',
+        description: 'Focus condominio per zona.',
+      },
+      {
+        href: '/checklist-visita-immobile',
+        label: 'Checklist visita',
+        description: 'Cosa controllare in ogni quartiere.',
       },
     ],
   },

@@ -20,8 +20,8 @@ Stato: **1 fatto** · resto in coda. Procediamo **una pagina alla volta**.
 | 12 | `/tempi-acquisto-casa` | Bassa | Supporto cluster | **Fatto** (2026-08-03) |
 | 13 | `/casa-nuova-o-usata` | Bassa | Supporto cluster | **Fatto** (2026-08-03) |
 | 14 | `/agevolazioni-prima-casa` | Bassa | Già ha link istituzionali; rinforzo copy | **Fatto** (2026-08-03) |
-| 15 | `/quartieri-monza` | Media | Ha mappa; copy da rafforzare | **Prossima** |
-| 16 | `/come-funziona` | Media | Trust + processo | Coda |
+| 15 | `/quartieri-monza` | Media | Ha mappa; copy da rafforzare | **Fatto** (2026-08-03) |
+| 16 | `/come-funziona` | Media | Trust + processo | **Prossima** |
 | 17 | `/faq` | Media | Snippet / PAA | Coda |
 | 18 | `/` home prose SEO | Media | Sezioni sotto il form | Coda |
 | 19 | `/monza` | Media | Hub geo vendita | Coda |
