@@ -582,12 +582,12 @@ export const GUIDE_PAGES: GuidePage[] = [
   {
     slug: 'mutuo-prima-casa',
     shortLabel: 'Mutuo',
-    metaTitle: 'Mutuo prima casa Monza: cosa sapere',
+    metaTitle: 'Mutuo prima casa a Monza: tempi, budget e offerta',
     metaDescription:
-      'Mutuo per comprare casa a Monza e in Brianza: tempi, documenti tipici e come allineare l’offerta di acquisto alla delibera della banca.',
+      'Mutuo per comprare casa a Monza e in Brianza: ordine di grandezza, tempi di delibera, costi accessori e come allineare l’offerta di acquisto alla banca.',
     title: 'Mutuo prima casa: allineare banca e offerta',
     intro:
-      'Senza un’idea chiara di finanziamento, un’offerta rischia di nascere fragile. Ecco i punti pratici per chi compra a Monza e in Brianza.',
+      'Senza un’idea chiara di finanziamento, un’offerta a Monza o in Brianza rischia di nascere **fragile**. Ecco i punti pratici: budget, tempi, costi accessori e allineamento con la proposta di acquisto.',
     breadcrumb: 'Mutuo prima casa',
     relatedTitle: 'Acquisto e costi',
     sections: [
@@ -595,24 +595,81 @@ export const GUIDE_PAGES: GuidePage[] = [
         heading: 'Prima l’ordine di grandezza, poi l’innamoramento',
         paragraphs: [
           'Fatti un quadro di rata sostenibile e di quanto la banca può finanziare (spesso non il 100% del prezzo). Solo dopo ha senso stringere la shortlist di immobili.',
+          'Se parti dall’annuncio e “vedi dopo il mutuo”, rischi di visitare fuori raggio o di scrivere proposte che i tempi bancari non reggono.',
+        ],
+        internalLinksLead: 'Budget oltre il finanziamento:',
+        internalLinks: [
+          { href: '/spese-acquisto-casa', label: 'spese di acquisto' },
+          { href: '/comprare-casa-monza', label: 'comprare casa a Monza' },
+          { href: '/annunci-casa-monza', label: 'leggere gli annunci' },
+        ],
+      },
+      {
+        heading: 'Cosa chiedere (e confrontare) alla banca',
+        paragraphs: [
+          'Non confrontare solo il tasso. Contano spread, durata, anticipo richiesto, flessibilità e costi accessori. Le condizioni cambiano tra istituti e nel tempo: verifica sul tuo caso, non su un sentito dire.',
+        ],
+        bullets: [
+          'Importo massimo finanziabile e percentuale sul prezzo',
+          'Rata sostenibile rispetto al reddito',
+          'Costi di istruttoria, perizia e polizze collegate',
+          'Tempi indicativi di pre-approvazione e delibera',
+          'Cosa succede se la perizia vale meno del prezzo pattuito',
         ],
       },
       {
         heading: 'Tempi che contano in trattativa',
+        paragraphs: [
+          'A Monza e in Brianza le trattative serie hanno scadenze. Se la proposta prevede un mutuo, i tempi devono essere realistici rispetto alla banca, non ottimistici “per chiudere subito”.',
+        ],
         bullets: [
           'Pre-approvazione o delibera di massima (se disponibile)',
-          'Perizia sull’immobile scelta',
+          'Perizia sull’immobile scelto',
           'Coerenza tra scadenza della proposta e tempi bancari',
           'Clausole sospensive legate al mutuo, scritte in modo chiaro',
+        ],
+        internalLinksLead: 'Proposta e calendario:',
+        internalLinks: [
+          { href: '/offerta-acquisto-casa', label: 'offerta di acquisto' },
+          { href: '/tempi-acquisto-casa', label: 'tempi di acquisto' },
+          { href: '/documenti-acquisto-casa', label: 'documenti' },
+        ],
+      },
+      {
+        heading: 'Prima casa: mutuo e agevolazioni non sono la stessa cosa',
+        paragraphs: [
+          '“Prima casa” in ambito fiscale e condizioni di mutuo sono piani diversi. Le agevolazioni sulle imposte hanno requisiti propri; il finanziamento ha regole della banca. Non mescolarli in un unico “ho sentito che…”.',
+          'Verifica i requisiti aggiornati sulle fonti ufficiali e chiedi conferma a notaio o consulente sul tuo caso.',
+        ],
+        externalLinksLead: 'Approfondimenti istituzionali:',
+        externalLinks: [EXTERNAL.bancaItaliaMutui, EXTERNAL.agevolazioniPrimaCasa, EXTERNAL.agenziaEntrate],
+        internalLinksLead: 'Sul sito:',
+        internalLinks: [{ href: '/agevolazioni-prima-casa', label: 'agevolazioni prima casa' }],
+      },
+      {
+        heading: 'Perizia e valore di mercato locale',
+        paragraphs: [
+          'La perizia bancaria guarda l’immobile con criteri suoi. Se il prezzo pattuito è lontano da ciò che il mercato locale sostiene, puoi trovarti a dover rinegoziare o integrare liquidità.',
+          'Per questo, prima di offrire, conta un confronto serio su zona e tipologica (appartamento a Monza vs indipendente in Brianza), non solo il listino online.',
+        ],
+        internalLinksLead: 'Ancoraggio di zona:',
+        internalLinks: [
+          { href: '/appartamenti-in-vendita-monza', label: 'appartamenti a Monza' },
+          { href: '/ville-in-vendita-brianza', label: 'ville in Brianza' },
+          { href: '/checklist-visita-immobile', label: 'checklist di visita' },
         ],
       },
       {
         heading: 'Informarsi senza affidarsi solo al passaparola',
         paragraphs: [
-          'Confronta più istituti e leggi i costi accessori, non solo il tasso. Per basi di educazione finanziaria puoi partire dalle risorse pubbliche; per i dettagli del tuo caso serve il confronto diretto con la banca o un consulente del credito.',
+          'Confronta più istituti e leggi i costi accessori. Per basi di educazione finanziaria parti dalle risorse pubbliche; per i dettagli del tuo caso serve il confronto diretto con la banca o un consulente del credito.',
+          'Se stai ancora scegliendo zona e tipologica, una consulenza locale sull’acquisto (gratuita e senza impegno) aiuta a restringere il raggio in modo coerente con budget e tempi. Non sostituisce la banca.',
         ],
-        externalLinksLead: 'Approfondimenti istituzionali:',
-        externalLinks: [EXTERNAL.bancaItaliaMutui, EXTERNAL.agevolazioniPrimaCasa, EXTERNAL.agenziaEntrate],
+        internalLinksLead: 'Continua:',
+        internalLinks: [
+          { href: '/comprare-casa-brianza', label: 'comprare in Brianza' },
+          { href: '/offerta-acquisto-casa', label: 'impostare l’offerta' },
+        ],
       },
     ],
     related: [
@@ -635,6 +692,16 @@ export const GUIDE_PAGES: GuidePage[] = [
         href: '/tempi-acquisto-casa',
         label: 'Tempi di acquisto',
         description: 'Dalla visita al rogito.',
+      },
+      {
+        href: '/documenti-acquisto-casa',
+        label: 'Documenti',
+        description: 'Carta per banca e rogito.',
+      },
+      {
+        href: '/comprare-casa-monza',
+        label: 'Comprare casa a Monza',
+        description: 'Hub acquisto locale.',
       },
     ],
   },
