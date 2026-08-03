@@ -10,8 +10,8 @@ Stato: **1 fatto** · resto in coda. Procediamo **una pagina alla volta**.
 | 2 | `/comprare-casa-monza` | Alta | Hub acquisto; ancora relativamente corta | **Fatto** (2026-08-03) |
 | 3 | `/vendere-casa-monza` | Alta | Hub vendita; intent correlato a valutazione | **Fatto** (2026-08-03) |
 | 4 | `/annunci-casa-monza` | Alta | Supporta cluster acquisto + CTR query | **Fatto** (2026-08-03) |
-| 5 | `/ville-in-vendita-brianza` | Media | Tipologica Brianza, thin | **Prossima** |
-| 6 | `/appartamenti-in-vendita-monza` | Media | Tipologica Monza, thin | Coda |
+| 5 | `/ville-in-vendita-brianza` | Media | Tipologica Brianza, thin | **Fatto** (2026-08-03) |
+| 6 | `/appartamenti-in-vendita-monza` | Media | Tipologica Monza, thin | **Prossima** |
 | 7 | `/spese-acquisto-casa` | Media | Intent informativo forte | Coda |
 | 8 | `/offerta-acquisto-casa` | Media | Vicino a conversione | Coda |
 | 9 | `/mutuo-prima-casa` | Media | Intent informativo | Coda |

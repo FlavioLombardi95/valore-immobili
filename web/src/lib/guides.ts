@@ -817,36 +817,94 @@ export const GUIDE_PAGES: GuidePage[] = [
   {
     slug: 'ville-in-vendita-brianza',
     shortLabel: 'Ville in vendita',
-    metaTitle: 'Ville in vendita in Brianza: cosa sapere',
+    metaTitle: 'Ville in vendita in Brianza: cosa confrontare prima dell’offerta',
     metaDescription:
-      'Ville e case indipendenti in vendita in Brianza: giardino, stato, costi di gestione e dove cercare gli annunci prima di un’offerta.',
+      'Ville e case indipendenti in vendita in Brianza: giardino, tetto, costi di gestione, comuni e come leggere gli annunci prima di un’offerta.',
     title: 'Ville in vendita in Brianza: oltre i metri quadri',
     intro:
-      'Giardino, tetto, impianti e manutenzione cambiano il costo reale di una casa indipendente. Ecco cosa tenere d’occhio.',
+      'Una villa o una casa indipendente non si confronta come un appartamento “più grande”. In Brianza pesano **lotto, privacy, stato strutturale e costi di gestione**. Ecco come leggere gli annunci e preparare visite serie.',
     breadcrumb: 'Ville in vendita',
     relatedTitle: 'Indipendenti e mercato',
     sections: [
       {
-        heading: 'Cosa pesa sul confronto',
-        bullets: [
-          'Lotto, confini e privacy rispetto ai vicini',
-          'Stato di tetto, facciate, infissi e impianti',
-          'Costi di gestione e lavori prevedibili nei prossimi anni',
-          'Accessi, parcheggio e collegamenti quotidiani',
+        heading: 'Perché il confronto è diverso dal condominio',
+        paragraphs: [
+          'Su un appartamento conti piano, spese e parti comuni. Su una villa, una schiera o una bifamiliare entrano tetto, facciate, impianti, confini, giardino utilizzabile e quanto la via è residenziale o di passaggio. Usare listini di condominio monzese come riferimento è uno degli errori più frequenti.',
+          'Anche i tempi di trattativa spesso sono diversi: lo stock è più sottile, gli acquirenti più selettivi, e un prezzo fuori mercato resta in vetrina a lungo.',
+        ],
+        internalLinksLead: 'Contesto tipologico e geo:',
+        internalLinks: [
+          { href: '/valutazione/ville-brianza', label: 'valutazione ville in Brianza' },
+          { href: '/appartamenti-in-vendita-monza', label: 'appartamenti in vendita a Monza' },
+          { href: '/comprare-casa-brianza', label: 'comprare casa in Brianza' },
         ],
       },
       {
-        heading: 'Annunci di indipendenti in zona',
+        heading: 'Cosa pesa sul confronto (checklist acquirente)',
         paragraphs: [
-          'Lo stock di ville e villette è più sottile di quello degli appartamenti: conviene allargare il raggio ai comuni della Brianza e aggiornare spesso i filtri sui portali.',
+          'Prima di innamorarti delle foto del giardino, verifica ciò che sposta costo reale e domanda. Non serve essere tecnici: serve una lista onesta di domande.',
         ],
-        externalLinksLead: 'Parti da questi elenchi:',
+        bullets: [
+          'Tipologia: schiera, bifamiliare o indipendente (non sono lo stesso prodotto)',
+          'Lotto, confini e privacy rispetto ai vicini',
+          'Stato di tetto, facciate, infissi e impianti',
+          'Giardino o cortile: quanto è davvero utilizzabile',
+          'Costi di gestione e lavori prevedibili nei prossimi anni',
+          'Accessi, parcheggio e collegamenti quotidiani verso Monza o Milano',
+          'Comune e micro-zona: non mescolare listini di comuni diversi',
+        ],
+      },
+      {
+        heading: 'Comuni e raggio: non “tutta la Brianza”',
+        paragraphs: [
+          'Lo stock di indipendenti è rado. Allargare il raggio ha senso, ma tieni i comuni separati nella shortlist. Lissone, Brugherio, Desio, Muggiò, Villasanta e gli altri non chiudono con la stessa logica: collegamenti, densità e profilo di chi compra cambiano.',
+          'Se stai ancora scegliendo tra Monza città (spesso più condominio) e un indipendente in provincia, chiarisci il trade-off prima di mischiare i salvataggi sui portali.',
+        ],
+        internalLinksLead: 'Per leggere i comuni e il percorso acquisto:',
+        internalLinks: [
+          { href: '/comprare-casa-brianza', label: 'guida comprare in Brianza' },
+          { href: '/brianza', label: 'hub Brianza' },
+          { href: '/comprare-casa-monza', label: 'comprare a Monza' },
+        ],
+      },
+      {
+        heading: 'Annunci: stock sottile, filtri da aggiornare spesso',
+        paragraphs: [
+          'Sugli indipendenti i portali mostrano ancora **richieste, non chiusure**. Lo stock online è più sottile di quello degli appartamenti: conviene aggiornare i filtri spesso e allargare con criterio ai comuni vicini, non con un unico filtro “Monza e provincia” che mescola tutto.',
+          'Confronta data, ribassi e se l’annuncio è fermo da mesi. Poi verifica sul posto ciò che le foto non dicono: umidità, rumore di via, reale privacy del lotto, stato di tetto e impianti.',
+        ],
+        externalLinksLead: 'Elenchi utili per partire:',
         externalLinks: [EXTERNAL.immobiliareBrianza, EXTERNAL.idealistaMonza, EXTERNAL.casaMonza],
+        internalLinksLead: 'Metodo di lettura:',
+        internalLinks: [
+          { href: '/annunci-casa-monza', label: 'annunci casa a Monza e dintorni' },
+          { href: '/checklist-visita-immobile', label: 'checklist di visita' },
+        ],
+      },
+      {
+        heading: 'Nuova o usata, costi nascosti e offerta',
+        paragraphs: [
+          'Sul nuovo conti tempi, finiture e regole del cantiere. Sull’usato conti lavori, documentazione e sorprese strutturali. Il trade-off non è solo estetico: cambia il budget reale dopo il rogito.',
+          'Quando l’immobile regge la visita, costruisci un’offerta coerente con la domanda di quel comune e di quella tipologica, non con una media €/mq regionale.',
+        ],
+        internalLinksLead: 'Approfondimenti:',
+        internalLinks: [
+          { href: '/casa-nuova-o-usata', label: 'casa nuova o usata' },
+          { href: '/offerta-acquisto-casa', label: 'offerta di acquisto' },
+          { href: '/spese-acquisto-casa', label: 'spese di acquisto' },
+          { href: '/documenti-acquisto-casa', label: 'documenti' },
+        ],
       },
       {
         heading: 'Oltre gli annunci pubblici',
         paragraphs: [
-          'Per ville e indipendenti lo stock online è ancora più sottile. Se stai cercando con criteri precisi, chiedi una consulenza: seguiamo anche immobili che non pubblichiamo sui portali.',
+          'Per ville e indipendenti lo stock online è ancora più sottile. Se cerchi con criteri precisi (comune, metratura, giardino, budget), una consulenza locale può affiancare i portali e segnalare anche proposte che non pubblichiamo in vetrina.',
+          'È **gratuita e senza impegno** di acquisto. Se invece stai valutando di vendere un indipendente, il percorso è la valutazione con sopralluogo sulla tipologica ville.',
+        ],
+        internalLinksLead: 'Due direzioni:',
+        internalLinks: [
+          { href: '/valutazione/ville-brianza', label: 'sopralluogo ville Brianza' },
+          { href: '/vendere-casa-monza', label: 'vendere casa a Monza' },
         ],
       },
     ],
@@ -870,6 +928,16 @@ export const GUIDE_PAGES: GuidePage[] = [
         href: '/casa-nuova-o-usata',
         label: 'Nuova o usata',
         description: 'Trade-off tipici nella scelta.',
+      },
+      {
+        href: '/annunci-casa-monza',
+        label: 'Annunci casa',
+        description: 'Come leggere i portali con metodo.',
+      },
+      {
+        href: '/checklist-visita-immobile',
+        label: 'Checklist visita',
+        description: 'Cosa controllare sul posto.',
       },
     ],
   },
