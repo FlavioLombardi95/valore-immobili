@@ -641,37 +641,94 @@ export const GUIDE_PAGES: GuidePage[] = [
   {
     slug: 'offerta-acquisto-casa',
     shortLabel: 'Offerta di acquisto',
-    metaTitle: 'Offerta di acquisto casa: come impostarla',
+    metaTitle: 'Offerta di acquisto casa a Monza: come impostarla',
     metaDescription:
-      'Offerta di acquisto casa a Monza e Brianza: come arrivare preparati, cosa scrivere e perché il prezzo dell’annuncio non è il punto di partenza obbligato.',
+      'Offerta di acquisto casa a Monza e Brianza: come arrivare preparati, cosa scrivere nella proposta e perché il prezzo dell’annuncio non è il punto di partenza obbligato.',
     title: 'Offerta di acquisto: partire dai valori reali',
     intro:
-      'Una proposta credibile nasce dal confronto con il mercato locale, non da una trattativa “a sentimento” sul prezzo pubblicato.',
+      'Una proposta credibile nasce dal **confronto con il mercato locale**, non da una trattativa a sentimento sul prezzo pubblicato. Ecco cosa chiarire prima di offrire a Monza e in Brianza.',
     breadcrumb: 'Offerta di acquisto',
     relatedTitle: 'Prima e dopo la proposta',
     sections: [
       {
+        heading: 'Il prezzo dell’annuncio non è il punto di partenza obbligato',
+        paragraphs: [
+          'Il listino online è una richiesta. A Monza e in Brianza due richieste vicine possono chiudere a livelli diversi a seconda di quartiere, stato, piano, box e domanda reale. Offrire “un po’ sotto” senza confronto comparabile è un tiro al buio.',
+          'Prima della proposta: shortlist nella stessa fascia di domanda, visita fatta, costi di acquisto in testa, idea di mutuo se serve. Solo dopo ha senso il numero.',
+        ],
+        internalLinksLead: 'Preparazione:',
+        internalLinks: [
+          { href: '/annunci-casa-monza', label: 'leggere gli annunci' },
+          { href: '/checklist-visita-immobile', label: 'checklist di visita' },
+          { href: '/spese-acquisto-casa', label: 'spese di acquisto' },
+          { href: '/mutuo-prima-casa', label: 'mutuo' },
+        ],
+      },
+      {
         heading: 'Cosa deve essere chiaro nella proposta',
+        paragraphs: [
+          'Una proposta seria riduce i malintesi. Non serve un romanzo: servono punti netti, così venditore e acquirente sanno su cosa stanno dicendo sì o no.',
+        ],
         bullets: [
           'Prezzo offerto e modalità di pagamento',
           'Tempi per il compromesso e per il rogito',
           'Eventuali clausole (mutuo, verifica documenti, stato luoghi)',
           'Caparra e conseguenze in caso di recesso',
+          'Cosa è incluso (box, cantina, arredi) se rilevante',
         ],
       },
       {
-        heading: 'Perché i valori di zona contano',
+        heading: 'Come ancorare l’offerta al mercato di zona',
         paragraphs: [
-          'A Monza e in Brianza due richieste vicine possono chiudere a livelli diversi. Prima di offrire, confronta immobili davvero comparabili e tieni conto di stato e lavori da fare. Se non trovi nulla di adatto online, possiamo orientarti anche su immobili che non pubblichiamo sui portali.',
+          'Confronta immobili davvero comparabili: stessa tipologica, stato simile, micro-zona allineata. Un attico ristrutturato e un terzo piano da rifare non si “mediano” solo perché hanno gli stessi mq.',
+          'Tieni conto dei lavori che farai nei primi mesi e delle spese di possesso (condominio o gestione indipendente). Un prezzo richiesto più basso può costare di più dopo il rogito.',
+        ],
+        internalLinksLead: 'Contesto tipologico e geo:',
+        internalLinks: [
+          { href: '/appartamenti-in-vendita-monza', label: 'appartamenti a Monza' },
+          { href: '/ville-in-vendita-brianza', label: 'ville in Brianza' },
+          { href: '/comprare-casa-monza', label: 'hub comprare a Monza' },
+          { href: '/comprare-casa-brianza', label: 'comprare in Brianza' },
+        ],
+      },
+      {
+        heading: 'Mutuo e tempi: non offrire al buio sul finanziamento',
+        paragraphs: [
+          'Se compri con mutuo, allinea l’offerta a un ordine di grandezza di delibera, non solo al desiderio di “chiudere subito”. Clausole e scadenze vanno scritte in modo chiaro: evitano promesse che la banca non regge nei tempi previsti.',
+          'Anche senza mutuo, i tempi di compromesso e rogito devono essere realistici rispetto a documenti e notaio.',
+        ],
+        internalLinksLead: 'Approfondimenti:',
+        internalLinks: [
+          { href: '/mutuo-prima-casa', label: 'mutuo prima casa' },
+          { href: '/tempi-acquisto-casa', label: 'tempi di acquisto' },
+          { href: '/documenti-acquisto-casa', label: 'documenti' },
         ],
       },
       {
         heading: 'Dopo l’accettazione',
         paragraphs: [
           'Se la proposta viene accettata, entrano in gioco documenti, notaio e (spesso) banca. Meglio avere già una lista di controlli aperti piuttosto che scoprirli a ridosso del rogito.',
+          'Visure, planimetria, APE, atto di provenienza e (in condominio) situazione spese: sono pezzi che tornano fuori. Anticiparli riduce stress e rinvii.',
         ],
         externalLinksLead: 'Riferimenti utili sul percorso formale:',
         externalLinks: [EXTERNAL.notariato, EXTERNAL.visuraCatastale],
+        internalLinksLead: 'Checklist sul sito:',
+        internalLinks: [
+          { href: '/documenti-acquisto-casa', label: 'documenti per comprare' },
+          { href: '/agevolazioni-prima-casa', label: 'agevolazioni prima casa' },
+        ],
+      },
+      {
+        heading: 'Se non trovi nulla di adatto online',
+        paragraphs: [
+          'A volte la shortlist sui portali non chiude: criteri stretti, poco stock, tipologica rara. In quel caso una consulenza locale può affiancare la ricerca, anche su immobili che non pubblichiamo in vetrina.',
+          'È **gratuita e senza impegno** di acquisto. Serve a leggere zona e prezzo richiesto con più concreto, non a sostituire notaio o banca.',
+        ],
+        internalLinksLead: 'Hub e tipologiche:',
+        internalLinks: [
+          { href: '/comprare-casa-monza', label: 'comprare casa a Monza' },
+          { href: '/annunci-casa-monza', label: 'annunci casa' },
+        ],
       },
     ],
     related: [
@@ -694,6 +751,16 @@ export const GUIDE_PAGES: GuidePage[] = [
         href: '/annunci-casa-monza',
         label: 'Annunci casa',
         description: 'Come leggere i prezzi in vetrina.',
+      },
+      {
+        href: '/spese-acquisto-casa',
+        label: 'Spese di acquisto',
+        description: 'Budget oltre il prezzo.',
+      },
+      {
+        href: '/mutuo-prima-casa',
+        label: 'Mutuo',
+        description: 'Allineare banca e proposta.',
       },
     ],
   },

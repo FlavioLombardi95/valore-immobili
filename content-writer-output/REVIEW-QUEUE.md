@@ -13,8 +13,8 @@ Stato: **1 fatto** · resto in coda. Procediamo **una pagina alla volta**.
 | 5 | `/ville-in-vendita-brianza` | Media | Tipologica Brianza, thin | **Fatto** (2026-08-03) |
 | 6 | `/appartamenti-in-vendita-monza` | Media | Tipologica Monza, thin | **Fatto** (2026-08-03) |
 | 7 | `/spese-acquisto-casa` | Media | Intent informativo forte | **Fatto** (2026-08-03) |
-| 8 | `/offerta-acquisto-casa` | Media | Vicino a conversione | **Prossima** |
-| 9 | `/mutuo-prima-casa` | Media | Intent informativo | Coda |
+| 8 | `/offerta-acquisto-casa` | Media | Vicino a conversione | **Fatto** (2026-08-03) |
+| 9 | `/mutuo-prima-casa` | Media | Intent informativo | **Prossima** |
 | 10 | `/documenti-acquisto-casa` | Media | Thin → allungare | Coda |
 | 11 | `/checklist-visita-immobile` | Media | Thin → allungare | Coda |
 | 12 | `/tempi-acquisto-casa` | Bassa | Supporto cluster | Coda |
