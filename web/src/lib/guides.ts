@@ -834,37 +834,88 @@ export const GUIDE_PAGES: GuidePage[] = [
   {
     slug: 'documenti-acquisto-casa',
     shortLabel: 'Documenti acquisto',
-    metaTitle: 'Documenti per comprare casa: elenco pratico',
+    metaTitle: 'Documenti per comprare casa a Monza: elenco pratico',
     metaDescription:
-      'Documenti per acquistare casa: visure, planimetrie, APE, atto di provenienza e controlli utili prima del compromesso a Monza e in Brianza.',
+      'Documenti per acquistare casa a Monza e in Brianza: visure, planimetrie, APE, atto di provenienza e quando chiederli prima del compromesso.',
     title: 'Documenti per comprare casa: cosa verificare',
     intro:
-      'Una trattativa seria si appoggia sulla carta. Ecco un elenco orientativo di ciò che di solito serve controllare.',
+      'Una trattativa seria a Monza o in Brianza si appoggia sulla **carta**, non solo sulle foto. Ecco un elenco orientativo di ciò che di solito serve controllare, e quando.',
     breadcrumb: 'Documenti acquisto',
     relatedTitle: 'Percorso di acquisto',
     sections: [
       {
+        heading: 'Perché i documenti contano quanto il prezzo',
+        paragraphs: [
+          'Puoi innamorarti di un appartamento in visita e scoprire dopo che la planimetria non torna, che ci sono spese condominiali arretrate o che manca pezzi di conformità. Meglio anticipare i controlli che rincorrerli a ridosso del rogito.',
+          'Questo elenco è orientativo: il notaio e, se c’è mutuo, la banca hanno liste proprie. Serve a non arrivare impreparati.',
+        ],
+        internalLinksLead: 'Contesto percorso:',
+        internalLinks: [
+          { href: '/offerta-acquisto-casa', label: 'offerta di acquisto' },
+          { href: '/tempi-acquisto-casa', label: 'tempi di acquisto' },
+          { href: '/spese-acquisto-casa', label: 'spese di acquisto' },
+        ],
+      },
+      {
         heading: 'Documenti tipici dell’immobile',
+        paragraphs: [
+          'In fase di interesse serio chiedi almeno il nucleo essenziale. Prima del compromesso conviene un quadro più completo.',
+        ],
         bullets: [
           'Visura e planimetria catastale coerenti con lo stato di fatto',
           'Atto di provenienza (rogito) del venditore',
           'Attestato di prestazione energetica (APE)',
           'Certificazioni impianti e conformità urbanistica, se disponibili',
           'Per gli appartamenti: regolamento e situazione spese condominiali',
+          'Documentazione di lavori o ristrutturazioni rilevanti',
         ],
       },
       {
-        heading: 'Visure e catasto',
+        heading: 'Visure e catasto: controllo, non sostituzione del notaio',
         paragraphs: [
-          'Le visure si possono richiedere anche online tramite i canali dell’Agenzia delle Entrate. Restano uno strumento di controllo: non sostituiscono la verifica notarile completa.',
+          'Le visure si possono richiedere anche online tramite i canali dell’Agenzia delle Entrate. Restano uno strumento di controllo: non sostituiscono la verifica notarile completa su provenienza, ipoteche e coerenza catastale.',
+          'Se planimetria e stato di fatto divergono, chiariscilo subito: in condominio a Monza e su indipendenti in Brianza è un tema frequente.',
         ],
         externalLinksLead: 'Canali ufficiali:',
         externalLinks: [EXTERNAL.visuraCatastale, EXTERNAL.agenziaEntrate, EXTERNAL.notariato],
       },
       {
+        heading: 'Appartamento vs indipendente: carte che cambiano',
+        paragraphs: [
+          'In condominio pesano regolamento, tabelle millesimali e situazione spese (anche lavori deliberati). Su villa o casa indipendente pesano più confini, eventuali dipendenze, stato di tetto e impianti documentato.',
+          'Non usare la stessa checklist “corta” per tipologiche diverse.',
+        ],
+        internalLinksLead: 'Focus tipologici:',
+        internalLinks: [
+          { href: '/appartamenti-in-vendita-monza', label: 'appartamenti a Monza' },
+          { href: '/ville-in-vendita-brianza', label: 'ville in Brianza' },
+          { href: '/checklist-visita-immobile', label: 'checklist di visita' },
+        ],
+      },
+      {
         heading: 'Quando chiedere cosa',
         paragraphs: [
-          'In fase di interesse puoi chiedere i documenti principali; prima del compromesso conviene avere un quadro più completo. Se qualcosa non torna (planimetria diversa, abusi sospetti, spese arretrate), meglio chiarirlo subito.',
+          'In fase di interesse: documenti principali (planimetria, APE se c’è, idea su spese). Prima del compromesso: quadro più completo e allineamento con notaio. Con mutuo: anticipa ciò che la banca chiederà per perizia e delibera.',
+          'Se qualcosa non torna (planimetria diversa, abusi sospetti, spese arretrate), meglio chiarirlo prima di alzare l’offerta o firmare.',
+        ],
+        internalLinksLead: 'Mutuo e proposta:',
+        internalLinks: [
+          { href: '/mutuo-prima-casa', label: 'mutuo prima casa' },
+          { href: '/offerta-acquisto-casa', label: 'offerta di acquisto' },
+          { href: '/agevolazioni-prima-casa', label: 'agevolazioni prima casa' },
+        ],
+      },
+      {
+        heading: 'Cosa non sostituiscono i documenti',
+        paragraphs: [
+          'La carta non sostituisce la visita: luce, rumore, odori, stato reale delle finiture li vedi sul posto. E non sostituisce un parere locale su zona e prezzo richiesto se stai ancora calibrando la shortlist.',
+          'La consulenza all’acquisto è gratuita e senza impegno: utile per orientarti su mercato e opportunità, non per fare da notaio.',
+        ],
+        internalLinksLead: 'Prima e dopo i documenti:',
+        internalLinks: [
+          { href: '/annunci-casa-monza', label: 'annunci casa' },
+          { href: '/comprare-casa-monza', label: 'comprare casa a Monza' },
+          { href: '/comprare-casa-brianza', label: 'comprare in Brianza' },
         ],
       },
     ],
@@ -888,6 +939,16 @@ export const GUIDE_PAGES: GuidePage[] = [
         href: '/checklist-visita-immobile',
         label: 'Checklist visita',
         description: 'Cosa guardare di persona.',
+      },
+      {
+        href: '/mutuo-prima-casa',
+        label: 'Mutuo',
+        description: 'Cosa chiede spesso la banca.',
+      },
+      {
+        href: '/agevolazioni-prima-casa',
+        label: 'Agevolazioni prima casa',
+        description: 'Requisiti e fonti ufficiali.',
       },
     ],
   },
