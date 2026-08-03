@@ -40,19 +40,19 @@ export type GuidePage = {
 export const EXTERNAL = {
   immobiliareMonza: {
     href: 'https://www.immobiliare.it/vendita-case/monza/',
-    label: 'Immobiliare.it — case in vendita a Monza',
+    label: 'Immobiliare.it: case in vendita a Monza',
   },
   immobiliareBrianza: {
     href: 'https://www.immobiliare.it/vendita-case/monza-brianza/',
-    label: 'Immobiliare.it — vendita in provincia di Monza e Brianza',
+    label: 'Immobiliare.it: vendita in provincia di Monza e Brianza',
   },
   idealistaMonza: {
     href: 'https://www.idealista.it/vendita-case/monza-monza/',
-    label: 'Idealista — vendita case a Monza',
+    label: 'Idealista: vendita case a Monza',
   },
   casaMonza: {
     href: 'https://www.casa.it/vendita/residenziale/monza/',
-    label: 'Casa.it — residenziale in vendita a Monza',
+    label: 'Casa.it: residenziale in vendita a Monza',
   },
   comuneMonza: {
     href: 'https://www.comune.monza.it/',
@@ -64,11 +64,11 @@ export const EXTERNAL = {
   },
   agevolazioniPrimaCasa: {
     href: 'https://www.agenziaentrate.gov.it/portale/aree-tematiche/casa/agevolazioni/agevolazioni-per-acquisto-della-prima-casa',
-    label: 'Agevolazioni prima casa — Agenzia delle Entrate',
+    label: 'Agevolazioni prima casa (Agenzia delle Entrate)',
   },
   visuraCatastale: {
     href: 'https://www.agenziaentrate.gov.it/portale/schede/fabbricatiterreni/visura-catastale',
-    label: 'Visura catastale — Agenzia delle Entrate',
+    label: 'Visura catastale (Agenzia delle Entrate)',
   },
   notariato: {
     href: 'https://www.notariato.it/',
@@ -76,7 +76,7 @@ export const EXTERNAL = {
   },
   bancaItaliaMutui: {
     href: 'https://www.bancaditalia.it/pubblicazioni/guide-bi/guida-mutuo/index.html',
-    label: 'Guida al mutuo — Banca d’Italia',
+    label: 'Guida al mutuo (Banca d’Italia)',
   },
 } as const
 
@@ -264,37 +264,93 @@ export const GUIDE_PAGES: GuidePage[] = [
   {
     slug: 'annunci-casa-monza',
     shortLabel: 'Annunci casa',
-    metaTitle: 'Annunci casa Monza: come leggerli davvero',
+    metaTitle: 'Annunci casa Monza: come leggerli senza farsi fuorviare',
     metaDescription:
-      'Annunci casa a Monza e Brianza: come confrontare i portali, cosa guardare oltre il prezzo e quali siti usare per una ricerca seria.',
+      'Annunci casa a Monza e Brianza: come confrontare i portali, cosa guardare oltre il prezzo richiesto e come passare dalla vetrina alla visita con metodo.',
     title: 'Annunci casa a Monza: oltre il prezzo in vetrina',
     intro:
-      'I portali mostrano richieste, non chiusure. Ecco come usarli bene quando cerchi casa a Monza e nei comuni vicini.',
+      'I portali mostrano **richieste, non chiusure**. Servono a costruire una shortlist, non a decidere da soli. Ecco come leggerli a Monza e nei comuni vicini senza confondere listino e mercato reale.',
     breadcrumb: 'Annunci casa a Monza',
     relatedTitle: 'Continua la ricerca',
     sections: [
       {
-        heading: 'Tre portali, stessi immobili (quasi)',
+        heading: 'A cosa servono (e a cosa no) i portali',
         paragraphs: [
-          'Molti annunci compaiono su più siti con foto e testi simili. Confronta sempre data di pubblicazione, agenzia o privato, e se il prezzo è cambiato nel tempo: un ribasso recente dice più di una media di zona.',
+          'Gli annunci online ti dicono cosa c’è in vetrina oggi, a che prezzo viene chiesto, da quanto tempo e con quali foto. Non ti dicono a quanto si chiude davvero in quella micro-zona, né se lo stato interno regge le promesse del testo.',
+          'Usarli bene significa filtrare, confrontare e preparare le visite. Usarli male significa innamorarti di un prezzo al metro quadro e scoprire in casa che stavi confrontando prodotti diversi.',
         ],
-        externalLinksLead: 'Consulta gli annunci residenziali in zona:',
-        externalLinks: [EXTERNAL.immobiliareMonza, EXTERNAL.idealistaMonza, EXTERNAL.casaMonza],
+        internalLinksLead: 'Quadro generale per chi compra:',
+        internalLinks: [
+          { href: '/comprare-casa-monza', label: 'comprare casa a Monza' },
+          { href: '/comprare-casa-brianza', label: 'comprare casa in Brianza' },
+        ],
       },
       {
-        heading: 'Cosa leggere tra le righe',
+        heading: 'Tre portali, spesso gli stessi immobili',
+        paragraphs: [
+          'Molti annunci compaiono su più siti con foto e testi simili. Non è un problema: è un segnale. Confronta data di pubblicazione, se è privato o agenzia, e se il prezzo è cambiato nel tempo. Un ribasso recente dice più di una media di zona.',
+          'Filtra per comune o quartiere, non solo per “Monza e provincia”. Se allarghi alla Brianza, tieni i comuni separati nella shortlist: altrimenti mescoli mercati diversi.',
+        ],
+        externalLinksLead: 'Parti da queste vetrine residenziali:',
+        externalLinks: [EXTERNAL.immobiliareMonza, EXTERNAL.idealistaMonza, EXTERNAL.casaMonza],
+        internalLinksLead: 'Per lo stock in provincia:',
+        internalLinks: [
+          { href: '/comprare-casa-brianza', label: 'guida Brianza' },
+        ],
+      },
+      {
+        heading: 'Cosa leggere tra le righe (oltre il prezzo)',
+        paragraphs: [
+          'Il prezzo richiesto è l’aggancio, non la conclusione. Prima di salvare un annuncio, controlla ciò che sposta il confronto a Monza: contesto di via, piano, accessori e costi di gestione.',
+        ],
         bullets: [
           'Piano, ascensore, esposizione e rumore (strada, ferrovia, locali)',
           'Spese condominiali e lavori deliberati o in corso',
           'Classe energetica e impianti (spesso sottovalutati in trattativa)',
           'Box, cantina, giardino: accessori che spostano il confronto',
-          'Tempo in vetrina: annunci “fermi” da mesi meritano domande in più',
+          'Tempo in vetrina: annunci fermi da mesi meritano domande in più',
+          'Quartiere e micro-zona allineati a ciò che stai confrontando',
+        ],
+        internalLinksLead: 'Per collocare i nomi di zona:',
+        internalLinks: [{ href: '/quartieri-monza', label: 'quartieri di Monza' }],
+      },
+      {
+        heading: 'Come costruire una shortlist che regge',
+        paragraphs: [
+          'Fissa prima i vincoli (budget con costi di atto, tipologica, raggio). Poi salva solo immobili nella stessa fascia di domanda: stessa tipologica, stato simile, contesto confrontabile. Se in una settimana hai cinquanta salvataggi sparsi su mezza provincia, non hai una shortlist: hai rumore.',
+          'Una regola pratica: tieni 5-8 candidati seri per volta. Quando ne scarti uno dopo la visita, ne aggiungi un altro nella stessa fascia, non “qualcosa di simile a dieci chilometri”.',
+        ],
+        bullets: [
+          'Stesso comune o stesso quartiere nel confronto diretto',
+          'Appartamento con appartamento; indipendente con indipendente',
+          'Nota data, prezzo iniziale e eventuali ribassi',
+          'Segna le domande da fare in visita (non a memoria)',
         ],
       },
       {
-        heading: 'Dal portale alla visita',
+        heading: 'Dal portale alla visita (e poi all’offerta)',
         paragraphs: [
-          'Usa i portali per costruire una shortlist, non per decidere. Prima di un’offerta serve visita, documenti e un confronto con ciò che in zona si sta davvero chiudendo — non solo con ciò che viene pubblicato.',
+          'Usa i portali per arrivare in casa con criteri chiari. In visita verifica luce reale, rumore, parti comuni, box e lavori evidenti. Solo dopo, se l’immobile regge, costruisci un’offerta sul mercato locale, non sul solo prezzo pubblicato.',
+          'Documenti e tempi entrano dopo: non bloccano la shortlist, ma bloccano un impegno serio se li ignori del tutto.',
+        ],
+        internalLinksLead: 'Passaggi successivi:',
+        internalLinks: [
+          { href: '/checklist-visita-immobile', label: 'checklist di visita' },
+          { href: '/offerta-acquisto-casa', label: 'offerta di acquisto' },
+          { href: '/documenti-acquisto-casa', label: 'documenti' },
+          { href: '/spese-acquisto-casa', label: 'spese di acquisto' },
+        ],
+      },
+      {
+        heading: 'Appartamenti, ville e stock fuori vetrina',
+        paragraphs: [
+          'Sulle tipologiche lo stock online cambia molto: gli appartamenti a Monza sono più numerosi; ville e indipendenti in Brianza sono più radi e vanno aggiornati spesso nei filtri.',
+          'I portali non sono tutto il mercato. Se hai criteri stretti, una consulenza locale può affiancare la ricerca e segnalare anche proposte che non compaiono in vetrina. È gratuita e senza impegno di acquisto.',
+        ],
+        internalLinksLead: 'Focus tipologici:',
+        internalLinks: [
+          { href: '/appartamenti-in-vendita-monza', label: 'appartamenti in vendita a Monza' },
+          { href: '/ville-in-vendita-brianza', label: 'ville in vendita in Brianza' },
         ],
       },
     ],
@@ -318,6 +374,16 @@ export const GUIDE_PAGES: GuidePage[] = [
         href: '/appartamenti-in-vendita-monza',
         label: 'Appartamenti in vendita',
         description: 'Focus su condominio e tipologiche.',
+      },
+      {
+        href: '/quartieri-monza',
+        label: 'Quartieri di Monza',
+        description: 'Dove collocare gli annunci sulla mappa.',
+      },
+      {
+        href: '/comprare-casa-brianza',
+        label: 'Comprare in Brianza',
+        description: 'Se allarghi il raggio ai comuni vicini.',
       },
     ],
   },
