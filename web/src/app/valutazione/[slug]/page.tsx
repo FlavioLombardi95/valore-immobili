@@ -37,8 +37,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const locality = getLocality(slug)
   if (locality) {
     return {
-      title: locality.pageTitle,
-      description: `Valutazione immobiliare gratuita a ${locality.name}: sopralluogo sul posto e stima basata su vendite reali nella zona, senza impegno.`,
+      title: {
+        absolute: `Valutazione immobiliare a ${locality.name}: sopralluogo gratis | Valore Immobili`,
+      },
+      description: `Sopralluogo gratuito a ${locality.name}, senza mandato. Stima sul mercato locale (non algoritmo né media di Monza). Richiedi in pochi minuti.`,
       alternates: { canonical: `${SITE_URL}${localityPath(locality.slug)}` },
     }
   }
@@ -46,7 +48,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const propertyType = getPropertyType(slug)
   if (propertyType) {
     return {
-      title: propertyType.metaTitle,
+      title: { absolute: `${propertyType.metaTitle} | Valore Immobili` },
       description: propertyType.metaDescription,
       alternates: { canonical: `${SITE_URL}${propertyTypePath(propertyType.slug)}` },
     }
@@ -126,8 +128,25 @@ function FaqBlock({
   title: string
   faqs: { question: string; answer: string }[]
 }) {
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <h2>{title}</h2>
       {faqs.map((faq) => (
         <Fragment key={faq.question}>
@@ -147,6 +166,20 @@ function RequestBlock({ locality }: { locality: Locality }) {
       <p>
         {locality.requestFollowUp}{' '}
         <Link href="/come-funziona">Come funziona</Link>. Dubbi su costi e documenti:{' '}
+        <Link href="/faq">FAQ</Link>.
+      </p>
+    </>
+  )
+}
+
+function AntiAvmBlock({ placeLabel }: { placeLabel: string }) {
+  return (
+    <>
+      <h2>Dopo una stima online a {placeLabel}</h2>
+      <p>
+        I calcolatori e le quotazioni OMI danno un orientamento, non il valore della tua casa. A{' '}
+        {placeLabel} contano via, stato reale e domanda locale: elementi che si vedono in sopralluogo. La
+        visita è <strong>gratuita</strong> e <strong>senza mandato</strong>. Dubbi tipici anche nelle{' '}
         <Link href="/faq">FAQ</Link>.
       </p>
     </>
@@ -425,6 +458,7 @@ function localityBody(locality: Locality): ReactNode {
   const context = <ContextBlock locality={locality} />
   const request = <RequestBlock locality={locality} />
   const siblings = <SiblingBlock locality={locality} />
+  const antiAvm = <AntiAvmBlock placeLabel={locality.name} />
   const buy = <BuyBridge placeLabel={locality.name} />
 
   switch (locality.layoutVariant) {
@@ -436,6 +470,7 @@ function localityBody(locality: Locality): ReactNode {
           {angle}
           {siblings}
           {request}
+          {antiAvm}
           {buy}
         </>
       )
@@ -450,6 +485,7 @@ function localityBody(locality: Locality): ReactNode {
           {angle}
           {request}
           {siblings}
+          {antiAvm}
           {buy}
         </>
       )
@@ -461,6 +497,7 @@ function localityBody(locality: Locality): ReactNode {
           {look}
           {request}
           {siblings}
+          {antiAvm}
           {buy}
         </>
       )
@@ -473,6 +510,7 @@ function localityBody(locality: Locality): ReactNode {
           {context}
           {siblings}
           {request}
+          {antiAvm}
           {buy}
         </>
       )
@@ -488,6 +526,12 @@ function propertyTypeBody(page: PropertyTypePage): ReactNode {
   const request = <PropertyTypeRequest page={page} />
   const tipologiche = <TipologicheLinks currentSlug={page.slug} />
   const zones = <PropertyTypeZones page={page} />
+  const antiAvm =
+    page.slug === 'appartamenti-monza' ? (
+      <AntiAvmBlock placeLabel="Monza" />
+    ) : (
+      <AntiAvmBlock placeLabel="Brianza" />
+    )
   const buy =
     page.slug === 'appartamenti-monza' ? (
       <BuyBridge placeLabel="Monza" />
@@ -504,6 +548,7 @@ function propertyTypeBody(page: PropertyTypePage): ReactNode {
         {zones}
         {tipologiche}
         {request}
+        {antiAvm}
         {buy}
       </>
     )
@@ -517,6 +562,7 @@ function propertyTypeBody(page: PropertyTypePage): ReactNode {
       {request}
       {tipologiche}
       {zones}
+      {antiAvm}
       {buy}
     </>
   )

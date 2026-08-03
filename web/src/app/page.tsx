@@ -9,9 +9,11 @@ import { RelatedLinks } from '@/components/RelatedLinks'
 import heroImage from '../../public/assets/hero-villa-reale-monza.jpg'
 
 export const metadata: Metadata = {
-  title: 'Valutazione immobiliare Monza gratuita con sopralluogo',
+  title: {
+    absolute: 'Valutazione immobiliare Monza: sopralluogo gratis | Valore Immobili',
+  },
   description:
-    'Sopralluogo gratuito a Monza e Brianza, senza impegno. Stima basata su vendite reali della zona, non su algoritmi. Richiedi in pochi minuti.',
+    'Sopralluogo gratuito a Monza e Brianza, senza mandato. Stima su vendite reali della zona, non su algoritmi. Richiedi in pochi minuti.',
   alternates: { canonical: 'https://valore-immobili.it/' },
 }
 
@@ -61,11 +63,11 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-4 py-14 md:py-20">
           <div className="max-w-2xl space-y-4">
             <h1 className="font-headline text-4xl font-extrabold tracking-tight text-cloud text-balance md:text-5xl">
-              Scopri quanto vale davvero la tua casa
+              Valutazione immobiliare a Monza con sopralluogo gratuito
             </h1>
             <p className="max-w-xl text-base text-slate-200 text-pretty md:text-lg">
-              Valutazione gratuita con sopralluogo a Monza e in Brianza, basata su vendite reali nella tua
-              zona. Un parere concreto prima di decidere se e come vendere.
+              Stima sul posto a Monza e in Brianza, su vendite reali della zona: non un algoritmo. Gratuita e
+              senza mandato, prima di decidere se e come vendere.
             </p>
             <div className="pt-2">
               <a
@@ -146,10 +148,12 @@ export default function HomePage() {
               centro né i comuni più esterni.
             </p>
             <p>
-              Se cerchi un focus tipologico, puoi approfondire gli{' '}
-              <Link href="/appartamenti-in-vendita-monza">appartamenti in vendita a Monza</Link> o le{' '}
-              <Link href="/ville-in-vendita-brianza">ville in vendita in Brianza</Link>: sono guide di
-              orientamento, non listini.
+              Se sai già la tipologica, parti da{' '}
+              <Link href="/valutazione/appartamenti-monza">valutazione appartamenti a Monza</Link> o da{' '}
+              <Link href="/valutazione/ville-brianza">valutazione ville in Brianza</Link>. Sul lato ricerca,
+              le guide <Link href="/appartamenti-in-vendita-monza">appartamenti in vendita a Monza</Link> e{' '}
+              <Link href="/ville-in-vendita-brianza">ville in vendita in Brianza</Link> orientano senza
+              confondere listini e stime.
             </p>
 
             <h2>Per chi vende e per chi compra</h2>
@@ -170,6 +174,26 @@ export default function HomePage() {
             title="Approfondimenti utili"
             items={[
               {
+                href: '/monza',
+                label: 'Valutazione a Monza',
+                description: 'Hub città: quartieri e stima sul posto.',
+              },
+              {
+                href: '/valutazione/appartamenti-monza',
+                label: 'Valutazione appartamenti',
+                description: 'Focus condominio a Monza e dintorni.',
+              },
+              {
+                href: '/valutazione/ville-brianza',
+                label: 'Valutazione ville in Brianza',
+                description: 'Schiere, bifamiliari e indipendenti.',
+              },
+              {
+                href: '/brianza',
+                label: 'Valutazione in Brianza',
+                description: 'Hub comuni della provincia.',
+              },
+              {
                 href: '/come-funziona',
                 label: 'Come funziona',
                 description: 'Richiesta, sopralluogo e stima passo per passo.',
@@ -178,26 +202,6 @@ export default function HomePage() {
                 href: '/faq',
                 label: 'Domande frequenti',
                 description: 'Costi, tempi, documenti e obblighi.',
-              },
-              {
-                href: '/monza',
-                label: 'Valutazione a Monza',
-                description: 'Come cambia il valore tra i quartieri della città.',
-              },
-              {
-                href: '/brianza',
-                label: 'Valutazione in Brianza',
-                description: 'Il servizio nei comuni della provincia.',
-              },
-              {
-                href: '/vendere-casa-monza',
-                label: 'Vendere casa a Monza',
-                description: 'Da dove iniziare prima di fissare un prezzo.',
-              },
-              {
-                href: '/comprare-casa-monza',
-                label: 'Comprare casa a Monza',
-                description: 'Mercato locale, annunci e costi di acquisto.',
               },
             ]}
           />

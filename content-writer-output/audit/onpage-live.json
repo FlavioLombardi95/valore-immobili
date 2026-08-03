@@ -1,0 +1,307 @@
+[
+  {
+    "url": "https://valore-immobili.it/",
+    "status": 200,
+    "title": "Valutazione immobiliare Monza gratuita con sopralluogo",
+    "titleLen": 54,
+    "desc": "Sopralluogo gratuito a Monza e Brianza, senza impegno. Stima basata su vendite reali della zona, non su algoritmi. Richiedi in pochi minuti.",
+    "descLen": 140,
+    "canonical": "https://valore-immobili.it",
+    "robots": null,
+    "h1s": [
+      "Scopri quanto vale davvero la tua casa"
+    ],
+    "h2Count": 6,
+    "h2s": [
+      "Una stima sul posto, non un algoritmo",
+      "Perché una valutazione sul posto e non online",
+      "Come funziona, passo per passo",
+      "Monza e Brianza: mercato locale, non medie provinciali",
+      "Per chi vende e per chi compra",
+      "Approfondimenti utili"
+    ],
+    "schemas": [
+      [
+        "Organization",
+        "Service"
+      ]
+    ],
+    "ogTitle": "Valutazione immobiliare Monza gratuita con sopralluogo",
+    "hasForm": true,
+    "internalLinkCount": 47,
+    "htmlLen": 48285
+  },
+  {
+    "url": "https://valore-immobili.it/monza",
+    "status": 200,
+    "title": "Valutazione immobiliare a Monza: stima sul posto | Valore Immobili",
+    "titleLen": 66,
+    "desc": "Valutazione immobiliare a Monza con sopralluogo gratuito: stima sul mercato reale del quartiere (Centro, San Fruttuoso, Cederna…). Senza impegno.",
+    "descLen": 145,
+    "canonical": "https://valore-immobili.it/monza",
+    "robots": null,
+    "h1s": [
+      "Valutazione immobiliare a Monza"
+    ],
+    "h2Count": 6,
+    "h2s": [
+      "Perché il valore a Monza dipende dalla zona",
+      "Cosa incide davvero sul prezzo",
+      "Appartamenti e ville",
+      "Come funziona la richiesta",
+      "Vendere o cercare casa a Monza",
+      "Approfondimenti utili"
+    ],
+    "schemas": [
+      [
+        "Organization",
+        "Service"
+      ]
+    ],
+    "ogTitle": "Valutazione immobiliare a Monza: stima sul posto | Valore Immobili",
+    "hasForm": true,
+    "internalLinkCount": 45,
+    "htmlLen": 40056
+  },
+  {
+    "url": "https://valore-immobili.it/brianza",
+    "status": 200,
+    "title": "Valutazione immobiliare in Brianza: comuni e zone | Valore Immobili",
+    "titleLen": 67,
+    "desc": "Valutazione immobiliare in Brianza con sopralluogo gratuito. Stima locale per Lissone, Brugherio, Desio e altri comuni: non medie provinciali. Senza impegno.",
+    "descLen": 157,
+    "canonical": "https://valore-immobili.it/brianza",
+    "robots": null,
+    "h1s": [
+      "Valutazione immobiliare in Brianza"
+    ],
+    "h2Count": 6,
+    "h2s": [
+      "Un mercato diverso in ogni comune",
+      "Comuni vicini a Monza",
+      "Per tipologia",
+      "Cosa consideriamo durante il sopralluogo",
+      "Per chi vende e per chi compra",
+      "Approfondimenti utili"
+    ],
+    "schemas": [
+      [
+        "Organization",
+        "Service"
+      ]
+    ],
+    "ogTitle": "Valutazione immobiliare in Brianza: comuni e zone | Valore Immobili",
+    "hasForm": true,
+    "internalLinkCount": 63,
+    "htmlLen": 49248
+  },
+  {
+    "url": "https://valore-immobili.it/valutazione/appartamenti-monza",
+    "status": 200,
+    "title": "Valutazione appartamenti Monza: sopralluogo gratuito | Valore Immobili",
+    "titleLen": 70,
+    "desc": "Valutazione appartamenti a Monza e Brianza con sopralluogo gratuito. Piano, ascensore, spese e vendite reali del quartiere. Senza impegno.",
+    "descLen": 138,
+    "canonical": "https://valore-immobili.it/valutazione/appartamenti-monza",
+    "robots": null,
+    "h1s": [
+      "Valutazione appartamenti a Monza"
+    ],
+    "h2Count": 8,
+    "h2s": [
+      "Perché due appartamenti con gli stessi mq valgono diversamente",
+      "Cosa osserviamo in un appartamento",
+      "Domande frequenti su appartamenti",
+      "Richiedi il sopralluogo per un appartamento",
+      "Valutazione per tipologia",
+      "Dove valutiamo appartamenti",
+      "Se stai cercando casa a Monza",
+      "Da appartamenti a zone e guide"
+    ],
+    "schemas": [
+      [
+        "Organization",
+        "Service"
+      ]
+    ],
+    "ogTitle": "Valutazione appartamenti Monza: sopralluogo gratuito | Valore Immobili",
+    "hasForm": true,
+    "internalLinkCount": 49,
+    "htmlLen": 41653
+  },
+  {
+    "url": "https://valore-immobili.it/valutazione/ville-brianza",
+    "status": 200,
+    "title": "Valutazione ville Brianza: sopralluogo gratuito | Valore Immobili",
+    "titleLen": 65,
+    "desc": "Valutazione ville e case indipendenti in Brianza con sopralluogo gratuito. Giardino, contesto e vendite reali della zona. Senza impegno.",
+    "descLen": 136,
+    "canonical": "https://valore-immobili.it/valutazione/ville-brianza",
+    "robots": null,
+    "h1s": [
+      "Valutazione ville in Brianza"
+    ],
+    "h2Count": 8,
+    "h2s": [
+      "Domande frequenti su ville",
+      "Cosa pesa di più su una villa o casa indipendente",
+      "Una villa non si valuta come un appartamento “più grande”",
+      "Comuni e tipologiche collegate",
+      "Valutazione per tipologia",
+      "Fissa il sopralluogo per una villa o casa indipendente",
+      "Se stai cercando casa a Brianza",
+      "Da ville a Monza e Brianza"
+    ],
+    "schemas": [
+      [
+        "Organization",
+        "Service"
+      ]
+    ],
+    "ogTitle": "Valutazione ville Brianza: sopralluogo gratuito | Valore Immobili",
+    "hasForm": true,
+    "internalLinkCount": 49,
+    "htmlLen": 41630
+  },
+  {
+    "url": "https://valore-immobili.it/valutazione/lissone",
+    "status": 200,
+    "title": "Quanto vale casa a Lissone? | Valore Immobili",
+    "titleLen": 45,
+    "desc": "Valutazione immobiliare gratuita a Lissone: sopralluogo sul posto e stima basata su vendite reali nella zona, senza impegno.",
+    "descLen": 124,
+    "canonical": "https://valore-immobili.it/valutazione/lissone",
+    "robots": null,
+    "h1s": [
+      "Quanto vale casa a Lissone?"
+    ],
+    "h2Count": 7,
+    "h2s": [
+      "Lissone non è Monza: il mercato ha una voce propria",
+      "Zone e contesto a Lissone (cosa cambia il valore)",
+      "Cosa pesa di più in una stima a Lissone",
+      "Prenota il sopralluogo a Lissone",
+      "Confronta con altri comuni vicini a Monza",
+      "Se stai cercando casa a Lissone",
+      "Dalla Brianza e dalle tipologiche"
+    ],
+    "schemas": [
+      [
+        "Organization",
+        "Service"
+      ]
+    ],
+    "ogTitle": "Quanto vale casa a Lissone? | Valore Immobili",
+    "hasForm": true,
+    "internalLinkCount": 44,
+    "htmlLen": 39925
+  },
+  {
+    "url": "https://valore-immobili.it/valutazione/desio",
+    "status": 200,
+    "title": "Valutazione immobiliare a Desio | Valore Immobili",
+    "titleLen": 49,
+    "desc": "Valutazione immobiliare gratuita a Desio: sopralluogo sul posto e stima basata su vendite reali nella zona, senza impegno.",
+    "descLen": 122,
+    "canonical": "https://valore-immobili.it/valutazione/desio",
+    "robots": null,
+    "h1s": [
+      "Valutazione immobiliare a Desio"
+    ],
+    "h2Count": 7,
+    "h2s": [
+      "Cosa guardiamo in una valutazione a Desio",
+      "Desio: centro, stazione e “un altro Desio” a pochi minuti",
+      "Desio è grande: la zona conta più della “media comunale”",
+      "Altri comuni della Brianza nord",
+      "Invia i dati per Desio",
+      "Se stai cercando casa a Desio",
+      "Dopo Desio, cosa leggere"
+    ],
+    "schemas": [
+      [
+        "Organization",
+        "Service"
+      ]
+    ],
+    "ogTitle": "Valutazione immobiliare a Desio | Valore Immobili",
+    "hasForm": true,
+    "internalLinkCount": 46,
+    "htmlLen": 39838
+  },
+  {
+    "url": "https://valore-immobili.it/faq",
+    "status": 200,
+    "title": "FAQ valutazione immobiliare Monza | Valore Immobili",
+    "titleLen": 51,
+    "desc": "Domande frequenti sulla valutazione immobiliare gratuita a Monza e Brianza: costi, tempi, documenti, stima online vs sopralluogo, obblighi e copertura geografica.",
+    "descLen": 162,
+    "canonical": "https://valore-immobili.it/faq",
+    "robots": null,
+    "h1s": [
+      "Domande frequenti"
+    ],
+    "h2Count": 2,
+    "h2s": [
+      "Non trovi la tua domanda?",
+      "Approfondisci"
+    ],
+    "schemas": [
+      [
+        "Organization",
+        "Service"
+      ],
+      "FAQPage"
+    ],
+    "ogTitle": "FAQ valutazione immobiliare Monza | Valore Immobili",
+    "hasForm": false,
+    "internalLinkCount": 43,
+    "htmlLen": 56086
+  },
+  {
+    "url": "https://valore-immobili.it/come-funziona",
+    "status": 200,
+    "title": "Come funziona la valutazione immobiliare | Valore Immobili",
+    "titleLen": 58,
+    "desc": "Come funziona la valutazione immobiliare gratuita con sopralluogo a Monza e Brianza: richiesta, contatto, visita sul posto e stima motivata. Tempi, documenti e cosa succede dopo.",
+    "descLen": 178,
+    "canonical": "https://valore-immobili.it/come-funziona",
+    "robots": null,
+    "h1s": [
+      "Come funziona la valutazione sul posto"
+    ],
+    "h2Count": 8,
+    "h2s": [
+      "Cosa aspettarti (in breve)",
+      "I quattro passaggi",
+      "Perché il sopralluogo fa la differenza",
+      "Cosa può essere utile avere a portata di mano",
+      "Dove operiamo",
+      "Quanto costa e cosa succede dopo",
+      "Se invece stai cercando casa",
+      "Dove andare dopo"
+    ],
+    "schemas": [
+      [
+        "Organization",
+        "Service"
+      ]
+    ],
+    "ogTitle": "Come funziona la valutazione immobiliare | Valore Immobili",
+    "hasForm": false,
+    "internalLinkCount": 45,
+    "htmlLen": 42735
+  },
+  {
+    "url": "https://valore-immobili.it/robots.txt",
+    "status": 200,
+    "bodyPreview": "User-Agent: *\nAllow: /\nDisallow: /admin\nDisallow: /grazie\nDisallow: /api/\n\nSitemap: https://valore-immobili.it/sitemap.xml\n",
+    "len": 123
+  },
+  {
+    "url": "https://valore-immobili.it/sitemap.xml",
+    "status": 200,
+    "bodyPreview": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://valore-immobili.it/</loc>\n<lastmod>2026-08-03T14:22:53.414Z</lastmod>\n<changefreq>weekly</changefreq>\n<priority>1</priority>\n</url>\n<url>\n<loc>https://valore-immobili.it/monza</loc>\n<lastmod>2026-08-03T14:22:53.414Z</lastmod>\n<changefreq>weekly</changefreq>\n<priority>0.9</priority>\n</url>\n<url>\n<loc>https://valore-immobili.it/brianza</loc>\n<lastmod>2026-08-03T14:22:53.414Z</lastmod>\n<changefreq>weekly</changefreq>\n<priority>0.9</priority>\n</url>\n<url>\n<loc>https://valore-immobili.it/come-funziona</loc>\n<lastmod>2026-08-03T14:22:53.414Z</lastmod>\n<changefreq>monthly</changefreq>\n<priority>0.8</priority>\n</url>\n<url>\n<loc>https://valore-immobili.it/faq</loc>\n<lastmod>2026-08-03T14:22:53.414Z</lastmod>\n<changefreq>monthly</changefreq>\n<priority>0.8</priority>\n</url>\n<url>\n<loc>https://valore-immobili.it/vendere-casa-monza</loc>\n<lastmod>2026-08-03T14:22:53.414Z</lastmod>\n<changefreq>monthly</changefreq>\n<priority>0.85</priority>\n</url>\n<url>\n<loc>https://valore-immobili.it/comprare-casa-monza</loc>\n<lastmod>2026-08-03T14:22:53.414Z</lastmod>\n<changefreq>monthly</changefreq>\n<priority>0.85</priority>\n</url>\n<url>\n<loc>https://valore-immobili.it/valutazione/lissone</loc>\n<lastmod>2026-08-03T14:22:53.414Z</lastmod>\n<changefreq>monthly</changefreq>\n<priority>0.8</priority>\n</url>\n<url>\n<loc>https://valore-immobili.it/valutazione/vimodrone</loc>\n<lastmod>2026-08-03T1",
+    "len": 5287
+  }
+]

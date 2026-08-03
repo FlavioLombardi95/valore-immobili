@@ -1,0 +1,71 @@
+# ──────────────────────────────────────────────────────────────────────────
+# robots.txt — 2026 "block training, allow retrieval" template
+#
+# robots.txt is the real lever that controls AI visibility (llms.txt is ignored).
+# Strategy: ALLOW retrieval/search bots that drive citations + referral traffic;
+# DECIDE per-policy on training bots. Customize before shipping.
+#
+# Gotchas:
+#  1. Blocking OAI-SearchBot removes you from ChatGPT search answers.
+#  2. Deprecated strings (Claude-Web, anthropic-ai) no longer work — don't rely on them.
+#  3. ~27% of sites ALSO accidentally block AI bots at the CDN/Cloudflare/WAF layer — audit that.
+#  4. noindex blocks AI citation too — a page must be indexable to be cited.
+#  5. Never block your sitemap path.
+#  6. Non-compliant bots (Bytespider, stealth crawlers) ignore robots.txt — enforce at WAF/server.
+# ──────────────────────────────────────────────────────────────────────────
+
+# ── RETRIEVAL / SEARCH BOTS — ALLOW (these create citations + send traffic) ──
+
+User-agent: OAI-SearchBot          # ChatGPT search index — blocking removes you from ChatGPT answers
+Allow: /
+
+User-agent: ChatGPT-User           # ChatGPT live fetch on user request
+Allow: /
+
+User-agent: PerplexityBot          # Perplexity index
+Allow: /
+
+User-agent: Perplexity-User        # Perplexity live fetch on user request
+Allow: /
+
+User-agent: ClaudeBot              # Anthropic crawler (current string)
+Allow: /
+
+User-agent: Claude-SearchBot       # Claude search retrieval
+Allow: /
+
+User-agent: Claude-User            # Claude live fetch on user request
+Allow: /
+
+# ── TRAINING BOTS — DECIDE PER POLICY ──
+# Uncomment a Disallow to opt OUT of model training. Note: blocking Google-Extended
+# affects Gemini *training* only and does NOT affect Google Search ranking.
+
+User-agent: GPTBot                 # OpenAI training
+Allow: /
+# Disallow: /
+
+User-agent: Google-Extended        # Gemini training (NOT Search rank)
+Allow: /
+# Disallow: /
+
+User-agent: CCBot                  # Common Crawl (feeds many models)
+Allow: /
+# Disallow: /
+
+User-agent: Meta-ExternalAgent     # Meta training
+Allow: /
+# Disallow: /
+
+User-agent: Bytespider             # ByteDance — often ignores robots.txt; enforce at WAF if blocking
+Allow: /
+# Disallow: /
+
+# ── HOUSEKEEPING — block crawl traps, keep money pages crawlable ──
+User-agent: *
+Disallow: /search
+Disallow: /*?           # parameter/faceted URLs (tune to your stack)
+Allow: /
+
+# Always expose your sitemap(s) — segment by template/section at scale.
+Sitemap: https://example.com/sitemap-index.xml

@@ -18,6 +18,48 @@
       "sourceType": "github",
       "skillPath": "SKILL.md",
       "computedHash": "7f032c368d4355fb237e1980d73d7febe5bc1a03bad3de74a3d4a918e8940cd1"
+    },
+    "programmatic-seo": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "skillPath": "skills/programmatic-seo/SKILL.md",
+      "computedHash": "0bbdcbacfbe46fd78d774041ee49afd313505bb435b775dc246f4b8e6981d797"
+    },
+    "programmatic-seo-expert": {
+      "source": "thevrus/Programmatic-SEO-Expert",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "7ebb08cc455dd70a6735cb0456ded0675e660ead1d6e8efcbc5cf133f0a512da"
+    },
+    "seo": {
+      "source": "AgriciDaniel/claude-seo",
+      "sourceType": "github",
+      "skillPath": "skills/seo/SKILL.md",
+      "computedHash": "6e90740e31c9882ae3f847c2b4deb9ee5ee5b4d1a6a7d5ea9e891f4df6ec8e49"
+    },
+    "seo-audit": {
+      "source": "AgriciDaniel/claude-seo",
+      "sourceType": "github",
+      "skillPath": "skills/seo-audit/SKILL.md",
+      "computedHash": "7fa3044a0f6276c4147e996c0a1e0202c347348e59762ee8cd05c8fce5116c1d"
+    },
+    "seo-cluster": {
+      "source": "AgriciDaniel/claude-seo",
+      "sourceType": "github",
+      "skillPath": "skills/seo-cluster/SKILL.md",
+      "computedHash": "ad6cad91f37216525b4672a118582cc24774a6c68c33bc16de3e5efb690f3a92"
+    },
+    "seo-content-brief": {
+      "source": "AgriciDaniel/claude-seo",
+      "sourceType": "github",
+      "skillPath": "skills/seo-content-brief/SKILL.md",
+      "computedHash": "06644d9ac0749a8bfba5fc50f4444c5b63f78c2fabe8cc7ea08920514b1c21b6"
+    },
+    "seo-programmatic": {
+      "source": "AgriciDaniel/claude-seo",
+      "sourceType": "github",
+      "skillPath": "skills/seo-programmatic/SKILL.md",
+      "computedHash": "00f0ab6fea27e57f8f798ce1ced28af0a1454cad4557b08196bcb8f03ebb1836"
     }
   }
 }

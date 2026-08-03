@@ -5,9 +5,11 @@ import { SeoPageLayout } from '@/components/SeoPageLayout'
 import { propertyTypePath } from '@/lib/property-types'
 
 export const metadata: Metadata = {
-  title: 'Valutazione immobiliare a Monza: stima sul posto',
+  title: {
+    absolute: 'Valutazione immobiliare Monza: sopralluogo gratis | Valore Immobili',
+  },
   description:
-    'Valutazione immobiliare a Monza con sopralluogo gratuito: stima sul mercato reale del quartiere (Centro, San Fruttuoso, Cederna…). Senza impegno.',
+    'Sopralluogo gratuito a Monza, senza mandato. Stima sul quartiere reale (Centro, San Fruttuoso, Cederna…), non su un algoritmo. Richiedi in pochi minuti.',
   alternates: { canonical: 'https://valore-immobili.it/monza' },
 }
 
@@ -15,31 +17,31 @@ export default function MonzaPage() {
   return (
     <SeoPageLayout
       title="Valutazione immobiliare a Monza"
-      intro="Se stai pensando di vendere a Monza, una stima **sul posto** è più affidabile di una valutazione automatica: tiene conto della zona reale, dello stato dell’immobile e della domanda del quartiere."
+      intro="Valutazione immobiliare a Monza con **sopralluogo gratuito**, senza mandato: stima sul quartiere reale, non su una media cittadina o un algoritmo."
       sourcePage="/monza"
       defaultCity="Monza"
       breadcrumb="Monza"
       relatedTitle="Approfondimenti utili"
       related={[
         {
+          href: propertyTypePath('appartamenti-monza'),
+          label: 'Valutazione appartamenti a Monza',
+          description: 'Pagina dedicata: piano, spese e condominio.',
+        },
+        {
           href: '/quartieri-monza',
           label: 'Quartieri di Monza',
           description: 'Orientarsi tra le zone prima della stima.',
         },
         {
-          href: propertyTypePath('appartamenti-monza'),
-          label: 'Valutazione appartamenti',
-          description: 'Piano, spese e condominio a Monza.',
-        },
-        {
           href: propertyTypePath('ville-brianza'),
-          label: 'Valutazione ville',
-          description: 'Ville e case indipendenti in Brianza.',
+          label: 'Valutazione ville in Brianza',
+          description: 'Se confronti con indipendenti fuori città.',
         },
         {
           href: '/brianza',
           label: 'Valutazione in Brianza',
-          description: 'Se l’immobile è fuori Monza città.',
+          description: 'Hub comuni fuori Monza città.',
         },
         {
           href: '/vendere-casa-monza',
@@ -84,13 +86,20 @@ export default function MonzaPage() {
         box o qualità del condominio. Per questo non usiamo una stima automatica come unico riferimento.
       </p>
 
-      <h2>Appartamenti e ville</h2>
+      <h2>Dopo una stima online a Monza</h2>
       <p>
-        Se sai già la tipologia, parti dalla pagina dedicata:{' '}
-        <Link href={propertyTypePath('appartamenti-monza')}>valutazione appartamenti a Monza</Link> oppure{' '}
+        I calcolatori danno un orientamento, non il valore della tua casa. A Monza contano via, piano, stato e
+        domanda di quartiere: elementi che si vedono in sopralluogo. La visita è <strong>gratuita</strong> e{' '}
+        <strong>senza mandato</strong>. Altri dubbi nelle <Link href="/faq">FAQ</Link>.
+      </p>
+
+      <h2>Appartamenti: pagina dedicata</h2>
+      <p>
+        Se stai valutando un’unità in condominio, non restare solo su questo hub: vai a{' '}
+        <Link href={propertyTypePath('appartamenti-monza')}>valutazione appartamenti a Monza</Link>. Per ville
+        e case indipendenti in provincia:{' '}
         <Link href={propertyTypePath('ville-brianza')}>valutazione ville in Brianza</Link>. Il modulo è lo
-        stesso: cambia il focus su cosa pesa davvero nella stima (condominio e spese da un lato, esterni e
-        lotto dall’altro).
+        stesso; cambia il focus in sopralluogo.
       </p>
 
       <h2>Come funziona la richiesta</h2>

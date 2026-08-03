@@ -21,49 +21,62 @@ Successo = più **clic qualificati** sulle query di valutazione, poi lead. Le im
 
 ---
 
-## 2. Stato attuale (GSC, 28 giorni)
+## 2. Stato attuale (GSC)
 
-### Metriche aggregate
+**Baseline aggiornata:** 2026-08-03 → vedi `content-writer-output/gsc/BASELINE.md` (raw: `baseline-raw.json`).  
+Property: `sc-domain:valore-immobili.it`. Finestre: 28gg `2026-07-04→07-31`, ~90gg `2026-05-03→07-31`.
+
+### Metriche aggregate (28 giorni, luglio 2026)
 
 | Metrica | Valore | Lettura |
 |---------|--------|---------|
-| Impressioni | ~25–45/giorno (picco ~40+) | Google mostra il sito; fase early ma già multi-pagina |
-| Clic | **1** (su tutta la finestra) | Problema di **CTR / posizione**, non solo di copertura |
-| Trend | Impressioni in lieve crescita | Coerente con indicizzazione delle nuove URL |
+| Impressioni | **~2.441** (somma pagine) | Google mostra il sito su più URL |
+| Clic | **0** | Collo di bottiglia = posizione + CTR/snippet |
+| Pagine con impr. | 13 | Hub + tipologiche + poche leaf |
 
-### Query più frequenti (impressioni)
+### Query top (28gg) — ancora tutto “valutazione/stima”
 
-| Query | Clic | Impressioni |
-|-------|------|-------------|
-| valutazione immobili monza | 0 | 106 |
-| valutazione gratuita immobile monza | 0 | 104 |
-| valutazione immobile monza | **1** | 92 |
-| valutazione immobiliare monza | 0 | 89 |
-| valutazione appartamenti monza brianza | 0 | 88 |
-| stima immobiliare monza | 0 | 88 |
-| valutazione appartamenti monza | 0 | 84 |
-| valutazione ville in brianza | 0 | 72 |
-| valutazione ville monza brianza | 0 | 66 |
-| valutazioni immobiliari monza | 0 | 16 |
-| valutazione immobili di prestigio / lusso monza | 0 | 9–11 |
-| valutazione villa brianza | 0 | 10 |
-| vendere casa a monza | 0 | **3** |
+| Query | Impr. | Pos. media |
+|-------|------:|----------:|
+| valutazione ville in brianza | 128 | **7.1** (striking distance) |
+| valutazione ville monza brianza | 118 | 16.6 |
+| valutazione gratuita immobile monza | 104 | **9.9** |
+| valutazione immobili / immobiliare / immobile monza | ~90 ciascuna | 22–55 |
+| stima immobiliare monza | 82 | 59.7 |
+| valutazione appartamenti monza (+ brianza) | ~82–85 | 39–61 |
 
-**Insight:** la domanda organica è quasi tutta **valutazione / stima** (+ tipologiche appartamenti e ville). Intent “vendere casa” è ancora residuale. Intent “comprare casa” **non compare** tra le query con impressioni.
+### Pagine top (28gg)
 
-### Pagine (impressioni)
+| URL | Impr. | Pos. media |
+|-----|------:|----------:|
+| `/monza` | 757 | 47.8 |
+| `/` | 474 | 42.1 |
+| `/vendere-casa-monza` | 376 | 71.9 |
+| `/faq` | 358 | 54.2 |
+| `/brianza` | 217 | **14.0** (miglior hub) |
+| `/valutazione/appartamenti-monza` | 172 | 58.5 |
+| `/valutazione/ville-brianza` | 72 | 18.2 |
+| Leaf comuni (Desio, Lissone, …) | 1–4 ciascuna | spesso **3–10** ma volume minimo |
 
-| URL | Clic | Impressioni |
-|-----|------|-------------|
-| `/` | 1 | 591 |
-| `/monza` | 0 | 453 |
-| `/faq` | 0 | 220 |
-| `/vendere-casa-monza` | 0 | 204 |
-| `/brianza` | 0 | 107 |
-| `/come-funziona` | 0 | 3 |
+**Insight:** priorità = CTR/snippet + spingere query già in pos. ~7–15 (ville Brianza, valutazione gratuita). I comuni rankano meglio in assoluto ma con pochissime impr.: servono più domanda aggregata + linking, non solo nuove URL.
 
-**Insight:** le 6 URL SEO sono **già in indice e ricevono impressioni**. Il collo di bottiglia non è “mancano pagine da indicizzare”, è **0 clic a fronte di ~1.5k impr. aggregate** (snippet + posizione SERP).
+### Cannibalizzazione (GSC ~90gg, audit A2 approfondito)
 
+**Skills:** GSC + `seo-audit` / `seo` — dettaglio in `content-writer-output/gsc/cannibalization-striking.json`.
+
+| Query | URL dominante (impr.) | URL dedicata dietro |
+|-------|----------------------|---------------------|
+| valutazione ville in brianza | `/brianza` (~128, pos ~7) | `/valutazione/ville-brianza` |
+| valutazione * monza (head) | `/` e `/monza` | tipologiche / FAQ |
+| valutazione appartamenti monza | `/` / `/monza` | `/valutazione/appartamenti-monza` |
+
+**Implicazione Fase B:** disambiguare tipologiche (soprattutto ville) prima di nuove leaf comuni.
+
+**Fase B (codice, 2026-08-03):** title/meta nicchia + H1 home; `/brianza` = hub comuni (non intent ville); hub→tipologiche; blocco anti-AVM; FAQ+schema tipologiche. Dettaglio: `content-writer-output/audit/PHASE-B-SUMMARY.md`. Mid-check GSC 2–4 sett. post-deploy.
+
+### Storico (riferimento precedente)
+
+Fonte precedente in questo doc: GSC Web ≈ 22 giu – 18 lug 2026 (1 clic, stesse dinamiche). Sostituito dalla baseline agosto sopra. Audit on-page: `content-writer-output/audit/ACTION-PLAN.md` (health ~76).
 ---
 
 ## 3. Inventario URL pubblico (codice)

@@ -36,10 +36,10 @@ export const PROPERTY_TYPE_PAGES: PropertyTypePage[] = [
     shortLabel: 'Appartamenti',
     title: 'Valutazione appartamenti a Monza',
     intro:
-      'Sopralluogo **gratuito** per appartamenti a Monza e nei comuni vicini: piano, spese, stato e contesto condominiale pesano quanto i metri quadri. Stima sul mercato reale della zona, non su medie online.',
-    metaTitle: 'Valutazione appartamenti Monza: sopralluogo gratuito',
+      'Valutazione appartamenti a Monza con **sopralluogo gratuito**: piano, spese, stato e condominio pesano quanto i mq. Non una media online: stima sul posto, senza mandato.',
+    metaTitle: 'Valutazione appartamenti Monza: sopralluogo gratis',
     metaDescription:
-      'Valutazione appartamenti a Monza e Brianza con sopralluogo gratuito. Piano, ascensore, spese e vendite reali del quartiere. Senza impegno.',
+      'Valutazione appartamenti a Monza con sopralluogo gratuito, senza mandato. Piano, ascensore, spese e vendite reali di quartiere: non un algoritmo.',
     defaultCity: 'Monza',
     layoutVariant: 'angle-led',
     angleHeading: 'Perché due appartamenti con gli stessi mq valgono diversamente',
@@ -68,6 +68,11 @@ export const PROPERTY_TYPE_PAGES: PropertyTypePage[] = [
           'Sì: in condominio pesano di più piano, ascensore, spese e parti comuni. Su una villa o casa indipendente contano di più giardino, autonomia e contesto di via.',
       },
       {
+        question: 'Basta una stima online o OMI per un appartamento a Monza?',
+        answer:
+          'No. Danno un orientamento, non il valore della tua unità. Piano, stato, spese e via si vedono in sopralluogo: la visita è gratuita e senza mandato.',
+      },
+      {
         question: 'Serve l’APE per la stima?',
         answer:
           'Non è obbligatorio per richiedere il sopralluogo, ma se ce l’hai accelera la lettura energetica e dei costi di gestione.',
@@ -84,10 +89,10 @@ export const PROPERTY_TYPE_PAGES: PropertyTypePage[] = [
     shortLabel: 'Ville',
     title: 'Valutazione ville in Brianza',
     intro:
-      'Sopralluogo **gratuito** per ville e case indipendenti in Brianza: giardino, stato, via e domanda locale cambiano il valore più di una media €/mq. Stima sul posto, senza impegno.',
-    metaTitle: 'Valutazione ville Brianza: sopralluogo gratuito',
+      'Valutazione ville in Brianza con **sopralluogo gratuito**: giardino, stato, via e domanda locale pesano più di una media €/mq. Stima sul posto, senza mandato: non un listino da appartamento monzese.',
+    metaTitle: 'Valutazione ville in Brianza: sopralluogo gratis',
     metaDescription:
-      'Valutazione ville e case indipendenti in Brianza con sopralluogo gratuito. Giardino, contesto e vendite reali della zona. Senza impegno.',
+      'Valutazione ville in Brianza con sopralluogo gratuito, senza mandato. Schiere, bifamiliari e indipendenti sul mercato locale: non una stima automatica.',
     defaultCity: '',
     layoutVariant: 'faq-led',
     angleHeading: 'Una villa non si valuta come un appartamento “più grande”',
@@ -114,6 +119,11 @@ export const PROPERTY_TYPE_PAGES: PropertyTypePage[] = [
         question: 'Valutate solo ville di prestigio?',
         answer:
           'No. Valutiamo ville, schiere e case indipendenti residenziali nella zona di Monza e Brianza, con lo stesso approccio sul posto.',
+      },
+      {
+        question: 'Una media €/mq o una stima automatica bastano per una villa in Brianza?',
+        answer:
+          'No. Giardino, stato, via e domanda locale pesano più di un listino da appartamento. Il sopralluogo è gratuito e senza mandato.',
       },
       {
         question: 'I tempi di vendita sono più lunghi delle unità in condominio?',
