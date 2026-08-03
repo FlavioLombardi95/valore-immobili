@@ -5,10 +5,18 @@ export type GuideExternalLink = {
   label: string
 }
 
+export type GuideInternalLink = {
+  href: string
+  label: string
+}
+
 export type GuideSection = {
   heading: string
   paragraphs?: string[]
   bullets?: string[]
+  /** Frase prima dei link interni della sezione */
+  internalLinksLead?: string
+  internalLinks?: GuideInternalLink[]
   /** Frase prima dei link esterni della sezione */
   externalLinksLead?: string
   externalLinks?: GuideExternalLink[]
@@ -80,62 +88,176 @@ export const GUIDE_PAGES: GuidePage[] = [
   {
     slug: 'comprare-casa-brianza',
     shortLabel: 'Comprare in Brianza',
-    metaTitle: 'Comprare casa in Brianza: comuni e valori',
+    metaTitle: 'Comprare casa in Brianza: comuni, prezzi e cosa confrontare',
     metaDescription:
-      'Comprare casa in Brianza: differenze tra comuni vicino a Monza, cosa confrontare e dove guardare gli annunci prima di un’offerta.',
-    title: 'Comprare casa in Brianza: oltre il solo comune di Monza',
+      'Guida per comprare casa in Brianza: differenze tra comuni vicino a Monza, come leggere gli annunci e quando chiedere una consulenza locale.',
+    title: 'Comprare casa in Brianza: come scegliere il comune giusto',
     intro:
-      'Lissone, Brugherio, Desio e gli altri comuni a ridosso di Monza hanno domande e prezzi diversi. Ecco come orientarti senza basarti solo sulle medie di provincia.',
+      'Ampliare la ricerca da Monza ai comuni della Brianza ha senso per budget, tipologica o collegamenti. Il rischio è trattare **“Brianza” come un listino unico**. Questa guida spiega come confrontare i comuni vicini, leggere gli annunci senza farsi fuorviare e capire quando serve un parere locale prima di un’offerta.',
     breadcrumb: 'Comprare casa in Brianza',
     relatedTitle: 'Approfondimenti utili',
     sections: [
       {
-        heading: 'Perché “Brianza” non è un mercato unico',
+        heading: 'Il problema: “Brianza” non è un listino',
         paragraphs: [
-          'Chi cerca casa spesso parte da Monza e poi amplia il raggio. È una scelta sensata, ma i comuni della Brianza non si muovono allo stesso modo: collegamenti, servizi, stock di appartamenti e presenza di case indipendenti cambiano il confronto.',
-          'Prima di innamorarti di un annuncio, chiediti se stai confrontando immobili nella stessa fascia di domanda — non solo con metrature simili.',
+          'Molti acquirenti partono da Monza e poi allargano il raggio: Lissone, Brugherio, Desio, Muggiò e gli altri comuni a ridosso. È una scelta pratica. Quello che non funziona è usare una **media di provincia**, o un prezzo “da Monza”, come se valesse uguale a pochi chilometri di distanza.',
+          'Ogni comune ha stock, tempi di trattativa e profilo di domanda diversi. Contano i collegamenti verso Monza o Milano, i servizi a piedi, quanto è denso il tessuto urbano e se in zona prevalgono appartamenti o case indipendenti. Due bilocali con metrature simili **non sono lo stesso prodotto** se uno è su un asse di passaggio e l’altro in una via residenziale quieta.',
+          'Anche i filtri dei portali spingono verso il confronto sbagliato: cercando “Monza e provincia” mescoli comuni con logiche diverse e ti sembra di avere “tante opzioni”, quando in realtà stai confrontando prodotti che sul mercato non si sostituiscono.',
+          'Se stai ancora calibrando il focus su Monza città, parti dall’hub dedicato e poi torna qui quando vuoi confrontare i comuni vicini.',
+        ],
+        internalLinksLead: 'Per il mercato cittadino:',
+        internalLinks: [
+          { href: '/comprare-casa-monza', label: 'Comprare casa a Monza' },
+          { href: '/quartieri-monza', label: 'quartieri di Monza' },
         ],
       },
       {
-        heading: 'Comuni da mettere a confronto',
+        heading: 'Cosa rischi se confronti male',
         paragraphs: [
-          'Tra i comuni più richiesti da chi lavora su Monza o Milano ci sono Lissone, Brugherio, Villasanta, Muggiò, Desio, Concorezzo e Cologno Monzese. Ognuno ha un profilo diverso di prezzi e tempi di trattativa.',
+          'Il danno non è solo “pagare un po’ di più”. Un confronto sbagliato ti fa partire da aspettative che il mercato di quel comune non sostiene: **offerta troppo alta** che non viene presa sul serio, oppure **troppo bassa** su un immobile che in zona tiene meglio.',
+          'Succede spesso mescolare tipologiche diverse nello stesso foglio Excel: un appartamento in condominio e una villetta a schiera non si chiudono con la stessa logica, anche nello stesso comune. Succede anche fidarsi di un annuncio che vende la posizione come “vicino a Monza” senza dire cosa cambia davvero rispetto al quartiere monzese più vicino.',
+          'I tempi di trattativa non sono uguali ovunque. In alcuni comuni la domanda è più stretta e le visite meno frequenti; in altri, soprattutto sugli assi verso Milano, la competizione su certi tagli è più viva. Se confronti solo foto e prezzo al metro quadro, perdi proprio queste differenze.',
         ],
         bullets: [
-          'Vicino a Monza con servizi consolidati (es. Lissone, Brugherio)',
-          'Fascia più residenziale e indipendenti (varie zone della Brianza)',
-          'Collegamenti verso Milano che pesano sul premio di prezzo',
+          'Usare Monza come **prezzo di listino** per un comune confine',
+          'Confrontare solo i mq senza via, piano, box e contesto',
+          'Mettere insieme condominio e indipendenti nello stesso “range”',
+          'Leggere il prezzo richiesto come se fosse già un **valore di chiusura**',
         ],
       },
       {
-        heading: 'Dove cercare gli annunci in zona',
+        heading: 'Un metodo in cinque passi prima dell’offerta',
         paragraphs: [
-          'Per capire cosa c’è davvero in vendita, conviene attraversare più portali e filtrare per comune, non solo per “Monza e provincia”. Gli annunci online restano un punto di partenza: il prezzo richiesto non è il valore di chiusura.',
+          'Prima di innamorarti di un annuncio, metti nero su bianco vincoli e raggio. Non serve un business plan: basta sapere budget massimo realistico (incluso mutuo e costi di atto), tipologica accettabile e quanti comuni sei disposto a seguire davvero. Se il mutuo non è ancora simulato, fallo prima di restringere i filtri: cambia il raggio più di quanto pensi.',
+          'Scegli **due o tre comuni**, non “tutta la Brianza”. Allargare troppo diluisce le visite e rende i confronti inutili. Una regola pratica: se in due settimane non riesci a visitare almeno un paio di immobili per comune, il raggio è troppo largo.',
+          'Poi filtra i portali **per comune** — non solo per “Monza e provincia” — e confronta immobili nella stessa fascia di domanda: stessa tipologica, stato simile, contesto di via confrontabile. In visita usa una checklist concreta. Solo dopo, se l’immobile regge, costruisci un’offerta credibile sul mercato di quel comune, non su una media stampata da qualche stimatore online.',
         ],
-        externalLinksLead: 'Parti da qui per lo stock in vendita:',
+        bullets: [
+          'Fissa budget, tempi e tipologica (anche con un primo giro mutuo)',
+          'Seleziona 2–3 comuni e resta lì per qualche settimana di ricerca',
+          'Filtra gli annunci per comune e aggiorna i salvataggi spesso',
+          'Confronta nella stessa fascia di domanda, non solo per metratura',
+          'Visita con criteri chiari, poi valuta l’offerta',
+        ],
+        internalLinksLead: 'Approfondisci i singoli passaggi qui:',
+        internalLinks: [
+          { href: '/mutuo-prima-casa', label: 'mutuo e prima casa' },
+          { href: '/spese-acquisto-casa', label: 'spese di acquisto' },
+          { href: '/annunci-casa-monza', label: 'come leggere gli annunci' },
+          { href: '/checklist-visita-immobile', label: 'checklist di visita' },
+          { href: '/offerta-acquisto-casa', label: 'offerta di acquisto' },
+        ],
+      },
+      {
+        heading: 'Come leggere i comuni a ridosso di Monza',
+        paragraphs: [
+          'Qui sotto trovi una lettura da acquirente dei comuni che seguiamo più spesso. Non sono schede prezzo: sono differenze di contesto da usare quando confronti due immobili “vicini sulla mappa”.',
+          '**Lissone** non è Monza con un altro CAP. Centro, fasce residenziali e assi verso Monza o Milano non chiudono allo stesso modo. Pesano servizi a piedi, tipologica (condominio vs schiera) e il fatto che la domanda locale abbia una voce propria, legata anche al tessuto produttivo e residenziale del comune.',
+          '**Brugherio** vive una tensione tipica: da un lato Monza, dall’altro l’orientamento verso Milano Est. Centro, fasce consolidate e aree come Cascina Gatti non attirano lo stesso profilo di acquirenti. Se un annuncio “guarda” i listini monzesi, chiediti se stai comprando davvero lo stesso prodotto.',
+          '**Vimodrone** sta sull’asse tra Monza e Milano Est. Per molti acquirenti i collegamenti (anche verso la MM2 dell’area est) pesano quanto lo stato interno. Un appartamento più comodo verso Milano e uno più quieto ma meno connesso possono divergere anche a parità di mq. Controlla via di passaggio vs residenziale, piano e ascensore.',
+          '**Muggiò** confina con Monza (lato San Fruttuoso e San Giuseppe): il confine sembra continuo, e molti annunci “copiano” aspettative monzesi. Come orientamento può aiutare; come prezzo da listino no. Box e posto auto qui pesano spesso più di quanto suggerisca una media online.',
+          '**Desio** è ampio: la media comunale serve poco. Centro, residenziale consolidato e fasce più lontane non sono lo stesso mercato. Distanza pratica dalla stazione e dai servizi quotidiani sposta la domanda; fuori dal centro aumentano tipologiche con giardino o box.',
+          '**Villasanta**, **Concorezzo** e **Cologno Monzese** chiudono il quadro con profili diversi: Villasanta più residenziale a ridosso di Monza; Concorezzo orientato verso la Brianza orientale (Vimercate, Agrate) più che verso Monza centro; Cologno più densa e legata alla MM2 verso Milano. Se stai confrontando questi comuni con una villetta “verde” più a nord, stai probabilmente mescolando prodotti diversi.',
+          'Non serve conoscere a memoria tutti i comuni della provincia. Serve sapere perché stai entrando in un comune e cosa stai sacrificando rispetto a un altro: minuti di spostamento, tipologica, quiete, servizi, probabilità di trovare lo stock che cerchi. Quelle sono le leve vere del confronto, non una media €/mq regionale.',
+        ],
+        internalLinksLead: 'Contesto di zona (utile anche a chi compra) sulle pagine locali:',
+        internalLinks: [
+          { href: '/valutazione/lissone', label: 'Lissone' },
+          { href: '/valutazione/brugherio', label: 'Brugherio' },
+          { href: '/valutazione/vimodrone', label: 'Vimodrone' },
+          { href: '/valutazione/muggio', label: 'Muggiò' },
+          { href: '/valutazione/desio', label: 'Desio' },
+          { href: '/valutazione/villasanta', label: 'Villasanta' },
+          { href: '/valutazione/concorezzo', label: 'Concorezzo' },
+          { href: '/valutazione/cologno-monzese', label: 'Cologno Monzese' },
+          { href: '/brianza', label: 'hub Brianza' },
+        ],
+      },
+      {
+        heading: 'Appartamento o villa: non è solo una preferenza',
+        paragraphs: [
+          'In Brianza lo stock di appartamenti e quello di ville o case indipendenti si muovono in modo diverso. Sul condominio pesano piano, spese, parti comuni e box. Sull’indipendente entrano tetto, lotto, privacy, impianti e **costi di gestione** che l’annuncio spesso sottovaluta.',
+          'Se esiti tra nuovo e usato, il trade-off non è solo estetico: tempi, lavori, documentazione e disponibilità reale in zona cambiano il piano di acquisto. Meglio chiarirlo prima di restringere i filtri sui portali.',
+        ],
+        internalLinksLead: 'Per tipologica e stato dell’immobile:',
+        internalLinks: [
+          { href: '/appartamenti-in-vendita-monza', label: 'appartamenti in vendita' },
+          { href: '/ville-in-vendita-brianza', label: 'ville in vendita in Brianza' },
+          { href: '/valutazione/ville-brianza', label: 'focus ville e indipendenti' },
+          { href: '/casa-nuova-o-usata', label: 'casa nuova o usata' },
+        ],
+      },
+      {
+        heading: 'Annunci: da dove partire (e cosa non sono)',
+        paragraphs: [
+          'I portali mostrano **richieste, non chiusure**. Servono a capire cosa c’è in vetrina oggi, quanto tempo resta online un annuncio e se il prezzo è sceso. Non bastano, da soli, a fissare un’offerta.',
+          'Attraversa più vetrine e filtra per comune. Molti immobili compaiono su più siti con testi simili: confronta data, privato o agenzia, e le variazioni di prezzo. Un annuncio fermo da mesi allo stesso prezzo racconta una storia diversa da uno aggiornato ieri dopo un ribasso.',
+          'Poi verifica sul posto ciò che le foto non dicono: rumore di via, luce reale, stato delle parti comuni, quanto è pratico il posto auto. Lo stock pubblico non è tutto il mercato. Soprattutto su villette e criteri stretti, parte dell’offerta circola con meno rumore online. Se hai vincoli precisi, ha senso affiancare alla ricerca sui portali un contatto locale.',
+        ],
+        externalLinksLead: 'Parti da questi elenchi per lo stock in vendita:',
         externalLinks: [EXTERNAL.immobiliareBrianza, EXTERNAL.idealistaMonza, EXTERNAL.casaMonza],
+        internalLinksLead: 'Metodo di lettura degli annunci:',
+        internalLinks: [{ href: '/annunci-casa-monza', label: 'annunci casa a Monza e dintorni' }],
+      },
+      {
+        heading: 'Dopo la visita: documenti, tempi e agevolazioni',
+        paragraphs: [
+          'Una visita convincente **non chiude il percorso**. Prima di impegnarti, allinea documenti, tempi verso il rogito e — se ti riguarda — i requisiti delle agevolazioni prima casa. Sono passaggi noiosi quanto utili: evitano sorprese quando sei già emotivamente “dentro” l’immobile.',
+          'Non serve ripetere qui ogni voce di costo o ogni scadenziario. Meglio usare le guide dedicate e tornare su questa pagina solo per il confronto tra comuni.',
+        ],
+        internalLinksLead: 'Checklist dopo la visita:',
+        internalLinks: [
+          { href: '/documenti-acquisto-casa', label: 'documenti per l’acquisto' },
+          { href: '/tempi-acquisto-casa', label: 'tempi fino al rogito' },
+          { href: '/agevolazioni-prima-casa', label: 'agevolazioni prima casa' },
+          { href: '/spese-acquisto-casa', label: 'spese oltre il prezzo' },
+        ],
+      },
+      {
+        heading: 'Quando ha senso una consulenza locale',
+        paragraphs: [
+          'Se stai confrontando due o tre comuni, hai poco tempo per le visite, cerchi una tipologica stretta o vuoi capire se un prezzo richiesto sta in piedi in quella zona, un parere locale riduce i giri a vuoto.',
+          'La consulenza sull’acquisto è **gratuita e senza impegno** di comprare con noi. Serve a leggere mercato e opportunità — anche immobili che non trovi in vetrina — con lo stesso approccio concreto che usiamo sul territorio: niente stima automatica come unica bussola.',
+          'Se invece stai vendendo per poi comprare, tieni aperti entrambi i percorsi: valutazione con sopralluogo sull’immobile attuale e ricerca sul prossimo.',
+        ],
+        internalLinksLead: 'Due porte d’ingresso, a seconda di dove sei nel percorso:',
+        internalLinks: [
+          { href: '/comprare-casa-monza', label: 'hub comprare a Monza' },
+          { href: '/vendere-casa-monza', label: 'vendere casa a Monza' },
+          { href: '/come-funziona', label: 'come funziona il percorso' },
+        ],
       },
     ],
     related: [
       {
         href: '/comprare-casa-monza',
         label: 'Comprare casa a Monza',
-        description: 'La guida hub sul mercato cittadino.',
+        description: 'Hub acquisto sul mercato cittadino.',
       },
       {
-        href: '/brianza',
-        label: 'Valutazione in Brianza',
-        description: 'Sopralluogo e valori nei comuni vicini.',
+        href: '/ville-in-vendita-brianza',
+        label: 'Ville in vendita in Brianza',
+        description: 'Indipendenti, giardino e costi reali.',
       },
       {
-        href: '/quartieri-monza',
-        label: 'Quartieri di Monza',
-        description: 'Come cambia la domanda tra le zone.',
+        href: '/spese-acquisto-casa',
+        label: 'Spese di acquisto',
+        description: 'Imposte, notaio e costi oltre il prezzo.',
+      },
+      {
+        href: '/offerta-acquisto-casa',
+        label: 'Offerta di acquisto',
+        description: 'Come impostare una proposta credibile.',
       },
       {
         href: '/annunci-casa-monza',
-        label: 'Annunci casa a Monza',
+        label: 'Annunci casa',
         description: 'Come leggere i portali senza farsi fuorviare.',
+      },
+      {
+        href: '/brianza',
+        label: 'Brianza',
+        description: 'Comuni e contesto geo della provincia.',
       },
     ],
   },

@@ -1,0 +1,110 @@
+{
+  "name": "valore-immobili",
+  "createdAt": "2026-08-03",
+  "language": "it",
+  "sources": [
+    "https://valore-immobili.it",
+    "https://valore-immobili.it/come-funziona",
+    "https://valore-immobili.it/faq",
+    "PRODUCT.md",
+    "docs/SEO.md"
+  ],
+  "identity": {
+    "byline": "Valore Immobili",
+    "company": "Valore Immobili",
+    "domain": "https://valore-immobili.it",
+    "tagline": "Scopri quanto vale davvero la tua casa",
+    "business": "Valutazione immobiliare gratuita con sopralluogo e consulenza acquisto a Monza e Brianza, basata sul mercato reale della zona."
+  },
+  "industry": {
+    "niche": "Real estate locale / lead gen valutazione immobiliare",
+    "geo": ["Monza", "Brianza", "provincia di Monza e Brianza"],
+    "positioning": "Consulente locale serio: sopralluogo reale, senza stima automatica come unica fonte, senza pressione commerciale",
+    "antiReferences": [
+      "portali stima automatica istantanea",
+      "urgenze e countdown da annuncio",
+      "tono luxury-agenzia freddo",
+      "linguaggio SaaS/AI generico"
+    ]
+  },
+  "audience": {
+    "primary": "Persone a Monza/Brianza in compra-vendita (vendita e acquisto) entro 3-12 mesi",
+    "segments": [
+      "Chi vende / proprietari — valutazione con sopralluogo",
+      "Chi compra / acquirenti — consulenza e ricerca locale"
+    ],
+    "seoEarlyStage": "Ricercatori di mercato in fase precoce (utili per SEO, non il solo focus di conversione)",
+    "painPoints": [
+      "incertezza sul valore reale (vendita o riferimento d'acquisto)",
+      "diffidenza verso stime online",
+      "paura di pressione commerciale",
+      "non sapere da dove partire (prezzo, zone, budget, documenti)"
+    ],
+    "goals": [
+      "capire un valore / percorso realistico",
+      "decidere con calma se/come vendere o comprare",
+      "supporto locale concreto"
+    ],
+    "objections": [
+      "poi mi forzano a firmare",
+      "bastano le stime online",
+      "costerà qualcosa",
+      "non ho ancora deciso di vendere o di comprare"
+    ]
+  },
+  "voice": {
+    "adjectives": ["direct", "conversational", "professional", "empathetic", "educational"],
+    "pronouns": "tu / noi",
+    "notes": "Paragrafi corti, liste, step. Prove di processo. Italiano naturale. Keyword locali senza stuffing.",
+    "avoid": [
+      "jargon SaaS",
+      "urgenza finta",
+      "emoji e esclamativi a raffica",
+      "promesse di prezzo senza sopralluogo",
+      "pattern AI (filler, simmetria forzata, em dash eccessivi)"
+    ],
+    "samples": [
+      "Valutazione gratuita con sopralluogo a Monza e in Brianza, basata su vendite reali nella tua zona. Un parere concreto prima di decidere se e come vendere.",
+      "Le stime automatiche partono da medie e metrature: non vedono lo stato reale dell’immobile…",
+      "La valutazione serve a darti un punto di partenza concreto. Non c’è alcun obbligo di affidare l’incarico."
+    ]
+  },
+  "content": {
+    "types": ["web pages", "landing", "FAQ", "guide SEO locali"],
+    "pillars": [
+      "sopralluogo vs algoritmo",
+      "Monza",
+      "Brianza",
+      "vendere casa",
+      "comprare casa"
+    ],
+    "primaryGoal": "lead_generation_compra_vendita",
+    "articleLength": "800-1800 (varies)",
+    "outputFormat": "markdown",
+    "publishingWorkflow": "self-review → web/ → Vercel"
+  },
+  "seo": {
+    "priority": "high",
+    "keywords": [
+      "valutazione immobiliare monza",
+      "valutazione immobile monza",
+      "valutazione gratuita immobile monza",
+      "stima immobiliare monza",
+      "valutazione appartamenti monza",
+      "valutazione ville brianza",
+      "vendere casa a monza",
+      "comprare casa monza"
+    ],
+    "constraints": [
+      "focus Monza/Brianza, non Milano",
+      "valutazione e comprare/vendere come cluster paralleli",
+      "CTA: valutazione (vendita) o consulenza (acquisto) a seconda della pagina"
+    ]
+  },
+  "files": {
+    "profile": "content-writer-output/profile/PROFILE.md",
+    "products": "content-writer-output/profile/PRODUCTS.md",
+    "ctas": "content-writer-output/profile/CTAS.md",
+    "caseStudies": "content-writer-output/profile/CASE-STUDIES.md"
+  }
+}

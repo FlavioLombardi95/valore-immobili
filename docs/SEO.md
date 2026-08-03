@@ -11,7 +11,7 @@ Fonte dati: Google Search Console (Web, ultimi 28 giorni ≈ 22 giu – 18 lug 2
 
 | Voce | Scelta |
 |------|--------|
-| Obiettivo primario | Lead organici (richiesta valutazione / sopralluogo) |
+| Obiettivo primario | Lead organici compra-vendita (valutazione / sopralluogo + consulenza acquisto) |
 | Geo | **Monza e Brianza** (tutti i comuni/quartieri della zona operativa) |
 | Paid | Google Ads limitato; organico = canale principale |
 | Modello | Lead gen, no brand agenzia, no Google Business Profile, no NAP directory |
@@ -149,7 +149,7 @@ Implementato via `showForm` in `SeoPageLayout`.
 
 Hub: `/comprare-casa-monza` (+ related alle guide).  
 13 guide flat in `guides.ts` (sitemap ≥ 30 URL).  
-Tono: utile a chi compra; conversione primaria resta la valutazione per proprietari.
+Tono: utile a chi compra; conversione verso consulenza acquisto sul hub, in parallelo alla valutazione per chi vende.
 
 ### 4.3 Comuni e quartieri
 

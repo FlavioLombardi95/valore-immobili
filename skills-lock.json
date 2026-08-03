@@ -1,11 +1,23 @@
 {
   "version": 1,
   "skills": {
+    "content-writer": {
+      "source": "bomsan69/claude-content-writer",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "cd80debdfc14e3b363c2741dc0d8c97137a50e65aedc68c61b76a52c5e2183ca"
+    },
     "hallmark": {
       "source": "nutlope/hallmark",
       "sourceType": "github",
       "skillPath": "skills/hallmark/SKILL.md",
       "computedHash": "8a8ecafd613f09e701330b5aa4a591ac539abb2605596df4a2394f03628d1d76"
+    },
+    "humanizer": {
+      "source": "blader/humanizer",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "7f032c368d4355fb237e1980d73d7febe5bc1a03bad3de74a3d4a918e8940cd1"
     }
   }
 }

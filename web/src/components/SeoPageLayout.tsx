@@ -18,7 +18,7 @@ type SeoPageProps = {
   relatedTitle?: string
   /** Se false: niente form sticky, solo CTA verso la richiesta. Default true sugli hub. */
   showForm?: boolean
-  /** CTA in fondo al contenuto quando showForm è false. Default: valutazione (proprietari). */
+  /** CTA in fondo al contenuto quando showForm è false. Default: valutazione (vendita); `purchase` per intent acquisto. */
   ctaVariant?: 'valuation' | 'purchase'
 }
 

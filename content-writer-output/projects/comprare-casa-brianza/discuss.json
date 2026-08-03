@@ -1,0 +1,75 @@
+{
+  "phase": "discuss",
+  "projectId": "comprare-casa-brianza",
+  "contentType": "web_page_seo_guide",
+  "platform": "website",
+  "url": "/comprare-casa-brianza",
+  "existingPage": true,
+  "topic": "Guida comprare casa in Brianza",
+  "angle": "Riscrivere e allungare la guida esistente: mercato per comune (non media provinciale), confronto con Monza, errori tipici, percorso offerta→rogito, deep link a guide e leaf già online; SEO + CTA consulenza acquisto",
+  "targetAudience": "Chi compra a Monza/Brianza (intent acquisto)",
+  "awarenessStage": "problem-aware / solution-aware",
+  "keyMessage": "Brianza non è un mercato unico: confronta comuni e domanda reale prima di un'offerta; un consulente locale aiuta a leggere prezzi e opportunità oltre gli annunci",
+  "goal": "SEO/indicizzazione + lead consulenza acquisto",
+  "cta": "Richiedi una consulenza per l'acquisto",
+  "ctaVariant": "purchase",
+  "tone": "profile default: diretto, locale, concreto, italiano naturale",
+  "length": "long_guide_1800_2800",
+  "framework": "PAS + pillar internal linking",
+  "frameworkRationale": "PAS per chi compra (problema: medie/annunci fuorvianti → agitare rischio offerta sbagliata → soluzione: confronto locale + consulenza). Struttura pillar per spawn/link pagine interne.",
+  "researchUrls": [],
+  "requirements": {
+    "language": "it",
+    "rewriteExisting": true,
+    "expandAccuracy": true,
+    "improveWriting": true,
+    "spawnInternalPagesIfUseful": true,
+    "linkExistingGuides": true,
+    "noInventedPricesOrCaseStudies": true,
+    "broaderMandate": "In seguito, stessa logica di riscrittura/allungamento sulle altre pagine del sito in autonomia a batch"
+  },
+  "candidateInternalPages": [
+    {
+      "type": "existing",
+      "path": "/comprare-casa-monza",
+      "role": "hub acquisto Monza"
+    },
+    {
+      "type": "existing",
+      "path": "/annunci-casa-monza",
+      "role": "leggere portali"
+    },
+    {
+      "type": "existing",
+      "path": "/spese-acquisto-casa",
+      "role": "costi"
+    },
+    {
+      "type": "existing",
+      "path": "/mutuo-prima-casa",
+      "role": "mutuo"
+    },
+    {
+      "type": "existing",
+      "path": "/offerta-acquisto-casa",
+      "role": "offerta"
+    },
+    {
+      "type": "existing",
+      "path": "/ville-in-vendita-brianza",
+      "role": "tipologica ville"
+    },
+    {
+      "type": "existing",
+      "path": "/valutazione/{comune}",
+      "role": "contesto comune (anche utile a chi compra)"
+    },
+    {
+      "type": "candidate_new",
+      "path": "/comprare-casa-{comune}",
+      "role": "leaf acquisto per comune — da valutare in /writer:plan se non cannibalizza leaf valutazione"
+    }
+  ],
+  "status": "awaiting_confirm",
+  "updatedAt": "2026-08-03"
+}

@@ -6,19 +6,23 @@ brand
 
 ## Users
 
-The primary audience is property owners in Monza and Brianza who are seriously considering selling within the next 3-12 months and want a real estimate before deciding what to do.
+The primary audience is people in Monza and Brianza who are seriously considering a property transaction — buying, selling, or both — within the next 3–12 months and want a concrete local opinion before deciding what to do.
 
-The secondary audience includes buyers and people researching the local property market in Monza and Brianza. They are not the main conversion target, but mini-site content should help them understand the area, local demand, and valuation context.
+That includes:
+- **Sellers / owners** who want a real on-site valuation before setting a price or choosing how to sell
+- **Buyers** who want local guidance on the market, areas, and opportunities (including properties not always listed online)
 
-Users usually arrive with uncertainty: they may not know the real market value of the property, they may distrust automatic online estimates, and they may fear sales pressure from agencies. The experience should reduce friction quickly and make the next step feel concrete, local, and low risk.
+Market researchers who are earlier in the journey remain a useful SEO audience, but conversion targets are compra-vendita leads (valuation requests and purchase consultations).
+
+Users usually arrive with uncertainty: they may not know the real market value of a property, they may distrust automatic online estimates, and they may fear sales pressure from agencies. The experience should reduce friction quickly and make the next step feel concrete, local, and low risk — whether they are selling or buying.
 
 ## Product Purpose
 
-Valore Immobili helps people request a free, on-site property valuation in Monza and Brianza. The product exists to generate qualified lead requests for real estate consultations, while building enough trust that users feel comfortable sharing contact details and property information.
+Valore Immobili helps people request a free, on-site property valuation or a free purchase consultation in Monza and Brianza. The product exists to generate qualified lead requests for real estate consultations on both sides of the transaction, while building enough trust that users feel comfortable sharing contact details and property (or search) information.
 
-The site should evolve from a single landing page into a focused local mini-site: one conversion path for valuation requests, plus supporting pages about Monza, Brianza, property valuation, and local selling context. Organic SEO is the primary acquisition strategy for the next months because there is no meaningful marketing budget; every new public page should justify itself through search intent, local usefulness, and conversion proximity.
+The site should evolve from a single landing page into a focused local mini-site: conversion paths for valuation (vendita) and purchase consultation (acquisto), plus supporting pages about Monza, Brianza, property valuation, and local buy/sell context. Organic SEO is the primary acquisition strategy for the next months because there is no meaningful marketing budget; every new public page should justify itself through search intent, local usefulness, and conversion proximity.
 
-Success means a healthy volume of form submissions, strong perceived professionalism, and leads that are relevant enough for a follow-up call and possible on-site visit.
+Success means a healthy volume of form submissions from both sellers and buyers, strong perceived professionalism, and leads that are relevant enough for a follow-up call and possible on-site visit or search support.
 
 The operational side is a lightweight mini-admin for lead management. Leads are stored in Vercel Postgres (not Google Sheets). Access is protected with Google login and an allowlist of approved admin emails.
 
@@ -42,9 +46,9 @@ Do not drift into generic AI/SaaS landing-page language or visuals: repeated car
 
 Lead with local trust. Monza and Brianza should feel like the reason the service exists, not a keyword inserted for SEO.
 
-Make the next step obvious. Every important page should make it clear that the user can request a free on-site valuation, what information is needed, and what happens after submission.
+Make the next step obvious. Every important page should make it clear whether the user can request a free on-site valuation (vendita) or a free purchase consultation (acquisto), what information is needed, and what happens after submission.
 
-Qualify without discouraging. The site should attract owners who are realistically considering a sale, while still giving useful context to people who are earlier in the decision.
+Qualify without discouraging. The site should attract people who are realistically considering buying or selling, while still giving useful context to people who are earlier in the decision.
 
 Prefer proof over persuasion. Use concrete process details, local context, transparent expectations, and helpful answers instead of hype.
 

@@ -1,0 +1,24 @@
+{
+  "phase": "plan",
+  "projectId": "comprare-casa-brianza",
+  "url": "/comprare-casa-brianza",
+  "framework": "PAS + pillar",
+  "estimatedWords": "2000-2500",
+  "newUrlsThisShip": false,
+  "primaryKeyword": "comprare casa in brianza",
+  "metaTitle": "Comprare casa in Brianza: comuni, prezzi e cosa confrontare",
+  "metaDescription": "Guida per comprare casa in Brianza: differenze tra comuni vicino a Monza, come leggere gli annunci e quando chiedere una consulenza locale.",
+  "h1": "Comprare casa in Brianza: come scegliere il comune giusto",
+  "sections": [
+    "Il problema: Brianza non è un listino",
+    "Cosa rischi se confronti male",
+    "Un metodo in 5 passi prima dell'offerta",
+    "Come leggere i comuni a ridosso di Monza",
+    "Appartamento o villa/indipendente",
+    "Annunci: da dove partire",
+    "Dopo la visita: documenti, tempi, agevolazioni",
+    "Quando ha senso una consulenza locale"
+  ],
+  "status": "awaiting_execute_confirm",
+  "planFile": "content-writer-output/projects/comprare-casa-brianza/PLAN.md"
+}
