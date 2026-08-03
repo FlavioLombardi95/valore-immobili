@@ -7,8 +7,8 @@ Stato: **1 fatto** · resto in coda. Procediamo **una pagina alla volta**.
 | # | URL | Priorità | Motivo | Status |
 |---|-----|----------|--------|--------|
 | 1 | `/comprare-casa-brianza` | — | Guida lunga + bold + link interni | **Fatto** (2026-08-03, fix bold/dash) |
-| 2 | `/comprare-casa-monza` | Alta | Hub acquisto; ancora relativamente corta | **In corso** |
-| 3 | `/vendere-casa-monza` | Alta | Hub vendita; intent correlato a valutazione | Coda |
+| 2 | `/comprare-casa-monza` | Alta | Hub acquisto; ancora relativamente corta | **Fatto** (2026-08-03) |
+| 3 | `/vendere-casa-monza` | Alta | Hub vendita; intent correlato a valutazione | **Prossima** |
 | 4 | `/annunci-casa-monza` | Alta | Supporta cluster acquisto + CTR query | Coda |
 | 5 | `/ville-in-vendita-brianza` | Media | Tipologica Brianza, thin | Coda |
 | 6 | `/appartamenti-in-vendita-monza` | Media | Tipologica Monza, thin | Coda |
