@@ -416,7 +416,7 @@ export const GUIDE_PAGES: GuidePage[] = [
       {
         heading: 'Come usare i quartieri nella shortlist',
         paragraphs: [
-          'Scegli una o due zone prioritarie, non “tutta Monza”. Se in due settimane non riesci a visitare con criterio, il raggio è troppo largo. Confronta solo immobili nella stessa fascia di domanda: stessa tipologica, stato simile, contesto di via confrontabile.',
+          'Scegli una o due zone prioritarie, non “tutta Monza”. Se in due settimane non riesci a visitare con criterio, il raggio è troppo largo. Confronta solo immobili nella stessa fascia di domanda: stessa tipologia, stato simile, contesto di via confrontabile.',
           'Un annuncio “Monza” senza quartiere chiaro è incompleto: chiedi la via e collocala sulla mappa prima di innamorarti del prezzo al metro quadro.',
         ],
         bullets: [
