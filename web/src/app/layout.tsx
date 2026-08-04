@@ -9,13 +9,15 @@ import './globals.css'
 const bricolage = Bricolage_Grotesque({
   variable: '--font-bricolage',
   subsets: ['latin'],
-  weight: ['400', '600', '700', '800'],
+  weight: ['700', '800'],
+  display: 'swap',
 })
 
 const sourceSans = Source_Sans_3({
   variable: '--font-source-sans',
   subsets: ['latin'],
   weight: ['400', '600', '700'],
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
