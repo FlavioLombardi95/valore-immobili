@@ -361,7 +361,7 @@ function LeadFormShell({
       <button
         type="submit"
         disabled={submitting || phoneStatus === 'checking'}
-        className="min-h-[52px] w-full rounded-full bg-brand font-headline text-lg font-bold text-white transition hover:bg-brand-rust focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 active:translate-y-px disabled:cursor-not-allowed disabled:opacity-70"
+        className="min-h-[52px] w-full rounded-full bg-brand-rust font-headline text-lg font-bold text-white transition hover:bg-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 active:translate-y-px disabled:cursor-not-allowed disabled:opacity-70"
       >
         {submitting ? 'Invio in corso…' : purchaseIntent ? 'Richiedi la consulenza gratuita' : 'Richiedi sopralluogo gratuito'}
       </button>

@@ -53,6 +53,7 @@ export default function HomePage() {
           alt="La Villa Reale di Monza al tramonto, vista dai giardini"
           placeholder="blur"
           priority
+          quality={75}
           sizes="100vw"
           className="absolute inset-0 -z-10 h-full w-full object-cover"
         />
@@ -72,7 +73,7 @@ export default function HomePage() {
             <div className="pt-2">
               <a
                 href="#richiesta"
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-6 font-headline text-base font-bold text-white transition hover:bg-brand-rust focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cloud focus-visible:ring-offset-2 focus-visible:ring-offset-ink active:translate-y-px"
+                className="inline-flex min-h-12 items-center justify-center rounded-full bg-brand-rust px-6 font-headline text-base font-bold text-white transition hover:bg-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cloud focus-visible:ring-offset-2 focus-visible:ring-offset-ink active:translate-y-px"
               >
                 Vai al modulo
               </a>

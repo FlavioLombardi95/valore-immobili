@@ -1,0 +1,726 @@
+{
+  "psi": {
+    "mobile": {
+      "url": "https://valore-immobili.it/",
+      "strategy": "mobile",
+      "lighthouse_scores": {
+        "performance": 99,
+        "accessibility": 97,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lab_metrics": {
+        "first-contentful-paint": {
+          "value": 901,
+          "display": "0.9\u00a0s",
+          "score": 1
+        },
+        "largest-contentful-paint": {
+          "value": 2101,
+          "display": "2.1\u00a0s",
+          "score": 0.96
+        },
+        "total-blocking-time": {
+          "value": 0,
+          "display": "0\u00a0ms",
+          "score": 1
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "display": "0",
+          "score": 1
+        },
+        "speed-index": {
+          "value": 2854.9864860076905,
+          "display": "2.9\u00a0s",
+          "score": 0.95
+        },
+        "interactive": {
+          "value": 2116,
+          "display": "2.1\u00a0s",
+          "score": 0.99
+        }
+      },
+      "field_metrics": {},
+      "opportunities": [],
+      "diagnostics": [
+        {
+          "id": "total-byte-weight",
+          "title": "Avoids enormous network payloads",
+          "display": "Total size was 342\u00a0KiB",
+          "score": 1,
+          "description": "Large network payloads cost users real money and are highly correlated with long load times. [Learn how to reduce payload sizes](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)."
+        },
+        {
+          "id": "mainthread-work-breakdown",
+          "title": "Minimizes main-thread work",
+          "display": "0.4\u00a0s",
+          "score": 1,
+          "description": "Consider reducing the time spent parsing, compiling and executing JS. You may find delivering smaller JS payloads helps with this. [Learn how to minimize main-thread work](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)"
+        },
+        {
+          "id": "bootup-time",
+          "title": "JavaScript execution time",
+          "display": "0.1\u00a0s",
+          "score": 1,
+          "description": "Consider reducing the time spent parsing, compiling, and executing JS. You may find delivering smaller JS payloads helps with this. [Learn how to reduce Javascript execution time](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)."
+        },
+        {
+          "id": "layout-shifts",
+          "title": "Avoid large layout shifts",
+          "display": "",
+          "score": null,
+          "description": "These are the largest layout shifts observed on the page. Each table item represents a single layout shift, and shows the element that shifted the most. Below each item are possible root causes that led to the layout shift. Some of these layout shifts may not be included in the CLS metric value due to [windowing](https://web.dev/articles/cls#what_is_cls). [Learn how to improve CLS](https://web.dev/articles/optimize-cls)"
+        },
+        {
+          "id": "long-tasks",
+          "title": "Avoid long main-thread tasks",
+          "display": "1 long task found",
+          "score": 1,
+          "description": "Lists the longest tasks on the main thread, useful for identifying worst contributors to input delay. [Learn how to avoid long main-thread tasks](https://web.dev/articles/optimize-long-tasks)"
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "display": "Est savings of 26\u00a0KiB",
+          "score": 0.5,
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        },
+        {
+          "id": "unused-css-rules",
+          "title": "Reduce unused CSS",
+          "display": "",
+          "score": 1,
+          "description": "Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. [Learn how to reduce unused CSS](https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/)."
+        }
+      ],
+      "failed_audits": [
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "score": 0,
+          "display": "Est savings of 120\u00a0ms",
+          "description": "Requests are blocking the page's initial render, which may delay LCP. [Deferring or inlining](https://developer.chrome.com/docs/performance/insights/render-blocking) can move these network requests out of the critical path."
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0,
+          "display": "",
+          "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/performance/insights/network-dependency-tree) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "title": "LCP request discovery",
+          "score": 0,
+          "display": "",
+          "description": "[Optimize LCP](https://developer.chrome.com/docs/performance/insights/lcp-discovery) by making the LCP image discoverable from the HTML immediately, and avoiding lazy-loading"
+        },
+        {
+          "id": "color-contrast",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+          "score": 0,
+          "display": "",
+          "description": "Low-contrast text is difficult or impossible for many users to read. [Learn how to provide sufficient color contrast](https://dequeuniversity.com/rules/axe/4.12/color-contrast)."
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "title": "Legacy JavaScript",
+          "score": 0.5,
+          "display": "Est savings of 14\u00a0KiB",
+          "description": "Polyfills and transforms enable older browsers to use new JavaScript features. However, many aren't necessary for modern browsers. Consider modifying your JavaScript build process to not transpile [Baseline](https://web.dev/articles/baseline-and-polyfills) features, unless you know you must support older browsers. [Learn why most sites can deploy ES6+ code without transpiling](https://developer.chrome.com/docs/performance/insights/legacy-javascript)"
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0.5,
+          "display": "Est savings of 26\u00a0KiB",
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        }
+      ],
+      "passed_audits_count": 92,
+      "seo_audits": [
+        {
+          "id": "is-crawlable",
+          "title": "Page isn\u2019t blocked from indexing",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "document-title",
+          "title": "Document has a `<title>` element",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "meta-description",
+          "title": "Document has a meta description",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "http-status-code",
+          "title": "Page has successful HTTP status code",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "link-text",
+          "title": "Links have descriptive text",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "crawlable-anchors",
+          "title": "Links are crawlable",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "robots-txt",
+          "title": "robots.txt is valid",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "image-alt",
+          "title": "Image elements have `[alt]` attributes",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "hreflang",
+          "title": "Document has a valid `hreflang`",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "canonical",
+          "title": "Document has a valid `rel=canonical`",
+          "score": 1,
+          "pass": true
+        }
+      ],
+      "accessibility_audits": [
+        {
+          "id": "color-contrast",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+          "score": 0,
+          "display": ""
+        }
+      ],
+      "audit_details": {
+        "legacy-javascript-insight": {
+          "title": "Legacy JavaScript",
+          "headings": [
+            "url",
+            "wastedBytes"
+          ],
+          "items": [
+            {
+              "url": "https://valore-immobili.it/_next/static/chunks/21wgzkn1j4p9k.js",
+              "wastedBytes": 14004
+            }
+          ],
+          "total_items": 1
+        },
+        "bootup-time": {
+          "title": "JavaScript execution time",
+          "headings": [
+            "url",
+            "total",
+            "scripting",
+            "scriptParseCompile"
+          ],
+          "items": [
+            {
+              "url": "https://valore-immobili.it/",
+              "total": 86.03999999999998,
+              "scripting": 2.1672,
+              "scriptParseCompile": 2.5391999999999983
+            },
+            {
+              "url": "https://valore-immobili.it/_next/static/chunks/21wgzkn1j4p9k.js",
+              "total": 79.75080000000003,
+              "scripting": 64.14000000000001,
+              "scriptParseCompile": 13.241999999999999
+            },
+            {
+              "url": "https://valore-immobili.it/_next/static/chunks/048kyhn1020md.js",
+              "total": 56.23920000000005,
+              "scripting": 39.766800000000046,
+              "scriptParseCompile": 7.5516
+            },
+            {
+              "url": "Unattributable",
+              "total": 54.69000000000014,
+              "scripting": 7.480799999999997,
+              "scriptParseCompile": 0
+            }
+          ],
+          "total_items": 4
+        },
+        "render-blocking-insight": {
+          "title": "Render-blocking requests",
+          "headings": [
+            "url",
+            "totalBytes",
+            "wastedMs"
+          ],
+          "items": [
+            {
+              "url": "https://valore-immobili.it/_next/static/chunks/0j-3b9homti7v.css",
+              "totalBytes": 8395,
+              "wastedMs": 151
+            }
+          ],
+          "total_items": 1
+        },
+        "total-byte-weight": {
+          "title": "Avoids enormous network payloads",
+          "headings": [
+            "url",
+            "totalBytes"
+          ],
+          "items": [
+            {
+              "url": "https://valore-immobili.it/_next/static/chunks/21wgzkn1j4p9k.js",
+              "totalBytes": 72703
+            },
+            {
+              "url": "https://valore-immobili.it/_next/static/media/017d9bea37084d9b-s.p.41rroleoq1br7.woff2",
+              "totalBytes": 41832
+            },
+            {
+              "url": "https://valore-immobili.it/_next/static/chunks/048kyhn1020md.js",
+              "totalBytes": 39038
+            },
+            {
+              "url": "https://valore-immobili.it/_next/static/media/47df9ba1c7236d3b-s.p.137759vg1sbmi.woff2",
+              "totalBytes": 29388
+            },
+            {
+              "url": "https://valore-immobili.it/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero-villa-reale-monza.1lrbif9up_j4x.jpg&w=750&q=75",
+              "totalBytes": 23742
+            }
+          ],
+          "total_items": 10
+        },
+        "network-requests": {
+          "title": "Network Requests",
+          "headings": [
+            "url",
+            "protocol",
+            "networkRequestTime",
+            "networkEndTime",
+            "transferSize",
+            "resourceSize",
+            "statusCode",
+            "mimeType",
+            "resourceType"
+          ],
+          "items": [
+            {
+              "url": "https://valore-immobili.it/",
+              "protocol": "h2",
+              "networkRequestTime": 1.0120000839233398,
+              "networkEndTime": 1006.5340001583099,
+              "transferSize": 11077,
+              "resourceSize": 50142,
+              "statusCode": 200,
+              "mimeType": "text/html",
+              "resourceType": "Document"
+            },
+            {
+              "url": "https://valore-immobili.it/_next/static/media/017d9bea37084d9b-s.p.41rroleoq1br7.woff2",
+              "protocol": "h2",
+              "networkRequestTime": 1017.5010001659393,
+              "networkEndTime": 1446.3500001430511,
+              "transferSize": 41832,
+              "resourceSize": 41236,
+              "statusCode": 200,
+              "mimeType": "font/woff2",
+              "resourceType": "Font"
+            },
+            {
+              "url": "https://valore-immobili.it/_next/static/media/47df9ba1c7236d3b-s.p.137759vg1sbmi.woff2",
+              "protocol": "h2",
+              "networkRequestTime": 1017.5620000362396,
+              "networkEndTime": 1431.063000202179,
+              "transferSize": 29388,
+              "resourceSize": 28792,
+              "statusCode": 200,
+              "mimeType": "font/woff2",
+              "resourceType": "Font"
+            },
+            {
+              "url": "https://valore-immobili.it/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero-villa-reale-monza.1lrbif9up_j4x.jpg&w=750&q=75",
+              "protocol": "h2",
+              "networkRequestTime": 1022.5310001373291,
+              "networkEndTime": 1426.3159999847412,
+              "transferSize": 23742,
+              "resourceSize": 23128,
+              "statusCode": 200,
+              "mimeType": "image/webp",
+              "resourceType": "Image"
+            },
+            {
+              "url": "https://valore-immobili.it/_next/static/chunks/0j-3b9homti7v.css",
+              "protocol": "h2",
+              "networkRequestTime": 1017.6330001354218,
+              "networkEndTime": 1702.3280003070831,
+              "transferSize": 8395,
+              "resourceSize": 39781,
+              "statusCode": 200,
+              "mimeType": "text/css",
+              "resourceType": "Stylesheet"
+            }
+          ],
+          "total_items": 43
+        },
+        "network-rtt": {
+          "title": "Network Round Trip Times",
+          "headings": [
+            "origin",
+            "rtt"
+          ],
+          "items": [
+            {
+              "origin": "https://valore-immobili.it",
+              "rtt": 1.9700099999999992
+            }
+          ],
+          "total_items": 1
+        },
+        "baseline": {
+          "title": "Baseline Features",
+          "headings": [
+            "featureId",
+            "displayStatus",
+            "source"
+          ],
+          "items": [
+            {
+              "featureId": "https://webstatus.dev/features/font-metric-overrides",
+              "displayStatus": "{'displayString': 'Limited Availability', 'status': 'limited', 'type': 'baseline-status'}",
+              "source": "https://valore-immobili.it/"
+            },
+            {
+              "featureId": "https://webstatus.dev/features/text-wrap-pretty",
+              "displayStatus": "{'type': 'baseline-status', 'displayString': 'Limited Availability', 'status': 'limited'}",
+              "source": "https://valore-immobili.it/"
+            },
+            {
+              "featureId": "https://webstatus.dev/features/layout-instability",
+              "displayStatus": "{'type': 'baseline-status', 'displayString': 'Limited Availability', 'status': 'limited'}",
+              "source": "https://valore-immobili.it/b6d998583225e59f/script.js"
+            },
+            {
+              "featureId": "https://webstatus.dev/features/scrollend",
+              "displayStatus": "{'type': 'baseline-status', 'displayString': 'Newly Available (2025-12-12)', 'status': 'low'}",
+              "source": "https://valore-immobili.it/_next/static/chunks/21wgzkn1j4p9k.js"
+            },
+            {
+              "featureId": "https://webstatus.dev/features/uint8array-base64-hex",
+              "displayStatus": "{'displayString': 'Newly Available (2025-09-05)', 'status': 'low', 'type': 'baseline-status'}",
+              "source": "http://ghost-rider/driver.html"
+            }
+          ],
+          "total_items": 36
+        },
+        "network-server-latency": {
+          "title": "Server Backend Latencies",
+          "headings": [
+            "origin",
+            "serverResponseTime"
+          ],
+          "items": [
+            {
+              "origin": "https://valore-immobili.it",
+              "serverResponseTime": 1
+            }
+          ],
+          "total_items": 1
+        },
+        "long-tasks": {
+          "title": "Avoid long main-thread tasks",
+          "headings": [
+            "url",
+            "startTime",
+            "duration"
+          ],
+          "items": [
+            {
+              "url": "https://valore-immobili.it/_next/static/chunks/2vna8rqmrhfjf.js",
+              "startTime": 2115,
+              "duration": 50
+            }
+          ],
+          "total_items": 1
+        },
+        "clickjacking-mitigation": {
+          "title": "Mitigate clickjacking with XFO or CSP",
+          "headings": [
+            "description",
+            "severity"
+          ],
+          "items": [
+            {
+              "description": "No frame control policy found",
+              "severity": "High"
+            }
+          ],
+          "total_items": 1
+        },
+        "origin-isolation": {
+          "title": "Ensure proper origin isolation with COOP",
+          "headings": [
+            "description",
+            "directive",
+            "severity"
+          ],
+          "items": [
+            {
+              "description": "No COOP header found",
+              "severity": "High"
+            }
+          ],
+          "total_items": 1
+        },
+        "server-response-time": {
+          "title": "Initial server response time was short",
+          "headings": [
+            "url",
+            "responseTime"
+          ],
+          "items": [
+            {
+              "url": "https://valore-immobili.it/",
+              "responseTime": 1
+            }
+          ],
+          "total_items": 1
+        },
+        "mainthread-work-breakdown": {
+          "title": "Minimizes main-thread work",
+          "headings": [
+            "groupLabel",
+            "duration"
+          ],
+          "items": [
+            {
+              "groupLabel": "Script Evaluation",
+              "duration": 170.8068000000002
+            },
+            {
+              "groupLabel": "Other",
+              "duration": 65.81400000000026
+            },
+            {
+              "groupLabel": "Style & Layout",
+              "duration": 60.7728
+            },
+            {
+              "groupLabel": "Script Parsing & Compilation",
+              "duration": 37.774800000000035
+            },
+            {
+              "groupLabel": "Rendering",
+              "duration": 12.028799999999995
+            }
+          ],
+          "total_items": 6
+        },
+        "has-hsts": {
+          "title": "Use a strong HSTS policy",
+          "headings": [
+            "description",
+            "directive",
+            "severity"
+          ],
+          "items": [
+            {
+              "description": "No `includeSubDomains` directive found",
+              "directive": "includeSubDomains",
+              "severity": "Medium"
+            },
+            {
+              "description": "No `preload` directive found",
+              "directive": "preload",
+              "severity": "Medium"
+            }
+          ],
+          "total_items": 2
+        },
+        "unused-javascript": {
+          "title": "Reduce unused JavaScript",
+          "headings": [
+            "url",
+            "totalBytes",
+            "wastedBytes"
+          ],
+          "items": [
+            {
+              "url": "https://valore-immobili.it/_next/static/chunks/21wgzkn1j4p9k.js",
+              "totalBytes": 72071,
+              "wastedBytes": 26246
+            }
+          ],
+          "total_items": 1
+        },
+        "viewport-insight": {
+          "title": "Optimize viewport for mobile",
+          "headings": [
+            "node"
+          ],
+          "items": [
+            {
+              "node": "{'selector': 'head > meta', 'nodeLabel': 'head > meta', 'snippet': '<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">', 'boundingRect': {'bottom': 0, 'top': 0, 'height': 0, 'left': "
+            }
+          ],
+          "total_items": 1
+        },
+        "csp-xss": {
+          "title": "Ensure CSP is effective against XSS attacks",
+          "headings": [
+            "description",
+            "directive",
+            "severity"
+          ],
+          "items": [
+            {
+              "description": "No CSP found in enforcement mode",
+              "severity": "High"
+            }
+          ],
+          "total_items": 1
+        },
+        "dom-size-insight": {
+          "title": "Optimize DOM size",
+          "headings": [
+            "statistic",
+            "node",
+            "value"
+          ],
+          "items": [
+            {
+              "statistic": "Total elements",
+              "value": "{'granularity': 1, 'value': 212, 'type': 'numeric'}"
+            },
+            {
+              "statistic": "DOM depth",
+              "node": "{'snippet': '<option value=\"\">', 'selector': 'div.grid > label.block > select.w-full > option', 'path': '1,HTML,1,BODY,3,MAIN,1,SECTION,0,DIV,1,DIV,0,FORM,1,DIV,1,DIV,2,LABEL,1,SELECT,0,OPTION', 'boun",
+              "value": "{'type': 'numeric', 'granularity': 1, 'value': 11}"
+            },
+            {
+              "statistic": "Most children",
+              "node": "{'nodeLabel': 'body.flex', 'snippet': '<body class=\"flex min-h-full flex-col bg-surface text-body antialiased\">', 'path': '1,HTML,1,BODY', 'boundingRect': {'top': 0, 'bottom': 4927, 'height': 4927, 'r",
+              "value": "{'value': 25, 'type': 'numeric', 'granularity': 1}"
+            }
+          ],
+          "total_items": 3
+        },
+        "resource-summary": {
+          "title": "Resources Summary",
+          "headings": [
+            "label",
+            "requestCount",
+            "transferSize"
+          ],
+          "items": [
+            {
+              "label": "Total",
+              "requestCount": 42,
+              "transferSize": 349731
+            },
+            {
+              "label": "Script",
+              "requestCount": 13,
+              "transferSize": 185246
+            },
+            {
+              "label": "Font",
+              "requestCount": 2,
+              "transferSize": 71220
+            },
+            {
+              "label": "Other",
+              "requestCount": 24,
+              "transferSize": 50051
+            },
+            {
+              "label": "Image",
+              "requestCount": 1,
+              "transferSize": 23742
+            }
+          ],
+          "total_items": 9
+        },
+        "trusted-types-xss": {
+          "title": "Mitigate DOM-based XSS with Trusted Types",
+          "headings": [
+            "description",
+            "severity"
+          ],
+          "items": [
+            {
+              "description": "No `Content-Security-Policy` header with Trusted Types directive found",
+              "severity": "High"
+            }
+          ],
+          "total_items": 1
+        },
+        "main-thread-tasks": {
+          "title": "Tasks",
+          "headings": [
+            "startTime",
+            "duration"
+          ],
+          "items": [
+            {
+              "startTime": 1008.985,
+              "duration": 9.821
+            },
+            {
+              "startTime": 1454.972,
+              "duration": 6.588
+            },
+            {
+              "startTime": 1704.6,
+              "duration": 53.827
+            },
+            {
+              "startTime": 1763.924,
+              "duration": 11.662
+            },
+            {
+              "startTime": 1777.279,
+              "duration": 41.708
+            }
+          ],
+          "total_items": 11
+        },
+        "color-contrast": {
+          "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+          "headings": [
+            "node"
+          ],
+          "items": [
+            {
+              "node": "{'selector': 'body.flex > header.border-b > div.mx-auto > a.inline-flex', 'explanation': 'Fix any of the following:\\n  Element has insufficient color contrast of 3.15 (foreground color: #ffffff, backg"
+            },
+            {
+              "node": "{'nodeLabel': 'Vai al modulo', 'selector': 'div.mx-auto > div.max-w-2xl > div.pt-2 > a.inline-flex', 'snippet': '<a href=\"#richiesta\" class=\"inline-flex min-h-12 items-center justify-center rounded-fu"
+            },
+            {
+              "node": "{'explanation': 'Fix any of the following:\\n  Element has insufficient color contrast of 3.15 (foreground color: #ffffff, background color: #f26522, font size: 13.5pt (18px), font weight: bold). Expec"
+            }
+          ],
+          "total_items": 3
+        }
+      },
+      "analysis_timestamp": "2026-08-04T15:27:20.725Z",
+      "error": null
+    }
+  }
+}

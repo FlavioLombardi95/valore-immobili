@@ -31,7 +31,7 @@ export function SiteHeader() {
         </nav>
         <a
           href="/#richiesta"
-          className="inline-flex min-h-10 shrink-0 items-center justify-center rounded-lg bg-brand px-4 text-sm font-bold text-white transition hover:bg-brand-rust focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 active:translate-y-px"
+          className="inline-flex min-h-10 shrink-0 items-center justify-center rounded-lg bg-brand-rust px-4 text-sm font-bold text-white transition hover:bg-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 active:translate-y-px"
         >
           Valutazione
         </a>

@@ -7,6 +7,12 @@
       "skillPath": "SKILL.md",
       "computedHash": "cd80debdfc14e3b363c2741dc0d8c97137a50e65aedc68c61b76a52c5e2183ca"
     },
+    "core-web-vitals": {
+      "source": "addyosmani/web-quality-skills",
+      "sourceType": "github",
+      "skillPath": "skills/core-web-vitals/SKILL.md",
+      "computedHash": "8e55888cc177e994e2cbfa0ee0a277e1273c6d43c8cf7649165f9e2f39489a48"
+    },
     "hallmark": {
       "source": "nutlope/hallmark",
       "sourceType": "github",
@@ -18,6 +24,12 @@
       "sourceType": "github",
       "skillPath": "SKILL.md",
       "computedHash": "7f032c368d4355fb237e1980d73d7febe5bc1a03bad3de74a3d4a918e8940cd1"
+    },
+    "lighthouse": {
+      "source": "onnokh/lighthouse",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "94bf9e0d6c9d8489d53d378a81584ca75df11c29f255feb6351292e02e839097"
     },
     "programmatic-seo": {
       "source": "coreyhaines31/marketingskills",

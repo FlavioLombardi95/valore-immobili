@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
 import { Bricolage_Grotesque, Source_Sans_3 } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
 import { SiteFooter } from '@/components/SiteFooter'
 import { SiteHeader } from '@/components/SiteHeader'
+import { DeferredAnalytics } from '@/components/DeferredAnalytics'
 import { siteGraphSchema } from '@/lib/structured-data'
 import './globals.css'
 
@@ -56,8 +55,7 @@ export default function RootLayout({
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
-        <Analytics />
-        <SpeedInsights />
+        <DeferredAnalytics />
       </body>
     </html>
   )

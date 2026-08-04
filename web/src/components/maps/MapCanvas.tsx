@@ -1,8 +1,9 @@
 'use client'
 
 import dynamic from 'next/dynamic'
+import { LazyMapMount } from '@/components/maps/LazyMapMount'
 
-export const BrianzaComuniMapCanvas = dynamic(
+const BrianzaComuniMapClient = dynamic(
   () =>
     import('@/components/maps/BrianzaComuniMapClient').then((m) => m.BrianzaComuniMapClient),
   {
@@ -18,7 +19,7 @@ export const BrianzaComuniMapCanvas = dynamic(
   },
 )
 
-export const MonzaQuartieriMapCanvas = dynamic(
+const MonzaQuartieriMapClient = dynamic(
   () =>
     import('@/components/maps/MonzaQuartieriMapClient').then((m) => m.MonzaQuartieriMapClient),
   {
@@ -33,3 +34,19 @@ export const MonzaQuartieriMapCanvas = dynamic(
     ),
   },
 )
+
+export function BrianzaComuniMapCanvas() {
+  return (
+    <LazyMapMount>
+      <BrianzaComuniMapClient />
+    </LazyMapMount>
+  )
+}
+
+export function MonzaQuartieriMapCanvas() {
+  return (
+    <LazyMapMount>
+      <MonzaQuartieriMapClient />
+    </LazyMapMount>
+  )
+}

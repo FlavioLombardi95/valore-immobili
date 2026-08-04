@@ -18,7 +18,7 @@ export default function GraziePage() {
       </p>
       <Link
         href="/"
-        className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-6 font-headline font-bold text-white transition hover:bg-brand-rust focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 active:translate-y-px"
+        className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-brand-rust px-6 font-headline font-bold text-white transition hover:bg-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 active:translate-y-px"
       >
         Torna alla home
       </Link>

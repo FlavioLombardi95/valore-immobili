@@ -73,7 +73,7 @@ export function SeoPageLayout({
                   </p>
                   <Link
                     href={`/?from=${encodeURIComponent(sourcePage)}&intent=acquisto#richiesta`}
-                    className="mt-4 inline-flex min-h-12 items-center justify-center rounded-lg bg-brand px-6 font-headline text-sm font-bold text-white transition hover:bg-brand-rust focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 active:translate-y-px"
+                    className="mt-4 inline-flex min-h-12 items-center justify-center rounded-lg bg-brand-rust px-6 font-headline text-sm font-bold text-white transition hover:bg-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 active:translate-y-px"
                   >
                     Richiedi una consulenza per l’acquisto
                   </Link>
@@ -86,7 +86,7 @@ export function SeoPageLayout({
                   </p>
                   <Link
                     href={`/?from=${encodeURIComponent(sourcePage)}#richiesta`}
-                    className="mt-4 inline-flex min-h-12 items-center justify-center rounded-lg bg-brand px-6 font-headline text-sm font-bold text-white transition hover:bg-brand-rust focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 active:translate-y-px"
+                    className="mt-4 inline-flex min-h-12 items-center justify-center rounded-lg bg-brand-rust px-6 font-headline text-sm font-bold text-white transition hover:bg-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 active:translate-y-px"
                   >
                     Richiedi la valutazione gratuita
                   </Link>
