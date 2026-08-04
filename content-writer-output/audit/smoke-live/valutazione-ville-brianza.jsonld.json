@@ -1,0 +1,123 @@
+{
+  "block_count": 2,
+  "processed_count": 2,
+  "total_bytes": 2106,
+  "truncated": false,
+  "blocks": [
+    {
+      "index": 1,
+      "size_bytes": 1004,
+      "valid": true,
+      "types": [
+        "AdministrativeArea",
+        "City",
+        "ImageObject",
+        "Offer",
+        "Organization",
+        "Service"
+      ],
+      "types_truncated": false,
+      "data": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://valore-immobili.it/#organization",
+            "name": "Valore Immobili",
+            "url": "https://valore-immobili.it",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://valore-immobili.it/assets/logo-dark.png"
+            },
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "Monza"
+              },
+              {
+                "@type": "AdministrativeArea",
+                "name": "Monza e Brianza"
+              }
+            ]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://valore-immobili.it/#service",
+            "name": "Valutazione immobiliare con sopralluogo",
+            "description": "Valutazione immobiliare gratuita a Monza e in Brianza con sopralluogo sul posto e confronto con vendite reali della zona, senza obbligo di mandato.",
+            "url": "https://valore-immobili.it",
+            "provider": {
+              "@id": "https://valore-immobili.it/#organization"
+            },
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "Monza"
+              },
+              {
+                "@type": "AdministrativeArea",
+                "name": "Monza e Brianza"
+              }
+            ],
+            "serviceType": "Valutazione immobiliare",
+            "offers": {
+              "@type": "Offer",
+              "price": 0,
+              "priceCurrency": "EUR",
+              "description": "Sopralluogo e stima gratuiti, senza impegno"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "size_bytes": 1102,
+      "valid": true,
+      "types": [
+        "Answer",
+        "FAQPage",
+        "Question"
+      ],
+      "types_truncated": false,
+      "data": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Valutate solo ville di prestigio?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Valutiamo ville, schiere e case indipendenti residenziali nella zona di Monza e Brianza, con lo stesso approccio sul posto."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Una media €/mq o una stima automatica bastano per una villa in Brianza?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Giardino, stato, via e domanda locale pesano più di un listino da appartamento. Il sopralluogo è gratuito e senza mandato."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "I tempi di vendita sono più lunghi delle unità in condominio?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Spesso sì, soprattutto se prezzo e stato non sono allineati alla domanda locale. Una stima realistica aiuta a non partire troppo alti."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Serve una planimetria o documenti catastali?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non sono obbligatori al primo contatto. Se li hai, velocizzano la stima; altrimenti si possono integrare dopo il sopralluogo."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

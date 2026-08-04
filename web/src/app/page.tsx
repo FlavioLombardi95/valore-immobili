@@ -126,6 +126,15 @@ export default function HomePage() {
               solo “prezzo medio Monza”.
             </p>
 
+            <h2>Valutazione gratuita: cosa include (e cosa no)</h2>
+            <p>
+              La valutazione con sopralluogo a Monza e in Brianza è <strong>gratuita</strong> e{' '}
+              <strong>senza mandato</strong>: non è un calcolatore online né una quotazione OMI da sola. Visita
+              sul posto, lettura dello stato reale e confronto con vendite di zona. Se hai già una stima
+              automatica e vuoi capire il salto di qualità, leggi{' '}
+              <Link href="/valutazione-online-o-sopralluogo">valutazione online o sopralluogo</Link>.
+            </p>
+
             <h2>Come funziona, passo per passo</h2>
             <ol>
               {steps.map((step) => (
@@ -179,6 +188,11 @@ export default function HomePage() {
                 description: 'Hub città: quartieri e stima sul posto.',
               },
               {
+                href: '/valutazione-online-o-sopralluogo',
+                label: 'Online o sopralluogo',
+                description: 'Calcolatore vs visita gratuita sul posto.',
+              },
+              {
                 href: '/valutazione/appartamenti-monza',
                 label: 'Valutazione appartamenti',
                 description: 'Focus condominio a Monza e dintorni.',
@@ -197,11 +211,6 @@ export default function HomePage() {
                 href: '/come-funziona',
                 label: 'Come funziona',
                 description: 'Richiesta, sopralluogo e stima passo per passo.',
-              },
-              {
-                href: '/faq',
-                label: 'Domande frequenti',
-                description: 'Costi, tempi, documenti e obblighi.',
               },
             ]}
           />

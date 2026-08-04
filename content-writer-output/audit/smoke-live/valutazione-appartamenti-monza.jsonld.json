@@ -1,0 +1,123 @@
+{
+  "block_count": 2,
+  "processed_count": 2,
+  "total_bytes": 2162,
+  "truncated": false,
+  "blocks": [
+    {
+      "index": 1,
+      "size_bytes": 1004,
+      "valid": true,
+      "types": [
+        "AdministrativeArea",
+        "City",
+        "ImageObject",
+        "Offer",
+        "Organization",
+        "Service"
+      ],
+      "types_truncated": false,
+      "data": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://valore-immobili.it/#organization",
+            "name": "Valore Immobili",
+            "url": "https://valore-immobili.it",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://valore-immobili.it/assets/logo-dark.png"
+            },
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "Monza"
+              },
+              {
+                "@type": "AdministrativeArea",
+                "name": "Monza e Brianza"
+              }
+            ]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://valore-immobili.it/#service",
+            "name": "Valutazione immobiliare con sopralluogo",
+            "description": "Valutazione immobiliare gratuita a Monza e in Brianza con sopralluogo sul posto e confronto con vendite reali della zona, senza obbligo di mandato.",
+            "url": "https://valore-immobili.it",
+            "provider": {
+              "@id": "https://valore-immobili.it/#organization"
+            },
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "Monza"
+              },
+              {
+                "@type": "AdministrativeArea",
+                "name": "Monza e Brianza"
+              }
+            ],
+            "serviceType": "Valutazione immobiliare",
+            "offers": {
+              "@type": "Offer",
+              "price": 0,
+              "priceCurrency": "EUR",
+              "description": "Sopralluogo e stima gratuiti, senza impegno"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "size_bytes": 1158,
+      "valid": true,
+      "types": [
+        "Answer",
+        "FAQPage",
+        "Question"
+      ],
+      "types_truncated": false,
+      "data": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "La valutazione appartamento è diversa da quella di una casa?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sì: in condominio pesano di più piano, ascensore, spese e parti comuni. Su una villa o casa indipendente contano di più giardino, autonomia e contesto di via."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Basta una stima online o OMI per un appartamento a Monza?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Danno un orientamento, non il valore della tua unità. Piano, stato, spese e via si vedono in sopralluogo: la visita è gratuita e senza mandato."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Serve l’APE per la stima?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non è obbligatorio per richiedere il sopralluogo, ma se ce l’hai accelera la lettura energetica e dei costi di gestione."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Posso chiedere la stima anche se non ho deciso di vendere?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sì. Molte richieste servono a capire un punto di partenza realistico prima di pubblicare o affidare. Nessun obbligo di mandato dopo la valutazione."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

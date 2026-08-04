@@ -55,6 +55,14 @@ export default function MonzaPage() {
         },
       ]}
     >
+      <h2>Valutazione gratuita a Monza: sul posto, non online</h2>
+      <p>
+        Se cerchi una <strong>valutazione gratuita</strong> a Monza, qui non ricevi un numero da algoritmo.
+        Il percorso è gratuito e senza mandato: sopralluogo, lettura di via e quartiere, confronto con
+        vendite reali. Differenza rispetto ai calcolatori:{' '}
+        <Link href="/valutazione-online-o-sopralluogo">valutazione online o sopralluogo</Link>.
+      </p>
+
       <h2>Perché il valore a Monza dipende dalla zona</h2>
       <p>
         Monza non è un mercato unico. Il valore di una casa in <strong>Centro</strong> o vicino alla Villa

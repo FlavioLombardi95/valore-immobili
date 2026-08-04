@@ -27,6 +27,9 @@ export type PropertyTypePage = {
   requestFollowUp: string
   zonesHeading: string
   zonesBody: string
+  /** Sezione extra (anti-thin / deepen tipologica) */
+  deepenHeading?: string
+  deepenBody?: string
   faqs?: PropertyTypeFaq[]
 }
 
@@ -114,6 +117,9 @@ export const PROPERTY_TYPE_PAGES: PropertyTypePage[] = [
     zonesHeading: 'Comuni e tipologiche collegate',
     zonesBody:
       'Il servizio copre Monza città e la Brianza residenziale. Tra un comune e l’altro (e tra schiera e indipendente) domanda e tempi di chiusura possono cambiare molto.',
+    deepenHeading: 'Schiera, bifamiliare o indipendente: non è lo stesso prodotto',
+    deepenBody:
+      'Una villa a schiera condivide muri e spesso regole di cortile: privacy e manutenzione pesano diversamente da una bifamiliare o da un’indipendente con giardino chiuso. In Brianza l’errore tipico è applicare una media €/mq da appartamento monzese, o trattare “villa” come un’unica categoria. Sul posto guardiamo tipologica, esterni realmente utilizzabili, stato di tetto e impianti, e chiusure di immobili simili nello stesso comune, non annunci generici “Brianza”.',
     faqs: [
       {
         question: 'Valutate solo ville di prestigio?',
@@ -124,6 +130,11 @@ export const PROPERTY_TYPE_PAGES: PropertyTypePage[] = [
         question: 'Una media €/mq o una stima automatica bastano per una villa in Brianza?',
         answer:
           'No. Giardino, stato, via e domanda locale pesano più di un listino da appartamento. Il sopralluogo è gratuito e senza mandato.',
+      },
+      {
+        question: 'Come si valuta una villa a schiera rispetto a un’indipendente?',
+        answer:
+          'La schiera ha vincoli di confine e spesso spazi esterni più contenuti; l’indipendente punta su privacy e lotto. Non usiamo lo stesso confronto di mercato.',
       },
       {
         question: 'I tempi di vendita sono più lunghi delle unità in condominio?',

@@ -27,6 +27,12 @@ const HREF_BY_ID: Record<string, string> = {
   concorezzo: localityPath('concorezzo'),
   'cologno-monzese': localityPath('cologno-monzese'),
   vimodrone: localityPath('vimodrone'),
+  seregno: localityPath('seregno'),
+  'cesano-maderno': localityPath('cesano-maderno'),
+  limbiate: localityPath('limbiate'),
+  vimercate: localityPath('vimercate'),
+  giussano: localityPath('giussano'),
+  meda: localityPath('meda'),
 }
 
 function FitBounds({ data }: { data: FeatureCollection }) {

@@ -371,6 +371,261 @@ export const NEAR_MONZA_LOCALITIES: Locality[] = [
     siblingsHeading: 'Zone vicine sull’asse verso Milano',
     relatedTitle: 'Da Cologno verso Monza e le guide',
   },
+  {
+    slug: 'seregno',
+    name: 'Seregno',
+    pageTitle: 'Quanto vale casa a Seregno?',
+    provinceHint: 'Monza e Brianza',
+    layoutVariant: 'compare-monza',
+    intro:
+      'Sopralluogo **gratuito** a Seregno: stima sul posto in un hub della Brianza Ovest, confrontata con vendite reali del comune (non con una media di Monza).',
+    angleHeading: 'Seregno non è “Monza più a nord”: è un mercato a sé',
+    angleBody:
+      'Seregno è un polo urbano della Brianza Ovest, con stazione sulla Milano–Chiasso (S9/S11) e un tessuto misto tra centro, zone residenziali e un’identità ancora legata al distretto del mobile. Domanda e prezzi cambiano tra micro-zone: usare listini monzesi o una media comunale unica è l’errore più frequente. La stima parte dalla via e dal ruolo pendolare reale, non dal CAP “vicino a Monza”.',
+    lookHeading: 'Cosa pesa di più in una stima a Seregno',
+    lookItems: [
+      'Distanza pratica dalla stazione e dai collegamenti verso Milano',
+      'Micro-zona: centro consolidato vs fasce residenziali (es. San Rocco)',
+      'Tipologia: appartamento in condominio vs casa/schiera',
+      'Stato interno, box e spazi esterni utilizzabili',
+      'Vendite chiuse a Seregno, non medie di Monza o della provincia',
+    ],
+    contextHeading: 'Nodo S9/S11 e distretto del mobile: due letture diverse',
+    contextParagraphs: [
+      'Chi vende a Seregno spesso confronta con Monza “perché siamo sulla stessa fascia”. In pratica il mercato reagisce al nodo ferroviario e alla micro-zona: un appartamento comodo verso la stazione non si valuta come una casa più quieta ma meno connessa, a parità di mq.',
+      'Il legame storico col mobile/design di Brianza Ovest spiega anche un profilo di acquirenti diverso da un quartiere monzese. Indica indirizzo e tipologica nella richiesta: prepariamo il confronto sulle chiusure di Seregno.',
+    ],
+    contextLinks: [
+      { href: 'https://www.comune.seregno.mb.it/', label: 'Comune di Seregno' },
+      { href: 'https://www.trenord.it/', label: 'Trenord: linee e orari' },
+    ],
+    contextLinksLead: 'Comune e collegamenti ferroviari:',
+    requestNote:
+      'Nel modulo indica “Seregno” e, se puoi, la zona rispetto alla stazione: orienta subito il confronto giusto.',
+    requestHeading: 'Richiedi il sopralluogo a Seregno',
+    requestFollowUp:
+      'Ti richiamiamo entro 1 o 2 giorni lavorativi. Gratuito e senza mandato. Percorso completo:',
+    siblingsHeading: 'Altri comuni della Brianza Ovest',
+    relatedTitle: 'Da Seregno verso hub e tipologiche',
+  },
+  {
+    slug: 'cesano-maderno',
+    name: 'Cesano Maderno',
+    pageTitle: 'Valutazione a Cesano Maderno: snodo pendolari',
+    provinceHint: 'Monza e Brianza',
+    layoutVariant: 'faq-led',
+    intro:
+      'Sopralluogo **gratuito** a Cesano Maderno: qui distanza dallo snodo ferroviario e qualità dell’interscambio pesano quanto i metri quadri.',
+    angleHeading: 'A Cesano Maderno il valore parla di pendolarismo, non di “media Monza”',
+    angleBody:
+      'Cesano Maderno è uno snodo forte verso Milano (S2, S4, S9 e linee verso Cadorna). Chi compra guarda spesso i tempi di viaggio e la comodità rispetto alla stazione più dell’aura del capoluogo. Una stima automatica “Cesano” appiattisce Binzago, Cassina Savina e le fasce più lontane dallo snodo: sul posto si riporta la micro-zona reale.',
+    lookHeading: 'Elementi che spostano il valore a Cesano Maderno',
+    lookItems: [
+      'Distanza e comodità rispetto allo snodo ferroviario',
+      'Quartiere (es. Binzago, Cassina Savina) e rumore di via',
+      'Piano, ascensore e spese in condominio',
+      'Box o posto auto (spesso decisivi per pendolari)',
+      'Vendite recenti nella stessa fascia di Cesano Maderno',
+    ],
+    contextHeading: 'Snodo S2/S4/S9: Binzago e Cassina Savina non sono uguali',
+    contextParagraphs: [
+      'Il comune vive di interscambio: due immobili simili sulla carta possono divergere se uno è pratico verso la stazione e l’altro no. L’errore tipico è partire da una media comunale o da listini monzesi ignorando i tempi reali verso Milano.',
+      'Segnala nella richiesta la zona (Binzago, Cassina Savina o altro) e se hai box: a Cesano questi dettagli orientano subito il confronto di mercato.',
+    ],
+    contextLinks: [
+      { href: 'https://www.comune.cesano-maderno.mb.it/', label: 'Comune di Cesano Maderno' },
+      { href: 'https://www.trenord.it/', label: 'Trenord' },
+    ],
+    contextLinksLead: 'Sito comunale e linee suburbane:',
+    requestNote:
+      'Indica “Cesano Maderno” e la zona rispetto alla stazione: prepariamo il sopralluogo sul pezzo giusto di mercato.',
+    requestHeading: 'Fissa la stima sul posto a Cesano Maderno',
+    requestFollowUp:
+      'Richiamo in 1 o 2 giorni lavorativi, senza costi né mandato. Dettaglio del processo:',
+    siblingsHeading: 'Comuni vicini sull’asse ferroviario',
+    relatedTitle: 'Dopo Cesano Maderno',
+    faqs: [
+      {
+        question: 'A Cesano Maderno quanto conta la distanza dalla stazione?',
+        answer:
+          'Molto. Lo snodo verso Milano è un driver di domanda: due immobili con mq simili possono chiudere diversamente se cambia la comodità verso i treni.',
+      },
+      {
+        question: 'Posso usare una stima online come prezzo di listino?',
+        answer:
+          'Meglio di no. I calcolatori non vedono micro-zona, piano e box. Il sopralluogo è gratuito e senza mandato.',
+      },
+      {
+        question: 'Valutate anche fuori dal centro, tipo Binzago?',
+        answer:
+          'Sì. Anzi: indicare la zona nella richiesta aiuta a confrontare vendite simili, non una media di tutto il comune.',
+      },
+    ],
+  },
+  {
+    slug: 'limbiate',
+    name: 'Limbiate',
+    pageTitle: 'Casa a Limbiate: stima verso Milano',
+    provinceHint: 'Monza e Brianza',
+    layoutVariant: 'angle-first',
+    intro:
+      'Sopralluogo **gratuito** a Limbiate: cerniera tra MB e l’area milanese, dove contano bus verso Comasina (M3) e assi stradali più che un confronto diretto con Monza centro.',
+    angleHeading: 'Limbiate guarda Milano (Comasina), non solo Monza',
+    angleBody:
+      'Limbiate non ha stazione ferroviaria in comune: la domanda pesa collegamenti bus verso M3 Comasina, la SS35 e le stazioni vicine (Varedo, Bovisio). Confrontare prezzi “da Monza” o da hub con FS propria spesso fuorvia. La stima deve restare su accessibilità reale e tessuto locale (anche artigianale lungo gli assi), non su una media brianzola generica.',
+    lookHeading: 'Cosa osserviamo sul posto a Limbiate',
+    lookItems: [
+      'Comodità verso Comasina M3 e assi stradali (SS35)',
+      'Contesto di via: residenziale vs scorrimento / artigianale',
+      'Tipologia prevalente: appartamenti nei villaggi residenziali',
+      'Stato condominiale, piano e spese',
+      'Vendite chiuse a Limbiate, non listini di comuni con stazione',
+    ],
+    contextHeading: 'Senza FS in comune: accessibilità e aspettative sul tram',
+    contextParagraphs: [
+      'Chi vende a Limbiate a volte incorpora già “il futuro” della metrotranvia verso Milano. Per una stima seria contano i collegamenti di oggi (bus verso Comasina, assi stradali) e la via concreta, non solo i progetti.',
+      'Tessuto e tipologiche tipiche dei villaggi residenziali non sono quelli di un centro con hub FS. Indica indirizzo e eventuali riferimenti (es. Villaggio dei Giovi): aiuta a non usare confronti sbagliati.',
+    ],
+    contextLinks: [
+      { href: 'https://comune.limbiate.mb.it/', label: 'Comune di Limbiate' },
+      { href: 'https://www.atm.it/', label: 'ATM: linee e M3' },
+    ],
+    contextLinksLead: 'Comune e rete verso Milano:',
+    requestNote:
+      'Nel modulo scrivi “Limbiate” e, se puoi, come ti muovi verso Milano: orienta la lettura di accessibilità.',
+    requestHeading: 'Attiva la valutazione a Limbiate',
+    requestFollowUp:
+      'Compila a fianco: richiamo in 1 o 2 giorni, sopralluogo gratuito. Il processo:',
+    siblingsHeading: 'Zone vicine tra MB e Milano nord',
+    relatedTitle: 'Da Limbiate verso hub e guide',
+  },
+  {
+    slug: 'vimercate',
+    name: 'Vimercate',
+    pageTitle: 'Valutazione a Vimercate: centro, Oreno, Torri',
+    provinceHint: 'Monza e Brianza',
+    layoutVariant: 'look-first',
+    intro:
+      'Sopralluogo **gratuito** a Vimercate: il valore cambia tra centro, Oreno e Torri Bianche. Stima sul posto, non media unica del comune.',
+    angleHeading: 'Vimercate è un mercato a micro-aree',
+    angleBody:
+      'Senza stazione FS in città, Vimercate reagisce ad autostrada/tangenziale, bus NET verso Monza/Arcore/M2 e a un mix residenziale–direzionale (Torri Bianche) diverso dal tessuto monzese compatto. Centro storico, Oreno e polo Torri Bianche non chiudono allo stesso modo: una media “Vimercate” nasconde queste differenze.',
+    lookHeading: 'Cosa fa la differenza a Vimercate',
+    lookItems: [
+      'Micro-area: centro, Oreno, Torri Bianche o altre frazioni',
+      'Accessibilità auto (A51/A4) e bus verso FS o M2',
+      'Mix tipologico: appartamenti vs case in frazione',
+      'Contesto (residenziale quieto vs asse più traffico)',
+      'Vendite nella stessa micro-area, non media comunale',
+    ],
+    contextHeading: 'Centro, Oreno e Torri Bianche: tre letture',
+    contextParagraphs: [
+      'Al centro e nelle frazioni residenziali (Oreno in primis) la domanda è spesso abitativa “classica”. Torri Bianche introduce un pezzo più direzionale/commerciale: confrontare annunci tra queste aree senza filtri è il modo più rapido per sbagliare prezzo.',
+      'Non c’è ferrovia in comune: pesano auto e bus. Nella richiesta indica la zona (centro, Oreno, Torri Bianche…): è il dato che orienta subito il confronto giusto.',
+    ],
+    contextLinks: [
+      { href: 'https://comune.vimercate.mb.it/', label: 'Comune di Vimercate' },
+    ],
+    contextLinksLead: 'Informazioni ufficiali sul territorio:',
+    requestNote:
+      'Segnala “Vimercate” e la micro-area (centro, Oreno, Torri Bianche…): evita confronti tra pezzi di mercato diversi.',
+    requestHeading: 'Invia i dati per Vimercate',
+    requestFollowUp:
+      'Con la zona prepariamo già il confronto. Richiamo in 1 o 2 giorni; gratis e senza impegno. Vedi:',
+    siblingsHeading: 'Brianza orientale e comuni vicini',
+    relatedTitle: 'Dopo Vimercate',
+  },
+  {
+    slug: 'giussano',
+    name: 'Giussano',
+    pageTitle: 'Quanto vale un immobile a Giussano?',
+    provinceHint: 'Monza e Brianza',
+    layoutVariant: 'angle-first',
+    intro:
+      'Sopralluogo **gratuito** a Giussano, nel distretto del mobile: stima sul posto tra frazioni e tessuto produttivo, non listino “da Monza”.',
+    angleHeading: 'Giussano: distretto del mobile, frazioni e accessibilità Milano–Asso',
+    angleBody:
+      'Giussano vive il cuore produttivo del mobile brianzolo (insieme a Meda, Lissone e altri). Il mercato è più disperso su frazioni (Paina, Birone…) che “città centrale” come Seregno. Contano contesto residenziale vs produttivo, stazione Carugo-Giussano sulla Milano–Asso e la tipologica reale. Copiare prezzi monzesi o di hub S9/S11 spesso fuorvia.',
+    lookHeading: 'Cosa valutiamo a Giussano',
+    lookItems: [
+      'Frazione e distanza da servizi / stazione Carugo-Giussano',
+      'Contesto: residenziale quieto vs assi più produttivi',
+      'Appartamento vs casa/schiera nelle frazioni',
+      'Stato, box e spazi esterni',
+      'Vendite simili a Giussano, non medie di Monza',
+    ],
+    contextHeading: 'Paina, Birone e il corridoio Milano–Asso',
+    contextParagraphs: [
+      'Rispetto a Seregno (nodo Chiasso), Giussano si legge di più sulla Milano–Asso e sul tessuto di frazioni. Due case con mq simili possono divergere se una è in un contesto residenziale raccolto e l’altra più esposta ad assi produttivi.',
+      'L’identità distretto del mobile spiega domanda e tempi diversi da Monza città. Indica la frazione nella richiesta: a Giussano è spesso più utile del solo nome del comune.',
+    ],
+    contextLinks: [
+      { href: 'https://www.comune.giussano.mb.it/', label: 'Comune di Giussano' },
+      { href: 'https://www.trenord.it/', label: 'Trenord' },
+    ],
+    contextLinksLead: 'Comune e linea Milano–Asso:',
+    requestNote:
+      'Scrivi “Giussano” e la frazione (es. Paina, Birone) se la conosci: accelera il confronto locale.',
+    requestHeading: 'Prenota il sopralluogo a Giussano',
+    requestFollowUp:
+      'Gratuito, senza mandato. Ti contattiamo in 1 o 2 giorni lavorativi. I passaggi:',
+    siblingsHeading: 'Altri comuni del distretto del mobile',
+    relatedTitle: 'Da Giussano verso Meda, Lissone e hub',
+  },
+  {
+    slug: 'meda',
+    name: 'Meda',
+    pageTitle: 'Valutare casa a Meda (design e stazione)',
+    provinceHint: 'Monza e Brianza',
+    layoutVariant: 'faq-led',
+    intro:
+      'Sopralluogo **gratuito** a Meda: storico centro del design/arredo brianzolo con stazione propria. Stima sul posto, non premium “da Monza”.',
+    angleHeading: 'Meda: design brianzolo + ferrovia, mercato diverso da Monza',
+    angleBody:
+      'Meda è uno dei simboli del mobile/design di Brianza e ha stazione sulla Milano–Asso (servizi verso Cadorna e S2 in rafforzamento sul tratto Seveso–Meda). Il valore si gioca su accessibilità ferroviaria, densità produttiva del settore e tipologiche soprattutto in condominio. Non è lo stesso prodotto di un quartiere monzese “premium”: la stima deve restare su chiusure di Meda.',
+    lookHeading: 'Fattori tipici sul mercato di Meda',
+    lookItems: [
+      'Comodità rispetto alla stazione e all’asse Milano–Meda',
+      'Contesto residenziale vs tessuto produttivo vicino',
+      'Appartamenti (prevalenti) vs case dove presenti',
+      'Stato, spese condominiali e box',
+      'Vendite a Meda, non listini di Seregno o Monza',
+    ],
+    contextHeading: 'Capitale brianzola del mobile: stazione e densità produttiva',
+    contextParagraphs: [
+      'A Meda l’identità economica (arredo/design) e la stazione propria spiegano una domanda diversa da hub solo “residenziali dormitorio”. Confrontare con Monza centro o con Seregno (altro corridoio FS) senza filtri porta spesso a aspettative sbagliate.',
+      'Segnala indirizzo e distanza percepita dalla stazione: a Meda è uno dei primi controlli che facciamo sul posto, insieme a stato e condominio.',
+    ],
+    contextLinks: [
+      { href: 'https://www.comune.meda.mb.it/', label: 'Comune di Meda' },
+      { href: 'https://www.trenord.it/', label: 'Trenord' },
+    ],
+    contextLinksLead: 'Comune e collegamenti ferroviari:',
+    requestNote:
+      'Indica “Meda” nel modulo: organizziamo un sopralluogo gratuito senza impegno sul mercato locale.',
+    requestHeading: 'Richiedi la stima a Meda',
+    requestFollowUp:
+      'Nessun obbligo di mandato. Richiamo in 1 o 2 giorni lavorativi. Flusso completo:',
+    siblingsHeading: 'Distretto del mobile e comuni vicini',
+    relatedTitle: 'Da Meda verso Giussano, Lissone e tipologiche',
+    faqs: [
+      {
+        question: 'Meda si valuta come Monza?',
+        answer:
+          'No. Identità produttiva (design/arredo) e stazione sulla Milano–Asso fanno un mercato a sé. Meglio confrontare chiusure di Meda.',
+      },
+      {
+        question: 'Conta la distanza dalla stazione?',
+        answer:
+          'Sì, insieme a stato e condominio. È uno dei primi elementi che leggiamo in sopralluogo.',
+      },
+      {
+        question: 'Il servizio include anche case indipendenti?',
+        answer:
+          'Sì, dove presenti. La tipologica cambia il confronto: non usiamo listini da appartamento per una casa.',
+      },
+    ],
+  },
 ]
 
 export function getLocality(slug: string) {

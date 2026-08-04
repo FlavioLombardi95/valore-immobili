@@ -98,6 +98,7 @@ Fonte precedente in questo doc: GSC Web ≈ 22 giu – 18 lug 2026 (1 clic, stes
 | `/{slug}` guide acquisto | 13 guide (annunci, spese, mutuo, …) | No (solo CTA) |
 
 **Totale sitemap target:** ≥ 30 URL (7 core + 8 comuni + 2 tipologiche + 13 guide = **30**).
+Con sprint accelerazione: +1 pilastro C + 6 comuni → **≥ 37** URL indicizzabili.
 
 Dati guide: `web/src/lib/guides.ts`. Route: `web/src/app/[slug]/page.tsx`.
 

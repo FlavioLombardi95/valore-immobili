@@ -2,6 +2,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { SeoPageLayout } from '@/components/SeoPageLayout'
+import { propertyTypePath } from '@/lib/property-types'
 
 export const metadata: Metadata = {
   title: 'FAQ valutazione immobiliare Monza',
@@ -74,6 +75,11 @@ export default function FaqPage() {
       relatedTitle="Approfondisci"
       related={[
         {
+          href: '/valutazione-online-o-sopralluogo',
+          label: 'Online o sopralluogo',
+          description: 'Dopo una stima automatica: cosa fare.',
+        },
+        {
           href: '/come-funziona',
           label: 'Come funziona',
           description: 'Il percorso completo, passo per passo.',
@@ -89,19 +95,14 @@ export default function FaqPage() {
           description: 'Il servizio nei comuni della provincia.',
         },
         {
+          href: propertyTypePath('appartamenti-monza'),
+          label: 'Valutazione appartamenti',
+          description: 'Focus condominio a Monza.',
+        },
+        {
           href: '/vendere-casa-monza',
           label: 'Vendere casa a Monza',
           description: 'Da dove iniziare prima di vendere.',
-        },
-        {
-          href: '/comprare-casa-monza',
-          label: 'Comprare casa a Monza',
-          description: 'Se stai cercando casa, non solo vendendo.',
-        },
-        {
-          href: '/quartieri-monza',
-          label: 'Quartieri di Monza',
-          description: 'Orientarsi tra le zone prima della stima.',
         },
       ]}
     >

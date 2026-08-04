@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     absolute: 'Valutazione immobiliare in Brianza: comuni | Valore Immobili',
   },
   description:
-    'Hub comuni Brianza: Lissone, Brugherio, Desio e altri. Sopralluogo gratuito sul mercato locale, senza mandato. Per le ville usa la pagina tipologica dedicata.',
+    'Hub comuni Brianza: Seregno, Cesano Maderno, Limbiate, Vimercate, Lissone, Desio e altri. Sopralluogo gratuito sul mercato locale. Per le ville usa la tipologica dedicata.',
   alternates: { canonical: 'https://valore-immobili.it/brianza' },
 }
 
@@ -30,14 +30,14 @@ export default function BrianzaPage() {
           description: 'Se l’immobile è nel comune di Monza.',
         },
         {
-          href: localityPath('lissone'),
-          label: 'Valutazione a Lissone',
-          description: 'Esempio di stima sul comune, non sulla provincia.',
+          href: localityPath('seregno'),
+          label: 'Valutazione a Seregno',
+          description: 'Hub Brianza Ovest e nodo S9/S11.',
         },
         {
-          href: localityPath('brugherio'),
-          label: 'Valutazione a Brugherio',
-          description: 'Mercato locale a ridosso di Monza.',
+          href: localityPath('vimercate'),
+          label: 'Valutazione a Vimercate',
+          description: 'Centro, Oreno e Torri Bianche.',
         },
         {
           href: propertyTypePath('ville-brianza'),
@@ -45,14 +45,14 @@ export default function BrianzaPage() {
           description: 'Pagina dedicata a ville, schiere e indipendenti.',
         },
         {
+          href: '/valutazione-online-o-sopralluogo',
+          label: 'Online o sopralluogo',
+          description: 'Dopo un calcolatore: cosa cambia.',
+        },
+        {
           href: propertyTypePath('appartamenti-monza'),
           label: 'Valutazione appartamenti',
           description: 'Focus condominio a Monza e dintorni.',
-        },
-        {
-          href: '/comprare-casa-brianza',
-          label: 'Comprare casa in Brianza',
-          description: 'Quando ha senso ampliare il raggio da Monza.',
         },
       ]}
     >

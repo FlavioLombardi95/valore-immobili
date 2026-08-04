@@ -138,9 +138,11 @@ Guide acquisto: solo link fix. No GBP finché non in PRODUCT.
 - [x] **B5** Blocco anti-AVM  
 - [x] **B6** FAQ tipologiche  
 - [x] **B7** Linking Brianza → comuni  
-- [ ] Mid-check GSC post-B (2–4 sett. post-deploy)  
-- [ ] **C1** Pilastro (`seo-content-brief` → …)  
-- [ ] **D0–D3** Comuni (`programmatic-seo-expert`, `seo-cluster`, …)
+- [ ] Mid-check GSC post-B (2–4 sett. post-deploy) — anche check giorno 7  
+- [x] **C1** Pilastro `/valutazione-online-o-sopralluogo`  
+- [x] **D2** 6 leaf: Seregno, Cesano Maderno, Limbiate, Vimercate, Giussano, Meda  
+- [ ] **Lighthouse** su tutte le pagine indicizzabili (post-ship)  
+- [ ] **D0–D3** ulteriori comuni solo GSC-driven
 
 ---
 

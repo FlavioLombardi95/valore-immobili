@@ -2,6 +2,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { SeoPageLayout } from '@/components/SeoPageLayout'
+import { propertyTypePath } from '@/lib/property-types'
 
 export const metadata: Metadata = {
   title: 'Come funziona la valutazione immobiliare',
@@ -20,6 +21,11 @@ export default function ComeFunzionaPage() {
       showForm={false}
       relatedTitle="Dove andare dopo"
       related={[
+        {
+          href: '/valutazione-online-o-sopralluogo',
+          label: 'Online o sopralluogo',
+          description: 'Cosa cambia rispetto a un calcolatore.',
+        },
         {
           href: '/faq',
           label: 'Domande frequenti',
@@ -41,14 +47,9 @@ export default function ComeFunzionaPage() {
           description: 'Prezzo, tempi e da dove partire.',
         },
         {
-          href: '/comprare-casa-monza',
-          label: 'Comprare casa a Monza',
-          description: 'Se invece stai cercando casa.',
-        },
-        {
-          href: '/quartieri-monza',
-          label: 'Quartieri di Monza',
-          description: 'Orientarsi tra le zone prima della stima.',
+          href: propertyTypePath('ville-brianza'),
+          label: 'Valutazione ville in Brianza',
+          description: 'Se confronti con indipendenti.',
         },
       ]}
     >

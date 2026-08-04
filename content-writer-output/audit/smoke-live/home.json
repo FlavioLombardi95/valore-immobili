@@ -1,0 +1,58 @@
+{
+  "url": "https://valore-immobili.it/",
+  "status_code": 200,
+  "content": "<!DOCTYPE html><html lang=\"it\" class=\"bricolage_grotesque_b945cdc1-module__Ov9JvG__variable source_sans_3_90e52968-module__deGDFW__variable h-full\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/media/017d9bea37084d9b-s.p.41rroleoq1br7.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/47df9ba1c7236d3b-s.p.137759vg1sbmi.woff2\" as=\"font\" crossorigin=\"\" type=\"fon...",
+  "raw_content": "<!DOCTYPE html><html lang=\"it\" class=\"bricolage_grotesque_b945cdc1-module__Ov9JvG__variable source_sans_3_90e52968-module__deGDFW__variable h-full\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" c...",
+  "is_spa": false,
+  "extracted_text": "Valutazione immobiliare a Monza con sopralluogo gratuito\nStima sul posto a Monza e in Brianza, su vendite reali della zona: non un algoritmo. Gratuita e senza mandato, prima di decidere se e come vendere.\nUna stima sul posto, non un algoritmo\n- Sopralluogo diretto con un consulente della zona, non una stima automatica\n- Analisi reale di stato, esposizione, piano, contesto e classe energetica\n- Confronto con vendite recenti nel tuo quartiere, non medie nazionali\n- Nessun costo e nessun obbligo di...",
+  "publication_date": "2026-01-01",
+  "accessibility_tree": null,
+  "headers": {
+    "Access-Control-Allow-Origin": "*",
+    "Age": "232",
+    "Cache-Control": "public, max-age=0, must-revalidate",
+    "Content-Disposition": "inline",
+    "Content-Encoding": "br",
+    "Content-Type": "text/html; charset=utf-8",
+    "Date": "Mon, 03 Aug 2026 16:10:17 GMT",
+    "Etag": "W/\"7a5061f6b53d07d54eadc57e025d358e\"",
+    "Server": "Vercel",
+    "Strict-Transport-Security": "max-age=63072000",
+    "Vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "X-Matched-Path": "/",
+    "X-Nextjs-Prerender": "1",
+    "X-Nextjs-Stale-Time": "300",
+    "X-Vercel-Cache": "HIT",
+    "X-Vercel-Id": "fra1::gbfpb-1785773417673-cbb5568f44d8",
+    "Transfer-Encoding": "chunked"
+  },
+  "redirect_chain": [],
+  "console_errors": [],
+  "render_diagnostics": [],
+  "render_engine": null,
+  "render_ms": null,
+  "mode_used": "raw",
+  "error": null,
+  "structured_data": {
+    "block_count": 1,
+    "processed_count": 1,
+    "total_bytes": 1004,
+    "truncated": false,
+    "blocks": [
+      {
+        "index": 1,
+        "size_bytes": 1004,
+        "valid": true,
+        "types": [
+          "AdministrativeArea",
+          "City",
+          "ImageObject",
+          "Offer",
+          "Organization",
+          "Service"
+        ],
+        "types_truncated": false
+      }
+    ]
+  }
+}

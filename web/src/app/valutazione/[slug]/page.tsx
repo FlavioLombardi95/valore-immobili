@@ -520,6 +520,9 @@ function localityBody(locality: Locality): ReactNode {
 function propertyTypeBody(page: PropertyTypePage): ReactNode {
   const angle = <AngleBlock heading={page.angleHeading} body={page.angleBody} />
   const look = <LookBlock heading={page.lookHeading} items={page.lookItems} />
+  const deepen = page.deepenHeading && page.deepenBody ? (
+    <AngleBlock heading={page.deepenHeading} body={page.deepenBody} />
+  ) : null
   const faq = page.faqs?.length ? (
     <FaqBlock title={`Domande frequenti su ${page.shortLabel.toLowerCase()}`} faqs={page.faqs} />
   ) : null
@@ -545,6 +548,7 @@ function propertyTypeBody(page: PropertyTypePage): ReactNode {
         {faq}
         {look}
         {angle}
+        {deepen}
         {zones}
         {tipologiche}
         {request}
@@ -558,6 +562,7 @@ function propertyTypeBody(page: PropertyTypePage): ReactNode {
     <>
       {angle}
       {look}
+      {deepen}
       {faq}
       {request}
       {tipologiche}

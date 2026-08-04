@@ -8,6 +8,11 @@ export const INDEXABLE_ROUTES = [
   { path: '/faq', priority: 0.8, changeFrequency: 'monthly' as const },
   { path: '/vendere-casa-monza', priority: 0.85, changeFrequency: 'monthly' as const },
   { path: '/comprare-casa-monza', priority: 0.85, changeFrequency: 'monthly' as const },
+  {
+    path: '/valutazione-online-o-sopralluogo',
+    priority: 0.88,
+    changeFrequency: 'monthly' as const,
+  },
 ]
 
 export const PRIVACY_POLICY_URL =

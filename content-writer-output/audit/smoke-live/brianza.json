@@ -1,0 +1,58 @@
+{
+  "url": "https://valore-immobili.it/brianza",
+  "status_code": 200,
+  "content": "<!DOCTYPE html><html lang=\"it\" class=\"bricolage_grotesque_b945cdc1-module__Ov9JvG__variable source_sans_3_90e52968-module__deGDFW__variable h-full\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/media/017d9bea37084d9b-s.p.41rroleoq1br7.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/47df9ba1c7236d3b-s.p.137759vg1sbmi.woff2\" as=\"font\" crossorigin=\"\" type=\"fon...",
+  "raw_content": "<!DOCTYPE html><html lang=\"it\" class=\"bricolage_grotesque_b945cdc1-module__Ov9JvG__variable source_sans_3_90e52968-module__deGDFW__variable h-full\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" c...",
+  "is_spa": false,
+  "extracted_text": "Valutazione immobiliare in Brianza\nQuesta pagina \u00e8 l\u2019hub dei comuni della Brianza. Ogni zona ha un mercato a s\u00e9: valutiamo l\u2019immobile di persona e lo confrontiamo con vendite reali l\u00ec, non con medie provinciali.\nComuni, non medie provinciali\nLa provincia di Monza e Brianza mette insieme centri, quartieri residenziali e case indipendenti. Il valore cambia tra un comune e l\u2019altro, e spesso anche tra zone dello stesso comune. Per questo la stima parte dal contesto specifico e dalla via, non da una ...",
+  "publication_date": "2026-01-01",
+  "accessibility_tree": null,
+  "headers": {
+    "Access-Control-Allow-Origin": "*",
+    "Age": "0",
+    "Cache-Control": "public, max-age=0, must-revalidate",
+    "Content-Disposition": "inline",
+    "Content-Encoding": "br",
+    "Content-Type": "text/html; charset=utf-8",
+    "Date": "Mon, 03 Aug 2026 16:10:25 GMT",
+    "Etag": "W/\"d36d8b57b67885bf7ab933730546e8c5\"",
+    "Server": "Vercel",
+    "Strict-Transport-Security": "max-age=63072000",
+    "Vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "X-Matched-Path": "/brianza",
+    "X-Nextjs-Prerender": "1",
+    "X-Nextjs-Stale-Time": "300",
+    "X-Vercel-Cache": "PRERENDER",
+    "X-Vercel-Id": "fra1::c6nlw-1785773425091-edf1f7745dbc",
+    "Transfer-Encoding": "chunked"
+  },
+  "redirect_chain": [],
+  "console_errors": [],
+  "render_diagnostics": [],
+  "render_engine": null,
+  "render_ms": null,
+  "mode_used": "raw",
+  "error": null,
+  "structured_data": {
+    "block_count": 1,
+    "processed_count": 1,
+    "total_bytes": 1004,
+    "truncated": false,
+    "blocks": [
+      {
+        "index": 1,
+        "size_bytes": 1004,
+        "valid": true,
+        "types": [
+          "AdministrativeArea",
+          "City",
+          "ImageObject",
+          "Offer",
+          "Organization",
+          "Service"
+        ],
+        "types_truncated": false
+      }
+    ]
+  }
+}

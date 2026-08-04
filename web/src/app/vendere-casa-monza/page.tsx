@@ -24,6 +24,11 @@ export default function VendereCasaMonzaPage() {
       relatedTitle="Approfondimenti utili"
       related={[
         {
+          href: '/valutazione-online-o-sopralluogo',
+          label: 'Online o sopralluogo',
+          description: 'Perché la stima automatica non basta.',
+        },
+        {
           href: '/come-funziona',
           label: 'Come funziona',
           description: 'Il percorso dalla richiesta alla stima.',
@@ -44,14 +49,9 @@ export default function VendereCasaMonzaPage() {
           description: 'Se l’immobile è in un comune vicino.',
         },
         {
-          href: '/comprare-casa-monza',
-          label: 'Comprare casa a Monza',
-          description: 'Se stai vendendo per poi acquistare.',
-        },
-        {
-          href: '/quartieri-monza',
-          label: 'Quartieri di Monza',
-          description: 'Contesto di zona per chi compra e vende.',
+          href: '/valutazione/appartamenti-monza',
+          label: 'Valutazione appartamenti',
+          description: 'Se vendi un’unità in condominio.',
         },
       ]}
     >
