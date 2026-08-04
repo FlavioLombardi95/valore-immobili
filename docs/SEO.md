@@ -23,7 +23,7 @@ Successo = più **clic qualificati** sulle query di valutazione, poi lead. Le im
 
 ## 2. Stato attuale (GSC)
 
-**Baseline aggiornata:** 2026-08-03 → vedi `content-writer-output/gsc/BASELINE.md` (raw: `baseline-raw.json`).  
+**Baseline aggiornata:** 2026-08-03 → vedi `content-writer-output/STATUS.md`.  
 Property: `sc-domain:valore-immobili.it`. Finestre: 28gg `2026-07-04→07-31`, ~90gg `2026-05-03→07-31`.
 
 ### Metriche aggregate (28 giorni, luglio 2026)
@@ -62,7 +62,7 @@ Property: `sc-domain:valore-immobili.it`. Finestre: 28gg `2026-07-04→07-31`, ~
 
 ### Cannibalizzazione (GSC ~90gg, audit A2 approfondito)
 
-**Skills:** GSC + `seo-audit` / `seo` — dettaglio in `content-writer-output/gsc/cannibalization-striking.json`.
+**Skills:** GSC + `seo-audit` / `seo` — dettaglio in `content-writer-output/STATUS.md`.
 
 | Query | URL dominante (impr.) | URL dedicata dietro |
 |-------|----------------------|---------------------|
@@ -72,11 +72,11 @@ Property: `sc-domain:valore-immobili.it`. Finestre: 28gg `2026-07-04→07-31`, ~
 
 **Implicazione Fase B:** disambiguare tipologiche (soprattutto ville) prima di nuove leaf comuni.
 
-**Fase B (codice, 2026-08-03):** title/meta nicchia + H1 home; `/brianza` = hub comuni (non intent ville); hub→tipologiche; blocco anti-AVM; FAQ+schema tipologiche. Dettaglio: `content-writer-output/audit/PHASE-B-SUMMARY.md`. Mid-check GSC 2–4 sett. post-deploy.
+**Fase B–D (codice, ago 2026):** anti-cannibal, pilastro online/sopralluogo, 6 comuni, Lighthouse ~100. Dettaglio: `content-writer-output/STATUS.md`. Mid-check GSC 7–14 gg.
 
 ### Storico (riferimento precedente)
 
-Fonte precedente in questo doc: GSC Web ≈ 22 giu – 18 lug 2026 (1 clic, stesse dinamiche). Sostituito dalla baseline agosto sopra. Audit on-page: `content-writer-output/audit/ACTION-PLAN.md` (health ~76).
+Fonte precedente: GSC Web ≈ 22 giu – 18 lug 2026. Sostituito dalla baseline agosto in `STATUS.md` (health audit iniziale ~76).
 ---
 
 ## 3. Inventario URL pubblico (codice)

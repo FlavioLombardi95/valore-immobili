@@ -40,3 +40,7 @@ valore-immobili-746c6fbe1d58.json
 .cursor/
 .claude/
 .impeccable/hook.cache.json
+
+# Dump Lighthouse / Unlighthouse grezzi (tenere solo STATUS.md)
+content-writer-output/audit/
+content-writer-output/gsc/

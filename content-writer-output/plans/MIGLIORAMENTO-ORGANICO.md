@@ -5,7 +5,7 @@
 
 **Angolo competitivo:** sopralluogo **gratuito**, **senza mandato**, mercato **locale** — non “numero in 60 secondi”.
 
-**Stato Fase A:** completa → `content-writer-output/audit/ACTION-PLAN.md` + `gsc/BASELINE.md`
+**Stato Fase A:** completa → `content-writer-output/STATUS.md`
 
 ---
 
@@ -39,7 +39,7 @@ Da GSC + audit (`seo-audit` / `seo`):
 4. **Leaf comuni** uniche (Jaccard ~0.26–0.35) e SSR ok per Googlebot/GPTBot/ClaudeBot (`programmatic-seo-expert`).  
 5. **Scalare comuni solo dopo** aver sistemato cannibal + striking distance (staged rollout expert).
 
-Dettaglio: `audit/ACTION-PLAN.md`, `gsc/cannibalization-striking.json`.
+Dettaglio consolidato: `STATUS.md`.
 
 ---
 
@@ -60,8 +60,7 @@ Dettaglio: `audit/ACTION-PLAN.md`, `gsc/cannibalization-striking.json`.
 
 **Skills:** GSC + `seo-audit` + `seo` (+ check SSR `programmatic-seo-expert`)
 
-- [x] A1 GSC baseline → `gsc/BASELINE.md`, aggiornato `docs/SEO.md`  
-- [x] A2 Audit approfondito → `audit/ACTION-PLAN.md` (health ~76)
+- [x] A1–A2 GSC + audit → `STATUS.md`, aggiornato `docs/SEO.md`
 
 ---
 
@@ -82,7 +81,7 @@ Dettaglio: `audit/ACTION-PLAN.md`, `gsc/cannibalization-striking.json`.
 
 **Done when:** deploy; GSC richiesti; dopo 2–4 sett. mid-check GSC (cannibal ville + CTR).
 
-Implementato in codice (2026-08-03): vedi `audit/PHASE-B-SUMMARY.md`.
+Implementato in codice (2026-08-03+): vedi `STATUS.md`.
 
 ---
 
