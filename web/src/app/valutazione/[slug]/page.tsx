@@ -172,10 +172,16 @@ function RequestBlock({ locality }: { locality: Locality }) {
   )
 }
 
-function AntiAvmBlock({ placeLabel }: { placeLabel: string }) {
+function AntiAvmBlock({
+  placeLabel,
+  heading,
+}: {
+  placeLabel: string
+  heading?: string
+}) {
   return (
     <>
-      <h2>Dopo una stima online a {placeLabel}</h2>
+      <h2>{heading ?? `Dopo una stima online a ${placeLabel}`}</h2>
       <p>
         I calcolatori e le quotazioni OMI danno un orientamento, non il valore della tua casa. A{' '}
         {placeLabel} contano via, stato reale e domanda locale: elementi che si vedono in sopralluogo. La
@@ -532,6 +538,11 @@ function propertyTypeBody(page: PropertyTypePage): ReactNode {
   const antiAvm =
     page.slug === 'appartamenti-monza' ? (
       <AntiAvmBlock placeLabel="Monza" />
+    ) : page.slug === 'ville-brianza' ? (
+      <AntiAvmBlock
+        placeLabel="Brianza"
+        heading="Perché non basta una stima online (e cosa fare dopo)"
+      />
     ) : (
       <AntiAvmBlock placeLabel="Brianza" />
     )
@@ -643,9 +654,14 @@ export default async function ValutazioneSlugPage({ params }: PageProps) {
             ]
           : [
               {
+                href: '/monza',
+                label: 'Valutazione gratuita a Monza',
+                description: 'Se l’immobile è in città (non tipologica ville).',
+              },
+              {
                 href: '/brianza',
-                label: 'Valutazione in Brianza',
-                description: 'Comuni e mercati locali.',
+                label: 'Comuni in Brianza',
+                description: 'Hub comuni — non sostituisce questa pagina ville.',
               },
               {
                 href: propertyTypePath('appartamenti-monza'),
@@ -663,14 +679,9 @@ export default async function ValutazioneSlugPage({ params }: PageProps) {
                 description: 'Quando allarghi il raggio da Monza.',
               },
               {
-                href: '/vendere-casa-monza',
-                label: 'Vendere casa a Monza',
-                description: 'Da dove partire prima del prezzo.',
-              },
-              {
-                href: '/monza',
-                label: 'Valutazione a Monza',
-                description: 'Se l’immobile è in città.',
+                href: '/valutazione-online-o-sopralluogo',
+                label: 'Online o sopralluogo',
+                description: 'Dopo un calcolatore: il salto di qualità.',
               },
             ]
       }

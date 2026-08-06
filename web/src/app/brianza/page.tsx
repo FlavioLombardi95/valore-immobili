@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     absolute: 'Valutazione immobiliare in Brianza: comuni | Valore Immobili',
   },
   description:
-    'Hub comuni Brianza: Seregno, Cesano Maderno, Limbiate, Vimercate, Lissone, Desio e altri. Sopralluogo gratuito sul mercato locale. Per le ville usa la tipologica dedicata.',
+    'Hub dei comuni in Brianza: Seregno, Cesano Maderno, Limbiate, Vimercate, Lissone, Desio e altri. Sopralluogo gratuito sul mercato del tuo comune. Tipologiche (ville, appartamenti): pagine dedicate.',
   alternates: { canonical: 'https://valore-immobili.it/brianza' },
 }
 
@@ -42,7 +42,7 @@ export default function BrianzaPage() {
         {
           href: propertyTypePath('ville-brianza'),
           label: 'Valutazione ville in Brianza',
-          description: 'Pagina dedicata a ville, schiere e indipendenti.',
+          description: 'Pagina dedicata (non questo hub).',
         },
         {
           href: '/valutazione-online-o-sopralluogo',
@@ -58,13 +58,14 @@ export default function BrianzaPage() {
     >
       <h2>Comuni, non medie provinciali</h2>
       <p>
-        La provincia di Monza e Brianza mette insieme centri, quartieri residenziali e case indipendenti. Il
-        valore cambia tra un comune e l’altro, e spesso anche tra zone dello stesso comune. Per questo la stima
-        parte dal contesto specifico e dalla via, non da una media provinciale.
+        Questa pagina serve a scegliere il <strong>comune</strong>. La provincia di Monza e Brianza mette
+        insieme centri e zone residenziali diverse: il valore cambia tra un comune e l’altro, e spesso anche
+        tra zone dello stesso comune. La stima parte dal contesto specifico e dalla via, non da una media
+        provinciale.
       </p>
       <p>
         La mappa sotto colloca i comuni su cui lavoriamo più di frequente. Se l’immobile è a Monza città, la
-        pagina dedicata è <Link href="/monza">valutazione a Monza</Link>.
+        pagina dedicata è <Link href="/monza">valutazione gratuita a Monza</Link>.
       </p>
 
       <BrianzaComuniMap />
@@ -89,25 +90,18 @@ export default function BrianzaPage() {
         <Link href="/faq">FAQ</Link>.
       </p>
 
-      <h2>Ville o appartamenti? Usa la tipologica</h2>
+      <h2>Per tipologica specifica (non questo hub)</h2>
       <p>
-        Se cerchi una stima su <strong>ville, schiere o case indipendenti</strong>, non restare su questo hub:
-        vai alla pagina dedicata{' '}
+        Qui resti sui comuni. Per una stima dedicata alle case indipendenti usa{' '}
         <Link href={propertyTypePath('ville-brianza')}>valutazione ville in Brianza</Link>. Per unità in
         condominio: <Link href={propertyTypePath('appartamenti-monza')}>valutazione appartamenti a Monza</Link>
-        . Il modulo è lo stesso; cambia cosa si osserva di più in sopralluogo.
-      </p>
-      <p>
-        Sul lato annunci e ricerca, le guide{' '}
-        <Link href="/appartamenti-in-vendita-monza">appartamenti in vendita a Monza</Link> e{' '}
-        <Link href="/ville-in-vendita-brianza">ville in vendita in Brianza</Link> aiutano a leggere l’offerta
-        senza confondere tipologiche diverse.
+        . Il modulo è lo stesso; cambia il focus in sopralluogo.
       </p>
 
       <h2>Cosa consideriamo durante il sopralluogo</h2>
       <ul>
         <li>Comune, quartiere e distanza da servizi, scuole e stazioni</li>
-        <li>Tipologia dell’immobile e stato di manutenzione</li>
+        <li>Stato di manutenzione e contesto della via</li>
         <li>Esposizione, spazi esterni e box o posto auto</li>
         <li>Classe energetica e impianti</li>
         <li>Collegamenti verso Monza e Milano</li>

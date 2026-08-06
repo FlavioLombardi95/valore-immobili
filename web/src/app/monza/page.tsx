@@ -6,18 +6,18 @@ import { propertyTypePath } from '@/lib/property-types'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Valutazione immobiliare Monza: sopralluogo gratis | Valore Immobili',
+    absolute: 'Valutazione gratuita immobile Monza: sopralluogo | Valore Immobili',
   },
   description:
-    'Sopralluogo gratuito a Monza, senza mandato. Stima sul quartiere reale (Centro, San Fruttuoso, Cederna…), non su un algoritmo. Richiedi in pochi minuti.',
+    'Valutazione gratuita dell’immobile a Monza con sopralluogo, senza mandato. Stima sul quartiere reale (Centro, San Fruttuoso, Cederna…), non su un algoritmo. Richiedi in pochi minuti.',
   alternates: { canonical: 'https://valore-immobili.it/monza' },
 }
 
 export default function MonzaPage() {
   return (
     <SeoPageLayout
-      title="Valutazione immobiliare a Monza"
-      intro="Valutazione immobiliare a Monza con **sopralluogo gratuito**, senza mandato: stima sul quartiere reale, non su una media cittadina o un algoritmo."
+      title="Valutazione gratuita dell’immobile a Monza"
+      intro="**Valutazione gratuita** a Monza con sopralluogo, senza mandato: stima sul quartiere reale, non su una media cittadina o un algoritmo."
       sourcePage="/monza"
       defaultCity="Monza"
       breadcrumb="Monza"
@@ -40,26 +40,26 @@ export default function MonzaPage() {
         },
         {
           href: '/brianza',
-          label: 'Valutazione in Brianza',
+          label: 'Comuni in Brianza',
           description: 'Hub comuni fuori Monza città.',
+        },
+        {
+          href: '/valutazione-online-o-sopralluogo',
+          label: 'Online o sopralluogo',
+          description: 'Dopo un calcolatore: cosa cambia.',
         },
         {
           href: '/vendere-casa-monza',
           label: 'Vendere casa a Monza',
           description: 'Prezzo, documenti e da dove partire.',
         },
-        {
-          href: '/comprare-casa-monza',
-          label: 'Comprare casa a Monza',
-          description: 'Se stai cercando casa, non solo vendendo.',
-        },
       ]}
     >
       <h2>Valutazione gratuita a Monza: sul posto, non online</h2>
       <p>
-        Se cerchi una <strong>valutazione gratuita</strong> a Monza, qui non ricevi un numero da algoritmo.
-        Il percorso è gratuito e senza mandato: sopralluogo, lettura di via e quartiere, confronto con
-        vendite reali. Differenza rispetto ai calcolatori:{' '}
+        Se cerchi una <strong>valutazione gratuita dell’immobile a Monza</strong>, questa è la pagina
+        giusta. Non ricevi un numero da algoritmo: il percorso è gratuito e senza mandato — sopralluogo,
+        lettura di via e quartiere, confronto con vendite reali. Differenza rispetto ai calcolatori:{' '}
         <Link href="/valutazione-online-o-sopralluogo">valutazione online o sopralluogo</Link>.
       </p>
 

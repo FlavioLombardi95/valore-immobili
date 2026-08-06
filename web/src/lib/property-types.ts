@@ -117,9 +117,9 @@ export const PROPERTY_TYPE_PAGES: PropertyTypePage[] = [
     zonesHeading: 'Comuni e tipologiche collegate',
     zonesBody:
       'Il servizio copre Monza città e la Brianza residenziale. Tra un comune e l’altro (e tra schiera e indipendente) domanda e tempi di chiusura possono cambiare molto.',
-    deepenHeading: 'Schiera, bifamiliare o indipendente: non è lo stesso prodotto',
+    deepenHeading: 'Perché non basta una stima online sulla villa',
     deepenBody:
-      'Una villa a schiera condivide muri e spesso regole di cortile: privacy e manutenzione pesano diversamente da una bifamiliare o da un’indipendente con giardino chiuso. In Brianza l’errore tipico è applicare una media €/mq da appartamento monzese, o trattare “villa” come un’unica categoria. Sul posto guardiamo tipologica, esterni realmente utilizzabili, stato di tetto e impianti, e chiusure di immobili simili nello stesso comune, non annunci generici “Brianza”.',
+      'Una media €/mq o un calcolatore non vedono giardino realmente utilizzabile, tetto, impianti, privacy di schiera vs indipendente, né la domanda del comune giusto. In Brianza l’errore tipico è trattare “villa” come un’unica categoria o copiare un listino da appartamento monzese. Sul posto confrontiamo chiusure di tipologiche simili nello stesso comune, non annunci generici “Brianza”. Compila il modulo qui sotto: sopralluogo gratuito, senza mandato.',
     faqs: [
       {
         question: 'Valutate solo ville di prestigio?',

@@ -24,13 +24,13 @@ export default function OnlineVsSopralluogoPage() {
       related={[
         {
           href: '/monza',
-          label: 'Valutazione a Monza',
-          description: 'Hub città e quartieri.',
+          label: 'Valutazione gratuita a Monza',
+          description: 'Pagina città: gratuita + sopralluogo.',
         },
         {
           href: '/brianza',
-          label: 'Valutazione in Brianza',
-          description: 'Comuni e mercati locali.',
+          label: 'Comuni in Brianza',
+          description: 'Hub comuni e mercati locali.',
         },
         {
           href: propertyTypePath('appartamenti-monza'),
@@ -93,10 +93,11 @@ export default function OnlineVsSopralluogoPage() {
 
       <h2>Dopo il calcolatore: i passi successivi</h2>
       <p>
-        Se l’immobile è a Monza città, parti da <Link href="/monza">valutazione a Monza</Link>. Se è in
-        provincia, dall’hub <Link href="/brianza">Brianza</Link> o dalla pagina del tuo comune. Per tipologica:{' '}
+        Se l’immobile è a Monza città, parti dalla{' '}
+        <Link href="/monza">valutazione gratuita a Monza</Link>. Se è in provincia, dall’hub{' '}
+        <Link href="/brianza">comuni in Brianza</Link> o dalla pagina del tuo comune. Per tipologica:{' '}
         <Link href={propertyTypePath('appartamenti-monza')}>appartamenti</Link> oppure{' '}
-        <Link href={propertyTypePath('ville-brianza')}>ville in Brianza</Link>.
+        <Link href={propertyTypePath('ville-brianza')}>valutazione ville in Brianza</Link>.
       </p>
       <p>
         Compila il modulo: ti richiamiamo entro 1 o 2 giorni lavorativi per fissare il sopralluogo{' '}

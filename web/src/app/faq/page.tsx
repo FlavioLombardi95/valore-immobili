@@ -7,7 +7,7 @@ import { propertyTypePath } from '@/lib/property-types'
 export const metadata: Metadata = {
   title: 'FAQ valutazione immobiliare Monza',
   description:
-    'Domande frequenti sulla valutazione immobiliare gratuita a Monza e Brianza: costi, tempi, documenti, stima online vs sopralluogo, obblighi e copertura geografica.',
+    'Domande su costi, tempi, documenti e stima online vs sopralluogo a Monza e Brianza. Per la valutazione gratuita a Monza usa la pagina città.',
   alternates: { canonical: 'https://valore-immobili.it/faq' },
 }
 
@@ -75,6 +75,11 @@ export default function FaqPage() {
       relatedTitle="Approfondisci"
       related={[
         {
+          href: '/monza',
+          label: 'Valutazione gratuita a Monza',
+          description: 'Pagina città: intent gratuita + sopralluogo.',
+        },
+        {
           href: '/valutazione-online-o-sopralluogo',
           label: 'Online o sopralluogo',
           description: 'Dopo una stima automatica: cosa fare.',
@@ -85,19 +90,14 @@ export default function FaqPage() {
           description: 'Il percorso completo, passo per passo.',
         },
         {
-          href: '/monza',
-          label: 'Valutazione a Monza',
-          description: 'Contesto cittadino e quartieri.',
+          href: propertyTypePath('ville-brianza'),
+          label: 'Valutazione ville in Brianza',
+          description: 'Tipologica dedicata (non FAQ).',
         },
         {
           href: '/brianza',
-          label: 'Valutazione in Brianza',
-          description: 'Il servizio nei comuni della provincia.',
-        },
-        {
-          href: propertyTypePath('appartamenti-monza'),
-          label: 'Valutazione appartamenti',
-          description: 'Focus condominio a Monza.',
+          label: 'Comuni in Brianza',
+          description: 'Hub comuni della provincia.',
         },
         {
           href: '/vendere-casa-monza',
@@ -112,9 +112,9 @@ export default function FaqPage() {
       />
 
       <p>
-        Qui trovi i dubbi più frequenti su valutazione gratuita, tempi di richiamo e obblighi. Per il
-        dettaglio del percorso (richiesta, visita, stima) vedi{' '}
-        <Link href="/come-funziona">come funziona la valutazione</Link>.
+        Qui trovi i dubbi più frequenti su costi, tempi di richiamo e obblighi. Per richiedere la{' '}
+        <Link href="/monza">valutazione gratuita dell’immobile a Monza</Link> usa la pagina città. Percorso
+        completo: <Link href="/come-funziona">come funziona la valutazione</Link>.
       </p>
 
       <div className="space-y-3">
@@ -136,9 +136,9 @@ export default function FaqPage() {
 
       <h2>Non trovi la tua domanda?</h2>
       <p>
-        Se stai valutando di vendere, parti dalla guida{' '}
-        <Link href="/vendere-casa-monza">vendere casa a Monza</Link> o dalla pagina{' '}
-        <Link href="/monza">valutazione a Monza</Link>. Se invece stai cercando casa,{' '}
+        Se stai valutando di vendere a Monza, parti dalla{' '}
+        <Link href="/monza">valutazione gratuita a Monza</Link> o dalla guida{' '}
+        <Link href="/vendere-casa-monza">vendere casa a Monza</Link>. Se invece stai cercando casa,{' '}
         <Link href="/comprare-casa-monza">comprare casa a Monza</Link> e la{' '}
         <Link href="/?from=faq&intent=acquisto#richiesta">consulenza gratuita sull’acquisto</Link> sono il
         percorso giusto.
