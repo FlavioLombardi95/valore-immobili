@@ -1,10 +1,8 @@
 # Stato SEO — valore-immobili.it
 
-**Aggiornato:** 2026-08-06  
+**Aggiornato:** 2026-08-06 (sera, post sprint URL winner)  
 **Piano vivo:** [plans/MIGLIORAMENTO-ORGANICO.md](plans/MIGLIORAMENTO-ORGANICO.md) · inventario URL: [docs/SEO.md](../docs/SEO.md)  
-**Canvas GSC:** aggiornato in-place (nessun canvas nuovo)
-
-Unico report consolidato (sostituisce ACTION-PLAN, PHASE-A/B, SPRINT, SMOKE, LIGHTHOUSE e JSON grezzi).
+**Canvas GSC:** [gsc-midcheck-2026-08-05](../../.cursor/projects/Users-flavio-lombardi-Desktop-valore-immobili/canvases/gsc-midcheck-2026-08-05.canvas.tsx) (unico, aggiornato in-place)
 
 ---
 
@@ -16,116 +14,105 @@ Unico report consolidato (sostituisce ACTION-PLAN, PHASE-A/B, SPRINT, SMOKE, LIG
 | Fase B (anti-cannibal + title/H1/anti-AVM) | Ship `42db1dc` |
 | Sprint accel (deepen + Fase C + 6 comuni) | Ship `04b4b62` |
 | Lighthouse ~100 | Ship `78e85a9`…`554862a` |
-| Mid-check GSC | **Aggiornato 2026-08-06** (dati fino al 2026-08-05; lag GSC ~1–2 gg) |
+| **Sprint organico CTR (URL winner)** | **Ship `fc6fd86`** (2026-08-06) |
+| Mid-check GSC post-sprint | **Target 2026-08-13 → 08-16** |
 
-**KPI primario:** posizione media organica (non score lab).
-
----
-
-## GSC mid-check — 2026-08-06
-
-Property: `sc-domain:valore-immobili.it` · type `web` · aggregazione **byProperty** (non somma pagine).
-
-| Finestra | Impressioni | Clic | CTR | Pos. media |
-|----------|------------:|-----:|----:|-----------:|
-| **28gg attuali** `2026-07-09 → 08-05` | **1024** | 0 | 0% | **30.6** |
-| 28gg precedenti `2026-06-11 → 07-08` | 700 | 2 | 0.29% | 27.3 |
-| 7gg `2026-07-30 → 08-05` | 258 | 0 | 0% | 32.1 |
-| Check 5/08 `07-08→08-04` | 1004 | 0 | 0% | 30.3 |
-| Baseline corretta `07-04→07-31` | **1066** | 0 | 0% | 29.8 |
-
-Nota: il **2441** della baseline del 3/08 era la **somma impressioni per URL** (sovraconta). Il totale property reale era ~**1066**. Confrontare sempre byProperty.
-
-### Lettura sintetica (6/08 vs 5/08)
-
-1. **Flat vs ieri:** 1024 impr / pos 30.6 vs 1004 / 30.3 — nessun salto né crollo.
-2. **Ville + gratuita stabili in striking distance:** ville ~pos **7**, gratuita ~pos **10**.
-3. **Cannibal ville ancora aperto:** 28gg `/brianza` **117** vs `/ville-brianza` **45**; 7gg **27 vs 20** (lenta chiusura, non invertito).
-4. **Nuovo:** su “gratuita” Google sparpaglia su `/monza`, home, FAQ — snippet confuso.
-5. **0 clic** resta il collo di bottiglia.
-6. **Leaf comuni:** ancora ≤7 impr.
-
-### Top query 28gg
-
-| Query | Impr | Pos |
-|-------|-----:|----:|
-| valutazione ville in brianza | 122 | **6.9** |
-| valutazione ville monza brianza | 116 | 16.9 |
-| valutazione gratuita immobile monza | 101 | **9.9** |
-| valutazione immobile monza | 86 | 25.5 |
-| valutazione immobili monza | 85 | 46.8 |
-| valutazione immobiliare monza | 85 | 54.4 |
-| valutazione appartamenti monza brianza | 83 | 36.3 |
-| stima immobiliare monza | 82 | 62.8 |
-| valutazione appartamenti monza | 76 | 61.6 |
-| valutazione villa brianza | 16 | 10.8 |
-
-### Top pagine 28gg (per URL; somma ≠ property)
-
-| URL | Impr | Pos |
-|-----|-----:|----:|
-| `/monza` | 716 | 50.3 |
-| `/` | 452 | 46.8 |
-| `/vendere-casa-monza` | 376 | 73.0 |
-| `/faq` | 344 | 55.1 |
-| `/valutazione/appartamenti-monza` | 260 | 60.1 |
-| `/brianza` | 220 | **14.1** |
-| `/valutazione/ville-brianza` | 98 | 18.8 |
-| leaf comuni | ≤7 | ~3–12 |
-
-### Cannibal “valutazione ville in brianza” (query×page)
-
-| Finestra | `/brianza` | `/ville-brianza` |
-|----------|-----------:|-----------------:|
-| 28gg | 117 @ 6.6 | 45 @ 18.2 |
-| 7gg | 27 @ 6.1 | 20 @ 18.8 |
-
-### Priorità immediate (dal dato)
-
-1. **Chiudere cannibal ville** — tipologica ancora dietro; monitorare altri ~7gg.
-2. **Snippet “gratuita”** — evitare sparpaglio su Monza/home/FAQ.
-3. **Non inseguire head Monza pos 40+** finché ville/gratuita non convertono clic.
-4. **Richiedi indicizzazione** leaf nuove + pilastro se non già fatto.
+**KPI primario:** posizione media organica + primi clic (non score lab).
 
 ---
 
-## Cosa è andato online
+## Sprint organico CTR — ship `fc6fd86`
 
-1. **Disambiguazione:** `/brianza` = hub comuni; tipologiche = winner ville/appartamenti  
-2. **Title/meta/H1** nicchia sopralluogo/senza mandato (anche leaf)  
-3. **Anti-AVM** su hub + leaf; FAQ tipologiche + schema  
-4. **Pilastro** `/valutazione-online-o-sopralluogo`  
-5. **6 comuni** unici: Seregno, Cesano Maderno, Limbiate, Vimercate, Giussano, Meda (Jaccard max ~0.33)  
-6. **Lighthouse:** CTA contrasto AA, mappe al click, analytics differito  
+Zero URL nuove. Winner sulle esistenti:
 
-Smoke post-B (title/H1/canonical/FAQ): **5/5 PASS**.
+1. **Ville:** `/brianza` ripulita da H2/copy che competevano; tipologica `/valutazione/ville-brianza` rinforzata (deepen anti-online + link interni con anchor esatto).
+2. **Gratuita Monza:** `/monza` = winner (title/H1 orientati a “valutazione gratuita immobile Monza”); home title disambiguata; FAQ/pilastro puntano a `/monza`.
 
----
+Smoke live title/H1/canonical (5/5 PASS):
 
-## Lighthouse mobile (CLI, post-fix)
-
-| Pagina | Perf | A11y | BP | SEO |
-|--------|-----:|-----:|---:|----:|
-| Home | 98 | 100 | 100 | 100 |
-| Seregno | 96 | 100 | 100 | 100 |
-| Brianza | 93 | 100 | 100 | 100 |
-| FAQ | 93 | 100 | 100 | 100 |
-
-Non spingere Perf 93→98: poco impatto sul ranking vs effort.
+| URL | Title live |
+|-----|------------|
+| `/` | Sopralluogo immobiliare Monza e Brianza \| Valore Immobili |
+| `/monza` | Valutazione gratuita immobile Monza: sopralluogo \| … |
+| `/brianza` | Valutazione immobiliare in Brianza: comuni \| … |
+| `/valutazione/ville-brianza` | Valutazione ville in Brianza: sopralluogo gratis \| … |
+| `/valutazione/appartamenti-monza` | Valutazione appartamenti Monza: sopralluogo gratis \| … |
 
 ---
 
-## Prossimi check
+## GSC — indicizzazione (2026-08-06)
 
-1. **GSC** tra ~7gg: share `/ville-brianza` vs `/brianza` su query ville; primi clic su gratuita/ville  
-2. Indicizzazione leaf nuove + pilastro  
-3. Solo dopo segnale clic: altri comuni GSC-driven  
+Sitemap: tutte le URL sprint **presenti** in `/sitemap.xml`.
+
+Ispezione API URL Inspection:
+
+| URL | Coverage |
+|-----|----------|
+| `/valutazione/ville-brianza` | Submitted and indexed (last crawl ~23/07) |
+| `/brianza` | Submitted and indexed |
+| `/monza` | Submitted and indexed |
+| `/valutazione-online-o-sopralluogo` | **URL is unknown to Google** |
+| `/valutazione/seregno` | **unknown** |
+| `/valutazione/cesano-maderno` | **unknown** |
+| `/valutazione/limbiate` | **unknown** |
+| `/valutazione/vimercate` | **unknown** |
+| `/valutazione/giussano` | **unknown** |
+| `/valutazione/meda` | **unknown** |
+
+Indexing API (`urlNotifications:publish`) = 403 (non abilitata sul progetto OAuth).  
+**Azione manuale richiesta:** in GSC → Controllo URL → **Richiedi indicizzazione** sulle 7 URL “unknown” (+ opzionale ricrawl di `/monza` e `/ville-brianza` dopo lo ship title).
+
+Checklist:
+
+- [ ] Richiedi: pilastro + 6 leaf nuove  
+- [ ] Richiedi ricrawl: `/monza`, `/valutazione/ville-brianza`  
+- [x] Ispezione API eseguita  
+- [x] Sitemap verificata  
+
+---
+
+## GSC mid-check — 2026-08-06 (pre-sprint, dati fino al 5/08)
+
+Property: `sc-domain:valore-immobili.it` · byProperty.
+
+| Finestra | Impressioni | Clic | Pos. media |
+|----------|------------:|-----:|-----------:|
+| 28gg `07-09 → 08-05` | **1024** | 0 | **30.6** |
+| 28gg prec. | 700 | 2 | 27.3 |
+| 7gg | 258 | 0 | 32.1 |
+
+Cannibal ville 7gg: `/brianza` 27 vs `/ville-brianza` 20. Gratuita sparpagliata su Monza/home/FAQ (motivo dello sprint).
+
+---
+
+## Prossimo mid-check (Fase 3) — **13–16 agosto 2026**
+
+Aggiornare lo **stesso** canvas + questa sezione.
+
+**Go / no-go scala comuni:**
+
+| Segnale | Azione |
+|---------|--------|
+| ≥1 clic su ville o gratuita **oppure** share 7gg Ville ≥ Brianza sulla query ville | OK ondata comuni successiva |
+| Ancora 0 clic e cannibal invariato | Solo altro giro snippet/link; **niente** nuovi comuni |
+
+---
+
+## Cosa è andato online (storico)
+
+1. Disambiguazione hub vs tipologiche (Fase B)  
+2. Title/meta/H1 nicchia; anti-AVM; FAQ tipologiche  
+3. Pilastro `/valutazione-online-o-sopralluogo`  
+4. 6 comuni: Seregno, Cesano Maderno, Limbiate, Vimercate, Giussano, Meda  
+5. Lighthouse: CTA AA, mappe al click, analytics differito  
+6. **Sprint CTR 06/08:** winner `/monza` + tipologica ville  
 
 ---
 
 ## Cosa non rifare
 
-- Nuove guide acquisto / pagine €/mq vs portali  
-- Audit PDF / DataForSEO senza bisogno  
-- Commit di dump Lighthouse grezzi (ignorati in `.gitignore`)
-- Confrontare “somma pagine” con totali property
+- Nuove guide €/mq / blog generico  
+- Inseguire head Monza pos 40+  
+- Nuova URL `/valutazione-gratuita-*`  
+- Chase Lighthouse / somma pagine vs property  
+- Nuovi comuni prima del go Fase 3  
