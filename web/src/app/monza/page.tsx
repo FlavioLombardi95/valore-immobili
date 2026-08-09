@@ -2,6 +2,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { SeoPageLayout } from '@/components/SeoPageLayout'
+import { localityPath } from '@/lib/localities'
 import { propertyTypePath } from '@/lib/property-types'
 
 export const metadata: Metadata = {
@@ -29,24 +30,24 @@ export default function MonzaPage() {
           description: 'Pagina dedicata: piano, spese e condominio.',
         },
         {
-          href: '/quartieri-monza',
-          label: 'Quartieri di Monza',
-          description: 'Orientarsi tra le zone prima della stima.',
-        },
-        {
           href: propertyTypePath('ville-brianza'),
           label: 'Valutazione ville in Brianza',
           description: 'Se confronti con indipendenti fuori città.',
         },
         {
-          href: '/brianza',
-          label: 'Comuni in Brianza',
-          description: 'Hub comuni fuori Monza città.',
-        },
-        {
           href: '/valutazione-online-o-sopralluogo',
           label: 'Online o sopralluogo',
           description: 'Dopo un calcolatore: cosa cambia.',
+        },
+        {
+          href: '/comprare-casa-monza',
+          label: 'Comprare casa a Monza',
+          description: 'Se stai cercando casa, non solo vendendo.',
+        },
+        {
+          href: localityPath('brugherio'),
+          label: 'Valutazione a Brugherio',
+          description: 'Comune limitrofo verso Milano Est.',
         },
         {
           href: '/vendere-casa-monza',

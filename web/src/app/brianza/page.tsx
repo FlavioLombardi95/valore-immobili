@@ -25,6 +25,11 @@ export default function BrianzaPage() {
       relatedTitle="Approfondimenti utili"
       related={[
         {
+          href: localityPath('brugherio'),
+          label: 'Valutazione a Brugherio',
+          description: 'Verso Monza e Milano Est — mercato locale.',
+        },
+        {
           href: '/monza',
           label: 'Valutazione a Monza',
           description: 'Se l’immobile è nel comune di Monza.',
@@ -33,11 +38,6 @@ export default function BrianzaPage() {
           href: localityPath('seregno'),
           label: 'Valutazione a Seregno',
           description: 'Hub Brianza Ovest e nodo S9/S11.',
-        },
-        {
-          href: localityPath('vimercate'),
-          label: 'Valutazione a Vimercate',
-          description: 'Centro, Oreno e Torri Bianche.',
         },
         {
           href: propertyTypePath('ville-brianza'),
@@ -65,7 +65,8 @@ export default function BrianzaPage() {
       </p>
       <p>
         La mappa sotto colloca i comuni su cui lavoriamo più di frequente. Se l’immobile è a Monza città, la
-        pagina dedicata è <Link href="/monza">valutazione gratuita a Monza</Link>.
+        pagina dedicata è <Link href="/monza">valutazione gratuita a Monza</Link>. Tra i comuni limitrofi, un
+        esempio tipico è <Link href={localityPath('brugherio')}>valutazione a Brugherio</Link>.
       </p>
 
       <BrianzaComuniMap />

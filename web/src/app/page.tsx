@@ -197,29 +197,29 @@ export default function HomePage() {
                 description: 'Pagina città: intent gratuita + sopralluogo.',
               },
               {
-                href: '/valutazione/ville-brianza',
-                label: 'Valutazione ville in Brianza',
-                description: 'Schiere, bifamiliari e indipendenti.',
-              },
-              {
                 href: '/valutazione-online-o-sopralluogo',
                 label: 'Online o sopralluogo',
                 description: 'Calcolatore vs visita gratuita sul posto.',
               },
               {
-                href: '/valutazione/appartamenti-monza',
-                label: 'Valutazione appartamenti',
-                description: 'Focus condominio a Monza e dintorni.',
+                href: '/comprare-casa-monza',
+                label: 'Comprare casa a Monza',
+                description: 'Se stai cercando casa, non solo vendendo.',
+              },
+              {
+                href: '/valutazione/brugherio',
+                label: 'Valutazione a Brugherio',
+                description: 'Comune limitrofo verso Milano Est.',
+              },
+              {
+                href: '/valutazione/ville-brianza',
+                label: 'Valutazione ville in Brianza',
+                description: 'Schiere, bifamiliari e indipendenti.',
               },
               {
                 href: '/brianza',
                 label: 'Comuni in Brianza',
                 description: 'Hub comuni della provincia.',
-              },
-              {
-                href: '/come-funziona',
-                label: 'Come funziona',
-                description: 'Richiesta, sopralluogo e stima passo per passo.',
               },
             ]}
           />

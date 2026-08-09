@@ -2,7 +2,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { SeoPageLayout } from '@/components/SeoPageLayout'
-import { propertyTypePath } from '@/lib/property-types'
 
 export const metadata: Metadata = {
   title: 'FAQ valutazione immobiliare Monza',
@@ -85,19 +84,19 @@ export default function FaqPage() {
           description: 'Dopo una stima automatica: cosa fare.',
         },
         {
+          href: '/comprare-casa-monza',
+          label: 'Comprare casa a Monza',
+          description: 'Hub acquisto, non solo valutazione.',
+        },
+        {
+          href: '/valutazione/brugherio',
+          label: 'Valutazione a Brugherio',
+          description: 'Esempio di leaf comune limitrofo.',
+        },
+        {
           href: '/come-funziona',
           label: 'Come funziona',
           description: 'Il percorso completo, passo per passo.',
-        },
-        {
-          href: propertyTypePath('ville-brianza'),
-          label: 'Valutazione ville in Brianza',
-          description: 'Tipologica dedicata (non FAQ).',
-        },
-        {
-          href: '/brianza',
-          label: 'Comuni in Brianza',
-          description: 'Hub comuni della provincia.',
         },
         {
           href: '/vendere-casa-monza',
