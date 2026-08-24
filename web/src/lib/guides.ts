@@ -1,4 +1,5 @@
 import type { RelatedLink } from '@/components/RelatedLinks'
+import { SELLER_GUIDE_PAGES } from './guide-pages-seller'
 
 export type GuideExternalLink = {
   href: string
@@ -34,6 +35,8 @@ export type GuidePage = {
   relatedTitle?: string
   sections: GuideSection[]
   related: RelatedLink[]
+  /** CTA in fondo: default acquisto; `valuation` per guide vendita → /monza */
+  ctaVariant?: 'valuation' | 'purchase'
 }
 
 /** Portali e fonti istituzionali riusati nelle guide acquisto. */
@@ -78,13 +81,18 @@ export const EXTERNAL = {
     href: 'https://www.bancaditalia.it/pubblicazioni/guide-bi/guida-mutuo/index.html',
     label: 'Guida al mutuo (Banca d’Italia)',
   },
+  apeInfo: {
+    href: 'https://www.mise.gov.it/it/energia/efficienza-energetica/diagnosi-e-certificazioni-energetiche/attestato-di-prestazione-energetica-ape',
+    label: 'Attestato di prestazione energetica (info istituzionali)',
+  },
 } as const
 
 /**
  * Guide informative (acquisto / mercato). Niente form sticky: CTA verso home.
  * URL piatte via `app/[slug]/page.tsx` + generateStaticParams.
+ * Le guide vendita sono in `guide-pages-seller.ts` e vengono concatenate sotto.
  */
-export const GUIDE_PAGES: GuidePage[] = [
+const PURCHASE_GUIDE_PAGES: GuidePage[] = [
   {
     slug: 'comprare-casa-brianza',
     shortLabel: 'Comprare in Brianza',
@@ -1759,6 +1767,8 @@ export const GUIDE_PAGES: GuidePage[] = [
     ],
   },
 ]
+
+export const GUIDE_PAGES: GuidePage[] = [...PURCHASE_GUIDE_PAGES, ...SELLER_GUIDE_PAGES]
 
 export function guidePath(slug: string) {
   return `/${slug}`

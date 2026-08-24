@@ -31,8 +31,13 @@
   - Appartamenti: tolto “gratis” dal title.
   - Ville: title/meta CTR (`gratuita, senza mandato`).
   - Home form H2: “sopralluogo sul posto” (non “valutazione gratuita”).
+- **Ship 24/08 (3 guide vendita nuove):**
+  - `/costo-vendere-casa-monza`
+  - `/classe-energetica-valore-casa`
+  - `/ristrutturare-prima-di-vendere`
+  - Link da `/vendere-casa-monza` e `/monza`; CTA valuation → `/monza`.
 - **Non fare:** scala nuovi comuni (0 clic). Non toccare cannibal ville/Lighthouse.
-- **Misura:** mid-check tra **7–10 giorni** su pos. “gratuita” + share `/monza` vs FAQ/home.
+- **Misura:** mid-check tra **7–10 giorni** su pos. “gratuita” + share `/monza` vs FAQ/home; coverage delle 3 guide nuove.
 
 ### Non indicizzate (ispezione API 9/08)
 

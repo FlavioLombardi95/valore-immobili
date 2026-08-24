@@ -2,7 +2,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { SeoPageLayout } from '@/components/SeoPageLayout'
-import { localityPath } from '@/lib/localities'
 import { propertyTypePath } from '@/lib/property-types'
 
 export const metadata: Metadata = {
@@ -35,24 +34,24 @@ export default function MonzaPage() {
           description: 'Se confronti con indipendenti fuori città.',
         },
         {
-          href: '/valutazione-online-o-sopralluogo',
-          label: 'Online o sopralluogo',
-          description: 'Dopo un calcolatore: cosa cambia.',
-        },
-        {
-          href: '/comprare-casa-monza',
-          label: 'Comprare casa a Monza',
-          description: 'Se stai cercando casa, non solo vendendo.',
-        },
-        {
-          href: localityPath('brugherio'),
-          label: 'Valutazione a Brugherio',
-          description: 'Comune limitrofo verso Milano Est.',
-        },
-        {
           href: '/vendere-casa-monza',
           label: 'Vendere casa a Monza',
           description: 'Prezzo, documenti e da dove partire.',
+        },
+        {
+          href: '/costo-vendere-casa-monza',
+          label: 'Quanto costa vendere',
+          description: 'Voci di spesa lato venditore.',
+        },
+        {
+          href: '/ristrutturare-prima-di-vendere',
+          label: 'Ristrutturare prima di vendere',
+          description: 'Lavori sì o no prima del listino.',
+        },
+        {
+          href: '/classe-energetica-valore-casa',
+          label: 'Classe energetica e valore',
+          description: 'APE e cosa sposta davvero il prezzo.',
         },
       ]}
     >

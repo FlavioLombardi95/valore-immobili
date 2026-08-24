@@ -44,7 +44,7 @@ export default async function GuidePage({ params }: PageProps) {
       defaultCity="Monza"
       breadcrumb={guide.breadcrumb}
       showForm={false}
-      ctaVariant="purchase"
+      ctaVariant={guide.ctaVariant ?? 'purchase'}
       related={guide.related}
       relatedTitle={guide.relatedTitle}
     >

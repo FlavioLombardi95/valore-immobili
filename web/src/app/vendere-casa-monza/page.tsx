@@ -29,24 +29,24 @@ export default function VendereCasaMonzaPage() {
           description: 'Pagina winner: intent gratuita + sopralluogo.',
         },
         {
+          href: '/costo-vendere-casa-monza',
+          label: 'Quanto costa vendere',
+          description: 'Voci di spesa lato venditore a Monza.',
+        },
+        {
+          href: '/ristrutturare-prima-di-vendere',
+          label: 'Ristrutturare prima di vendere',
+          description: 'Quando i lavori hanno senso (e quando no).',
+        },
+        {
+          href: '/classe-energetica-valore-casa',
+          label: 'Classe energetica e valore',
+          description: 'APE e cosa sposta davvero il prezzo.',
+        },
+        {
           href: '/valutazione-online-o-sopralluogo',
           label: 'Online o sopralluogo',
           description: 'Perché la stima automatica non basta.',
-        },
-        {
-          href: '/comprare-casa-monza',
-          label: 'Comprare casa a Monza',
-          description: 'Se dopo la vendita cerchi casa in zona.',
-        },
-        {
-          href: '/valutazione/brugherio',
-          label: 'Valutazione a Brugherio',
-          description: 'Se l’immobile è nel comune limitrofo.',
-        },
-        {
-          href: '/come-funziona',
-          label: 'Come funziona',
-          description: 'Il percorso dalla richiesta alla stima.',
         },
         {
           href: '/faq',
