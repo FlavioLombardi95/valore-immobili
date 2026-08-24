@@ -21,6 +21,11 @@ type SeoPageProps = {
   showForm?: boolean
   /** CTA in fondo al contenuto quando showForm è false. Default: valutazione (vendita); `purchase` per intent acquisto. */
   ctaVariant?: 'valuation' | 'purchase'
+  /**
+   * Destinazione CTA valutazione quando `showForm` è false.
+   * Default: `/monza` (pagina winner per “valutazione gratuita”), non la home.
+   */
+  ctaHref?: string
 }
 
 export function SeoPageLayout({
@@ -34,6 +39,7 @@ export function SeoPageLayout({
   relatedTitle = 'Continua a leggere',
   showForm = true,
   ctaVariant = 'valuation',
+  ctaHref = '/monza',
 }: SeoPageProps) {
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 md:py-10">
@@ -80,15 +86,17 @@ export function SeoPageLayout({
                 </>
               ) : (
                 <>
-                  <p className="font-headline text-base font-bold text-ink">Vuoi una valutazione sul posto?</p>
+                  <p className="font-headline text-base font-bold text-ink">
+                    Vuoi la valutazione gratuita a Monza?
+                  </p>
                   <p className="mt-1 text-sm text-slate">
-                    Sopralluogo gratuito a Monza e in Brianza, senza impegno.
+                    Sopralluogo sul posto, senza mandato. La richiesta si fa dalla pagina città.
                   </p>
                   <Link
-                    href={`/?from=${encodeURIComponent(sourcePage)}#richiesta`}
+                    href={ctaHref}
                     className="mt-4 inline-flex min-h-12 items-center justify-center rounded-lg bg-brand-rust px-6 font-headline text-sm font-bold text-white transition hover:bg-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 active:translate-y-px"
                   >
-                    Richiedi la valutazione gratuita
+                    Vai alla valutazione gratuita a Monza
                   </Link>
                 </>
               )}

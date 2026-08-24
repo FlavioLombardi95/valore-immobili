@@ -4,52 +4,54 @@ import Link from 'next/link'
 import { SeoPageLayout } from '@/components/SeoPageLayout'
 
 export const metadata: Metadata = {
-  title: 'FAQ valutazione immobiliare Monza',
+  title: {
+    absolute: 'FAQ: costi, tempi e documenti del sopralluogo | Valore Immobili',
+  },
   description:
-    'Domande su costi, tempi, documenti e stima online vs sopralluogo a Monza e Brianza. Per la valutazione gratuita a Monza usa la pagina città.',
+    'Risposte su costi, tempi, documenti e differenza tra stima online e visita sul posto. Per richiedere la valutazione gratuita a Monza usa la pagina città dedicata.',
   alternates: { canonical: 'https://valore-immobili.it/faq' },
 }
 
 const faqs = [
   {
     q: 'Quanto costa una valutazione immobiliare a Monza?',
-    a: 'La valutazione con sopralluogo è gratuita. Non c’è costo iniziale, nessun obbligo di mandato e nessuna pubblicità obbligatoria. L’obiettivo è darti un parere concreto sul mercato della tua zona.',
+    a: 'Il sopralluogo non ha costo iniziale, né obbligo di mandato né pubblicità obbligatoria. Per aprire la richiesta di valutazione gratuita a Monza usa la pagina città dedicata; qui trovi solo i dettagli su costi e tempi.',
   },
   {
     q: 'Come funziona la valutazione del mio immobile?',
-    a: 'Compili il modulo con i dati principali dell’immobile. Ti richiamiamo entro 1 o 2 giorni lavorativi per fissare un sopralluogo gratuito sul posto. Dopo la visita ricevi una stima motivata basata sullo stato reale e sul mercato locale.',
+    a: 'Dalla pagina Monza compili il modulo con i dati principali. Ti richiamiamo entro 1 o 2 giorni lavorativi per fissare la visita sul posto. Dopo ricevi una stima motivata su stato reale e mercato locale.',
   },
   {
     q: 'Meglio una valutazione online o sul posto?',
-    a: 'Per un immobile a Monza e in Brianza la valutazione sul posto è più affidabile. Le stime automatiche partono da medie e metrature; in visita si vedono stato, esposizione, piano, contesto condominiale e dettagli che spostano il valore.',
+    a: 'A Monza e in Brianza la visita sul posto è più affidabile. Le stime automatiche partono da medie e metrature; in sopralluogo si vedono stato, esposizione, piano e contesto condominiale. Il confronto dettagliato è nella guida online vs sopralluogo.',
   },
   {
     q: 'In quanto tempo vengo ricontattato?',
     a: 'In genere entro 1 o 2 giorni lavorativi dalla richiesta, per concordare giorno e orario del sopralluogo.',
   },
   {
-    q: 'Sono obbligato ad affidarvi la vendita dopo la valutazione?',
-    a: 'No. La valutazione serve a darti un punto di partenza concreto. Non c’è alcun obbligo di affidare l’incarico: puoi fermarti al parere o decidere dopo con calma.',
+    q: 'Sono obbligato ad affidarvi la vendita dopo la stima?',
+    a: 'No. Il sopralluogo serve a darti un punto di partenza concreto. Non c’è obbligo di incarico: puoi fermarti al parere o decidere dopo con calma.',
   },
   {
-    q: 'Devo aver già deciso di vendere per richiedere la valutazione?',
-    a: 'No. Molte richieste arrivano proprio per capire se e quando ha senso vendere, o a che prezzo partire. Puoi chiedere la stima anche in fase di riflessione.',
+    q: 'Devo aver già deciso di vendere per richiedere una stima?',
+    a: 'No. Molte richieste servono a capire se e quando ha senso vendere, o a che prezzo partire. Puoi chiedere il sopralluogo anche in fase di riflessione, dalla pagina Monza o dall’hub Brianza.',
   },
   {
-    q: 'Quali documenti servono per la valutazione?',
-    a: 'Non sono obbligatori, ma velocizzano la stima: planimetria e visura catastale, attestato di prestazione energetica (APE) se disponibile e, per gli appartamenti, ultime spese condominiali. Se manca qualcosa, si può comunque partire e integrare dopo.',
+    q: 'Quali documenti servono per il sopralluogo?',
+    a: 'Non sono obbligatori, ma velocizzano la stima: planimetria e visura catastale, APE se disponibile e, per gli appartamenti, ultime spese condominiali. Se manca qualcosa, si può partire e integrare dopo.',
   },
   {
-    q: 'Valutate anche fuori Monza, in Brianza?',
-    a: 'Sì. Operiamo su Monza e nei comuni della provincia di Monza e Brianza, con lo stesso approccio basato sul sopralluogo sul posto e sulla lettura del mercato di zona.',
+    q: 'Operate anche fuori Monza, in Brianza?',
+    a: 'Sì. Copriamo Monza e i comuni della provincia con lo stesso approccio: visita sul posto e lettura del mercato di zona. L’elenco comuni è nell’hub Brianza.',
   },
   {
-    q: 'Quali immobili valutate?',
-    a: 'Appartamenti, ville, case indipendenti, box e altre tipologie residenziali nella zona di Monza e Brianza.',
+    q: 'Quali immobili trattate?',
+    a: 'Appartamenti, ville, case indipendenti, box e altre tipologie residenziali a Monza e in Brianza. Per le tipologiche ci sono pagine dedicate (appartamenti Monza, ville Brianza).',
   },
   {
     q: 'Offrite anche supporto a chi vuole comprare casa?',
-    a: 'Sì. Oltre alla valutazione per chi vende, puoi richiedere una consulenza gratuita sull’acquisto a Monza e in Brianza, senza impegno di acquisto. È un percorso separato rispetto al sopralluogo di stima.',
+    a: 'Sì. Oltre al sopralluogo per chi vende, puoi richiedere una consulenza sull’acquisto a Monza e in Brianza, senza impegno. È un percorso separato dalla stima di vendita.',
   },
 ]
 
@@ -67,7 +69,7 @@ export default function FaqPage() {
   return (
     <SeoPageLayout
       title="Domande frequenti"
-      intro="Risposte dirette su **costi, tempi, documenti** e su cosa cambia tra stima online e sopralluogo a Monza e in Brianza. Senza giri di parole."
+      intro="Risposte su **costi, tempi e documenti** del sopralluogo. Per la richiesta di **valutazione gratuita a Monza** non restare qui: usa la pagina città."
       sourcePage="/faq"
       breadcrumb="FAQ"
       showForm={false}

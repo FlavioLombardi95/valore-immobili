@@ -14,6 +14,8 @@ type FieldErrors = Partial<Record<string, string>>
 type LeadFormProps = {
   sourcePage?: string
   defaultCity?: string
+  /** Override H2 del form (es. home: evita “valutazione gratuita” fuori da /monza). */
+  heading?: string
 }
 
 export function LeadForm(props: LeadFormProps) {
@@ -28,7 +30,7 @@ export function LeadForm(props: LeadFormProps) {
   )
 }
 
-function LeadFormInner({ sourcePage = '/', defaultCity = '' }: LeadFormProps) {
+function LeadFormInner({ sourcePage = '/', defaultCity = '', heading }: LeadFormProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
   const purchaseIntent = searchParams.get('intent') === 'acquisto'
@@ -150,6 +152,7 @@ function LeadFormInner({ sourcePage = '/', defaultCity = '' }: LeadFormProps) {
   return (
     <LeadFormShell
       purchaseIntent={purchaseIntent}
+      heading={heading}
       submitting={submitting}
       phoneStatus={phoneStatus}
       form={form}
@@ -175,6 +178,7 @@ type FormState = {
 
 type LeadFormShellProps = {
   purchaseIntent: boolean
+  heading?: string
   submitting: boolean
   phoneStatus: 'idle' | 'checking' | 'valid' | 'invalid'
   form: FormState
@@ -186,6 +190,7 @@ type LeadFormShellProps = {
 
 function LeadFormShell({
   purchaseIntent,
+  heading,
   submitting,
   phoneStatus,
   form,
@@ -198,7 +203,9 @@ function LeadFormShell({
     <form onSubmit={handleSubmit} noValidate className="space-y-4 rounded-3xl border border-line bg-surface p-5 shadow-[0_8px_28px_rgba(23,28,31,0.06)] md:p-6">
       <div>
         <h2 className="font-headline text-2xl font-extrabold text-secondary md:text-3xl">
-          {purchaseIntent ? 'Richiedi una consulenza per l’acquisto' : 'Richiedi una valutazione gratuita'}
+          {purchaseIntent
+            ? 'Richiedi una consulenza per l’acquisto'
+            : heading ?? 'Richiedi una valutazione gratuita'}
         </h2>
         <p className="mt-2 text-sm text-slate">
           {purchaseIntent

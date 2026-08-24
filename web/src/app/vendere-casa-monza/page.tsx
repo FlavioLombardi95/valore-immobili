@@ -24,14 +24,14 @@ export default function VendereCasaMonzaPage() {
       relatedTitle="Approfondimenti utili"
       related={[
         {
+          href: '/monza',
+          label: 'Valutazione gratuita a Monza',
+          description: 'Pagina winner: intent gratuita + sopralluogo.',
+        },
+        {
           href: '/valutazione-online-o-sopralluogo',
           label: 'Online o sopralluogo',
           description: 'Perché la stima automatica non basta.',
-        },
-        {
-          href: '/monza',
-          label: 'Valutazione a Monza',
-          description: 'Come cambia il valore tra i quartieri.',
         },
         {
           href: '/comprare-casa-monza',
@@ -93,9 +93,10 @@ export default function VendereCasaMonzaPage() {
       </p>
       <p>
         L’obiettivo è darti un <strong>punto di partenza concreto</strong> per decidere prezzo, tempi e strategia.
-        Gratuita, senza impegno di affidare la vendita. Il percorso passo passo è spiegato in{' '}
-        <Link href="/come-funziona">come funziona la valutazione</Link>; i dubbi più frequenti stanno nelle{' '}
-        <Link href="/faq">domande frequenti</Link>.
+        Senza impegno di affidare la vendita. Per la{' '}
+        <Link href="/monza">valutazione gratuita dell’immobile a Monza</Link> usa la pagina città (non questa
+        guida). Il percorso passo passo è in <Link href="/come-funziona">come funziona</Link>; i dubbi tipici
+        nelle <Link href="/faq">domande frequenti</Link>.
       </p>
 
       <h2>Cosa conta davvero quando vendi a Monza</h2>
@@ -106,8 +107,8 @@ export default function VendereCasaMonzaPage() {
       </p>
       <p>
         Per orientarti sul contesto di zona (utile anche a chi compra, quindi rilevante se stai cercando un acquirente
-        “giusto”), vedi i <Link href="/quartieri-monza">quartieri di Monza</Link> e l’hub{' '}
-        <Link href="/monza">valutazione a Monza</Link>.
+        “giusto”), vedi i <Link href="/quartieri-monza">quartieri di Monza</Link> e la{' '}
+        <Link href="/monza">valutazione gratuita a Monza</Link>.
       </p>
       <p>
         Se l’immobile è in un comune della Brianza, non usare Monza come prezzo da copiare. Parti dall’hub{' '}
@@ -188,8 +189,8 @@ export default function VendereCasaMonzaPage() {
       </p>
       <p>
         Per l’acquisto: <Link href="/comprare-casa-monza">comprare casa a Monza</Link> e, se allarghi il raggio,{' '}
-        <Link href="/comprare-casa-brianza">comprare casa in Brianza</Link>. Per la vendita, la CTA in fondo a questa
-        pagina apre la richiesta di valutazione gratuita.
+        <Link href="/comprare-casa-brianza">comprare casa in Brianza</Link>. Per la vendita, richiedi la{' '}
+        <Link href="/monza">valutazione gratuita a Monza</Link> dalla pagina città.
       </p>
 
       <h2>In sintesi</h2>

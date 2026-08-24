@@ -7,18 +7,18 @@ import { propertyTypePath } from '@/lib/property-types'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Valutazione gratuita immobile Monza: sopralluogo | Valore Immobili',
+    absolute: 'Valutazione gratuita immobile Monza — sopralluogo senza mandato',
   },
   description:
-    'Valutazione gratuita dell’immobile a Monza con sopralluogo, senza mandato. Stima sul quartiere reale (Centro, San Fruttuoso, Cederna…), non su un algoritmo. Richiedi in pochi minuti.',
+    'Valutazione gratuita dell’immobile a Monza con sopralluogo sul posto, senza mandato. Stima su via e quartiere reali (Centro, San Fruttuoso, Cederna…), non su un algoritmo. Richiedi in pochi minuti.',
   alternates: { canonical: 'https://valore-immobili.it/monza' },
 }
 
 export default function MonzaPage() {
   return (
     <SeoPageLayout
-      title="Valutazione gratuita dell’immobile a Monza"
-      intro="**Valutazione gratuita** a Monza con sopralluogo, senza mandato: stima sul quartiere reale, non su una media cittadina o un algoritmo."
+      title="Valutazione gratuita immobile a Monza"
+      intro="Questa è la pagina per la **valutazione gratuita dell’immobile a Monza**: sopralluogo sul posto, senza mandato, stima su via e quartiere reali — non su una media cittadina o un algoritmo."
       sourcePage="/monza"
       defaultCity="Monza"
       breadcrumb="Monza"
