@@ -12,9 +12,10 @@ const links = [
   { href: '/valutazione/ville-brianza', label: 'Ville' },
   { href: '/come-funziona', label: 'Come funziona' },
   { href: '/vendere-casa-monza', label: 'Vendere casa' },
+  { href: '/valore-al-metro-quadro-monza', label: '€/mq Monza' },
+  { href: '/costo-vendere-casa-monza', label: 'Costo vendere' },
   { href: '/comprare-casa-monza', label: 'Comprare casa' },
   { href: '/valutazione-online-o-sopralluogo', label: 'Online o sopralluogo' },
-  { href: '/valutazione/brugherio', label: 'Brugherio' },
   { href: '/faq', label: 'FAQ' },
 ]
 

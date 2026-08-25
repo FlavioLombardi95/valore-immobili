@@ -8,14 +8,14 @@ export const metadata: Metadata = {
     absolute: 'FAQ: costi, tempi e documenti del sopralluogo | Valore Immobili',
   },
   description:
-    'Risposte su costi, tempi, documenti e differenza tra stima online e visita sul posto. Per richiedere la valutazione gratuita a Monza usa la pagina città dedicata.',
+    'Risposte su costi, tempi, documenti e differenza tra stima online e visita sul posto. Per aprire una richiesta a Monza usa la pagina città dedicata.',
   alternates: { canonical: 'https://valore-immobili.it/faq' },
 }
 
 const faqs = [
   {
     q: 'Quanto costa una valutazione immobiliare a Monza?',
-    a: 'Il sopralluogo non ha costo iniziale, né obbligo di mandato né pubblicità obbligatoria. Per aprire la richiesta di valutazione gratuita a Monza usa la pagina città dedicata; qui trovi solo i dettagli su costi e tempi.',
+    a: 'Il sopralluogo non ha costo iniziale, né obbligo di mandato né pubblicità obbligatoria. Per aprire la richiesta a Monza usa la pagina città dedicata; qui trovi solo i dettagli su costi e tempi.',
   },
   {
     q: 'Come funziona la valutazione del mio immobile?',
@@ -69,7 +69,7 @@ export default function FaqPage() {
   return (
     <SeoPageLayout
       title="Domande frequenti"
-      intro="Risposte su **costi, tempi e documenti** del sopralluogo. Per la richiesta di **valutazione gratuita a Monza** non restare qui: usa la pagina città."
+      intro="Risposte su **costi, tempi e documenti** del sopralluogo. Per aprire una richiesta a Monza non restare qui: usa la **pagina città**."
       sourcePage="/faq"
       breadcrumb="FAQ"
       showForm={false}
@@ -77,8 +77,8 @@ export default function FaqPage() {
       related={[
         {
           href: '/monza',
-          label: 'Valutazione gratuita a Monza',
-          description: 'Pagina città: intent gratuita + sopralluogo.',
+          label: 'Sopralluogo a Monza',
+          description: 'Pagina città: modulo e stima sul posto.',
         },
         {
           href: '/valutazione-online-o-sopralluogo',
@@ -86,14 +86,14 @@ export default function FaqPage() {
           description: 'Dopo una stima automatica: cosa fare.',
         },
         {
-          href: '/comprare-casa-monza',
-          label: 'Comprare casa a Monza',
-          description: 'Hub acquisto, non solo valutazione.',
+          href: '/valore-al-metro-quadro-monza',
+          label: 'Valore al metro quadro a Monza',
+          description: 'Perché le medie €/mq ingannano.',
         },
         {
-          href: '/valutazione/brugherio',
-          label: 'Valutazione a Brugherio',
-          description: 'Esempio di leaf comune limitrofo.',
+          href: '/vendere-casa-monza',
+          label: 'Vendere casa a Monza',
+          description: 'Da dove iniziare prima di vendere.',
         },
         {
           href: '/come-funziona',
@@ -101,9 +101,9 @@ export default function FaqPage() {
           description: 'Il percorso completo, passo per passo.',
         },
         {
-          href: '/vendere-casa-monza',
-          label: 'Vendere casa a Monza',
-          description: 'Da dove iniziare prima di vendere.',
+          href: '/comprare-casa-monza',
+          label: 'Comprare casa a Monza',
+          description: 'Hub acquisto, non solo valutazione.',
         },
       ]}
     >
@@ -113,9 +113,9 @@ export default function FaqPage() {
       />
 
       <p>
-        Qui trovi i dubbi più frequenti su costi, tempi di richiamo e obblighi. Per richiedere la{' '}
-        <Link href="/monza">valutazione gratuita dell’immobile a Monza</Link> usa la pagina città. Percorso
-        completo: <Link href="/come-funziona">come funziona la valutazione</Link>.
+        Qui trovi i dubbi più frequenti su costi, tempi di richiamo e obblighi. Per aprire la richiesta a Monza
+        usa la <Link href="/monza">pagina città</Link>. Percorso completo:{' '}
+        <Link href="/come-funziona">come funziona la valutazione</Link>.
       </p>
 
       <div className="space-y-3">
@@ -137,12 +137,11 @@ export default function FaqPage() {
 
       <h2>Non trovi la tua domanda?</h2>
       <p>
-        Se stai valutando di vendere a Monza, parti dalla{' '}
-        <Link href="/monza">valutazione gratuita a Monza</Link> o dalla guida{' '}
+        Se stai valutando di vendere a Monza, parti dalla <Link href="/monza">pagina Monza</Link> o dalla guida{' '}
         <Link href="/vendere-casa-monza">vendere casa a Monza</Link>. Se invece stai cercando casa,{' '}
         <Link href="/comprare-casa-monza">comprare casa a Monza</Link> e la{' '}
-        <Link href="/?from=faq&intent=acquisto#richiesta">consulenza gratuita sull’acquisto</Link> sono il
-        percorso giusto.
+        <Link href="/?from=faq&intent=acquisto#richiesta">consulenza sull’acquisto</Link> sono il percorso
+        giusto.
       </p>
     </SeoPageLayout>
   )

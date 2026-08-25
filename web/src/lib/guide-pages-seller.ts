@@ -502,4 +502,151 @@ export const SELLER_GUIDE_PAGES: GuidePage[] = [
       },
     ],
   },
+  {
+    slug: 'valore-al-metro-quadro-monza',
+    shortLabel: 'Valore €/mq Monza',
+    ctaVariant: 'valuation',
+    metaTitle: 'Valore al metro quadro a Monza: cosa (non) significa',
+    metaDescription:
+      'Valore al metro quadro a Monza: perché le medie €/mq ingannano, cosa contano davvero quartiere e tipologica, e quando serve una stima sul posto invece di un listino.',
+    title: 'Valore al metro quadro a Monza: cosa (non) significa',
+    intro:
+      'Cerchi il **valore al metro quadro a Monza** e trovi medie, mappe e calcolatori. Utile come orientamento grezzo. Fuorviante se lo usi per fissare il prezzo della *tua* casa. Qui spieghiamo cosa misura davvero l’€/mq, dove sbaglia, e come passare da una media a una stima sul posto.',
+    breadcrumb: 'Valore al metro quadro a Monza',
+    relatedTitle: 'Dopo le medie',
+    sections: [
+      {
+        heading: 'Il problema: trattare l’€/mq come se fosse il prezzo',
+        paragraphs: [
+          'L’€/mq è un rapporto: prezzo (o richiesta) diviso metri. Su un portale o su una statistica ufficiale diventa una media di zona. Su un annuncio diventa un numero da confrontare con il vicino. Su un calcolatore online diventa una scorciatoia per “quanto vale casa mia”.',
+          'A Monza queste scorciatoie falliscono spesso. Due appartamenti con la stessa metratura in San Fruttuoso e in Centro non sono lo stesso prodotto. Un ultimo piano con ascensore e box non è un secondo senza ascensore su via di passaggio. Il metro quadro non vede piano, spese, stato, luce, condominio.',
+          'Chi vende partendo solo dall’€/mq medio “Monza” rischia un listino fuori mercato. Chi compra confrontando solo €/mq rischia di innamorarsi del taglio sbagliato.',
+        ],
+        internalLinksLead: 'Contesto di zona e tipologica:',
+        internalLinks: [
+          { href: '/quartieri-monza', label: 'quartieri di Monza' },
+          { href: '/valutazione/appartamenti-monza', label: 'appartamenti a Monza' },
+          { href: '/vendere-casa-monza', label: 'vendere casa a Monza' },
+        ],
+      },
+      {
+        heading: 'Cosa rischi se ti fidi solo della media',
+        paragraphs: [
+          'Pubblichi alto perché “la media di Monza dice X”. Restano poche visite serie. Arrivano ribassi disordinati. Il mercato legge i ribassi.',
+          'Oppure pubblichi basso perché un annuncio vicino chiede meno €/mq. Chiudi prima, ma lasci valore sul tavolo: magari il vicino era da ristrutturare, o senza box, o in una via peggiore.',
+          'Dal lato acquisto: scarti immobili “cari al metro” che in realtà sono più liquidi (piano, stato, box) e insegui immobili “economici al metro” che in visita non reggono.',
+        ],
+        bullets: [
+          'Listino troppo alto → giorni online, poi ribassi',
+          'Listino troppo basso → chiusura rapida, meno netto',
+          'Confronto annunci vs chiusure reali (non è la stessa cosa)',
+          'Medie cittadine che mischiano Centro e periferia',
+        ],
+      },
+      {
+        heading: 'Cosa misura davvero l’€/mq (e cosa no)',
+        paragraphs: [
+          'Misura un rapporto grezzo. Utile per ordinare annunci *dopo* aver filtrato per tipologica, stato e micro-zona. Non sostituisce una lettura dell’immobile.',
+          'Non misura: qualità del condominio, lavori deliberati, rumore di via, esposizione, ascensore, box, cantina, terrazzo, APE, quanto l’immobile è “pronto” o da rifare.',
+          'Le fonti ufficiali e i portali usano campioni diversi (richieste vs compravendite, periodi diversi, aggregazioni diverse). Confrontare “la media di Monza” di due siti diversi spesso confronta mele e pere.',
+        ],
+        externalLinksLead: 'Fonti generali (non listini per la tua via):',
+        externalLinks: [EXT.agenziaEntrate],
+      },
+      {
+        heading: 'Monza: perché la città spezza le medie',
+        paragraphs: [
+          'Monza non è un mercato unico. Centro, zone verso la Villa Reale e il Parco, San Fruttuoso, San Giuseppe, Triante, San Rocco, Cederna, Sant’Albino: stock, domanda e tipologiche cambiano. Una media cittadina liscia queste differenze.',
+          'Anche dentro lo stesso quartiere, via e piano spostano. Contano i collegamenti, i servizi a piedi, il profilo di chi cerca casa lì (famiglie, single, chi lavora su Milano).',
+          'Se allarghi a Brianza, copiare l’€/mq di Monza è ancora peggio. Un comune limitrofo ha tempi e listini suoi. Usa l’hub Brianza o la pagina del comune, non “Monza meno il 10%”.',
+        ],
+        internalLinksLead: 'Per collocare la zona:',
+        internalLinks: [
+          { href: '/quartieri-monza', label: 'quartieri di Monza' },
+          { href: '/brianza', label: 'hub Brianza' },
+          { href: '/monza', label: 'pagina valutazione a Monza' },
+        ],
+      },
+      {
+        heading: 'Quando l’€/mq serve (e quando no)',
+        paragraphs: [
+          'Serve come filtro grezzo: “questo annuncio è fuori scala rispetto a immobili *simili* nella stessa micro-zona”. Serve dopo aver allineato tipologica e stato.',
+          'Non serve come prezzo di listino della tua casa. Non serve come unica base per un’offerta di acquisto. Non serve se stai confrontando un bilocale ristrutturato con uno da rifare “perché i mq sono uguali”.',
+          'Se hai già una media e un calcolatore, il passo successivo non è un altro numero online. È capire se la tua unità regge quel range o no, visti di persona gli elementi che l’€/mq ignora.',
+        ],
+        internalLinksLead: 'Dal numero grezzo alla stima:',
+        internalLinks: [
+          { href: '/valutazione-online-o-sopralluogo', label: 'online o sopralluogo' },
+          { href: '/come-funziona', label: 'come funziona' },
+        ],
+      },
+      {
+        heading: 'Un metodo pratico (senza fingere un listino ufficiale)',
+        paragraphs: [
+          'Filtra confronti per tipologica (appartamento vs indipendente) e stato (pronto / da aggiornare / da rifare).',
+          'Restringi alla micro-zona: stessa area di domanda, non “tutta Monza”.',
+          'Guarda chiusure e trattative serie dove puoi, non solo richieste di annuncio. Le richieste gonfiano spesso l’€/mq.',
+          'Poi porta il confronto sull’immobile reale: piano, box, spese, luce, APE, lavori. Quello che manca o avanza rispetto ai “simili” sposta il prezzo più della media.',
+        ],
+        bullets: [
+          'Stessa tipologica',
+          'Stato confrontabile',
+          'Stessa micro-zona',
+          'Aggiustamento per piano, box, spese, APE, lavori',
+        ],
+        internalLinksLead: 'Approfondimenti collegati:',
+        internalLinks: [
+          { href: '/classe-energetica-valore-casa', label: 'classe energetica e valore' },
+          { href: '/ristrutturare-prima-di-vendere', label: 'ristrutturare prima di vendere' },
+          { href: '/costo-vendere-casa-monza', label: 'costo vendere casa' },
+        ],
+      },
+      {
+        heading: 'Dal metro quadro al sopralluogo',
+        paragraphs: [
+          'Se cerchi “valore al metro quadro Monza” perché stai per pubblicare o per fare un’offerta, il numero medio non chiude la decisione. Chiude una stima motivata sull’immobile visto di persona.',
+          'Il sopralluogo a Monza è senza costo iniziale e senza mandato: non è un listino OMI e non è un algoritmo. Serve a dirti se il range che hai in testa regge, e perché.',
+          'Apri la richiesta dalla pagina città. Se stai vendendo, tieni aperta anche la guida su vendere casa a Monza per documenti e tempi.',
+        ],
+        internalLinksLead: 'Passi successivi:',
+        internalLinks: [
+          { href: '/monza', label: 'valutazione gratuita a Monza' },
+          { href: '/vendere-casa-monza', label: 'vendere casa a Monza' },
+          { href: '/faq', label: 'FAQ' },
+        ],
+      },
+    ],
+    related: [
+      {
+        href: '/monza',
+        label: 'Valutazione gratuita a Monza',
+        description: 'Stima sul posto, senza mandato.',
+      },
+      {
+        href: '/vendere-casa-monza',
+        label: 'Vendere casa a Monza',
+        description: 'Prezzo, documenti, percorso.',
+      },
+      {
+        href: '/quartieri-monza',
+        label: 'Quartieri di Monza',
+        description: 'Micro-zone oltre la media cittadina.',
+      },
+      {
+        href: '/valutazione/appartamenti-monza',
+        label: 'Appartamenti a Monza',
+        description: 'Piano, spese, condominio.',
+      },
+      {
+        href: '/valutazione-online-o-sopralluogo',
+        label: 'Online o sopralluogo',
+        description: 'Calcolatore vs visita.',
+      },
+      {
+        href: '/costo-vendere-casa-monza',
+        label: 'Costo vendere casa',
+        description: 'Voci lato venditore.',
+      },
+    ],
+  },
 ]

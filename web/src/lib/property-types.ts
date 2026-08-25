@@ -39,7 +39,7 @@ export const PROPERTY_TYPE_PAGES: PropertyTypePage[] = [
     shortLabel: 'Appartamenti',
     title: 'Valutazione appartamenti a Monza',
     intro:
-      'Valutazione appartamenti a Monza con **sopralluogo gratuito**: piano, spese, stato e condominio pesano quanto i mq. Non una media online: stima sul posto, senza mandato.',
+      'Valutazione appartamenti a Monza con **sopralluogo sul posto, senza mandato**: piano, spese, stato e condominio pesano quanto i mq. Non una media online: stima sulla tua unità e sul quartiere reale.',
     metaTitle: 'Valutazione appartamenti Monza: piano e condominio',
     metaDescription:
       'Valutazione appartamenti a Monza con sopralluogo sul posto, senza mandato. Piano, ascensore, spese e vendite reali di quartiere: non un algoritmo.',
@@ -93,9 +93,9 @@ export const PROPERTY_TYPE_PAGES: PropertyTypePage[] = [
     title: 'Valutazione ville in Brianza',
     intro:
       'Valutazione ville in Brianza con **sopralluogo gratuito**: giardino, stato, via e domanda locale pesano più di una media €/mq. Stima sul posto, senza mandato: non un listino da appartamento monzese.',
-    metaTitle: 'Valutazione ville in Brianza — gratuita, senza mandato',
+    metaTitle: 'Valutazione ville in Brianza — gratis, senza mandato',
     metaDescription:
-      'Valutazione ville in Brianza con sopralluogo gratuito e senza mandato. Schiere, bifamiliari e indipendenti sul mercato locale: non una stima automatica né un listino da appartamento.',
+      'Quanto vale la tua villa in Brianza? Sopralluogo gratis e senza mandato: schiere, bifamiliari e indipendenti sul mercato del tuo comune, non una stima automatica.',
     defaultCity: '',
     layoutVariant: 'faq-led',
     angleHeading: 'Una villa non si valuta come un appartamento “più grande”',

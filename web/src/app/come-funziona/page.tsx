@@ -7,7 +7,7 @@ import { propertyTypePath } from '@/lib/property-types'
 export const metadata: Metadata = {
   title: 'Come funziona il sopralluogo immobiliare',
   description:
-    'Come funziona il sopralluogo a Monza e Brianza: richiesta, contatto, visita sul posto e stima motivata. Tempi, documenti e cosa succede dopo. La valutazione gratuita a Monza si richiede dalla pagina città.',
+    'Come funziona il sopralluogo a Monza e Brianza: richiesta, contatto, visita sul posto e stima motivata. Tempi, documenti e cosa succede dopo. Per Monza città usa la pagina dedicata.',
   alternates: { canonical: 'https://valore-immobili.it/come-funziona' },
 }
 
@@ -33,7 +33,7 @@ export default function ComeFunzionaPage() {
         },
         {
           href: '/monza',
-          label: 'Valutazione gratuita a Monza',
+          label: 'Sopralluogo a Monza',
           description: 'Pagina città per aprire la richiesta.',
         },
         {

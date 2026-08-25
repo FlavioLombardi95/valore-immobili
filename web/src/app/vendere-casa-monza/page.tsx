@@ -6,17 +6,19 @@ import Link from 'next/link'
 import { SeoPageLayout } from '@/components/SeoPageLayout'
 
 export const metadata: Metadata = {
-  title: 'Vendere casa a Monza: prezzo, documenti e da dove iniziare',
+  title: {
+    absolute: 'Vendere casa a Monza: prezzo, documenti e da dove iniziare',
+  },
   description:
-    'Vendere casa a Monza: perché partire da una valutazione sul posto, quali documenti servono, come evitare prezzi fuori mercato e cosa succede dopo la richiesta.',
+    'Vendere casa a Monza: perché partire da una stima sul posto, quali documenti servono, come evitare prezzi fuori mercato e cosa succede dopo la richiesta. Guida pratica, senza impegno.',
   alternates: { canonical: 'https://valore-immobili.it/vendere-casa-monza' },
 }
 
 export default function VendereCasaMonzaPage() {
   return (
     <SeoPageLayout
-      title="Vendere casa a Monza: da dove iniziare davvero"
-      intro="Prima di pubblicare un annuncio o accettare il primo parere “di listino”, serve capire il **valore reale** dell’immobile nella tua zona. Questa guida spiega cosa conta a Monza, quali documenti preparare e perché un sopralluogo gratuito è un punto di partenza più solido di una stima automatica."
+      title="Vendere casa a Monza: da dove iniziare"
+      intro="**Vendere casa a Monza** senza partire da un prezzo inventato: questa guida spiega cosa conta in città, quali documenti preparare e perché un sopralluogo sul posto è un punto di partenza più solido di una stima automatica o di un annuncio “due scale più in là”."
       sourcePage="/vendere-casa-monza"
       defaultCity="Monza"
       breadcrumb="Vendere casa a Monza"
@@ -25,8 +27,13 @@ export default function VendereCasaMonzaPage() {
       related={[
         {
           href: '/monza',
-          label: 'Valutazione gratuita a Monza',
-          description: 'Pagina winner: intent gratuita + sopralluogo.',
+          label: 'Sopralluogo a Monza',
+          description: 'Pagina città: stima sul posto senza mandato.',
+        },
+        {
+          href: '/valore-al-metro-quadro-monza',
+          label: 'Valore al metro quadro',
+          description: 'Perché le medie €/mq a Monza ingannano.',
         },
         {
           href: '/costo-vendere-casa-monza',
@@ -42,11 +49,6 @@ export default function VendereCasaMonzaPage() {
           href: '/classe-energetica-valore-casa',
           label: 'Classe energetica e valore',
           description: 'APE e cosa sposta davvero il prezzo.',
-        },
-        {
-          href: '/valutazione-online-o-sopralluogo',
-          label: 'Online o sopralluogo',
-          description: 'Perché la stima automatica non basta.',
         },
         {
           href: '/faq',
@@ -82,10 +84,11 @@ export default function VendereCasaMonzaPage() {
       </ul>
       <p>
         La differenza non è “ottimismo contro pessimismo”. È partire da un confronto concreto con ciò che, nella tua
-        zona, si sta davvero muovendo.
+        zona, si sta davvero muovendo. Le medie €/mq? Spesso fuorvianti: vedi{' '}
+        <Link href="/valore-al-metro-quadro-monza">valore al metro quadro a Monza</Link>.
       </p>
 
-      <h2>La soluzione: una valutazione sul posto come punto di partenza</h2>
+      <h2>La soluzione: una stima sul posto come punto di partenza</h2>
       <p>
         Una valutazione con sopralluogo non è un obbligo di mandato e non è una cifra magica stampata da un
         algoritmo. È una lettura motivata dell’immobile vista di persona, confrontata con il mercato reale della
@@ -93,10 +96,10 @@ export default function VendereCasaMonzaPage() {
       </p>
       <p>
         L’obiettivo è darti un <strong>punto di partenza concreto</strong> per decidere prezzo, tempi e strategia.
-        Senza impegno di affidare la vendita. Per la{' '}
-        <Link href="/monza">valutazione gratuita dell’immobile a Monza</Link> usa la pagina città (non questa
-        guida). Il percorso passo passo è in <Link href="/come-funziona">come funziona</Link>; i dubbi tipici
-        nelle <Link href="/faq">domande frequenti</Link>.
+        Senza impegno di affidare la vendita. Per aprire la richiesta a Monza usa la{' '}
+        <Link href="/monza">pagina città</Link> (non questa guida). Il percorso passo passo è in{' '}
+        <Link href="/come-funziona">come funziona</Link>; i dubbi tipici nelle{' '}
+        <Link href="/faq">domande frequenti</Link>.
       </p>
 
       <h2>Cosa conta davvero quando vendi a Monza</h2>
@@ -108,7 +111,7 @@ export default function VendereCasaMonzaPage() {
       <p>
         Per orientarti sul contesto di zona (utile anche a chi compra, quindi rilevante se stai cercando un acquirente
         “giusto”), vedi i <Link href="/quartieri-monza">quartieri di Monza</Link> e la{' '}
-        <Link href="/monza">valutazione gratuita a Monza</Link>.
+        <Link href="/monza">pagina Monza</Link> per la stima sul posto.
       </p>
       <p>
         Se l’immobile è in un comune della Brianza, non usare Monza come prezzo da copiare. Parti dall’hub{' '}
@@ -131,7 +134,8 @@ export default function VendereCasaMonzaPage() {
         </li>
         <li>
           <strong>Definisci la strategia:</strong> prezzo di partenza, margine di trattativa, eventuali lavori minimi
-          che spostano la domanda.
+          che spostano la domanda. Guida:{' '}
+          <Link href="/ristrutturare-prima-di-vendere">ristrutturare prima di vendere</Link>.
         </li>
         <li>
           <strong>Se compri dopo:</strong> allinea budget e raggio di ricerca in parallelo. Guida:{' '}
@@ -153,7 +157,9 @@ export default function VendereCasaMonzaPage() {
       </ul>
       <p>
         Non è una lista per spaventarti: è ciò che, in una vendita seria, torna fuori prima o poi. Averli a portata di
-        mano evita sorprese a metà percorso.
+        mano evita sorprese a metà percorso. Sull’APE:{' '}
+        <Link href="/classe-energetica-valore-casa">classe energetica e valore</Link>. Sui costi lato venditore:{' '}
+        <Link href="/costo-vendere-casa-monza">quanto costa vendere casa a Monza</Link>.
       </p>
 
       <h2>Cosa succede dopo la richiesta</h2>
@@ -165,8 +171,7 @@ export default function VendereCasaMonzaPage() {
       <p>
         Nessun costo iniziale, nessun obbligo di incarico. Se dopo la stima vuoi procedere, ne parliamo con calma. Se
         preferisci solo il numero e decidere da solo, va bene lo stesso. Dettaglio del percorso:{' '}
-        <Link href="/come-funziona">come funziona</Link>. Dubbi su costi e documenti:{' '}
-        <Link href="/faq">FAQ</Link>.
+        <Link href="/come-funziona">come funziona</Link>. Dubbi su costi e documenti: <Link href="/faq">FAQ</Link>.
       </p>
 
       <h2>Appartamento o casa indipendente</h2>
@@ -189,14 +194,14 @@ export default function VendereCasaMonzaPage() {
       </p>
       <p>
         Per l’acquisto: <Link href="/comprare-casa-monza">comprare casa a Monza</Link> e, se allarghi il raggio,{' '}
-        <Link href="/comprare-casa-brianza">comprare casa in Brianza</Link>. Per la vendita, richiedi la{' '}
-        <Link href="/monza">valutazione gratuita a Monza</Link> dalla pagina città.
+        <Link href="/comprare-casa-brianza">comprare casa in Brianza</Link>. Per la vendita, apri la richiesta dalla{' '}
+        <Link href="/monza">pagina Monza</Link>.
       </p>
 
       <h2>In sintesi</h2>
       <p>
         Vendere casa a Monza con più controllo significa partire dal mercato reale della tua zona, non da una media o
-        da un annuncio vicino. Un sopralluogo gratuito ti dà quel punto di partenza, senza impegno. Poi decidi tu se e
+        da un annuncio vicino. Un sopralluogo sul posto ti dà quel punto di partenza, senza impegno. Poi decidi tu se e
         come procedere.
       </p>
     </SeoPageLayout>

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     absolute: 'Sopralluogo immobiliare Monza e Brianza | Valore Immobili',
   },
   description:
-    'Sopralluogo a Monza e Brianza su vendite reali di zona, non algoritmi. Senza mandato. La richiesta di valutazione gratuita a Monza è sulla pagina città dedicata.',
+    'Sopralluogo a Monza e Brianza su vendite reali di zona, non algoritmi. Senza mandato. Per Monza città usa la pagina dedicata; qui trovi il percorso e il modulo per la Brianza.',
   alternates: { canonical: 'https://valore-immobili.it/' },
 }
 
@@ -67,13 +67,13 @@ export default function HomePage() {
               Sopralluogo immobiliare a Monza e in Brianza
             </h1>
             <p className="max-w-xl text-base text-slate-200 text-pretty md:text-lg">
-              Stima sul posto su vendite reali della zona: non un algoritmo. Senza mandato. Se cerchi la
-              valutazione gratuita dell’immobile a Monza, usa la{' '}
+              Stima sul posto su vendite reali della zona: non un algoritmo. Senza mandato. Per Monza città
+              apri la{' '}
               <Link
                 href="/monza"
                 className="font-semibold text-cloud underline underline-offset-2 hover:text-white"
               >
-                pagina dedicata a Monza
+                pagina dedicata
               </Link>
               — non questa home.
             </p>
@@ -138,9 +138,8 @@ export default function HomePage() {
             <p>
               Il sopralluogo a Monza e in Brianza è <strong>senza mandato</strong> e senza costo iniziale:
               non è un calcolatore online né una quotazione OMI da sola. Visita sul posto, lettura dello stato
-              reale e confronto con vendite di zona. Per la{' '}
-              <Link href="/monza">valutazione gratuita dell’immobile a Monza</Link> usa solo la pagina città. Se
-              hai già una stima automatica, leggi{' '}
+              reale e confronto con vendite di zona. Per Monza città usa solo la{' '}
+              <Link href="/monza">pagina dedicata</Link>. Se hai già una stima automatica, leggi{' '}
               <Link href="/valutazione-online-o-sopralluogo">valutazione online o sopralluogo</Link>.
             </p>
 
@@ -160,11 +159,11 @@ export default function HomePage() {
 
             <h2>Monza e Brianza: mercato locale, non medie provinciali</h2>
             <p>
-              Lavoriamo su Monza (richiesta dalla{' '}
-              <Link href="/monza">pagina valutazione gratuita a Monza</Link>) e sui comuni della{' '}
+              Lavoriamo su Monza (richiesta dalla <Link href="/monza">pagina città</Link>) e sui comuni della{' '}
               <Link href="/brianza">Brianza</Link>. Valutare un immobile per la sua zona reale (via, tipologica,
               stato) evita di partire da una media provinciale che non descrive né il centro né i comuni più
-              esterni.
+              esterni. Le medie €/mq? Spesso fuorvianti: vedi{' '}
+              <Link href="/valore-al-metro-quadro-monza">valore al metro quadro a Monza</Link>.
             </p>
             <p>
               Se sai già la tipologica, parti da{' '}
@@ -194,28 +193,28 @@ export default function HomePage() {
             items={[
               {
                 href: '/monza',
-                label: 'Valutazione gratuita a Monza',
-                description: 'Pagina città: intent gratuita + sopralluogo.',
+                label: 'Sopralluogo a Monza',
+                description: 'Pagina città: modulo e stima sul posto.',
               },
               {
-                href: '/valutazione-online-o-sopralluogo',
-                label: 'Online o sopralluogo',
-                description: 'Calcolatore vs visita gratuita sul posto.',
+                href: '/valore-al-metro-quadro-monza',
+                label: 'Valore al metro quadro a Monza',
+                description: 'Perché le medie €/mq non bastano.',
               },
               {
-                href: '/comprare-casa-monza',
-                label: 'Comprare casa a Monza',
-                description: 'Se stai cercando casa, non solo vendendo.',
-              },
-              {
-                href: '/valutazione/brugherio',
-                label: 'Valutazione a Brugherio',
-                description: 'Comune limitrofo verso Milano Est.',
+                href: '/vendere-casa-monza',
+                label: 'Vendere casa a Monza',
+                description: 'Prezzo, documenti e da dove partire.',
               },
               {
                 href: '/valutazione/ville-brianza',
                 label: 'Valutazione ville in Brianza',
                 description: 'Schiere, bifamiliari e indipendenti.',
+              },
+              {
+                href: '/valutazione-online-o-sopralluogo',
+                label: 'Online o sopralluogo',
+                description: 'Calcolatore vs visita sul posto.',
               },
               {
                 href: '/brianza',

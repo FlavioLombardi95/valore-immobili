@@ -1,7 +1,43 @@
 # Stato SEO — valore-immobili.it
 
-**Aggiornato:** 2026-08-24  
+**Aggiornato:** 2026-08-25  
 **Canvas GSC:** aggiornato in-place  
+
+---
+
+## GSC pull — 2026-08-25 (post-ship 24/08)
+
+| Finestra | Impressioni | Clic | Pos. media |
+|----------|------------:|-----:|-----------:|
+| **28gg** `07-28 → 08-24` | **1.226** | 0 | **35.5** |
+| 7gg `08-18 → 08-24` | **251** | 0 | **37.0** |
+| Check 24/08 (28gg) | 1.262 | 0 | 35.3 |
+| Check 24/08 (7gg) | 319 | 0 | 37.7 |
+
+### Lettura
+
+1. **0 clic** su tutte le finestre. Unico clic storico: **2 luglio**, home, query `valutazione immobile monza`.
+2. Volume 7gg **251** (era 319): la finestra scorre via i picchi 16–17 ago. Non è un crollo reale.
+3. **Ville ok e in miglioramento:** `valutazione ville in brianza` **126** @**7.2** (28gg); sui 7gg pos **6.2**. Cannibal: `/ville-brianza` **24** @**5.1** vs `/brianza` **22** @**31.4**.
+4. **Gratuita — dati ancora pre-ship:** sui 7gg FAQ **18** @**56.8**, home **17** @**73.6**, `/monza` **15** @**74.7** (5ª). Su 28gg `/monza` resta leader (**93** @**33**). Intervento 24/08 non misurabile (lag 7–10 gg).
+5. **3 guide vendita nuove:** 0 impressioni (non indicizzate o lag).
+6. **Opportunità secondaria:** `vendere casa a monza` **52** @**28.7** (28gg) → `/vendere-casa-monza`.
+
+### Decisione 25/08
+
+- **Ship 25/08 (seconda ondata + leve traffico):**
+  - De-ottimizzazione aggressiva “gratuita” su FAQ, home, appartamenti, come-funziona, vendere (anchor neutri → `/monza`).
+  - `/monza` rinforzata su secondarie: H2 **stima immobiliare a Monza** (86 impr @66.5).
+  - `/vendere-casa-monza` H1/intro più esatti su query `vendere casa a monza` (52 @28.7).
+  - **Nuova guida** `/valore-al-metro-quadro-monza` (query GSC 51 impr @53.9).
+  - Ville: meta CTR più diretta (“Quanto vale la tua villa…”).
+  - Footer + related: link a guide vendita / €/mq per crawl.
+- **Fare subito (GSC manuale):** indicizzazione
+  - `/valore-al-metro-quadro-monza`
+  - `/costo-vendere-casa-monza`, `/classe-energetica-valore-casa`, `/ristrutturare-prima-di-vendere`
+  - `/comprare-casa-monza`, `/valutazione-online-o-sopralluogo`
+- **Non fare:** scala comuni, rollback ville.
+- **Misura:** mid-check ~**1–3 settembre** su pos. “gratuita”, share `/monza`, impr su €/mq + vendere + stima.
 
 ---
 

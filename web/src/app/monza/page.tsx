@@ -39,14 +39,14 @@ export default function MonzaPage() {
           description: 'Prezzo, documenti e da dove partire.',
         },
         {
+          href: '/valore-al-metro-quadro-monza',
+          label: 'Valore al metro quadro a Monza',
+          description: 'Perché le medie €/mq ingannano.',
+        },
+        {
           href: '/costo-vendere-casa-monza',
           label: 'Quanto costa vendere',
           description: 'Voci di spesa lato venditore.',
-        },
-        {
-          href: '/ristrutturare-prima-di-vendere',
-          label: 'Ristrutturare prima di vendere',
-          description: 'Lavori sì o no prima del listino.',
         },
         {
           href: '/classe-energetica-valore-casa',
@@ -61,6 +61,19 @@ export default function MonzaPage() {
         giusta. Non ricevi un numero da algoritmo: il percorso è gratuito e senza mandato — sopralluogo,
         lettura di via e quartiere, confronto con vendite reali. Differenza rispetto ai calcolatori:{' '}
         <Link href="/valutazione-online-o-sopralluogo">valutazione online o sopralluogo</Link>.
+      </p>
+
+      <h2>Stima immobiliare a Monza: cosa significa in pratica</h2>
+      <p>
+        Una <strong>stima immobiliare a Monza</strong> seria non è una media cittadina né un “prezzo al metro
+        quadro” da listino. È una lettura motivata dell’immobile visto di persona: via, piano, stato,
+        condominio o lotto, domanda reale del quartiere. Lo stesso approccio vale se parti da una valutazione
+        immobiliare generica trovata online: qui la chiudi sul posto, senza mandato.
+      </p>
+      <p>
+        Se stai confrontando solo €/mq tra annunci, leggi prima{' '}
+        <Link href="/valore-al-metro-quadro-monza">valore al metro quadro a Monza</Link>: spiega perché quei
+        numeri fuorviano e quando servono davvero.
       </p>
 
       <h2>Perché il valore a Monza dipende dalla zona</h2>
